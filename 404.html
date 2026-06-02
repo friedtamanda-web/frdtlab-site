@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FRDTLAB — Signal lost</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@700;800&family=JetBrains+Mono:wght@400;500&family=Newsreader:opsz,wght@6..72,300;6..72,400&display=swap" rel="stylesheet">
+<style>
+:root{--black:#0b0b0c;--line:#2c2d33;--white:#f6f5f2;--body:#c4c5cc;--steel:#c9cad0;--blue:#6f9bff;--pink:#ff3d8b;
+--display:"Archivo Narrow",sans-serif;--serif:"Newsreader",Georgia,serif;--mono:"JetBrains Mono",monospace}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--black);color:var(--white);font-family:var(--serif);min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:32px;overflow:hidden;position:relative}
+.bg{position:absolute;inset:0;z-index:0;background:radial-gradient(60% 80% at 80% 12%,rgba(47,107,255,.18),transparent 62%),radial-gradient(55% 75% at 14% 90%,rgba(255,61,139,.14),transparent 62%)}
+.box{position:relative;z-index:1;max-width:560px}
+.code{font-family:var(--mono);font-size:13px;letter-spacing:.28em;text-transform:uppercase;color:var(--blue)}
+h1{font-family:var(--display);font-weight:800;text-transform:uppercase;font-size:clamp(3.5rem,14vw,7rem);line-height:.9;margin:18px 0 6px}
+h1 b{color:var(--pink)}
+p{color:var(--body);font-size:1.15rem;line-height:1.5;margin:18px auto 0;max-width:42ch}
+.cta{display:inline-flex;gap:14px;flex-wrap:wrap;justify-content:center;margin-top:38px}
+.btn{font-family:var(--mono);font-size:13px;letter-spacing:.12em;text-transform:uppercase;padding:15px 28px;transition:all .3s}
+.btn-primary{background:var(--pink);color:var(--black);font-weight:500}
+.btn-primary:hover{background:var(--white)}
+.btn-ghost{border:1px solid var(--line);color:var(--white)}
+.btn-ghost:hover{border-color:var(--blue);color:var(--blue)}
+</style>
+</head>
+<body>
+<div class="bg"></div>
+<div class="box">
+  <div class="code">404 · Signal lost</div>
+  <h1>Off the <b>grid</b>.</h1>
+  <p>This page isn't part of the system — yet. Everything here is active, forming, or on the horizon. This one never made it onto the map.</p>
+  <div class="cta">
+    <a href="/" class="btn btn-primary">Back to the Lab</a>
+    <a href="/institution.html" class="btn btn-ghost">See the Institution</a>
+  </div>
+</div>
+</body>
+</html>
