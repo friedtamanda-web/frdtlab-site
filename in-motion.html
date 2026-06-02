@@ -267,6 +267,7 @@ footer{background:var(--black);border-top:1px solid var(--line);padding:88px 0 4
     <a href="#recognition">On Stage</a>
     <a href="#movement">Movement</a>
     <a href="guide.html">The Guide</a>
+    <a href="frameworks.html">Frameworks</a>
     <a href="index.html">Home</a>
     <a href="https://afrdtlab.substack.com/" class="nav-cta">Enter the Lab</a>
   </div>
@@ -404,6 +405,45 @@ footer{background:var(--black);border-top:1px solid var(--line);padding:88px 0 4
   </div>
 </section>
 
+<!-- ============================ NEW VENTURES (teaser) ============================ -->
+<style>
+.ventures{background:var(--black);border-top:1px solid var(--line)}
+.ventures .eyebrow::before{background:var(--amber)}
+.ventures h2{font-family:var(--display);font-weight:800;text-transform:uppercase;font-size:clamp(2rem,4.6vw,3.4rem);line-height:1.02;color:var(--white);max-width:18ch;margin-top:20px}
+.ventures h2 em{font-style:normal;color:var(--amber)}
+.ventures .v-intro{margin-top:22px;color:var(--body-text);max-width:52ch;font-family:var(--serif);font-size:1.05rem;line-height:1.6}
+.v-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);margin-top:48px}
+.v-tile{background:var(--charcoal);padding:34px 30px;min-height:230px;display:flex;flex-direction:column;position:relative;overflow:hidden;transition:background .4s var(--ease)}
+.v-tile:hover{background:var(--panel)}
+.v-tile .tag{font-family:var(--mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--steel)}
+.v-tile h3{font-family:var(--display);font-weight:700;text-transform:uppercase;font-size:1.6rem;line-height:1;color:var(--white);margin-top:auto}
+.v-tile p{font-size:.95rem;color:var(--body-text);font-weight:400;margin-top:12px;line-height:1.5}
+.v-load{position:relative;height:2px;background:rgba(255,255,255,.07);margin-top:20px;overflow:hidden;border-radius:2px}
+.v-load::after{content:"";position:absolute;top:0;left:-40%;width:40%;height:100%;border-radius:2px;
+  background:linear-gradient(90deg,transparent,var(--amber),transparent);animation:vload 2.4s var(--ease) infinite}
+.v-tile:nth-child(2) .v-load::after{animation-delay:.5s;background:linear-gradient(90deg,transparent,var(--pink),transparent)}
+.v-tile:nth-child(3) .v-load::after{animation-delay:1s;background:linear-gradient(90deg,transparent,var(--blue),transparent)}
+@keyframes vload{to{left:120%}}
+.ventures .v-close{margin-top:40px;font-family:var(--display);font-weight:700;text-transform:uppercase;font-size:clamp(1.2rem,2.4vw,1.7rem);color:var(--white)}
+.ventures .v-close span{color:var(--pink)}
+@media(max-width:820px){.v-grid{grid-template-columns:1fr}}
+</style>
+<section class="sec ventures" id="ventures">
+  <div class="wrap">
+    <div class="sec-head reveal" style="margin-bottom:0">
+      <div class="eyebrow">New Ventures · Loading</div>
+      <h2>Some of this doesn't have a <em>name yet</em>.</h2>
+      <p class="v-intro">A few things are taking shape outside the usual lane. Where marketing meets the physical, the experiential, the things you can stand inside of. Early, unfinished, and on purpose.</p>
+    </div>
+    <div class="v-grid reveal">
+      <div class="v-tile"><span class="tag">On the horizon</span><h3>Classic Cars</h3><p>Steel, story, and a little horsepower. Brand as a thing you can hear start up.</p><div class="v-load"></div></div>
+      <div class="v-tile"><span class="tag">On the horizon</span><h3>Themed Stays</h3><p>Places built to make you feel something before you unpack. Hospitality as narrative.</p><div class="v-load"></div></div>
+      <div class="v-tile"><span class="tag">On the horizon</span><h3>Experiential</h3><p>Marketing you can walk into. The system, made physical, made human.</p><div class="v-load"></div></div>
+    </div>
+    <p class="v-close reveal">Human <span>+</span> business <span>+</span> vibe. Built where the three overlap.</p>
+  </div>
+</section>
+
 <!-- ============================ MOVEMENT ============================ -->
 <section class="sec move" id="movement">
   <div class="wrap">
@@ -421,21 +461,22 @@ footer{background:var(--black);border-top:1px solid var(--line);padding:88px 0 4
   </div>
 </section>
 
-<!-- ============================ IN THE FIELD ============================ -->
-<section class="sec" id="field">
+<!-- ============================ IMPACT ============================ -->
+<section class="sec" id="impact">
   <div class="wrap">
     <div class="sec-head reveal">
-      <div class="eyebrow">In the Field</div>
-      <h2>The work, out in the world.</h2>
+      <div class="eyebrow">Impact · In the community</div>
+      <h2>The work shows up off the screen, too.</h2>
+      <p class="lead">Detroit-rooted, by hand. One Step Forward supports K-12 students at Ralph J. Bunche Preparatory Academy, down to the basics: clean clothes, books, and someone showing up. InnovatED313 brings experiential STEAM learning to students and teachers across southeast Michigan.</p>
     </div>
     <div class="field-grid reveal">
       <div class="field-fig">
-        <img src="img/community.jpg" width="1400" height="787" loading="lazy" alt="A community group on a forest hike">
-        <span class="cap">Community · Gathering in person</span>
+        <img src="img/reading.jpg" width="1000" height="1333" loading="lazy" alt="Amanda Friedt reading with a student at Bunche Preparatory Academy in Detroit">
+        <span class="cap">One Step Forward · Bunche Prep, Detroit</span>
       </div>
       <div class="field-fig">
-        <img src="img/reading.jpg" width="1000" height="1333" loading="lazy" alt="Amanda Friedt reading with a student in a classroom">
-        <span class="cap">Publishing · In the classroom</span>
+        <img src="img/community.jpg" width="1400" height="787" loading="lazy" alt="A community gathering in person">
+        <span class="cap">Community · Building together</span>
       </div>
     </div>
   </div>
@@ -515,6 +556,7 @@ footer{background:var(--black);border-top:1px solid var(--line);padding:88px 0 4
       <div class="foot-links">
         <a href="index.html">Home</a>
         <a href="guide.html">The Guide</a>
+    <a href="frameworks.html">Frameworks</a>
         <a href="https://afrdtlab.substack.com/">Newsletter</a>
         <a href="https://www.linkedin.com/in/amandafriedt/">LinkedIn</a>
         <a href="https://www.instagram.com/unapologetic_leader/">Instagram</a>
