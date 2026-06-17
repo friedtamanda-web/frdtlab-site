@@ -1,0 +1,27 @@
+# FRDTLAB
+
+> FRDTLAB is Amanda Friedt's (also known as Amanda Farley) marketing and AI systems lab. It studies how attention, intent, and trust move across search, AI, audiences, and systems, then turns that into infrastructure, frameworks, and action. Focus: integrated marketing, AI-era search, signal systems, and content velocity. Based in Detroit, Michigan.
+
+## Core ideas
+- AI does not rank content, it calculates confidence: every mention, review, and citation is a vote.
+- Search has moved: one intent, distributed across Google, AI assistants, TikTok, Reddit, YouTube, and more.
+- The six-layer marketing system: search mapping, product, audience intelligence, AI/LLM, automation, and velocity.
+- Agentic marketing: one research loop (sense, structure, ship, measure, compound) feeding five channel outputs.
+- Content velocity: volume done with structure becomes search signal, audience training, and authority at once.
+
+## Key pages
+- [Home](https://frdtlab.com/): What FRDTLAB studies and builds.
+- [In Motion](https://frdtlab.com/in-motion.html): Current work, experiments, and signals.
+- [Frameworks](https://frdtlab.com/frameworks.html): The systems and models behind the work.
+- [Workshops](https://frdtlab.com/workshops.html): The New SEO / AI Search, Agentic Marketing, and Content Velocity, for teams at any level, plus a small-business class on getting recommended by AI. Includes a quote request form.
+- [Trainings](https://frdtlab.com/trainings.html): AI Training & Skill Building for organizations. Three tiers (Calibrate, Install, Embed) with a fixed-scope diagnostic; builds durable, role-specific capability the team owns.
+- [Work With Me](https://frdtlab.com/work-with-me.html): Advisory, workshops, and AI/marketing speaking.
+
+## Subscribe
+- [Newsletter on Substack](https://theunapologeticleader.substack.com/): Field notes on marketing, AI, and systems.
+
+## Related
+- [The Unapologetic Leader](https://theunapologeticleader.com/): The leadership and identity side of the same body of work.
+
+## Author
+Amanda Friedt, also known as Amanda Farley. Detroit-based growth strategist and speaker. Two decades in integrated marketing and AI-era search; SMX Advanced speaker; founder of FRDTLAB.
