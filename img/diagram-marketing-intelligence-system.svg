@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 640" role="img" aria-label="The Integrated Marketing Intelligence System. Signal inputs (search demand, audience psychology, product and feed data) feed an intelligence layer of AI agents, which drives activation (content velocity, paid media, AI discovery). Performance loops back as new signal through automation. You are not marketing on top of the system; you are marketing through it.">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600&amp;family=Archivo+Narrow:wght@700&amp;family=JetBrains+Mono:wght@500&amp;display=swap');
+      .disp{font-family:"Archivo Narrow","Archivo",sans-serif;font-weight:700;text-transform:uppercase}
+      .sans{font-family:"Archivo",system-ui,sans-serif}
+      .mono{font-family:"JetBrains Mono",ui-monospace,monospace;letter-spacing:.18em;text-transform:uppercase}
+      .w{fill:#f6f5f2}.body{fill:#c4c5cc}.steel{fill:#b4b6bf}.pink{fill:#ff3d8b}.blue{fill:#6f9bff}
+    </style>
+    <marker id="ab" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#6f9bff"/></marker>
+    <marker id="ap" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#ff3d8b"/></marker>
+  </defs>
+  <rect width="960" height="640" fill="#0b0b0c"/>
+  <text x="64" y="60" class="mono pink" font-size="13">FRDT Lab · Infrastructure</text>
+  <text x="64" y="104" class="disp w" font-size="34">The integrated marketing intelligence system</text>
+  <rect x="64" y="122" width="48" height="4" fill="#ff3d8b"/>
+
+  <!-- column labels -->
+  <text x="150" y="170" class="mono blue" font-size="11">Signal inputs</text>
+  <text x="480" y="170" text-anchor="middle" class="mono pink" font-size="11">Intelligence layer</text>
+  <text x="810" y="170" text-anchor="middle" class="mono pink" font-size="11">Activation</text>
+
+  <!-- input nodes -->
+  <g class="sans">
+    <g><rect x="64" y="196" width="210" height="60" rx="10" fill="#1b1c20" stroke="#2c2d33"/><text x="169" y="232" text-anchor="middle" class="w" font-size="16">Search demand</text></g>
+    <g><rect x="64" y="290" width="210" height="60" rx="10" fill="#1b1c20" stroke="#2c2d33"/><text x="169" y="326" text-anchor="middle" class="w" font-size="16">Audience psychology</text></g>
+    <g><rect x="64" y="384" width="210" height="60" rx="10" fill="#1b1c20" stroke="#2c2d33"/><text x="169" y="420" text-anchor="middle" class="w" font-size="16">Product &amp; feed data</text></g>
+  </g>
+
+  <!-- intelligence core -->
+  <rect x="360" y="226" width="240" height="190" rx="14" fill="#141417" stroke="#ff3d8b" stroke-width="1.5"/>
+  <text x="480" y="304" text-anchor="middle" class="disp w" font-size="22">AI agent</text>
+  <text x="480" y="332" text-anchor="middle" class="disp w" font-size="22">ecosystem</text>
+  <text x="480" y="366" text-anchor="middle" class="sans steel" font-size="13">interprets · routes · adapts</text>
+
+  <!-- output nodes -->
+  <g class="sans">
+    <g><rect x="686" y="196" width="210" height="60" rx="10" fill="#1b1c20" stroke="#2c2d33"/><text x="791" y="232" text-anchor="middle" class="w" font-size="16">Content velocity</text></g>
+    <g><rect x="686" y="290" width="210" height="60" rx="10" fill="#1b1c20" stroke="#2c2d33"/><text x="791" y="326" text-anchor="middle" class="w" font-size="16">Paid media</text></g>
+    <g><rect x="686" y="384" width="210" height="60" rx="10" fill="#1b1c20" stroke="#2c2d33"/><text x="791" y="420" text-anchor="middle" class="w" font-size="16">AI discovery</text></g>
+  </g>
+
+  <!-- input -> core arrows -->
+  <g fill="none" stroke="#6f9bff" stroke-width="2">
+    <path d="M274 226 C 320 232, 330 280, 358 300" marker-end="url(#ab)"/>
+    <path d="M274 320 L 356 320" marker-end="url(#ab)"/>
+    <path d="M274 414 C 320 408, 330 360, 358 340" marker-end="url(#ab)"/>
+  </g>
+  <!-- core -> output arrows -->
+  <g fill="none" stroke="#ff3d8b" stroke-width="2">
+    <path d="M600 300 C 640 280, 650 232, 684 226" marker-end="url(#ap)"/>
+    <path d="M602 320 L 684 320" marker-end="url(#ap)"/>
+    <path d="M600 340 C 640 360, 650 408, 684 414" marker-end="url(#ap)"/>
+  </g>
+
+  <!-- feedback loop -->
+  <g fill="none" stroke="#b4b6bf" stroke-width="2" stroke-dasharray="2 6" stroke-linecap="round">
+    <path d="M791 444 L 791 500 L 169 500 L 169 444" marker-end="url(#ab)"/>
+  </g>
+  <text x="480" y="492" text-anchor="middle" class="mono steel" font-size="11">Performance returns as new signal · automation</text>
+
+  <line x1="64" y1="556" x2="896" y2="556" stroke="#2c2d33" stroke-width="2"/>
+  <text x="64" y="592" class="disp w" font-size="22">Not marketing on top of the system.</text>
+  <text x="64" y="620" class="disp w" font-size="22">Marketing <tspan class="pink">through</tspan> it.</text>
+</svg>
