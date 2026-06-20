@@ -273,7 +273,7 @@ footer{background:var(--black);border-top:1px solid var(--line);padding:80px 0 4
     <div class="sec-head"><div class="eyebrow">Request a quote</div><h2>Tell us where the work is breaking.</h2>
       <p class="sub">The diagnostic is the fastest way to a real number. Share a few details and we will scope the right starting point.</p>
     </div>
-    <form class="qform" action="https://formspree.io/f/xzdqwawo" method="POST">
+    <form class="qform" data-kl-event="Training Inquiry">
       <input type="hidden" name="_subject" value="FRDT AI Training / diagnostic request">
       <input type="hidden" name="request_type" value="AI Training & Skill Building">
       <div class="row">
@@ -363,6 +363,18 @@ function choose(v){try{localStorage.setItem(KEY,v);}catch(e){}if(v==='granted')a
 var y=document.getElementById('flcYes'),n=document.getElementById('flcNo');
 if(y)y.addEventListener('click',function(){choose('granted');});
 if(n)n.addEventListener('click',function(){choose('denied');});})();
+</script>
+<script>/* kl-lead-handler */
+document.addEventListener('submit',function(e){
+  var f=e.target; if(!f||!f.getAttribute||!f.getAttribute('data-kl-event'))return;
+  e.preventDefault();
+  var fd=new FormData(f),p={};
+  fd.forEach(function(v,k){ if(k.charAt(0)!=='_'&&v){ p[k]=p[k]?p[k]+', '+v:''+v; } });
+  var email=p.email||p.Email||'';
+  try{ if(window.klaviyo){ if(email){window.klaviyo.push(['identify',Object.assign({'$email':email},p)]);} window.klaviyo.push(['track', f.getAttribute('data-kl-event'), p]); } }catch(err){}
+  var msg=document.createElement('p'); msg.className='form-note'; msg.style.cssText='font-size:1.05rem;margin-top:8px'; msg.textContent='Thank you — we got it. We will be in touch.';
+  f.parentNode.insertBefore(msg,f.nextSibling); f.style.display='none';
+});
 </script>
 </body>
 </html>

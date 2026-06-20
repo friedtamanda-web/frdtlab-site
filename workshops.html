@@ -280,8 +280,8 @@ footer{background:var(--black);border-top:1px solid var(--line);padding:80px 0 4
     <div class="sec-head"><div class="eyebrow">Request a quote</div><h2>Tell me about your team.</h2>
       <p class="sub">A few details and I'll come back with a recommended workshop, format, and a quote. No pressure, no spam.</p>
     </div>
-    <!-- Replace YOUR_FORM_ID with your Formspree form ID (formspree.io). Until then, the email fallback below works. -->
-    <form class="qform" action="https://formspree.io/f/xzdqwawo" method="POST">
+    
+    <form class="qform" data-kl-event="Workshop Inquiry">
       <input type="hidden" name="_subject" value="FRDTLAB workshop quote request">
       <div class="row">
         <div class="field"><label for="name">Your name</label><input id="name" name="name" type="text" required></div>
@@ -353,6 +353,18 @@ footer{background:var(--black);border-top:1px solid var(--line);padding:80px 0 4
 const nl=document.getElementById('navLinks'),mb=document.getElementById('menuBtn');
 mb.addEventListener('click',()=>{const o=nl.classList.toggle('open');mb.setAttribute('aria-expanded',o)});
 nl.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{nl.classList.remove('open');mb.setAttribute('aria-expanded','false')}));
+</script>
+<script>/* kl-lead-handler */
+document.addEventListener('submit',function(e){
+  var f=e.target; if(!f||!f.getAttribute||!f.getAttribute('data-kl-event'))return;
+  e.preventDefault();
+  var fd=new FormData(f),p={};
+  fd.forEach(function(v,k){ if(k.charAt(0)!=='_'&&v){ p[k]=p[k]?p[k]+', '+v:''+v; } });
+  var email=p.email||p.Email||'';
+  try{ if(window.klaviyo){ if(email){window.klaviyo.push(['identify',Object.assign({'$email':email},p)]);} window.klaviyo.push(['track', f.getAttribute('data-kl-event'), p]); } }catch(err){}
+  var msg=document.createElement('p'); msg.className='form-note'; msg.style.cssText='font-size:1.05rem;margin-top:8px'; msg.textContent='Thank you — we got it. We will be in touch.';
+  f.parentNode.insertBefore(msg,f.nextSibling); f.style.display='none';
+});
 </script>
 </body>
 </html>
