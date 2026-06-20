@@ -40,12 +40,12 @@
  ],
  "author": {
   "@type": "Person",
-  "name": "Amanda Friedt", "alternateName": ["Amanda Farley", "Amanda Friedt Farley"],
+  "name": "Amanda Friedt",
   "sameAs": [
    "https://www.linkedin.com/in/amandafriedt/",
    "https://www.instagram.com/unapologetic_leader/",
    "https://www.tiktok.com/@unapologeticleadership",
-   "https://theunapologeticleader.substack.com/",
+   "https://afrdtlab.substack.com/",
    "https://theunapologeticleader.com/"
   ],
   "knowsAbout": [
@@ -148,37 +148,12 @@ footer{background:var(--black);border-top:1px solid var(--line);padding:80px 0 4
 .foot-links a{font-family:var(--mono);font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--steel);transition:color .3s}
 .foot-links a:hover{color:var(--pink)}
 </style>
-<!-- Consent Mode v2 (advanced): everything denied until the visitor chooses -->
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('consent', 'default', {
-    'ad_storage': 'denied',
-    'ad_user_data': 'denied',
-    'ad_personalization': 'denied',
-    'analytics_storage': 'denied',
-    'wait_for_update': 500
-  });
-</script>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-1CDWBM46D5"></script>
-<script>
-  gtag('js', new Date());
-  gtag('config', 'G-1CDWBM46D5');
-</script>
-</head>
+<style id="mob-safe">img,svg,video{max-width:100%;height:auto}html,body{overflow-x:hidden}@media(max-width:560px){.grid,.svc,.cols{grid-template-columns:1fr!important}}</style></head>
 <body>
 <nav id="nav">
   <a href="index.html" class="brand">FRDT<b>LAB</b></a>
   <button class="menu-btn" id="menuBtn" aria-label="Toggle menu" aria-expanded="false">Menu</button>
-  <div class="nav-links" id="navLinks">
-    <a href="index.html">The Lab</a>
-    <a href="in-motion.html">In Motion</a>
-    <a href="frameworks.html" class="current">Frameworks</a>
-    <a href="workshops.html">Workshops</a><a href="trainings.html">Trainings</a>
-    <a href="work-with-me.html">Work With Me</a>
-    <a href="https://theunapologeticleader.substack.com/" class="nav-cta">Enter the Lab</a>
-  </div>
+  <div class="nav-links" id="navLinks"><a href="index.html">The Lab</a><a href="index.html#build">How We Build</a><a href="work-with-me.html">Work With Me</a><a href="in-motion.html">In Motion</a><a href="https://theunapologeticleader.com">Unapologetic</a><a href="https://afrdtlab.substack.com/" class="nav-cta">Subscribe</a></div>
 </nav>
 
 <header class="hero">
@@ -346,12 +321,11 @@ footer{background:var(--black);border-top:1px solid var(--line);padding:80px 0 4
       <div class="foot-links">
         <a href="index.html">The Lab</a>
         <a href="in-motion.html">In Motion</a>
-        <a href="work-with-me.html">Work With Me</a>
-        <a href="workshops.html">Workshops</a><a href="trainings.html">Trainings</a>
+        <a href="guide.html">The Guide</a>
+    <a href="work-with-me.html">Work With Me</a>
         <a href="https://theunapologeticleader.com">Unapologetic</a>
-        <a href="https://theunapologeticleader.substack.com/">Newsletter</a>
+        <a href="https://afrdtlab.substack.com/">Newsletter</a>
         <a href="mailto:hello@frdtlab.com">Contact</a>
-        <a href="https://www.linkedin.com/in/amandafriedt/">LinkedIn</a><a href="https://www.instagram.com/unapologetic_leader/">Instagram</a><a href="https://www.tiktok.com/@unapologeticleadership">TikTok</a>
       </div>
     </div>
   </div>
@@ -360,35 +334,6 @@ footer{background:var(--black);border-top:1px solid var(--line);padding:80px 0 4
 const nl=document.getElementById('navLinks'),mb=document.getElementById('menuBtn');
 mb.addEventListener('click',()=>{const o=nl.classList.toggle('open');mb.setAttribute('aria-expanded',o)});
 nl.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{nl.classList.remove('open');mb.setAttribute('aria-expanded','false')}));
-</script>
-<!-- Consent banner (Consent Mode v2) -->
-<style>
-.flc{position:fixed;left:16px;right:16px;bottom:16px;z-index:9000;max-width:560px;margin:0 auto;background:#141417;border:1px solid #2c2d33;border-radius:14px;box-shadow:0 16px 50px rgba(0,0,0,.5);padding:18px 20px;display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between;font-family:"Archivo",system-ui,sans-serif}
-.flc[hidden]{display:none}
-.flc p{margin:0;font-size:.9rem;color:#c4c5cc;line-height:1.45;flex:1 1 240px}
-.flc p a{color:#ff3d8b;text-decoration:underline}
-.flc-btns{display:flex;gap:10px}
-.flc-btn{font-family:"JetBrains Mono",ui-monospace,monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;padding:11px 18px;border-radius:30px;border:none;cursor:pointer}
-.flc-ghost{background:transparent;border:1px solid #2c2d33;color:#c4c5cc}
-.flc-yes{background:#ff3d8b;color:#0b0b0c}
-.flc-yes:hover{background:#fff}
-</style>
-<div id="flConsent" class="flc" hidden role="dialog" aria-label="Privacy choices">
-  <p>We use one privacy-friendly analytics cookie to learn what resonates. No ads, no selling your data. See our <a href="https://theunapologeticleader.com/privacy.html">Privacy Policy</a>.</p>
-  <div class="flc-btns">
-    <button type="button" id="flcNo" class="flc-btn flc-ghost">Decline</button>
-    <button type="button" id="flcYes" class="flc-btn flc-yes">Allow</button>
-  </div>
-</div>
-<script>
-(function(){var KEY='frd-consent-v1',bar=document.getElementById('flConsent'),saved=null;
-function apply(s){gtag('consent','update',{'ad_storage':s,'ad_user_data':s,'ad_personalization':s,'analytics_storage':s});}
-try{saved=localStorage.getItem(KEY);}catch(e){}
-if(saved==='granted'){apply('granted');}else if(saved!=='denied'){if(bar)bar.hidden=false;}
-function choose(v){try{localStorage.setItem(KEY,v);}catch(e){}if(v==='granted')apply('granted');if(bar)bar.hidden=true;}
-var y=document.getElementById('flcYes'),n=document.getElementById('flcNo');
-if(y)y.addEventListener('click',function(){choose('granted');});
-if(n)n.addEventListener('click',function(){choose('denied');});})();
 </script>
 </body>
 </html>
