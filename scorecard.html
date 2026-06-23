@@ -89,6 +89,12 @@ footer a{color:var(--steel)}footer a:hover{color:var(--pink)}
     <div class="bar"><div id="barFill"></div></div>
     <p class="verdict" id="verdict"></p>
     <div class="move"><b>Your first move</b><span id="move"></span></div>
+    <form data-kl-event="AI Visibility Scorecard" style="max-width:52ch;margin:22px auto 0;display:flex;gap:10px;flex-wrap:wrap;justify-content:center">
+      <input type="hidden" name="signal_score" id="capScore">
+      <input name="email" type="email" required placeholder="you@email.com" style="flex:1 1 240px;padding:13px 15px;border:1px solid var(--line);background:#0f0f12;color:var(--white);border-radius:8px;font-size:1rem">
+      <button type="submit" style="background:var(--pink);color:#fff;font-weight:700;border:none;border-radius:8px;padding:13px 22px;cursor:pointer">Email me the full breakdown</button>
+    </form>
+    <p class="meta" style="margin-top:10px">Get your score + the exact fixes for your tier. No spam.</p>
     <div class="cta">
       <a class="btn btn-primary" id="ctaSub" href="https://afrdtlab.substack.com/?utm_source=scorecard&utm_medium=result&utm_campaign=ai_visibility">Get the full breakdown →</a>
       <a class="btn btn-ghost" id="ctaMini" href="https://unapologeticleader.gumroad.com/l/fieldguide?utm_source=scorecard">Get the $9 field guide</a>
@@ -98,7 +104,7 @@ footer a{color:var(--steel)}footer a:hover{color:var(--pink)}
 </main>
 
 <footer><div class="wrap">
-  <p class="meta">FRDTLAB · The Signal Lab · Detroit &nbsp;·&nbsp; <a href="index.html">Home</a> · <a href="frameworks.html">Frameworks</a> · <a href="https://afrdtlab.substack.com/">Newsletter</a></p>
+  <p class="meta">FRDTLAB · The Signal Lab · Detroit &nbsp;·&nbsp; <a href="index.html">Home</a> · <a href="frameworks.html">Frameworks</a> · <a href="prompt-pack.html">Prompt Pack</a><a href="shop.html">Shop</a><a href="https://afrdtlab.substack.com/">Newsletter</a></p>
 </div></footer>
 
 <script>
@@ -142,9 +148,22 @@ btn.addEventListener('click',()=>{
   const tn=document.getElementById('tierName');tn.textContent=t.name;tn.style.color=t.color;
   document.getElementById('verdict').textContent=t.verdict;
   document.getElementById('move').textContent=t.move;
+  document.getElementById('capScore').value=score+' / 10 — '+t.name;
   const r=document.getElementById('result');r.style.display='block';
   document.getElementById('barFill').style.width=(score*10)+'%';
   r.scrollIntoView({behavior:'smooth'});
+});
+</script>
+<script>/* kl-lead-handler */
+document.addEventListener('submit',function(e){
+  var f=e.target; if(!f||!f.getAttribute||!f.getAttribute('data-kl-event'))return;
+  e.preventDefault();
+  var fd=new FormData(f),p={};
+  fd.forEach(function(v,k){ if(k.charAt(0)!=='_'&&v){ p[k]=p[k]?p[k]+', '+v:''+v; } });
+  var email=p.email||p.Email||'';
+  try{ if(window.klaviyo){ if(email){window.klaviyo.push(['identify',Object.assign({'$email':email},p)]);} window.klaviyo.push(['track', f.getAttribute('data-kl-event'), p]); } }catch(err){}
+  var msg=document.createElement('p'); msg.className='meta'; msg.style.cssText='margin-top:12px;color:var(--white)'; msg.textContent='On its way — check your inbox for the full breakdown.';
+  f.parentNode.insertBefore(msg,f.nextSibling); f.style.display='none';
 });
 </script>
 </body></html>
