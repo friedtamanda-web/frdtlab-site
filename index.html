@@ -26,7 +26,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=Archivo+Narrow:wght@500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;1,6..72,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 
 <!-- JSON-LD: machine-readable authority -->
 <script type="application/ld+json">
@@ -101,7 +101,7 @@
   --line-soft:#222329;
   --steel:#b4b6bf; --steel-dim:#c9cad0; --body-text:#c4c5cc;
   --white:#f6f5f2; --ivory:#eceae4;
-  --blue:#6f9bff; --blue-deep:#2f6bff; --pink:#ff3d8b;
+  --blue:#6f9bff; --blue-deep:#2f6bff; --pink:#E84393;
   --display:"Archivo Narrow","Archivo",sans-serif;
   --sans:"Archivo",system-ui,sans-serif;
   --serif:"Newsreader",Georgia,serif;
@@ -300,6 +300,58 @@ footer{background:var(--black);border-top:1px solid var(--line);padding:88px 0 4
 {"@type":"PodcastEpisode","name":"Broken Pixels, Calm Leaders, and the PPC Comeback","url":"https://www.youtube.com/watch?v=cwrmxfSUl4M","partOfSeries":{"@type":"PodcastSeries","name":"PPC Live The Podcast"}}
 ]}
 </script>
+<style id="brand-2027">
+/* FRDTLAB 2027 — light-ground reskin (role-based token remap + dark-pattern overrides) */
+:root{
+  --black:#F6F4F2;--charcoal:#FCFBFA;--panel:#F1EEEA;--line:#E2DEDA;--line-soft:#ECE8E3;--line-dark:#E2DEDA;
+  --steel:#6E6E76;--steel-dim:#8E8E96;--body-text:#4A4A52;--dim:#6E6E76;
+  --white:#111114;--ivory:#111114;--ink:#111114;--on-dark:#F6F4F2;
+  --blue:#111114;--blue-deep:#111114;--blue-li:#6E6E76;
+  --pink:#E84393;--pink-deep:#C9277A;
+  --green:#4A4A52;--amber:#C9277A;
+  --display:'Inter',system-ui,-apple-system,sans-serif;--sans:'Inter',system-ui,-apple-system,sans-serif;
+  --serif:'Inter',system-ui,-apple-system,sans-serif;--mono:'JetBrains Mono',ui-monospace,monospace;
+}
+html,body{background:#F6F4F2!important;color:#111114!important}
+body{font-family:'Inter',system-ui,sans-serif!important;font-feature-settings:"tnum" 1,"cv05" 1,"ss01" 1}
+h1,h2,h3,h4,h5{font-family:'Inter',system-ui,sans-serif!important;color:#111114;letter-spacing:-.02em}
+.hero h1,.hero h1 em{color:#111114!important}
+.hero h1 em{font-style:normal}
+.lead,.sub,p{color:#4A4A52}
+/* faint hero glows + body noise: tone down on light */
+body::before{opacity:.025!important}
+.hero-bg{opacity:.5!important}
+/* NAV — light */
+nav{background:rgba(246,244,242,.82)!important;border-bottom:1px solid #E2DEDA!important}
+nav.scrolled{background:rgba(246,244,242,.92)!important;border-bottom:1px solid #E2DEDA!important}
+.brand,.nav-links a{color:#111114!important}
+.nav-links a:hover,.nav-links a.current{color:#E84393!important}
+.brand b,.brand .sig{color:#E84393!important}
+.nav-cta{border:1px solid #111114!important;color:#111114!important;background:transparent!important}
+.nav-cta:hover{background:#E84393!important;border-color:#E84393!important;color:#fff!important}
+/* DARK bands stay ink (hero/accent), text light */
+.dark{background:#111114!important;color:#F6F4F2!important}
+.dark h1,.dark h2,.dark h3,.dark h4,.dark p,.dark .lead,.dark li,.dark .sub,.dark span{color:#F6F4F2}
+.dark .eyebrow,.dark .sec-num,.dark .kicker{color:#E84393!important}
+/* sections + hairlines */
+.sec{border-top:1px solid #E2DEDA!important}
+.eyebrow{color:#6E6E76!important}
+/* cards / panels on light */
+[class*="card"],[class*="col"],.stat,.recog-fig,.shift-col,.svc,.stage{border-color:#E2DEDA!important}
+/* buttons: pink = the one signal */
+.btn-primary,.gumroad-button{background:#E84393!important;color:#fff!important;border:none!important}
+.btn-primary:hover{background:#111114!important;color:#fff!important}
+.btn-ghost{border:1px solid #111114!important;color:#111114!important;background:transparent!important}
+.btn-ghost:hover{border-color:#E84393!important;color:#E84393!important}
+a{color:inherit}
+/* FOOTER stays ink */
+footer{background:#111114!important;color:#8E8E96!important;border-top:none!important}
+footer a{color:#B9B7BD!important}
+footer a:hover{color:#E84393!important}
+footer .foot-tag,footer .meta{color:#8E8E96!important}
+/* selection */
+::selection{background:#E84393;color:#fff}
+</style>
 </head>
 <body>
 
@@ -398,7 +450,7 @@ footer{background:var(--black);border-top:1px solid var(--line);padding:88px 0 4
 </section>
 
 <!-- ============================ STUDIO teaser ============================ -->
-<section class="sec" id="work-offers" style="border-top:1px solid rgba(255,255,255,.08)"><div class="wrap"><span class="eyebrow">Work with me</span><h2 style="margin:12px 0 26px">Three ways to build together.</h2><div class="svc" style="display:grid;grid-template-columns:repeat(3,1fr);gap:18px"><a href="work-with-me.html" class="svc-card" style="display:block;padding:26px 24px;border:1px solid rgba(255,255,255,.12);border-radius:14px;color:inherit;background:rgba(255,255,255,.02)"><div style="color:#ff3d8b;font-family:ui-monospace,monospace;font-size:.72rem;letter-spacing:.18em;text-transform:uppercase">Advisory</div><p style="margin:12px 0 14px;opacity:.82;line-height:1.5">Embedded strategy and AI systems for teams building the next version of their marketing.</p><span style="color:#ff3d8b;font-weight:600">Explore &rarr;</span></a><a href="work-with-me.html" class="svc-card" style="display:block;padding:26px 24px;border:1px solid rgba(255,255,255,.12);border-radius:14px;color:inherit;background:rgba(255,255,255,.02)"><div style="color:#ff3d8b;font-family:ui-monospace,monospace;font-size:.72rem;letter-spacing:.18em;text-transform:uppercase">Workshops</div><p style="margin:12px 0 14px;opacity:.82;line-height:1.5">Hands-on sessions: agentic marketing, the new SEO, content velocity, getting recommended by AI.</p><span style="color:#ff3d8b;font-weight:600">Explore &rarr;</span></a><a href="work-with-me.html" class="svc-card" style="display:block;padding:26px 24px;border:1px solid rgba(255,255,255,.12);border-radius:14px;color:inherit;background:rgba(255,255,255,.02)"><div style="color:#ff3d8b;font-family:ui-monospace,monospace;font-size:.72rem;letter-spacing:.18em;text-transform:uppercase">Speaking</div><p style="margin:12px 0 14px;opacity:.82;line-height:1.5">Keynotes and fireside talks on marketing in the infrastructure era.</p><span style="color:#ff3d8b;font-weight:600">Explore &rarr;</span></a></div><p style="margin-top:22px"><a href="work-with-me.html" class="btn btn-primary">Work With Me</a></p></div></section>
+<section class="sec" id="work-offers" style="border-top:1px solid rgba(255,255,255,.08)"><div class="wrap"><span class="eyebrow">Work with me</span><h2 style="margin:12px 0 26px">Three ways to build together.</h2><div class="svc" style="display:grid;grid-template-columns:repeat(3,1fr);gap:18px"><a href="work-with-me.html" class="svc-card" style="display:block;padding:26px 24px;border:1px solid rgba(255,255,255,.12);border-radius:14px;color:inherit;background:rgba(255,255,255,.02)"><div style="color:#E84393;font-family:ui-monospace,monospace;font-size:.72rem;letter-spacing:.18em;text-transform:uppercase">Advisory</div><p style="margin:12px 0 14px;opacity:.82;line-height:1.5">Embedded strategy and AI systems for teams building the next version of their marketing.</p><span style="color:#E84393;font-weight:600">Explore &rarr;</span></a><a href="work-with-me.html" class="svc-card" style="display:block;padding:26px 24px;border:1px solid rgba(255,255,255,.12);border-radius:14px;color:inherit;background:rgba(255,255,255,.02)"><div style="color:#E84393;font-family:ui-monospace,monospace;font-size:.72rem;letter-spacing:.18em;text-transform:uppercase">Workshops</div><p style="margin:12px 0 14px;opacity:.82;line-height:1.5">Hands-on sessions: agentic marketing, the new SEO, content velocity, getting recommended by AI.</p><span style="color:#E84393;font-weight:600">Explore &rarr;</span></a><a href="work-with-me.html" class="svc-card" style="display:block;padding:26px 24px;border:1px solid rgba(255,255,255,.12);border-radius:14px;color:inherit;background:rgba(255,255,255,.02)"><div style="color:#E84393;font-family:ui-monospace,monospace;font-size:.72rem;letter-spacing:.18em;text-transform:uppercase">Speaking</div><p style="margin:12px 0 14px;opacity:.82;line-height:1.5">Keynotes and fireside talks on marketing in the infrastructure era.</p><span style="color:#E84393;font-weight:600">Explore &rarr;</span></a></div><p style="margin-top:22px"><a href="work-with-me.html" class="btn btn-primary">Work With Me</a></p></div></section>
 <section class="sec" id="studio">
   <div class="wrap">
     <div class="sec-head reveal">
@@ -423,8 +475,8 @@ footer{background:var(--black);border-top:1px solid var(--line);padding:88px 0 4
 <!-- ============================ COMMUNITY ============================ -->
 <section class="sec" id="signal-magnet" style="border-top:1px solid rgba(255,255,255,.08)"><div class="wrap"><span class="eyebrow">Free · The Signal Report</span><h2 style="margin:12px 0 14px">What's actually changing in the infrastructure era.</h2><p style="opacity:.84;max-width:54ch;line-height:1.6;margin-bottom:22px">The research drop on where marketing is rebuilding underneath — search demand, AI discovery, agentic systems, feed intelligence. No fluff. In your inbox.</p><!-- Replace the form id below with your Klaviyo FRDTLAB form (pointed at the "FRDT Lab Subscribers" list). Until then, the direct-download link works. --><form data-kl-event="Signal Report Request" style="display:flex;gap:10px;flex-wrap:wrap;max-width:540px;margin-bottom:6px">
       <input name="email" type="email" required placeholder="you@email.com" style="flex:1 1 240px;padding:13px 14px;border:1px solid #2c2d33;background:#0f0f12;color:#f6f5f2;border-radius:8px;font-size:1rem">
-      <button type="submit" style="background:#ff3d8b;color:#0b0b0c;font-weight:700;border:none;border-radius:8px;padding:13px 22px;cursor:pointer">Send me the report</button>
-    </form><p style="margin-top:10px"><a href="FRDTLAB-Signal-Report.pdf" style="color:#ff3d8b;font-weight:600">Or download the Signal Report now &rarr;</a></p><p style="margin-top:16px;opacity:.86">Not sure where you stand? <a href="scorecard.html" style="color:#ff3d8b;font-weight:600">Take the 2-minute AI Visibility Scorecard &rarr;</a></p><p style="margin-top:10px;opacity:.86">New: <a href="prompt-pack.html" style="color:#ff3d8b;font-weight:600">The AI Marketing Prompt Pack — 50 prompts, $29 &rarr;</a></p></div></section>
+      <button type="submit" style="background:#E84393;color:#0b0b0c;font-weight:700;border:none;border-radius:8px;padding:13px 22px;cursor:pointer">Send me the report</button>
+    </form><p style="margin-top:10px"><a href="FRDTLAB-Signal-Report.pdf" style="color:#E84393;font-weight:600">Or download the Signal Report now &rarr;</a></p><p style="margin-top:16px;opacity:.86">Not sure where you stand? <a href="scorecard.html" style="color:#E84393;font-weight:600">Take the 2-minute AI Visibility Scorecard &rarr;</a></p><p style="margin-top:10px;opacity:.86">New: <a href="prompt-pack.html" style="color:#E84393;font-weight:600">The AI Marketing Prompt Pack — 50 prompts, $29 &rarr;</a></p></div></section>
 <section class="sec community" id="community">
   <div class="wrap">
     <div class="sec-head reveal">
