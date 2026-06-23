@@ -63,12 +63,12 @@
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=Archivo+Narrow:wght@600;700&family=Newsreader:opsz,wght@6..72,300;6..72,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
 :root {
   --black:#0b0b0c; --charcoal:#141417; --dark-gray:#2c2d33; --mid-gray:#b4b6bf;
   --light-gray:#c4c5cc; --muted:#9a9ba2; --off-white:#f6f5f2; --white:#eceae4;
-  --blue:#6f9bff; --pink:#ff3d8b; --teal:#4ad6a0; --coral:#ff8a4c; --red:#ff6b6a;
+  --blue:#6f9bff; --pink:#E84393; --teal:#4ad6a0; --coral:#ff8a4c; --red:#ff6b6a;
   --amber:#ffb454; --purple:#a78bfa;
   --font:'Archivo',system-ui,sans-serif;
   --display:'Archivo Narrow','Archivo',sans-serif;
@@ -447,6 +447,58 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--blue);outline-offse
 <script type="text/javascript">
 !function(){if(!window.klaviyo){window._klOnsite=window._klOnsite||[];try{window.klaviyo=new Proxy({},{get:function(n,i){return"push"===i?function(){var n;(n=window._klOnsite).push.apply(n,arguments)}:function(){for(var n=arguments.length,o=new Array(n),w=0;w<n;w++)o[w]=arguments[w];var t="function"==typeof o[o.length-1]?o.pop():void 0,e=new Promise((function(n){window._klOnsite.push([i].concat(o,[function(i){t&&t(i),n(i)}]))}));return e}}})}catch(n){window.klaviyo=window.klaviyo||[],window.klaviyo.push=function(){var n;(n=window._klOnsite).push.apply(n,arguments)}}}}();
 </script>
+<style id="brand-2027">
+/* FRDTLAB 2027 — light-ground reskin (role-based token remap + dark-pattern overrides) */
+:root{
+  --black:#F6F4F2;--charcoal:#FCFBFA;--panel:#F1EEEA;--line:#E2DEDA;--line-soft:#ECE8E3;--line-dark:#E2DEDA;
+  --steel:#6E6E76;--steel-dim:#8E8E96;--body-text:#4A4A52;--dim:#6E6E76;
+  --white:#111114;--ivory:#111114;--ink:#111114;--on-dark:#F6F4F2;
+  --blue:#111114;--blue-deep:#111114;--blue-li:#6E6E76;
+  --pink:#E84393;--pink-deep:#C9277A;
+  --green:#4A4A52;--amber:#C9277A;
+  --display:'Inter',system-ui,-apple-system,sans-serif;--sans:'Inter',system-ui,-apple-system,sans-serif;
+  --serif:'Inter',system-ui,-apple-system,sans-serif;--mono:'JetBrains Mono',ui-monospace,monospace;
+}
+html,body{background:#F6F4F2!important;color:#111114!important}
+body{font-family:'Inter',system-ui,sans-serif!important;font-feature-settings:"tnum" 1,"cv05" 1,"ss01" 1}
+h1,h2,h3,h4,h5{font-family:'Inter',system-ui,sans-serif!important;color:#111114;letter-spacing:-.02em}
+.hero h1,.hero h1 em{color:#111114!important}
+.hero h1 em{font-style:normal}
+.lead,.sub,p{color:#4A4A52}
+/* faint hero glows + body noise: tone down on light */
+body::before{opacity:.025!important}
+.hero-bg{opacity:.5!important}
+/* NAV — light */
+nav{background:rgba(246,244,242,.82)!important;border-bottom:1px solid #E2DEDA!important}
+nav.scrolled{background:rgba(246,244,242,.92)!important;border-bottom:1px solid #E2DEDA!important}
+.brand,.nav-links a{color:#111114!important}
+.nav-links a:hover,.nav-links a.current{color:#E84393!important}
+.brand b,.brand .sig{color:#E84393!important}
+.nav-cta{border:1px solid #111114!important;color:#111114!important;background:transparent!important}
+.nav-cta:hover{background:#E84393!important;border-color:#E84393!important;color:#fff!important}
+/* DARK bands stay ink (hero/accent), text light */
+.dark{background:#111114!important;color:#F6F4F2!important}
+.dark h1,.dark h2,.dark h3,.dark h4,.dark p,.dark .lead,.dark li,.dark .sub,.dark span{color:#F6F4F2}
+.dark .eyebrow,.dark .sec-num,.dark .kicker{color:#E84393!important}
+/* sections + hairlines */
+.sec{border-top:1px solid #E2DEDA!important}
+.eyebrow{color:#6E6E76!important}
+/* cards / panels on light */
+[class*="card"],[class*="col"],.stat,.recog-fig,.shift-col,.svc,.stage{border-color:#E2DEDA!important}
+/* buttons: pink = the one signal */
+.btn-primary,.gumroad-button{background:#E84393!important;color:#fff!important;border:none!important}
+.btn-primary:hover{background:#111114!important;color:#fff!important}
+.btn-ghost{border:1px solid #111114!important;color:#111114!important;background:transparent!important}
+.btn-ghost:hover{border-color:#E84393!important;color:#E84393!important}
+a{color:inherit}
+/* FOOTER stays ink */
+footer{background:#111114!important;color:#8E8E96!important;border-top:none!important}
+footer a{color:#B9B7BD!important}
+footer a:hover{color:#E84393!important}
+footer .foot-tag,footer .meta{color:#8E8E96!important}
+/* selection */
+::selection{background:#E84393;color:#fff}
+</style>
 </head>
 <body>
 <nav class="fl-nav">
