@@ -21,7 +21,9 @@
 <meta name="twitter:image" content="https://frdtlab.com/og-image.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"></noscript>
 <script type="application/ld+json">
 {
  "@context": "https://schema.org",
@@ -226,6 +228,20 @@ footer .foot-tag{color:#9A9AA2!important}
 footer .foot-tag span{color:#9A9AA2!important}
 footer h4,footer h5,footer .foot-col-title{color:#F6F4F2!important}
 </style>
+<style id="a11y-2027">
+/* WCAG AA: muted text darker on light grounds, re-lightened inside dark sections */
+:root{--steel-dim:#5d5d66;--steel:#5d5d66;--dim:#5d5d66}
+.dark,.sec.dark{--steel-dim:#aab0bb;--steel:#aab0bb;--dim:#aab0bb}
+/* small pink labels + filled buttons -> accessible pink; bright signal pink kept for large display + dark sections */
+.eyebrow,.kicker,.sec-num,.more,.studio-lines .more,.bridge-body .more,.brand b,.brand .sig,.svc-card span{color:#b81c66!important}
+[style*="color:#E84393"]{color:#b81c66!important}
+.btn-primary,.gumroad-button,.nav-cta:hover{background:#b81c66!important;border-color:#b81c66!important;color:#fff!important}
+.dark .eyebrow,.dark .kicker,.dark .sec-num,.dark .more,.sec.dark .eyebrow{color:#E84393!important}
+.hero h1 em,h1 em,h2 em,.unapol h2 em,.move h2 em{color:#E84393!important}
+.hero-photo .tag,.tag{background:#b81c66!important;color:#fff!important}
+.dark [style*="color:#E84393"],.sec.dark [style*="color:#E84393"]{color:#E84393!important}
+.prose a,.lead a,article a,p a:not(.btn):not(.nav-cta):not(.btn-ghost){text-decoration:underline;text-underline-offset:2px}
+</style>
 </head>
 <body>
 <nav id="nav">
@@ -262,26 +278,30 @@ footer h4,footer h5,footer .foot-col-title{color:#F6F4F2!important}
   <div class="sec-head"><div class="eyebrow">Products</div><h2>Buy once. Use forever.</h2></div>
   <div class="cols" style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px">
     <div style="border:1px solid var(--pink);border-radius:12px;padding:24px;background:var(--charcoal);display:flex;flex-direction:column">
+      <img src="img/cover-prompt-pack.png" alt="The AI Marketing Prompt Pack — cover" loading="lazy" style="width:calc(100% + 48px);margin:-24px -24px 16px;border-radius:12px 12px 0 0;display:block">
       <div style="font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--pink)">Available now · $49</div>
       <h3 style="font-family:var(--display);text-transform:uppercase;color:var(--white);font-size:1.4rem;margin:8px 0 8px">The AI Marketing Prompt Pack</h3>
       <p style="color:var(--body-text);margin-bottom:18px;flex:1">50 operator-grade prompts across audience, content, AI search, paid, feed, social, email, and systems. Each one specifies its exact output.</p>
       <div style="display:flex;gap:10px;flex-wrap:wrap"><a class="gumroad-button" href="https://unapologeticleader.gumroad.com/l/kzcuq?wanted=true" data-gumroad-overlay-checkout="true" style="background:#E84393;color:#fff;font-weight:700;border-radius:30px;padding:12px 22px;text-decoration:none">Buy — $49</a><a href="prompt-pack.html" style="align-self:center;font-family:var(--mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--steel)">Details →</a></div>
     </div>
     <div style="border:1px solid var(--line);border-radius:12px;padding:24px;background:var(--charcoal);display:flex;flex-direction:column">
+      <img src="img/cover-playbook.png" alt="Get Recommended by AI — The GEO Playbook cover" loading="lazy" style="width:calc(100% + 48px);margin:-24px -24px 16px;border-radius:12px 12px 0 0;display:block">
       <div style="font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--pink)">Available now · $97</div>
       <h3 style="font-family:var(--display);text-transform:uppercase;color:var(--white);font-size:1.4rem;margin:8px 0 8px">Get Recommended by AI — The GEO Playbook</h3>
       <p style="color:var(--body-text);margin-bottom:18px;flex:1">The how-to for showing up in ChatGPT, Perplexity, and Google AI answers. The confidence engine, the 7 levers, and a 30-day plan.</p>
       <div style="display:flex;gap:10px;flex-wrap:wrap"><a class="gumroad-button" href="https://unapologeticleader.gumroad.com/l/dorbkf?wanted=true" data-gumroad-overlay-checkout="true" style="background:#E84393;color:#fff;font-weight:700;border-radius:30px;padding:12px 22px;text-decoration:none">Buy — $97</a></div>
     </div>
     <div style="border:1px solid var(--line);border-radius:12px;padding:24px;background:var(--charcoal);display:flex;flex-direction:column">
+      <img src="img/cover-starter-kit.png" alt="Small Business AI Starter Kit — cover" loading="lazy" style="width:calc(100% + 48px);margin:-24px -24px 16px;border-radius:12px 12px 0 0;display:block">
       <div style="font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--pink)">Available now · $97</div>
       <h3 style="font-family:var(--display);text-transform:uppercase;color:var(--white);font-size:1.4rem;margin:8px 0 8px">Small Business AI Starter Kit</h3>
       <p style="color:var(--body-text);margin-bottom:18px;flex:1">The five AI systems a small business should set up first — with the prompts and SOPs to run them.</p>
       <div style="display:flex;gap:10px;flex-wrap:wrap"><a class="gumroad-button" href="https://unapologeticleader.gumroad.com/l/nynshb?wanted=true" data-gumroad-overlay-checkout="true" style="background:#E84393;color:#fff;font-weight:700;border-radius:30px;padding:12px 22px;text-decoration:none">Buy — $97</a></div>
     </div>
   </div>
-  <div style="margin-top:18px;border:1px solid var(--pink);border-radius:12px;padding:24px;background:var(--charcoal);display:flex;flex-wrap:wrap;align-items:center;gap:18px;justify-content:space-between">
-    <div style="flex:1 1 320px">
+  <div style="margin-top:18px;border:1px solid var(--pink);border-radius:12px;padding:24px;background:var(--charcoal);display:flex;flex-wrap:wrap;align-items:center;gap:24px;justify-content:space-between">
+    <img src="img/cover-bundle.png" alt="FRDTLAB Full-Stack AI Bundle — cover" loading="lazy" style="width:260px;max-width:100%;border-radius:8px;display:block;flex:0 0 auto">
+    <div style="flex:1 1 280px">
       <div style="font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--pink)">Best value · save $46</div>
       <h3 style="font-family:var(--display);text-transform:uppercase;color:var(--white);font-size:1.5rem;margin:8px 0 6px">FRDTLAB Full-Stack AI Bundle</h3>
       <p style="color:var(--body-text);margin:0">All three: the Prompt Pack, the GEO Playbook, and the Starter Kit. <span style="text-decoration:line-through;color:var(--steel)">$243</span> &nbsp;<b style="color:var(--white)">$197</b>.</p>

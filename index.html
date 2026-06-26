@@ -26,7 +26,9 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"></noscript>
 
 <!-- JSON-LD: machine-readable authority -->
 <script type="application/ld+json">
@@ -201,7 +203,7 @@ section{position:relative}
 .step{background:var(--charcoal);padding:34px 24px;display:flex;flex-direction:column;gap:12px;transition:background .4s}
 .step:hover{background:var(--panel)}
 .step .s-num{font-family:var(--mono);font-size:11px;letter-spacing:.2em;color:var(--pink)}
-.step h4{font-family:var(--display);font-weight:700;text-transform:uppercase;font-size:1.5rem;line-height:1;color:var(--white)}
+.step h3,.step h4{font-family:var(--display);font-weight:700;text-transform:uppercase;font-size:1.5rem;line-height:1;color:var(--white)}
 .step ul{list-style:none;display:flex;flex-direction:column;gap:5px}
 .step li{font-size:.92rem;color:var(--body-text);font-weight:400}
 @media(max-width:960px){.flow{grid-template-columns:repeat(2,1fr)}}
@@ -376,6 +378,20 @@ footer .foot-tag{color:#9A9AA2!important}
 footer .foot-tag span{color:#9A9AA2!important}
 footer h4,footer h5,footer .foot-col-title{color:#F6F4F2!important}
 </style>
+<style id="a11y-2027">
+/* WCAG AA: muted text darker on light grounds, re-lightened inside dark sections */
+:root{--steel-dim:#5d5d66;--steel:#5d5d66;--dim:#5d5d66}
+.dark,.sec.dark{--steel-dim:#aab0bb;--steel:#aab0bb;--dim:#aab0bb}
+/* small pink labels + filled buttons -> accessible pink; bright signal pink kept for large display + dark sections */
+.eyebrow,.kicker,.sec-num,.more,.studio-lines .more,.bridge-body .more,.brand b,.brand .sig,.svc-card span{color:#b81c66!important}
+[style*="color:#E84393"]{color:#b81c66!important}
+.btn-primary,.gumroad-button,.nav-cta:hover{background:#b81c66!important;border-color:#b81c66!important;color:#fff!important}
+.dark .eyebrow,.dark .kicker,.dark .sec-num,.dark .more,.sec.dark .eyebrow{color:#E84393!important}
+.hero h1 em,h1 em,h2 em,.unapol h2 em,.move h2 em{color:#E84393!important}
+.hero-photo .tag,.tag{background:#b81c66!important;color:#fff!important}
+.dark [style*="color:#E84393"],.sec.dark [style*="color:#E84393"]{color:#E84393!important}
+.prose a,.lead a,article a,p a:not(.btn):not(.nav-cta):not(.btn-ghost){text-decoration:underline;text-underline-offset:2px}
+</style>
 </head>
 <body>
 
@@ -464,11 +480,11 @@ footer h4,footer h5,footer .foot-col-title{color:#F6F4F2!important}
       <h2>A loop, not a launch. Each pass compounds the last.</h2>
     </div>
     <div class="flow reveal">
-      <div class="step"><span class="s-num">→ 01</span><h4>Sense</h4><ul><li>Observe</li><li>Research</li></ul></div>
-      <div class="step"><span class="s-num">→ 02</span><h4>Structure</h4><ul><li>Organize</li><li>Clarify</li></ul></div>
-      <div class="step"><span class="s-num">→ 03</span><h4>Build</h4><ul><li>Create systems</li><li>Create signal</li></ul></div>
-      <div class="step"><span class="s-num">→ 04</span><h4>Measure</h4><ul><li>Learn</li><li>Improve</li></ul></div>
-      <div class="step"><span class="s-num">→ 05</span><h4>Compound</h4><ul><li>Momentum</li><li>Scale · Impact</li></ul></div>
+      <div class="step"><span class="s-num">→ 01</span><h3>Sense</h3><ul><li>Observe</li><li>Research</li></ul></div>
+      <div class="step"><span class="s-num">→ 02</span><h3>Structure</h3><ul><li>Organize</li><li>Clarify</li></ul></div>
+      <div class="step"><span class="s-num">→ 03</span><h3>Build</h3><ul><li>Create systems</li><li>Create signal</li></ul></div>
+      <div class="step"><span class="s-num">→ 04</span><h3>Measure</h3><ul><li>Learn</li><li>Improve</li></ul></div>
+      <div class="step"><span class="s-num">→ 05</span><h3>Compound</h3><ul><li>Momentum</li><li>Scale · Impact</li></ul></div>
     </div>
   </div>
 </section>
