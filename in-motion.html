@@ -26,7 +26,9 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"></noscript>
 
 <!-- JSON-LD: machine-readable authority -->
 <script type="application/ld+json">
@@ -376,6 +378,20 @@ footer .foot-brand b,footer .foot-brand .sig{color:#E84393!important}
 footer .foot-tag{color:#9A9AA2!important}
 footer .foot-tag span{color:#9A9AA2!important}
 footer h4,footer h5,footer .foot-col-title{color:#F6F4F2!important}
+</style>
+<style id="a11y-2027">
+/* WCAG AA: muted text darker on light grounds, re-lightened inside dark sections */
+:root{--steel-dim:#5d5d66;--steel:#5d5d66;--dim:#5d5d66}
+.dark,.sec.dark{--steel-dim:#aab0bb;--steel:#aab0bb;--dim:#aab0bb}
+/* small pink labels + filled buttons -> accessible pink; bright signal pink kept for large display + dark sections */
+.eyebrow,.kicker,.sec-num,.more,.studio-lines .more,.bridge-body .more,.brand b,.brand .sig,.svc-card span{color:#b81c66!important}
+[style*="color:#E84393"]{color:#b81c66!important}
+.btn-primary,.gumroad-button,.nav-cta:hover{background:#b81c66!important;border-color:#b81c66!important;color:#fff!important}
+.dark .eyebrow,.dark .kicker,.dark .sec-num,.dark .more,.sec.dark .eyebrow{color:#E84393!important}
+.hero h1 em,h1 em,h2 em,.unapol h2 em,.move h2 em{color:#E84393!important}
+.hero-photo .tag,.tag{background:#b81c66!important;color:#fff!important}
+.dark [style*="color:#E84393"],.sec.dark [style*="color:#E84393"]{color:#E84393!important}
+.prose a,.lead a,article a,p a:not(.btn):not(.nav-cta):not(.btn-ghost){text-decoration:underline;text-underline-offset:2px}
 </style>
 </head>
 <body>

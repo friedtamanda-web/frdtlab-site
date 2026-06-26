@@ -21,7 +21,9 @@
 <meta name="twitter:image" content="https://frdtlab.com/og-image.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"></noscript>
 <script type="application/ld+json">
 {
  "@context": "https://schema.org",
@@ -214,6 +216,20 @@ footer .foot-tag{color:#9A9AA2!important}
 footer .foot-tag span{color:#9A9AA2!important}
 footer h4,footer h5,footer .foot-col-title{color:#F6F4F2!important}
 </style>
+<style id="a11y-2027">
+/* WCAG AA: muted text darker on light grounds, re-lightened inside dark sections */
+:root{--steel-dim:#5d5d66;--steel:#5d5d66;--dim:#5d5d66}
+.dark,.sec.dark{--steel-dim:#aab0bb;--steel:#aab0bb;--dim:#aab0bb}
+/* small pink labels + filled buttons -> accessible pink; bright signal pink kept for large display + dark sections */
+.eyebrow,.kicker,.sec-num,.more,.studio-lines .more,.bridge-body .more,.brand b,.brand .sig,.svc-card span{color:#b81c66!important}
+[style*="color:#E84393"]{color:#b81c66!important}
+.btn-primary,.gumroad-button,.nav-cta:hover{background:#b81c66!important;border-color:#b81c66!important;color:#fff!important}
+.dark .eyebrow,.dark .kicker,.dark .sec-num,.dark .more,.sec.dark .eyebrow{color:#E84393!important}
+.hero h1 em,h1 em,h2 em,.unapol h2 em,.move h2 em{color:#E84393!important}
+.hero-photo .tag,.tag{background:#b81c66!important;color:#fff!important}
+.dark [style*="color:#E84393"],.sec.dark [style*="color:#E84393"]{color:#E84393!important}
+.prose a,.lead a,article a,p a:not(.btn):not(.nav-cta):not(.btn-ghost){text-decoration:underline;text-underline-offset:2px}
+</style>
 </head>
 <body>
 <nav id="nav">
@@ -232,6 +248,14 @@ footer h4,footer h5,footer .foot-col-title{color:#F6F4F2!important}
     <a href="mailto:hello@frdtlab.com?subject=Working%20together" class="btn btn-primary">Request availability</a>
   </div>
 </header>
+
+<section class="sec" id="intelligence-infrastructure" style="padding-top:54px">
+  <div class="wrap how">
+    <div class="eyebrow">The work, named</div>
+    <h2 style="margin-top:14px;max-width:24ch">You don&rsquo;t need to understand AI. You need someone who reads the signal.</h2>
+    <p style="margin-top:18px">Most owners are stuck for three reasons: the work has no name, no clear price, and the AI moment has everyone scared. So &mdash; plainly. The category is <b>intelligence infrastructure</b>: the durable layer under your marketing and operations that makes your business easier to understand, easier to trust, easier to grow. We find where your signal &mdash; and your money &mdash; is leaking, and build the system that fixes it. That&rsquo;s the whole job.</p>
+  </div>
+</section>
 
 <section class="sec">
   <div class="wrap">
@@ -259,18 +283,27 @@ footer h4,footer h5,footer .foot-col-title{color:#F6F4F2!important}
 
 <section class="sec" id="services">
   <div class="wrap">
-    <div class="sec-head"><div class="eyebrow">Engagements</div><h2>Three ways to put me to work.</h2></div>
+    <div class="sec-head"><div class="eyebrow">The ladder · named &amp; priced</div><h2>Three steps. A number on each one.</h2></div>
     <div class="svc">
-      <div class="svc-col"><div class="bar"></div><div class="idx">01 / Retainer</div><h3><a href="fractional-cmo.html" style="color:var(--white)">Fractional CMO / VP of Growth</a></h3>
-        <ul><li>Senior marketing leadership, part-time</li><li>Own the strategy + the system</li><li>$5,000–$15,000 / month</li></ul>
-        <p style="margin-top:14px"><a href="fractional-cmo.html" style="color:var(--pink);font-weight:600">See the details →</a></p></div>
-      <div class="svc-col"><div class="bar"></div><div class="idx">02 / Project</div><h3><a href="ai-adoption.html" style="color:var(--white)">AI Adoption for Marketing</a></h3>
-        <ul><li>Put AI to real work, not demos</li><li>Workflows, prompts, SOPs</li><li>$8,000–$25,000 / project</li></ul>
-        <p style="margin-top:14px"><a href="ai-adoption.html" style="color:var(--pink);font-weight:600">See the details →</a></p></div>
-      <div class="svc-col"><div class="bar"></div><div class="idx">03 / Build</div><h3><a href="marketing-ops.html" style="color:var(--white)">Marketing Operations &amp; Systems</a></h3>
-        <ul><li>Audit the stack, fix the wiring</li><li>One operating system, not five silos</li><li>Audit $2,500 · build $10K–$30K</li></ul>
-        <p style="margin-top:14px"><a href="marketing-ops.html" style="color:var(--pink);font-weight:600">See the details →</a></p></div>
+      <div class="svc-col"><div class="bar"></div><div class="idx">01 / The Signal Map</div><h3><a href="marketing-ops.html" style="color:var(--white)">Find where it&rsquo;s leaking</a></h3>
+        <ul><li>Fixed-scope diagnostic: demand, feed, content, site, conversion, ops</li><li>A plain-language map + the 3 highest-leverage fixes</li><li><b>$1,500 fixed</b></li></ul>
+        <p style="margin-top:14px"><a href="marketing-ops.html" style="color:var(--pink);font-weight:600">Start with the Map →</a></p></div>
+      <div class="svc-col"><div class="bar"></div><div class="idx">02 / The Build</div><h3><a href="fractional-cmo.html" style="color:var(--white)">Install the system</a></h3>
+        <ul><li>We build it and train your team &mdash; it runs without me</li><li>Fractional leadership, ops, and <a href="ai-adoption.html" style="color:var(--pink)">AI adoption</a></li><li><b>From $8,000</b> &middot; or equity / trade / training</li></ul>
+        <p style="margin-top:14px"><a href="fractional-cmo.html" style="color:var(--pink);font-weight:600">See the Build →</a></p></div>
+      <div class="svc-col"><div class="bar"></div><div class="idx">03 / The Room</div><h3><a href="trainings.html" style="color:var(--white)">Keep building, together</a></h3>
+        <ul><li>Teach the read. Get your people into better seats.</li><li>The cooperative &mdash; learning, training, support</li><li><b>Free to join</b> &middot; cohorts as we launch together</li></ul>
+        <p style="margin-top:14px"><a href="https://theunapologeticleader.com" style="color:var(--pink);font-weight:600">Join the movement →</a></p></div>
     </div>
+    <p style="margin-top:24px;max-width:72ch;color:var(--body-text)"><b style="color:var(--white)">The deal is flexible on purpose.</b> I&rsquo;ll trade, take equity, train, or get paid &mdash; whatever breaks your wall fastest. I keep what&rsquo;s mine to teach; everything we build, we build together.</p>
+  </div>
+</section>
+
+<section class="sec" id="proof">
+  <div class="wrap how">
+    <div class="sec-head"><div class="eyebrow">Proof · Case #1</div><h2>DIY Door Store: a signal-path collapse, not a demand drop.</h2></div>
+    <p>Organic demand looked like it fell for 16 months. It hadn&rsquo;t. The <b>signal path</b> had collapsed &mdash; feed disapproval, mismatched product descriptions, a flat architecture eating itself. We stopped chasing &ldquo;more content,&rdquo; rebuilt the titles around what the buyer was actually carrying &mdash; fit-uncertainty &mdash; and fixed the feed.</p>
+    <p style="margin-top:12px"><b>Products moved 0 &rarr; 60&ndash;320 clicks. Feed disapproval ~43% &rarr; resolved.</b> That&rsquo;s the Signal Map, the Build, and the loop in one engagement &mdash; the obvious answer was wrong, and the system underneath was the story.</p>
   </div>
 </section>
 
