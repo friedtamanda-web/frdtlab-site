@@ -140,7 +140,7 @@
     <p class="kicker" style="text-align:center">Your result</p>
     <div class="score-wrap">
       <div class="score-num"><span id="scoreVal">0</span><small>/100</small></div>
-      <div id="tierBadge" class="tier-badge">—</div>
+      <div id="tierBadge" class="tier-badge"> </div>
     </div>
     <p class="tier-line" id="tierLine"></p>
 
@@ -173,7 +173,7 @@
 </div></footer>
 
 <script>
-/* ===== TIER LOGIC — single source of truth (score 0-100) ===== */
+/* ===== TIER LOGIC, single source of truth (score 0-100) ===== */
 window.FRDT_tierFromScore = function (score) {
   if (score <= 40) return "invisible";
   if (score <= 75) return "emerging";
@@ -189,13 +189,13 @@ var FRDT = (function () {
   var QUESTIONS = [
     { lever:"Entity clarity",
       q:"If someone asked an AI “what is [your brand]?”, how clearly could it answer?",
-      opts:[["It couldn't — nothing on my site states plainly what I am",0],["It'd guess from scattered clues",1],["There's a clear line, but it's buried",2],["One unambiguous line says exactly what I am, up top",3]]},
+      opts:[["It couldn't, nothing on my site states plainly what I am",0],["It'd guess from scattered clues",1],["There's a clear line, but it's buried",2],["One unambiguous line says exactly what I am, up top",3]]},
     { lever:"Question coverage",
       q:"Do you answer real buyer questions in the words a buyer would actually type into an AI?",
-      opts:[["No — my copy is about us, not their questions",0],["A little, mostly keyword pages",1],["Some real questions, inconsistently",2],["Yes — buyer questions, in buyer phrasing, across the site",3]]},
+      opts:[["No, my copy is about us, not their questions",0],["A little, mostly keyword pages",1],["Some real questions, inconsistently",2],["Yes, buyer questions, in buyer phrasing, across the site",3]]},
     { lever:"Quotable answers",
       q:"Is your copy structured so a model can lift a clean 2-3 sentence answer verbatim?",
-      opts:[["No — it's long-form marketing prose",0],["Rarely",1],["On a few key pages",2],["Yes — tight, quotable answers by design",3]]},
+      opts:[["No, it's long-form marketing prose",0],["Rarely",1],["On a few key pages",2],["Yes, tight, quotable answers by design",3]]},
     { lever:"Citations & proof",
       q:"Does anything off your own site corroborate your claims (press, reviews, mentions, data)?",
       opts:[["Nothing I know of",0],["A couple of stray mentions",1],["Some reviews / third-party signals",2],["Strong, consistent off-site proof",3]]},
@@ -206,7 +206,7 @@ var FRDT = (function () {
       q:"How recently has the substance of your site shown signs of life?",
       opts:[["Untouched for a year+",0],["Occasional small edits",1],["Updated every few months",2],["Active, visible, regular updates",3]]},
     { lever:"Distribution",
-      q:"Are you showing up where the models actually read — the places they pull answers from?",
+      q:"Are you showing up where the models actually read, the places they pull answers from?",
       opts:[["No idea where that even is",0],["Only my own site",1],["A few relevant platforms",2],["Present across the surfaces models cite",3]]}
   ];
   var answers = new Array(QUESTIONS.length).fill(null);
@@ -282,11 +282,11 @@ var FRDT = (function () {
     if (tier === "invisible"){
       head.textContent = "The 7 levers, in the order that matters";
       sub.textContent = "Most brands fix #5 first and wonder why nothing moves. Yours start at the top: entity, then questions, then quotable proof. The foundation isn't built yet, and the order beats the effort.";
-      cta.innerHTML = '<h3>The GEO Playbook</h3><p>The confidence engine, all seven levers, and a 30-day plan. The exact system, not theory.</p><a class="btn-primary" href="https://unapologeticleader.gumroad.com/l/dorbkf'+u+'invisible">Get the GEO Playbook — $97</a>';
+      cta.innerHTML = '<h3>The GEO Playbook</h3><p>The confidence engine, all seven levers, and a 30-day plan. The exact system, not theory.</p><a class="btn-primary" href="https://unapologeticleader.gumroad.com/l/dorbkf'+u+'invisible">Get the GEO Playbook, $97</a>';
     } else if (tier === "emerging"){
       head.textContent = "You're visible, but not chosen";
       sub.textContent = "The difference between seen and recommended is usually one thing: your content reads like marketing, not like an answer a machine wants to quote. Stop writing pages, start writing answers. Point it at your highest-intent page first.";
-      cta.innerHTML = '<h3>The Prompt Pack</h3><p>Fifty operator prompts, including a block for AI-search content built to get quoted. Or take the Bundle: Pack + Playbook + Starter Kit, save $46.</p><a class="btn-primary" href="https://unapologeticleader.gumroad.com/l/kzcuq'+u+'emerging" style="margin:0 6px 8px">Prompt Pack — $49</a><a class="btn-primary" href="https://unapologeticleader.gumroad.com/l/etenyb'+u+'emerging" style="margin:0 6px 8px;background:#111114">Full Bundle — $197</a>';
+      cta.innerHTML = '<h3>The Prompt Pack</h3><p>Fifty operator prompts, including a block for AI-search content built to get quoted. Or take the Bundle: Pack + Playbook + Starter Kit, save $46.</p><a class="btn-primary" href="https://unapologeticleader.gumroad.com/l/kzcuq'+u+'emerging" style="margin:0 6px 8px">Prompt Pack, $49</a><a class="btn-primary" href="https://unapologeticleader.gumroad.com/l/etenyb'+u+'emerging" style="margin:0 6px 8px;background:#111114">Full Bundle, $197</a>';
     } else {
       head.textContent = "You're in rare air, here's the edge most miss";
       sub.textContent = "The levers everyone talks about are handled. The frontier move is upstream of tactics: building authority the machines treat as a source, not just a result, so your point of view becomes the reference answer in your category.";
@@ -306,7 +306,7 @@ var FRDT = (function () {
 })();
 FRDT._render();
 
-/* ===== KLAVIYO CAPTURE — fires on unlock (account Twvzce, list FRDT Lab Subscribers) ===== */
+/* ===== KLAVIYO CAPTURE, fires on unlock (account Twvzce, list FRDT Lab Subscribers) ===== */
 window.FRDT_unlockBreakdown = function () {
   var emailEl = document.getElementById("frdt-scorecard-email");
   var email = (emailEl && emailEl.value || "").trim();
