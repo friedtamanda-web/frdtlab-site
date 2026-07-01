@@ -330,6 +330,12 @@ window.FRDT_unlockBreakdown = function () {
     kl.push(["track", "Scorecard Completed", {
       "score": score, "tier": tier, "scorecard_name": "AI Visibility Scorecard"
     }]);
+    /* subscribe with consent so the scorecard flow can actually deliver (list FRDT Lab Subscribers) */
+    fetch("https://a.klaviyo.com/client/subscriptions/?company_id=Twvzce", {
+      method: "POST",
+      headers: { "Content-Type": "application/json", "revision": "2024-10-15" },
+      body: JSON.stringify({ data: { type: "subscription", attributes: { profile: { data: { type: "profile", attributes: { email: email, subscriptions: { email: { marketing: { consent: "SUBSCRIBED" } } } } } } }, relationships: { list: { data: { type: "list", id: "QYJzYY" } } } } })
+    });
   } catch (err) {}
   document.getElementById("frdt-gate").style.display = "none";
   var bd = document.getElementById("frdt-breakdown");
