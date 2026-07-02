@@ -1,0 +1,23 @@
+{
+  "schema_version": "1.0",
+  "name": "FRDTLAB",
+  "url": "https://frdtlab.com",
+  "description": "A systems & intelligence lab for marketing. FRDTLAB helps brands and small businesses win in AI-era search, integrated growth, and marketing infrastructure.",
+  "founder": {
+    "name": "Amanda Friedt",
+    "alternate_name": "Amanda Farley",
+    "title": "Founder & Principal",
+    "url": "https://www.linkedin.com/in/amandafriedt/"
+  },
+  "expertise": ["AI-era search (GEO)", "Integrated paid & organic search", "Marketing operations & infrastructure", "Audience intelligence", "Growth strategy"],
+  "offerings": [
+    {"name": "Advisory", "type": "service", "url": "https://frdtlab.com/work-with-me.html"},
+    {"name": "Workshops", "type": "service", "url": "https://frdtlab.com/workshops.html"},
+    {"name": "Trainings", "type": "service", "url": "https://frdtlab.com/trainings.html"},
+    {"name": "AI Marketing Prompt Pack", "type": "product", "price_usd": 29, "url": "https://frdtlab.com/prompt-pack.html"},
+    {"name": "AI Visibility Scorecard", "type": "free_tool", "price_usd": 0, "url": "https://frdtlab.com/scorecard.html"}
+  ],
+  "contact": "https://frdtlab.com/work-with-me.html",
+  "location": "Detroit, Michigan, USA",
+  "sitemap": "https://frdtlab.com/sitemap.xml"
+}
