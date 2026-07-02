@@ -237,7 +237,7 @@ footer h4,footer h5,footer .foot-col-title{color:#F6F4F2!important}
   <a href="index.html" class="brand">FRDT<b>LAB</b></a>
   <button class="menu-btn" id="menuBtn" aria-label="Toggle menu" aria-expanded="false">Menu</button>
   <div class="nav-links" id="navLinks"><a href="index.html">The Lab</a>
-        <a href="about.html">About</a><a href="about.html">About</a><a href="index.html#build">How We Build</a><a href="work-with-me.html" class="current">Work With Me</a><a href="in-motion.html">In Motion</a><a href="https://theunapologeticleader.com">Unapologetic</a><a href="shop.html">Shop</a><a href="https://afrdtlab.substack.com/" class="nav-cta">Subscribe</a></div>
+        <a href="about.html">About</a><a href="index.html#build">How We Build</a><a href="work-with-me.html" class="current">Work With Me</a><a href="in-motion.html">In Motion</a><a href="https://theunapologeticleader.com">Unapologetic</a><a href="shop.html">Shop</a><a href="https://afrdtlab.substack.com/" class="nav-cta">Subscribe</a></div>
 </nav>
 
 <header class="hero">
@@ -246,7 +246,7 @@ footer h4,footer h5,footer .foot-col-title{color:#F6F4F2!important}
     <div class="eyebrow">Work With Me</div>
     <h1>If you're building something <em>real</em> I'm interested.</h1>
     <p>I work with founders, leadership teams, and operators who care about meaningful momentum. The work is collaborative and pointed at real problems, not more noise.</p>
-    <a href="mailto:hello@frdtlab.com?subject=Working%20together" class="btn btn-primary">Request availability</a>
+    <a href="#intake" class="btn btn-primary">Start the conversation</a>
   </div>
 </header>
 
@@ -407,18 +407,36 @@ footer h4,footer h5,footer .foot-col-title{color:#F6F4F2!important}
   </div>
 </section>
 
-<section class="sec cta">
-  <div class="wrap">
-    <div class="eyebrow" style="justify-content:center">Let's build</div>
-    <h2>Tell me what you're trying to move.</h2>
-    <p>The next three moves, the bottleneck, the decision nobody wants to make. Start there and we will find the place where one change moves the most.</p>
-    <a href="mailto:hello@frdtlab.com?subject=Working%20together" class="btn btn-primary">Request availability</a>
-    <p class="small">hello@frdtlab.com</p>
+<section class="sec" id="intake">
+  <div class="wrap" style="max-width:760px">
+    <div class="sec-head"><div class="eyebrow">Let's build</div><h2>Tell me what you're trying to move.</h2></div>
+    <p style="max-width:60ch;color:var(--body-text)">The next three moves, the bottleneck, the decision nobody wants to make. Start there. I read every one of these myself and reply within two business days.</p>
+    <form class="wwm-form" data-kl-event="Work With Me Inquiry" style="margin-top:32px">
+      <input type="hidden" name="_subject" value="FRDTLAB work-with-me inquiry">
+      <input type="text" name="company_website" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0" aria-hidden="true">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
+        <div style="display:flex;flex-direction:column"><label for="wname" style="font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#5d5d66;margin-bottom:7px">Name *</label><input id="wname" name="name" type="text" required style="font-size:1rem;background:#fff;border:1px solid #E2DEDA;color:#111114;padding:13px 14px;border-radius:2px"></div>
+        <div style="display:flex;flex-direction:column"><label for="wemail" style="font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#5d5d66;margin-bottom:7px">Work email *</label><input id="wemail" name="email" type="email" required style="font-size:1rem;background:#fff;border:1px solid #E2DEDA;color:#111114;padding:13px 14px;border-radius:2px"></div>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:16px">
+        <div style="display:flex;flex-direction:column"><label for="wcompany" style="font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#5d5d66;margin-bottom:7px">Company / organization *</label><input id="wcompany" name="company" type="text" required style="font-size:1rem;background:#fff;border:1px solid #E2DEDA;color:#111114;padding:13px 14px;border-radius:2px"></div>
+        <div style="display:flex;flex-direction:column"><label for="wrole" style="font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#5d5d66;margin-bottom:7px">Role</label><input id="wrole" name="role" type="text" style="font-size:1rem;background:#fff;border:1px solid #E2DEDA;color:#111114;padding:13px 14px;border-radius:2px"></div>
+      </div>
+      <div style="display:flex;flex-direction:column;margin-top:16px"><label for="wtype" style="font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#5d5d66;margin-bottom:7px">Engagement type *</label><select id="wtype" name="engagement_type" required style="font-size:1rem;background:#fff;border:1px solid #E2DEDA;color:#111114;padding:13px 14px;border-radius:2px"><option value="">Select</option><option>Advisory</option><option>Workshop</option><option>Speaking</option><option>Not sure yet</option></select></div>
+      <div style="display:flex;flex-direction:column;margin-top:16px"><label for="wmove" style="font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#5d5d66;margin-bottom:7px">What are you trying to move? *</label><textarea id="wmove" name="what_to_move" required placeholder="The bottleneck, the decision, the next three moves." style="font-size:1rem;background:#fff;border:1px solid #E2DEDA;color:#111114;padding:13px 14px;border-radius:2px;min-height:110px;resize:vertical"></textarea></div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:16px">
+        <div style="display:flex;flex-direction:column"><label for="wtime" style="font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#5d5d66;margin-bottom:7px">Timeline</label><select id="wtime" name="timeline" style="font-size:1rem;background:#fff;border:1px solid #E2DEDA;color:#111114;padding:13px 14px;border-radius:2px"><option value="">Select</option><option>This month</option><option>This quarter</option><option>Exploring</option></select></div>
+        <div style="display:flex;flex-direction:column"><label for="wbudget" style="font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#5d5d66;margin-bottom:7px">Budget range *</label><select id="wbudget" name="budget" required style="font-size:1rem;background:#fff;border:1px solid #E2DEDA;color:#111114;padding:13px 14px;border-radius:2px"><option value="">Select</option><option>Under $5K</option><option>$5K–$15K</option><option>$15K–$50K</option><option>$50K+</option><option>This is a speaking inquiry</option></select></div>
+      </div>
+      <button type="submit" class="btn btn-primary" style="margin-top:22px">Send it →</button>
+      <p style="font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#5d5d66;margin-top:14px">No newsletter opt-in hiding in here. This form does one thing.</p>
+      <p style="color:var(--body-text);font-size:.9rem;margin-top:6px">Forms not your thing? <a href="mailto:hello@frdtlab.com?subject=Working%20together" style="color:var(--pink);font-weight:600">hello@frdtlab.com</a> works too.</p>
+    </form>
   </div>
 </section>
 
-<section class="sec" id="explore-offers" style="border-top:1px solid rgba(255,255,255,.08)"><div class="wrap"><span class="eyebrow">Go deeper</span><h2 style="margin:12px 0 18px">Explore the offerings.</h2><p style="opacity:.85;line-height:1.7"><a href="workshops.html" style="color:#E84393;font-weight:600">Workshops</a> &nbsp;·&nbsp; <a href="trainings.html" style="color:#E84393;font-weight:600">Trainings &amp; skill-building</a> &nbsp;·&nbsp; <a href="frameworks.html" style="color:#E84393;font-weight:600">Frameworks</a></p></div></section>
-<section style="background:#111114;padding:62px 26px;text-align:center"><div style="max-width:680px;margin:0 auto"><p style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11.5px;letter-spacing:.2em;text-transform:uppercase;color:#E84393;margin:0 0 14px">The next move</p><h2 style="font-family:'Inter',system-ui,sans-serif;font-weight:800;font-size:clamp(1.6rem,4vw,2.4rem);color:#F6F4F2;letter-spacing:-.02em;margin:0 0 12px">If the mission fits, let's talk.</h2><p style="color:#B9B7BD;font-size:1.05rem;line-height:1.55;margin:0 auto 26px;max-width:46ch">No pitch, no pressure. Tell me what you're building and we'll see if there's a real fit.</p><a href="mailto:hello@frdtlab.com?subject=Work%20with%20me" style="display:inline-block;background:#E84393;color:#fff;font-weight:700;padding:15px 30px;border-radius:10px;text-decoration:none">Start the conversation</a></div></section>
+<section class="sec" id="explore-offers" style="border-top:1px solid rgba(255,255,255,.08)"><div class="wrap"><span class="eyebrow">Go deeper</span><h2 style="margin:12px 0 18px">Explore the offerings.</h2><p style="opacity:.85;line-height:1.7"><a href="workshops.html" style="color:#E84393;font-weight:600">Workshops</a> <span style="opacity:.7">(from $5,300)</span> &nbsp;·&nbsp; <a href="trainings.html" style="color:#E84393;font-weight:600">Trainings &amp; skill-building</a> &nbsp;·&nbsp; <a href="frameworks.html" style="color:#E84393;font-weight:600">Frameworks</a></p></div></section>
+<section style="background:#111114;padding:62px 26px;text-align:center"><div style="max-width:680px;margin:0 auto"><p style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11.5px;letter-spacing:.2em;text-transform:uppercase;color:#E84393;margin:0 0 14px">The next move</p><h2 style="font-family:'Inter',system-ui,sans-serif;font-weight:800;font-size:clamp(1.6rem,4vw,2.4rem);color:#F6F4F2;letter-spacing:-.02em;margin:0 0 12px">If the mission fits, let's talk.</h2><p style="color:#B9B7BD;font-size:1.05rem;line-height:1.55;margin:0 auto 26px;max-width:46ch">No pitch, no pressure. Tell me what you're building and we'll see if there's a real fit.</p><a href="#intake" style="display:inline-block;background:#E84393;color:#fff;font-weight:700;padding:15px 30px;border-radius:10px;text-decoration:none">Start the conversation</a></div></section>
 <section style="border-top:1px solid #E2DEDA;background:#111114"><div style="max-width:1080px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:0;align-items:stretch"><img src="img/elephant-in-the-room.jpg" alt="PubCon: the search marketing industry gathered around the elephant in the room" loading="lazy" style="width:100%;height:100%;min-height:320px;object-fit:cover;display:block"><div style="padding:52px 44px;display:flex;flex-direction:column;justify-content:center"><p style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#E84393;margin:0 0 16px">The marketing elephant in the room</p><h2 style="font-family:'Inter',sans-serif;font-weight:800;font-size:clamp(1.5rem,3vw,2.1rem);line-height:1.16;letter-spacing:-.02em;color:#F6F4F2;margin:0 0 14px">SEO, PPC, social, and CRM each working alone. A disconnected stack turns every report into archaeology and every optimization into a negotiation.</h2><p style="color:#B9B7BD;font-size:1.05rem;line-height:1.6;margin:0 0 24px">Platforms reward clean signals, not your org chart. The fix isn't another tool. It's one connected growth system where every campaign teaches the next one.</p><p style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#8E8E96;margin:0 0 20px">PubCon &middot; the search industry in one room (yes, that's the elephant)</p><a href="work-with-me.html" style="align-self:flex-start;background:#E84393;color:#fff;font-weight:700;padding:14px 28px;border-radius:10px;text-decoration:none">See how I build it &rarr;</a></div></div></section>
 <section style="background:#FCFBFA;padding:64px 26px;border-top:1px solid #E2DEDA"><div style="max-width:1080px;margin:0 auto"><p style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#b81c66;margin:0 0 8px">What owners are saying</p><h2 style="font-family:'Inter',sans-serif;font-weight:800;font-size:clamp(1.5rem,3vw,2.1rem);letter-spacing:-.02em;color:#111114;margin:0 0 26px">The cost shows up in plain language.</h2><div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px"><img src="img/cards/card-04-owner.png" alt="Owner quote: The phone used to ring on its own. It stopped, and nobody can tell me why." loading="lazy" style="width:100%;border-radius:12px;display:block"><img src="img/cards/card-05-owner.png" alt="Owner quote: I have paid three people to fix my marketing. What I got back was dashboards." loading="lazy" style="width:100%;border-radius:12px;display:block"><img src="img/cards/card-06-owner.png" alt="Owner quote: I do not need another tool. I need to stop being the thing all eleven tools are plugged into." loading="lazy" style="width:100%;border-radius:12px;display:block"></div><p style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#8E8E96;margin:14px 0 0">Composite, paraphrased from research</p></div></section>
 <footer id="footer">
@@ -444,6 +462,19 @@ footer h4,footer h5,footer .foot-col-title{color:#F6F4F2!important}
 const nl=document.getElementById('navLinks'),mb=document.getElementById('menuBtn');
 mb.addEventListener('click',()=>{const o=nl.classList.toggle('open');mb.setAttribute('aria-expanded',o)});
 nl.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{nl.classList.remove('open');mb.setAttribute('aria-expanded','false')}));
+</script>
+<script>/* kl-lead-handler */
+document.addEventListener('submit',function(e){
+  var f=e.target; if(!f||!f.getAttribute||!f.getAttribute('data-kl-event'))return;
+  e.preventDefault();
+  if(f.company_website && f.company_website.value){ return; }
+  var fd=new FormData(f),p={};
+  fd.forEach(function(v,k){ if(k.charAt(0)!=='_'&&k!=='company_website'&&v){ p[k]=p[k]?p[k]+', '+v:''+v; } });
+  var email=p.email||p.Email||'';
+  try{ if(window.klaviyo){ if(email){window.klaviyo.push(['identify',Object.assign({'$email':email},p)]);} window.klaviyo.push(['track', f.getAttribute('data-kl-event'), p]); } }catch(err){}
+  var msg=document.createElement('p'); msg.style.cssText='font-size:1.05rem;margin-top:14px;color:#111114'; msg.innerHTML='Got it. You\'ll hear from me within two business days. In the meantime, the <a href="FRDTLAB-Signal-Report.pdf" style="color:#b81c66;font-weight:600">Signal Report</a> is free.';
+  f.parentNode.insertBefore(msg,f.nextSibling); f.style.display='none';
+});
 </script>
 </body>
 </html>
