@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Signal-Leak Diagnostic &middot; FRDTLAB</title>
+<meta name="description" content="A free 2-minute diagnostic that scores where your marketing is leaking signal across the six layers of a marketing operating system, and shows you the gaps to close first.">
+<link rel="canonical" href="https://frdtlab.com/signal-leak.html">
+<meta name="theme-color" content="#F6F4F2">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="FRDTLAB">
+<meta property="og:title" content="The Signal-Leak Diagnostic">
+<meta property="og:description" content="Money almost never leaks inside a marketing channel. It leaks in the gaps between them. Score where your signal is draining in 2 minutes, free.">
+<meta property="og:url" content="https://frdtlab.com/signal-leak.html">
+<meta property="og:image" content="https://frdtlab.com/img/og-frdtlab.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="The Signal-Leak Diagnostic">
+<meta name="twitter:description" content="Score where your marketing is leaking signal across the six layers, free. The leak is almost never inside a layer. It is in the gaps.">
+<meta name="twitter:image" content="https://frdtlab.com/img/og-frdtlab.png">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "The Signal-Leak Diagnostic",
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "Web",
+  "url": "https://frdtlab.com/signal-leak.html",
+  "description": "A free self-scoring diagnostic that rates where a marketing organization is leaking signal across the six layers of a marketing operating system: search behavior mapping, product and intent mapping, audience intelligence, AI and LLM optimization, automation, and content velocity.",
+  "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+  "isPartOf": {"@type": "WebPage", "url": "https://frdtlab.com/marketing-operating-system.html", "name": "Marketing Operating System"},
+  "author": {
+    "@type": "Person",
+    "name": "Amanda Friedt",
+    "alternateName": "Amanda Farley",
+    "jobTitle": "Founder, FRDTLAB",
+    "sameAs": [
+      "https://www.linkedin.com/in/amandafriedt/",
+      "https://www.instagram.com/unapologetic_leader/",
+      "https://www.tiktok.com/@unapologeticleadership",
+      "https://afrdtlab.substack.com/",
+      "https://theunapologeticleader.com/"
+    ]
+  },
+  "publisher": {"@type": "Organization", "name": "FRDTLAB", "url": "https://frdtlab.com/"}
+}
+</script>
+
+<style>
+  :root{
+    --ground:#F6F4F2; --paper:#FCFBFA; --ink:#111114; --body:#4A4A52;
+    --muted:#6E6E76; --line:#E2DEDA; --pink:#E84393; --pink-aa:#b81c66;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  @media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
+  body{background:var(--ground);color:var(--ink);font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;line-height:1.65;-webkit-font-smoothing:antialiased}
+  img,svg{max-width:100%;height:auto}
+  a{color:inherit}
+  .wrap{max-width:820px;margin:0 auto;padding:0 24px}
+  header.site{border-bottom:1px solid var(--line);background:rgba(246,244,242,.9);backdrop-filter:blur(10px);position:sticky;top:0;z-index:20}
+  .nav{max-width:1080px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;padding:16px 24px;flex-wrap:wrap;gap:10px}
+  .mark{font-size:1.05rem;letter-spacing:.02em;text-decoration:none;font-weight:800}
+  .mark b{color:var(--pink-aa)}
+  .nav-links{display:flex;gap:18px;flex-wrap:wrap}
+  .nav-links a{font-size:.82rem;color:var(--muted);text-decoration:none}
+  .nav-links a:hover{color:var(--ink)}
+  .eyebrow{font-family:'JetBrains Mono',ui-monospace,monospace;font-size:.72rem;text-transform:uppercase;letter-spacing:.18em;color:var(--pink-aa);font-weight:600;margin-bottom:14px}
+  .hero{padding:64px 0 8px}
+  h1{font-size:clamp(2.2rem,6vw,3.4rem);font-weight:800;letter-spacing:-.03em;line-height:1.05;margin-bottom:18px}
+  .answer{font-size:1.22rem;line-height:1.55;color:var(--ink);max-width:60ch}
+  .answer b{color:var(--ink)}
+  section{padding:40px 0;border-top:1px solid var(--line)}
+  section:first-of-type{border-top:none}
+  h2{font-size:clamp(1.4rem,3.4vw,2rem);font-weight:800;letter-spacing:-.02em;line-height:1.15;margin-bottom:14px}
+  p{color:var(--body);font-size:1.05rem;margin-bottom:16px;max-width:66ch}
+  p.lede{color:var(--ink);font-size:1.1rem}
+  /* quiz */
+  .quiz{display:grid;gap:14px;margin-top:8px}
+  .q{background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:20px 22px}
+  .q .layer-tag{font-family:'JetBrains Mono',ui-monospace,monospace;font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;color:var(--pink-aa);font-weight:600;margin-bottom:8px}
+  .q .stmt{font-size:1.04rem;color:var(--ink);font-weight:600;margin-bottom:14px;line-height:1.4}
+  .opts{display:flex;gap:10px;flex-wrap:wrap}
+  .opts label{flex:1;min-width:140px;display:flex;align-items:center;gap:9px;border:1px solid var(--line);border-radius:8px;padding:11px 14px;cursor:pointer;font-size:.92rem;color:var(--body);background:#fff;transition:border-color .12s,background .12s}
+  .opts label:hover{border-color:var(--pink-aa)}
+  .opts input{accent-color:var(--pink-aa);width:16px;height:16px;flex:none}
+  .opts label:has(input:checked){border-color:var(--pink-aa);background:#FBEAF2;color:var(--ink);font-weight:600}
+  .runbar{margin-top:26px;display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+  .btn{display:inline-block;padding:14px 28px;font-weight:700;font-size:.95rem;text-decoration:none;border-radius:4px;border:none;cursor:pointer;font-family:inherit}
+  .btn-primary{background:var(--pink-aa);color:#fff}
+  .btn-primary:hover{filter:brightness(1.08)}
+  .btn-ghost{border:1px solid var(--ink);color:var(--ink);background:transparent}
+  .btn-ghost:hover{border-color:var(--pink-aa);color:var(--pink-aa)}
+  .warn{color:var(--pink-aa);font-size:.9rem;font-weight:600;margin:0}
+  .hidden{display:none}
+  /* result */
+  #result{scroll-margin-top:90px}
+  .scorecard{background:var(--ink);color:#F6F4F2;border-radius:14px;padding:30px 28px;margin-top:6px}
+  .scorecard .band{font-family:'JetBrains Mono',ui-monospace,monospace;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:#E84393;font-weight:600}
+  .scorecard .num{font-size:3.2rem;font-weight:800;letter-spacing:-.03em;line-height:1;margin:6px 0 2px}
+  .scorecard .num small{font-size:1.1rem;color:#9A9AA2;font-weight:600}
+  .scorecard .verdict{color:#DCDCE1;font-size:1.05rem;max-width:60ch;margin-top:10px}
+  .bars{margin-top:24px;display:grid;gap:12px}
+  .bar-row{display:grid;grid-template-columns:1fr;gap:5px}
+  .bar-row .lbl{display:flex;justify-content:space-between;font-size:.86rem;color:var(--ink);font-weight:600}
+  .bar-row .lbl span:last-child{font-family:'JetBrains Mono',ui-monospace,monospace;color:var(--pink-aa);font-size:.78rem}
+  .track{height:12px;background:#EDE9E5;border-radius:6px;overflow:hidden}
+  .fill{height:100%;background:var(--pink);border-radius:6px;transition:width .5s ease}
+  .leaks{margin-top:24px;display:grid;gap:12px}
+  .leak{border-left:3px solid var(--pink);background:var(--paper);padding:14px 18px;border-radius:0 8px 8px 0}
+  .leak h3{font-size:1.02rem;font-weight:700;margin-bottom:3px;letter-spacing:-.01em}
+  .leak p{font-size:.95rem;margin-bottom:0}
+  /* capture */
+  .capture{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:28px 26px;margin-top:26px}
+  .capture h2{margin-bottom:8px}
+  .capture p{margin-bottom:18px}
+  .form-row{display:flex;gap:10px;flex-wrap:wrap}
+  .form-row input[type=email]{flex:1;min-width:220px;padding:14px 16px;border:1px solid var(--line);border-radius:6px;font-size:1rem;font-family:inherit;background:#fff;color:var(--ink)}
+  .form-row input[type=email]:focus{outline:2px solid var(--pink-aa);outline-offset:1px;border-color:var(--pink-aa)}
+  .hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+  .fineprint{font-size:.8rem;color:var(--muted);margin-top:12px;margin-bottom:0}
+  .thanks{background:#FBEAF2;border:1px solid var(--pink);border-radius:10px;padding:20px 22px;margin-top:26px}
+  .thanks p{color:var(--ink);margin-bottom:0;font-weight:600}
+  .next-row{display:flex;gap:14px;justify-content:flex-start;flex-wrap:wrap;margin-top:22px}
+  footer{border-top:1px solid var(--line);background:#111114;color:#8E8E96;padding:40px 0;margin-top:20px}
+  footer .foot{max-width:1080px;margin:0 auto;padding:0 24px;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;align-items:center}
+  footer a{color:#B9B7BD;text-decoration:none;font-size:.82rem}
+  footer a:hover{color:#E84393}
+  .foot-links{display:flex;gap:16px;flex-wrap:wrap}
+  :focus-visible{outline:2px solid var(--pink-aa);outline-offset:2px}
+</style>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600&display=swap">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet"></noscript>
+
+<!-- GA4 (direct gtag, Consent Mode v2) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-1TGNWXQ27S"></script>
+<script>
+window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
+gtag('consent','default',{'ad_storage':'denied','ad_user_data':'denied','ad_personalization':'denied','analytics_storage':'granted','wait_for_update':500});
+gtag('js',new Date());gtag('config','G-1TGNWXQ27S');
+</script>
+<!-- Klaviyo onsite (account Twvzce) -->
+<script async type="text/javascript" src="https://static.klaviyo.com/onsite/js/Twvzce/klaviyo.js?company_id=Twvzce"></script>
+</head>
+<body>
+
+<header class="site">
+  <div class="nav">
+    <a class="mark" href="https://frdtlab.com/index.html">FRDT<b>LAB</b></a>
+    <nav class="nav-links" aria-label="Main">
+      <a href="https://frdtlab.com/index.html">The Lab</a>
+      <a href="https://frdtlab.com/about.html">About</a>
+      <a href="https://frdtlab.com/work-with-me.html">Work With Me</a>
+      <a href="https://frdtlab.com/shop.html">Shop</a>
+      <a href="https://afrdtlab.substack.com/">Subscribe</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<div class="wrap hero">
+  <p class="eyebrow">Free Diagnostic &middot; FRDTLAB</p>
+  <h1>The Signal-Leak Diagnostic</h1>
+  <p class="answer"><b>Money almost never leaks inside a marketing channel. It leaks in the gaps between them.</b> Answer twelve quick questions across the six layers of a marketing operating system. In two minutes you get a leak profile: the exact gaps where your signal, and your money, are draining right now.</p>
+</div>
+
+<section>
+  <div class="wrap">
+    <p class="lede">Rate each statement honestly. There is no score to game, only leaks to find. "Yes" means it is genuinely dialed in and running without you. "Sort of" means it half works. "No" means it is missing, manual, or stuck in one person's head.</p>
+    <form id="diagnostic">
+      <div class="quiz" id="quiz"><!-- questions injected --></div>
+      <div class="runbar">
+        <button type="submit" class="btn btn-primary">See my leak profile</button>
+        <p class="warn hidden" id="warn">Answer all twelve to see your profile.</p>
+      </div>
+    </form>
+  </div>
+</section>
+
+<section id="result" class="hidden">
+  <div class="wrap">
+    <p class="eyebrow">Your leak profile</p>
+    <div class="scorecard">
+      <div class="band" id="band">Leaking</div>
+      <div class="num"><span id="scoreNum">0</span> <small>/ 24 leak points</small></div>
+      <p class="verdict" id="verdict"></p>
+    </div>
+
+    <div class="bars" id="bars"><!-- per-layer bars injected --></div>
+
+    <h2 style="margin-top:30px">Where you are leaking most</h2>
+    <div class="leaks" id="leaks"><!-- top leaks injected --></div>
+
+    <div class="capture" id="capture">
+      <h2>Get your full leak profile and the fix plan</h2>
+      <p>Drop your email and I will send the full breakdown, plus the 30/60/90 sequence to close your top leaks first. No spam, just the plan.</p>
+      <form id="captureForm">
+        <div class="hp" aria-hidden="true"><label>Leave blank<input type="text" name="company_website" tabindex="-1" autocomplete="off"></label></div>
+        <div class="form-row">
+          <input type="email" id="email" name="email" placeholder="you@company.com" required aria-label="Email address">
+          <button type="submit" class="btn btn-primary">Send my fix plan</button>
+        </div>
+        <p class="fineprint">You will also get FRDTLAB's occasional notes on building marketing that runs when you are not in the room. Unsubscribe anytime.</p>
+      </form>
+    </div>
+
+    <div class="thanks hidden" id="thanks">
+      <p>On its way. Check your inbox for your full leak profile and the fix plan. While you wait, the next two moves are below.</p>
+    </div>
+
+    <div class="next-row">
+      <a class="btn btn-ghost" href="marketing-operating-system.html" data-cta="sl-hub">What a marketing operating system is &rarr;</a>
+      <a class="btn btn-ghost" href="shop.html" data-cta="sl-kit">See the Installation Kit &rarr;</a>
+      <a class="btn btn-ghost" href="work-with-me.html" data-cta="sl-advisory">Have it built with you &rarr;</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="foot">
+    <a class="mark" href="https://frdtlab.com/index.html" style="color:#F6F4F2">FRDT<b style="color:#E84393">LAB</b></a>
+    <div class="foot-links">
+      <a href="https://frdtlab.com/marketing-operating-system.html">Operating System</a>
+      <a href="https://frdtlab.com/work-with-me.html">Work With Me</a>
+      <a href="https://frdtlab.com/shop.html">Shop</a>
+      <a href="https://frdtlab.com/scorecard.html">AI Scorecard</a>
+      <a href="mailto:hello@frdtlab.com">Contact</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* ---- The Signal-Leak Diagnostic ---- */
+var LAYERS = [
+  {name:"Search Behavior Mapping", fix:"Rebuild the demand map. Pull the real phrases buyers use, including the messy long-tail, and put that list in front of everyone writing and buying, on a schedule."},
+  {name:"Product & Intent Mapping", fix:"Map every offer to the intent and moment it serves, and rewrite product data in the buyer's words, not your internal ones."},
+  {name:"Audience Intelligence", fix:"Mine the real language from reviews, calls, and comments, then route it to every team so insight stops dying in one person's head."},
+  {name:"AI & LLM Optimization (GEO)", fix:"Add the structured data and clear answers AI engines need, so you get recommended in ChatGPT, Perplexity, and AI search, not just ranked."},
+  {name:"Automation", fix:"Wire the connections so signal moves itself. When a trend, lead, or behavior fires, something happens without a person nudging it."},
+  {name:"Content Velocity", fix:"Turn one insight into many pieces across channels fast, built to be found and reused, so volume becomes an asset instead of noise."}
+];
+var QUESTIONS = [
+  {l:0, t:"We know the exact phrases our buyers search, including the messy long-tail ones, and we refresh that list on a schedule."},
+  {l:0, t:"Search demand data reaches the people writing content and running ads, not just the SEO person."},
+  {l:1, t:"Every product or offer is mapped to the specific search intent and buyer moment it serves."},
+  {l:1, t:"Our product data, titles, and feeds are written the way buyers describe what they want."},
+  {l:2, t:"We mine the real language of our audience from reviews, calls, and comments, and it shows up in our copy."},
+  {l:2, t:"Audience insight is shared across teams, not locked in one tool or one person's head."},
+  {l:3, t:"When someone asks ChatGPT, Perplexity, or AI search about our category, we show up and get recommended."},
+  {l:3, t:"Our pages carry the structured data and clear answers AI engines need to cite us."},
+  {l:4, t:"When a signal fires, a trend, a new lead, a behavior, something happens automatically without a person nudging it."},
+  {l:4, t:"Our tools are connected so data moves between them without manual copy-paste."},
+  {l:5, t:"We can turn one insight into many pieces of content across channels quickly."},
+  {l:5, t:"Our content is built to be found and reused, so volume becomes an asset instead of noise."}
+];
+
+/* build quiz */
+(function(){
+  var q = document.getElementById('quiz'), html='';
+  QUESTIONS.forEach(function(item, i){
+    html += '<div class="q">'
+      + '<div class="layer-tag">Layer 0'+(item.l+1)+' &middot; '+LAYERS[item.l].name+'</div>'
+      + '<div class="stmt">'+item.t+'</div>'
+      + '<div class="opts">'
+      + '<label><input type="radio" name="q'+i+'" value="0"> Yes, dialed in</label>'
+      + '<label><input type="radio" name="q'+i+'" value="1"> Sort of</label>'
+      + '<label><input type="radio" name="q'+i+'" value="2"> No / not sure</label>'
+      + '</div></div>';
+  });
+  q.innerHTML = html;
+})();
+
+var lastScore = 0, lastBand = "", lastLeaks = "";
+
+document.getElementById('diagnostic').addEventListener('submit', function(e){
+  e.preventDefault();
+  var total = 0, layerScore = [0,0,0,0,0,0], answered = 0;
+  QUESTIONS.forEach(function(item, i){
+    var sel = document.querySelector('input[name="q'+i+'"]:checked');
+    if(sel){ answered++; var v = parseInt(sel.value,10); total += v; layerScore[item.l] += v; }
+  });
+  if(answered < QUESTIONS.length){ document.getElementById('warn').classList.remove('hidden'); return; }
+  document.getElementById('warn').classList.add('hidden');
+
+  /* band */
+  var band, verdict;
+  if(total <= 6){ band="Tight"; verdict="Your system holds. Most of your signal is making it across the gaps. The move now is not patching leaks, it is compounding: widen the lead."; }
+  else if(total <= 14){ band="Leaking"; verdict="You have a stack, not yet a system. Signal is reaching some layers and dying in others. The fix is wiring, not more tools. Close your top two leaks and the rest starts to compound."; }
+  else { band="Hemorrhaging"; verdict="Your channels are running as islands. Real money is draining in the gaps between them. Connecting these layers is the highest-leverage thing you could do this quarter, and it is usually cheaper than the rebuild you are picturing."; }
+
+  document.getElementById('scoreNum').textContent = total;
+  document.getElementById('band').textContent = band;
+  document.getElementById('verdict').textContent = verdict;
+
+  /* per-layer bars */
+  var barsHtml = '';
+  LAYERS.forEach(function(L, idx){
+    var pct = Math.round((layerScore[idx]/4)*100);
+    barsHtml += '<div class="bar-row"><div class="lbl"><span>'+L.name+'</span><span>'+layerScore[idx]+'/4 leak</span></div>'
+      + '<div class="track"><div class="fill" style="width:'+pct+'%"></div></div></div>';
+  });
+  document.getElementById('bars').innerHTML = barsHtml;
+
+  /* top leaks: highest layer scores, take up to 3 that are >=2 */
+  var ranked = LAYERS.map(function(L, idx){ return {idx:idx, name:L.name, fix:L.fix, s:layerScore[idx]}; })
+    .filter(function(x){ return x.s >= 2; })
+    .sort(function(a,b){ return b.s - a.s; })
+    .slice(0,3);
+  if(ranked.length === 0){ ranked = [{name:"No major leaks", fix:"Nothing is hemorrhaging. Your next gain is compounding what already works: pick the strongest layer and push its signal further into the others."}]; }
+  var leaksHtml = '';
+  ranked.forEach(function(r){ leaksHtml += '<div class="leak"><h3>'+r.name+'</h3><p>'+r.fix+'</p></div>'; });
+  document.getElementById('leaks').innerHTML = leaksHtml;
+
+  lastScore = total; lastBand = band;
+  lastLeaks = ranked.map(function(r){ return r.name; }).join(', ');
+
+  document.getElementById('result').classList.remove('hidden');
+  document.getElementById('result').scrollIntoView({behavior:'smooth'});
+  try{ if(window.gtag){ gtag('event','signal_leak_completed',{score:total, band:band}); } }catch(err){}
+});
+
+/* email capture -> Klaviyo onsite (identify + track) */
+document.getElementById('captureForm').addEventListener('submit', function(e){
+  e.preventDefault();
+  if(this.company_website && this.company_website.value){ return; } /* honeypot */
+  var email = document.getElementById('email').value.trim();
+  if(!email){ return; }
+  try{
+    var _learnq = window._learnq || [];
+    _learnq.push(['identify', {'$email': email, 'Signal Leak Score': lastScore, 'Signal Leak Band': lastBand}]);
+    _learnq.push(['track', 'Signal Leak Diagnostic', {'score': lastScore, 'band': lastBand, 'top_leaks': lastLeaks, 'source': 'signal-leak.html'}]);
+  }catch(err){}
+  try{ if(window.gtag){ gtag('event','signal_leak_lead',{score:lastScore, band:lastBand}); } }catch(err){}
+  document.getElementById('capture').classList.add('hidden');
+  document.getElementById('thanks').classList.remove('hidden');
+});
+
+/* CTA event tracking (GA4) */
+document.addEventListener('click',function(e){
+  var a=e.target.closest('[data-cta]'); if(!a)return;
+  try{ if(window.gtag){ gtag('event','cta_click',{cta:a.getAttribute('data-cta'),page:'signal-leak'}); } }catch(err){}
+});
+</script>
+</body>
+</html>
