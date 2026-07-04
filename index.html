@@ -610,7 +610,7 @@ footer h4,footer h5,footer .foot-col-title{color:#F6F4F2!important}
         <a href="in-motion.html">In Motion</a>
         
     <a href="frameworks.html">Frameworks</a>
-    <a href="scorecard.html">AI Scorecard</a><a href="ai-visibility-audit.html">AI Visibility Audit</a><a href="ai-for-small-business.html">AI for Small Business</a><a href="ai-search-consultant.html">AI Search Consultant</a>
+    <a href="scorecard.html">AI Scorecard</a><a href="ai-visibility-audit.html">AI Visibility Audit</a><a href="ai-for-small-business.html">AI for Small Business</a><a href="marketing-operating-system.html">Marketing Operating System</a><a href="ai-search-consultant.html">AI Search Consultant</a>
     <a href="work-with-me.html">Work With Me</a>
         <a href="https://theunapologeticleader.com">Unapologetic</a>
         <a href="prompt-pack.html">Prompt Pack</a><a href="shop.html">Shop</a><a href="https://afrdtlab.substack.com/">Newsletter</a>
@@ -659,6 +659,7 @@ document.addEventListener('submit',function(e){
   fd.forEach(function(v,k){ if(k.charAt(0)!=='_'&&v){ p[k]=p[k]?p[k]+', '+v:''+v; } });
   var email=p.email||p.Email||'';
   try{ if(window.klaviyo){ if(email){window.klaviyo.push(['identify',Object.assign({'$email':email},p)]);} window.klaviyo.push(['track', f.getAttribute('data-kl-event'), p]); } }catch(err){}
+  try{ if(window.gtag){ gtag('event','generate_lead',{event_category:'form',event_label:f.getAttribute('data-kl-event'),form_name:f.getAttribute('data-kl-event'),send_to:'G-1TGNWXQ27S'}); } }catch(err){}
   var msg=document.createElement('p'); msg.className='form-note'; msg.style.cssText='font-size:1.05rem;margin-top:8px'; msg.textContent='Thank you, we got it. We will be in touch.';
   f.parentNode.insertBefore(msg,f.nextSibling); f.style.display='none';
 });
