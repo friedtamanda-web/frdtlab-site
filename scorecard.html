@@ -330,6 +330,7 @@ window.FRDT_unlockBreakdown = function () {
     kl.push(["track", "Scorecard Completed", {
       "score": score, "tier": tier, "scorecard_name": "AI Visibility Scorecard"
     }]);
+    try{window.klaviyo.push(["track","New Lead",{form:"Scorecard Completed",brand:"FRDTLAB"}]);}catch(e){}
     /* subscribe with consent so the scorecard flow can actually deliver (list FRDT Lab Subscribers) */
     fetch("https://a.klaviyo.com/client/subscriptions/?company_id=Twvzce", {
       method: "POST",

@@ -338,6 +338,7 @@ document.getElementById('captureForm').addEventListener('submit', function(e){
     var _learnq = window._learnq || [];
     _learnq.push(['identify', {'$email': email, 'Signal Leak Score': lastScore, 'Signal Leak Band': lastBand}]);
     _learnq.push(['track', 'Signal Leak Diagnostic', {'score': lastScore, 'band': lastBand, 'top_leaks': lastLeaks, 'source': 'signal-leak.html'}]);
+    try{window.klaviyo.push(['track','New Lead',{form:'Signal Leak Diagnostic',brand:'FRDTLAB',source:'signal-leak.html'}]);}catch(e){}
   }catch(err){}
   try{ if(window.gtag){ gtag('event','signal_leak_lead',{score:lastScore, band:lastBand}); } }catch(err){}
   document.getElementById('capture').classList.add('hidden');
