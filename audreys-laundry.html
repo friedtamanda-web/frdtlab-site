@@ -171,6 +171,7 @@ function audreySubmit(e){
   try{
     klaviyo.push(["identify",{"$email":email,"$first_name":name,"$phone_number":f.phone.value}]);
     klaviyo.push(["track","Audrey Laundry Lead",{space:f.space.value,message:f.message.value,source:"audreys-laundry"}]);
+    try{window.klaviyo.push(['track','New Lead',{form:'Audrey Laundry Lead',brand:'FRDTLAB'}]);}catch(e){}
   }catch(err){}
   document.getElementById("audreyForm").style.display="none";
   document.getElementById("thanks").style.display="block";

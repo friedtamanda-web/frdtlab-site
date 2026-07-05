@@ -160,6 +160,7 @@ window.FRDT_research=function(){
   try{var kl=window.klaviyo=window.klaviyo||[];
     kl.push(['identify',{'$email':email,'brand':'FRDTLAB','source':'research_lab_findings'}]);
     kl.push(['track','Research Findings Requested',{'report':'Competence Trap Findings No. 001'}]);
+    try{window.klaviyo.push(['track','New Lead',{form:'Research Findings Requested',brand:'FRDTLAB'}]);}catch(e){}
   }catch(e){}
   document.getElementById('rform').style.display='none';document.getElementById('rerr').style.display='none';
   document.getElementById('gdone').style.display='block';return false;
