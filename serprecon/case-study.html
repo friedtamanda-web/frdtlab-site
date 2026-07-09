@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Case Study — From Invisible to Cited · SERPrecon × FRDTLAB</title>
+<style>
+:root{--bg:#0D1A2B;--bg2:#0A1420;--panel:#12202F;--panel2:#152638;--line:#20344A;--white:#F2F5F9;--soft:#B9C4D2;--mut:#7A8AA0;--green:#2ECC5E;--pink:#FF2D78;--mono:ui-monospace,"SF Mono",Menlo,Consolas,monospace;--font:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,Helvetica,Arial,sans-serif}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:var(--font);background:var(--bg);color:var(--white);line-height:1.6;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1040px;margin:0 auto;padding:0 28px}
+.topbar{background:var(--bg2);border-bottom:1px solid var(--line);padding:18px 0}
+.topbar .in{display:flex;align-items:center;justify-content:space-between}
+.lg-sr{font-weight:800;font-size:19px;letter-spacing:-.01em}.lg-sr em{font-style:normal;color:var(--green)}
+.lg-fl{font-weight:800;font-size:17px;letter-spacing:.04em}.lg-fl em{font-style:normal;color:var(--pink)}
+.mid{font-family:var(--mono);font-size:11px;letter-spacing:.35em;color:var(--mut)}
+.hero{position:relative;padding:90px 0 70px;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:72px 72px;background-position:center;border-bottom:1px solid var(--line)}
+.hero::after{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 30% 40%,transparent 30%,var(--bg) 85%)}
+.hero .wrap{position:relative;z-index:2}
+.kick{font-family:var(--mono);font-size:12px;letter-spacing:.3em;color:var(--green);display:flex;align-items:center;gap:16px;margin-bottom:34px;text-transform:uppercase}
+.kick::before{content:"";width:36px;height:2px;background:var(--green);flex:0 0 auto}
+h1{font-size:clamp(54px,9vw,104px);line-height:.98;letter-spacing:-.035em;font-weight:800;margin-bottom:34px}
+h1 em{font-style:normal;color:var(--green)}
+.sub{font-size:20px;color:var(--soft);max-width:560px}
+.statband{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;background:var(--line);border:1px solid var(--line);margin-top:60px}
+@media(max-width:760px){.statband{grid-template-columns:1fr 1fr}}
+.statband div{background:var(--panel);padding:26px 22px}
+.statband b{display:block;font-size:44px;font-weight:800;color:var(--green);letter-spacing:-.03em;line-height:1.05}
+.statband span{display:block;font-family:var(--mono);font-size:11.5px;color:var(--soft);margin-top:10px;line-height:1.5}
+.statband i{display:block;font-family:var(--mono);font-style:normal;font-size:10.5px;color:var(--mut);margin-top:6px}
+section{padding:76px 0 4px}
+.secnum{font-family:var(--mono);font-size:12px;letter-spacing:.3em;color:var(--green);margin-bottom:20px;text-transform:uppercase}
+.secnum b{color:var(--mut);font-weight:400;margin-right:18px}
+h2{font-size:clamp(30px,4.4vw,46px);letter-spacing:-.025em;line-height:1.08;margin-bottom:22px;font-weight:800}
+p.body{font-size:16.5px;color:var(--soft);max-width:640px;margin-bottom:14px}
+.split{display:grid;gap:34px;align-items:start}
+@media(min-width:820px){.split{grid-template-columns:1.1fr .9fr}}
+.profile{background:var(--panel);border:1px solid var(--line);padding:28px}
+.profile .ttl{font-family:var(--mono);font-size:11px;letter-spacing:.25em;color:var(--green);margin-bottom:18px}
+.profile dl{display:grid;grid-template-columns:auto 1fr;gap:12px 24px;font-size:14px}
+.profile dt{font-family:var(--mono);font-size:11px;letter-spacing:.15em;color:var(--mut);padding-top:2px}
+.profile dd{color:var(--soft)}
+.g3{display:grid;gap:2px;background:var(--line);border:1px solid var(--line);margin-top:36px}
+@media(min-width:760px){.g3{grid-template-columns:1fr 1fr 1fr}}
+.g3>div{background:var(--panel);padding:28px 24px}
+.g3 .lbl{font-family:var(--mono);font-size:11px;letter-spacing:.25em;color:var(--pink);margin-bottom:14px}
+.g3 h3{font-size:20px;margin-bottom:12px;letter-spacing:-.01em}
+.g3 p{font-size:14.5px;color:var(--soft)}
+.callout{background:var(--panel2);border-left:4px solid var(--green);padding:30px 34px;font-size:19px;line-height:1.55;margin-top:40px;max-width:860px}
+.callout b{color:var(--green)}
+.methods{display:grid;gap:2px;background:var(--line);border:1px solid var(--line);margin-top:36px}
+@media(min-width:760px){.methods{grid-template-columns:1fr 1fr}.methods .wide{grid-column:1/-1}}
+.methods>div{background:var(--panel);padding:30px 28px}
+.methods .n{font-family:var(--mono);font-size:13px;color:var(--green);margin-right:14px;font-weight:700}
+.methods h3{display:inline;font-size:20px;letter-spacing:-.01em}
+.methods p{font-size:14.5px;color:var(--soft);margin-top:14px}
+.methods .meta{font-family:var(--mono);font-size:11.5px;color:var(--mut);margin-top:14px}
+.methods .wide{border-top:2px solid var(--green);display:grid;gap:22px}
+@media(min-width:760px){.methods .wide{grid-template-columns:1fr 1fr}}
+.methods .wide .head{grid-column:1/-1;margin-bottom:-8px}
+.find{display:grid;gap:2px;background:var(--line);border:1px solid var(--line);margin-top:36px}
+@media(min-width:760px){.find{grid-template-columns:1fr 1fr}}
+.find>div{background:var(--panel);padding:30px 28px}
+.find .lbl{font-family:var(--mono);font-size:11px;letter-spacing:.25em;color:var(--green);margin-bottom:14px}
+.find h3{font-size:21px;letter-spacing:-.015em;margin-bottom:12px;line-height:1.25}
+.find p{font-size:14.5px;color:var(--soft)}
+.res{display:grid;gap:2px;background:var(--line);border:1px solid var(--line);margin-top:36px}
+@media(min-width:760px){.res{grid-template-columns:1fr 1fr 1fr}}
+.res>div{background:var(--panel);padding:30px 26px}
+.res b{display:block;font-size:52px;font-weight:800;color:var(--green);letter-spacing:-.03em;line-height:1}
+.res .t{display:block;font-size:15px;font-weight:700;color:var(--white);margin-top:12px}
+.res p{font-size:13.5px;color:var(--soft);margin-top:8px}
+.voice{background:var(--panel2);border:1px solid var(--line);border-top:3px solid var(--green);padding:44px;margin-top:36px}
+.voice .lbl{font-family:var(--mono);font-size:11px;letter-spacing:.3em;color:var(--green);margin-bottom:24px}
+.voice blockquote{font-size:clamp(20px,2.8vw,27px);line-height:1.45;letter-spacing:-.01em;font-weight:600}
+.voice .attr{font-family:var(--mono);font-size:12px;color:var(--mut);margin-top:22px}
+.two{display:grid;gap:34px;margin-top:44px}
+@media(min-width:760px){.two{grid-template-columns:1fr 1fr}}
+.two h3{font-family:var(--mono);font-size:12px;letter-spacing:.25em;color:var(--green);margin-bottom:16px;text-transform:uppercase}
+.two p{font-size:15px;color:var(--soft);margin-bottom:12px}
+.brands{display:grid;gap:2px;background:var(--line);border:1px solid var(--line);margin:70px 0 0}
+@media(min-width:700px){.brands{grid-template-columns:1fr 1fr}}
+.brands>div{background:var(--panel);padding:32px 30px}
+.brands .nm{font-weight:800;font-size:18px;margin-bottom:12px}
+.brands p{font-size:14px;color:var(--soft)}
+.brands a{color:var(--green);text-decoration:none;font-family:var(--mono);font-size:12.5px;display:inline-block;margin-top:14px}
+.brands .fl a{color:var(--pink)}
+footer{padding:36px 0 50px;text-align:center}
+footer .l1{font-family:var(--mono);font-size:11px;letter-spacing:.3em;color:var(--mut)}
+footer .l2{font-family:var(--mono);font-size:11px;color:var(--mut);margin-top:10px;opacity:.7}
+</style>
+</head>
+<body>
+
+<div class="topbar"><div class="wrap in">
+  <div class="lg-sr">SERP<em>recon</em></div>
+  <div class="mid">—&nbsp;&nbsp;CASE STUDY&nbsp;&nbsp;—</div>
+  <div class="lg-fl">FRDT<em>LAB</em></div>
+</div></div>
+
+<header class="hero"><div class="wrap">
+  <div class="kick">AI Visibility &amp; Search Intelligence &nbsp;·&nbsp; Specialty Ecommerce &nbsp;·&nbsp; 2026</div>
+  <h1>From<br>Invisible<br>to <em>Cited.</em></h1>
+  <p class="sub">How a specialty home parts retailer closed the AI search gap against big-box competition — without rewriting a single product description.</p>
+  <div class="statband">
+    <div><b>37%</b><span>AI citation rate for priority queries</span><i>Baseline: 0%</i></div>
+    <div><b>+41%</b><span>Share of Voice core commercial set</span><i>Google + AI surfaces</i></div>
+    <div><b>83</b><span>Semantic gaps identified</span><i>0 previously documented</i></div>
+    <div><b>4 mo</b><span>Time to first AI citation</span><i>16-mo engagement total</i></div>
+  </div>
+</div></header>
+
+<section><div class="wrap">
+  <div class="secnum"><b>01</b>THE SITUATION</div>
+  <h2>A specialist retailer. An invisible presence.</h2>
+  <div class="split">
+    <div>
+      <p class="body">Framewell — a specialty replacement-parts retailer with a 900+ SKU catalog of dimensional and fitment-specific home hardware — was losing search visibility to big-box competitors across every surface that mattered.</p>
+      <p class="body">Their rank tracker showed organic position. Their content tools prescribed more words. Neither explained why retailers with a fraction of Framewell's product depth were consistently appearing in AI-generated answers for the exact queries Framewell should own.</p>
+      <p class="body">The question wasn't whether they ranked. They ranked. The question was why ranking no longer meant being the answer — and what it would take to close that gap before the AI search transition made it permanent.</p>
+    </div>
+    <div class="profile">
+      <div class="ttl">/ CLIENT PROFILE</div>
+      <dl>
+        <dt>SECTOR</dt><dd>Specialty Home Improvement Ecommerce</dd>
+        <dt>CATALOG</dt><dd>900+ replacement-specific SKUs</dd>
+        <dt>INTENT</dt><dd>Exact-fit replacement purchases</dd>
+        <dt>VERSUS</dt><dd>Big-box retailers + brand DTC sites</dd>
+        <dt>SURFACES</dt><dd>Google Organic · Shopping · AI Answers</dd>
+        <dt>TERM</dt><dd>16-month ongoing partnership</dd>
+      </dl>
+    </div>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <div class="secnum"><b>02</b>THE PROBLEM</div>
+  <h2>Three compounding problems. One visible symptom.</h2>
+  <p class="body">AI-generated answers were absorbing buying intent before any click happened. Ranking on page one no longer guaranteed visibility. Framewell needed to know exactly what was blocking them — not another prescription to write more words.</p>
+  <div class="g3">
+    <div><div class="lbl">PROBLEM A</div><h3>Entity invisibility</h3><p>AI models had no signal to recognize Framewell as a subject-matter authority. To the models, it was a product listing — not an expert source. Citations never followed, no matter how well individual pages ranked.</p></div>
+    <div><div class="lbl">PROBLEM B</div><h3>Semantic coverage gaps</h3><p>Critical product concepts — compatibility tables, dimensional fitment guides, installation context — were absent from the site's content architecture. AI engines cannot retrieve what isn't structured to be retrieved.</p></div>
+    <div><div class="lbl">PROBLEM C</div><h3>Competitive blind spots</h3><p>No visibility into which competitor pages AI engines were retrieving — or what structural signals made their content trustworthy to models. Flying blind against an AI-first SERP while competitors quietly built retrieval authority.</p></div>
+  </div>
+  <div class="callout">The rank tracker said they were visible. The AI search layer said they didn't exist. Both were correct — <b>and that's the gap SERPrecon was built to close.</b></div>
+</div></section>
+
+<section><div class="wrap">
+  <div class="secnum"><b>03</b>THE METHOD</div>
+  <h2>Five intelligence streams. Run concurrently.</h2>
+  <p class="body">SERPrecon doesn't diagnose visibility from one angle. Gaps are never all in one place — so the platform runs five measurement streams simultaneously, each informing the others.</p>
+  <div class="methods">
+    <div><span class="n">01</span><h3>Share of Voice Mapping</h3><p>40+ commercial keywords tracked across Google organic, Google Shopping, and AI surfaces. Not position — true market ownership. Who's visible, who's cited, who captures intent before the click.</p><div class="meta">Competitors monitored: 11 domains</div></div>
+    <div><span class="n">02</span><h3>AI Overview Monitoring</h3><p>Citation tracking across Google AI Overviews, ChatGPT, and Perplexity. Which domains AI models trust, which entities they name, and which content structures earn retrieval across all three surfaces.</p><div class="meta">Surfaces: Google · ChatGPT · Perplexity</div></div>
+    <div><span class="n">03</span><h3>Query Fan-Out Analysis</h3><p>Each priority keyword expanded into the full semantic neighborhood AI models associate with it. Reveals adjacent concepts a page must cover — not just the target keyword, but the entire retrieval context engines expect.</p><div class="meta">Output: landing pages · guides · taxonomy nodes</div></div>
+    <div><span class="n">04</span><h3>Semantic Gap Discovery</h3><p>Systematic identification of concepts competitors covered that Framewell didn't — and that AI models were actively using as trust signals. No editorial instinct. Evidence-led content development from day one.</p><div class="meta">83 gaps identified · 0 previously documented</div></div>
+    <div class="wide">
+      <div class="head"><span class="n">05</span><h3>Competitive Intelligence</h3></div>
+      <p>Continuous monitoring of 11 competitor domains — big-box retailers, brand DTC sites, specialty platforms, and user forums — tracking AI citation rates, content architecture changes, and semantic expansion moves in real time.</p>
+      <p>Every content and taxonomy investment made at Framewell was validated against competitive intelligence before execution. Where competitors dominated, the strategy found whitespace. Where they had gaps, Framewell moved first.</p>
+    </div>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <div class="secnum"><b>04</b>KEY FINDINGS</div>
+  <h2>What the data actually showed.</h2>
+  <div class="find">
+    <div><div class="lbl">FINDING 01</div><h3>AI models read Framewell as a store, not a source</h3><p>The fix wasn't more product copy. It was structured specificity: dimensional data formatted for extraction, compatibility tables AI could parse, and installation context that answered the fitment question — the one question big-box sites routinely skipped.</p></div>
+    <div><div class="lbl">FINDING 03</div><h3>Google AI Overviews rewarded fitment content, not purchase content</h3><p>For "replacement [product type]" queries, AI Overviews pulled exclusively from content that answered "will this fit?" — not "add to cart." At the time of the audit, Framewell's product pages answered neither in a format models could extract.</p></div>
+    <div><div class="lbl">FINDING 02</div><h3>Three domains dominated AI citations for queries Framewell ranked for organically</h3><p>All three shared one structural signal: explicit replacement-intent framing throughout their taxonomy. Not just product pages — category architecture, navigation, and internal linking all signaled "this site answers the replacement question."</p></div>
+    <div><div class="lbl">FINDING 04</div><h3>Fan-out revealed 83 content opportunities no competitor had fully claimed</h3><p>Fan-out mapping exposed an entire semantic neighborhood — measurement guides, brand-specific compatibility hubs, installation subtype expansions — that no competitor had fully owned. First-mover advantage was still available. For now.</p></div>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <div class="secnum"><b>05</b>RESULTS</div>
+  <h2>The numbers that moved.</h2>
+  <div class="res">
+    <div><b>37%</b><span class="t">AI citation rate</span><p>Baseline: 0. First citation: 4 months in. Priority queries across all three AI surfaces.</p></div>
+    <div><b>+41%</b><span class="t">Share of Voice</span><p>Core commercial keyword set. Measured across Google organic, Shopping, and AI surfaces combined.</p></div>
+    <div><b>200+</b><span class="t">SKUs updated</span><p>Product titles and descriptions revised based on AI intent data. Zero guesswork — every change driven by retrieval evidence.</p></div>
+    <div><b>12</b><span class="t">New landing pages</span><p>Built directly from fan-out findings. Each validated against competitive intelligence before a word was written.</p></div>
+    <div><b>6</b><span class="t">New taxonomy nodes</span><p>Compatibility hubs, subtype expansions, brand-specific replacement architectures. None existed before the engagement.</p></div>
+    <div><b>83</b><span class="t">Semantic gaps documented</span><p>From zero. The development backlog now has evidence behind every item — not editorial instinct.</p></div>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <div class="secnum"><b>06</b>THE OUTCOME</div>
+  <h2>From rank tracking to decision infrastructure.</h2>
+  <div class="voice">
+    <div class="lbl">/ CLIENT VOICE</div>
+    <blockquote>"We stopped guessing which content would move the needle. The data told us the problem wasn't our product quality — it was that AI couldn't retrieve us as an authority. Once we understood that, every investment had a rationale."</blockquote>
+    <div class="attr">Head of Ecommerce Strategy · Framewell · 16-month engagement</div>
+  </div>
+  <div class="two">
+    <div><h3>SERPrecon as operating system</h3><p>Framewell now runs SERPrecon as a decision-support layer across every content and taxonomy investment. New landing pages are green-lit when fan-out data confirms the semantic territory. Product titles are updated when AI monitoring surfaces a competitor gaining citation ground.</p><p>The shift isn't just in visibility — it's in how decisions get made. The backlog is evidence-led. The roadmap is prioritized by retrieval potential, not editorial instinct.</p></div>
+    <div><h3>The competitive position</h3><p>Framewell entered a semantic territory its big-box competitors owned by volume alone — and began winning it by specificity. Not by outspending on content, but by building exactly what AI models needed to retrieve a specialist as an authority.</p><p>In a market where the answer surface is shifting from blue links to AI citations, the authoritative answer is the position worth fighting for. SERPrecon made it measurable. FRDTLAB made it strategic.</p></div>
+  </div>
+  <div class="brands">
+    <div><div class="nm">SERP<span style="color:var(--green)">recon</span></div><p>SERPrecon is a strategic intelligence platform for measuring search visibility beyond traditional rankings. It tracks Share of Voice across organic, Shopping, and AI surfaces — and identifies exactly which problem is holding a site back: content, intent, or authority.</p><a href="https://serprecon.com">serprecon.com</a></div>
+    <div class="fl"><div class="nm">FRDT<span style="color:var(--pink)">LAB</span></div><p>FRDTLAB is an AI growth systems and audience intelligence lab. This case study was produced as part of an ongoing strategy partnership — SERPrecon provides the data infrastructure; FRDTLAB provides the strategic framework for acting on it.</p><a href="https://frdtlab.com">frdtlab.com</a></div>
+  </div>
+</div></section>
+
+<footer>
+  <div class="l1">CO-BRANDED CASE STUDY · AI VISIBILITY &amp; SEARCH INTELLIGENCE · 2026</div>
+  <div class="l2">Client details anonymized · All metrics from live platform data</div>
+</footer>
+
+</body>
+</html>

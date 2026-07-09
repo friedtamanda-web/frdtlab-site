@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SERPrecon — Homepage Concept Mock</title>
+<style>
+  :root{
+    --ink:#0e1420; --ink-soft:#3b4657; --muted:#67718a;
+    --paper:#ffffff; --wash:#f4f6fa; --line:#e3e8f0;
+    --brand:#1c9e3e; --brand-dark:#3e5063; --brand-wash:#e9f6ec;
+    --navy:#3e5063; --green:#24a53f;
+    --pass:#0c7a4d; --pass-wash:#e7f6ee;
+    --warn:#a05a00; --warn-wash:#fdf1de;
+    --fail:#b3261e; --fail-wash:#fdecea;
+    --note:#8a6d00; --note-wash:#fff7d6; --note-line:#e8d98a;
+    --radius:14px;
+    --font:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,Helvetica,Arial,sans-serif;
+    --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:var(--font);color:var(--ink);background:var(--paper);line-height:1.55;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 28px}
+  section{padding:72px 0}
+  h1,h2,h3{line-height:1.15;letter-spacing:-.02em}
+  h2{font-size:clamp(26px,3.4vw,38px);margin-bottom:14px}
+  .kicker{font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--brand);margin-bottom:14px}
+  .lede{font-size:18px;color:var(--ink-soft);max-width:720px}
+  .grid{display:grid;gap:20px}
+  @media(min-width:820px){.g3{grid-template-columns:1fr 1fr 1fr}.g2{grid-template-columns:1fr 1fr}.g4{grid-template-columns:repeat(4,1fr)}}
+  .card{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);padding:26px}
+  .card h3{font-size:18px;margin-bottom:8px}
+  .card p{font-size:15px;color:var(--ink-soft)}
+
+  .concept-bar{background:var(--ink);color:#cdd6e6;font-size:12.5px;letter-spacing:.06em;text-align:center;padding:9px 16px}
+  .concept-bar b{color:#fff}
+
+  .rationale-toggle{position:fixed;right:18px;bottom:18px;z-index:60;background:var(--ink);color:#fff;border:none;border-radius:999px;padding:13px 20px;font-size:13.5px;font-weight:600;cursor:pointer;box-shadow:0 8px 24px rgba(14,20,32,.35);font-family:var(--font)}
+  .rationale-toggle span{opacity:.65;margin-right:6px}
+  .note{display:none;background:var(--note-wash);border:1px solid var(--note-line);border-left:4px solid var(--note);border-radius:10px;padding:16px 18px;margin:26px 0 0;font-size:14px;color:#5c4a02}
+  .note b{display:block;font-size:11px;letter-spacing:.12em;text-transform:uppercase;margin-bottom:6px;color:var(--note)}
+  body.show-notes .note{display:block}
+
+  nav{border-bottom:1px solid var(--line);background:#fff;position:sticky;top:0;z-index:50}
+  .nav-in{display:flex;align-items:center;justify-content:space-between;height:64px}
+  .logo{font-weight:800;font-size:20px;letter-spacing:-.02em;color:var(--navy);display:flex;align-items:center}
+  .logo em{font-style:normal;color:var(--green);font-weight:700}
+  .lg-e{display:inline-flex;flex-direction:column;justify-content:center;gap:.115em;width:.58em;margin:0 .06em;vertical-align:baseline}
+  .lg-e i{display:block;height:.135em;border-radius:.02em;background:linear-gradient(90deg,var(--navy) 0 68%,var(--green) 68% 100%)}
+  .lg-e i:nth-child(2){width:78%;background:linear-gradient(90deg,var(--navy) 0 55%,var(--green) 55% 100%)}
+  .nav-links{display:flex;gap:26px;font-size:14.5px;color:var(--ink-soft)}
+  .nav-links a{color:inherit;text-decoration:none}
+  .btn{display:inline-block;background:var(--brand);color:#fff;border-radius:10px;padding:13px 24px;font-weight:650;font-size:15.5px;text-decoration:none;border:none;cursor:pointer}
+  .btn.small{padding:9px 16px;font-size:14px}
+  .btn.ghost{background:transparent;color:var(--ink);border:1.5px solid var(--line)}
+
+  .hero{background:linear-gradient(180deg,#f7f9fd 0%,#fff 100%);padding:84px 0 76px;border-bottom:1px solid var(--line)}
+  .hero-grid{display:grid;gap:48px;align-items:center}
+  @media(min-width:960px){.hero-grid{grid-template-columns:1.05fr .95fr}}
+  .hero h1{font-size:clamp(34px,4.6vw,52px);margin-bottom:20px}
+  .hero .sub{font-size:18.5px;color:var(--ink-soft);margin-bottom:30px;max-width:540px}
+  .hero .cta-row{display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+  .hero .micro{font-size:13px;color:var(--muted);margin-top:14px}
+
+  .diag{background:#fff;border:1px solid var(--line);border-radius:18px;box-shadow:0 24px 60px rgba(20,35,80,.10);overflow:hidden;font-size:14px}
+  .diag-head{background:var(--ink);color:#e8edf7;padding:14px 20px;font-family:var(--mono);font-size:12.5px;display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
+  .diag-head .q{color:#fff}
+  .diag-body{padding:20px}
+  .diag-row{display:flex;align-items:flex-start;gap:12px;padding:11px 0;border-bottom:1px dashed var(--line)}
+  .diag-row:last-of-type{border-bottom:none}
+  .pill{flex:0 0 auto;font-size:11px;font-weight:800;letter-spacing:.06em;border-radius:999px;padding:4px 10px;margin-top:1px}
+  .pill.pass{background:var(--pass-wash);color:var(--pass)}
+  .pill.warn{background:var(--warn-wash);color:var(--warn)}
+  .pill.fail{background:var(--fail-wash);color:var(--fail)}
+  .diag-row b{display:block;font-size:13.5px}
+  .diag-row span{color:var(--muted);font-size:13px}
+  .diag-verdict{margin-top:14px;background:var(--brand-wash);border:1px solid #d6e0ff;border-radius:12px;padding:14px 16px;font-size:13.5px}
+  .diag-verdict b{color:var(--brand-dark)}
+
+  .band{background:var(--ink);color:#dbe3f0}
+  .band h2{color:#fff}
+  .band .lede{color:#aab6ca}
+  .band .card{background:#161e2e;border-color:#2a3550}
+  .band .card h3{color:#fff}
+  .band .card p{color:#a9b4c9}
+  .band .note{background:#2a2508;border-color:#4d4310;color:#e6d98a}
+  .band .note b{color:#f0dd6e}
+
+  .step-num{width:34px;height:34px;border-radius:999px;background:var(--brand);color:#fff;font-weight:800;display:flex;align-items:center;justify-content:center;margin-bottom:14px;font-size:15px}
+
+  .quote{background:var(--wash);border:1px solid var(--line);border-radius:var(--radius);padding:38px;max-width:840px;margin:0 auto}
+  .quote p.q{font-size:21px;line-height:1.5;letter-spacing:-.01em;margin-bottom:18px}
+  .quote .attr{font-size:14px;color:var(--muted)}
+
+  .vs-table{width:100%;border-collapse:collapse;font-size:14.5px;margin-top:10px}
+  .vs-table th,.vs-table td{padding:13px 16px;text-align:left;border-bottom:1px solid var(--line)}
+  .vs-table th{font-size:12px;letter-spacing:.09em;text-transform:uppercase;color:var(--muted)}
+  .vs-table td:first-child{font-weight:650}
+  .hl{background:var(--brand-wash)}
+
+  .price-card{position:relative;display:flex;flex-direction:column}
+  .price-card .tag{position:absolute;top:-12px;left:24px;background:var(--brand);color:#fff;font-size:11px;font-weight:800;letter-spacing:.08em;border-radius:999px;padding:4px 12px}
+  .price-card .amount{font-size:38px;font-weight:800;letter-spacing:-.03em;margin:6px 0 2px}
+  .price-card .amount small{font-size:15px;font-weight:500;color:var(--muted)}
+  .price-card ul{list-style:none;margin:18px 0 22px;flex:1}
+  .price-card li{padding:7px 0 7px 26px;position:relative;font-size:14.5px;color:var(--ink-soft)}
+  .price-card li::before{content:"✓";position:absolute;left:2px;color:var(--pass);font-weight:800}
+  .price-card li.lead-feat{font-weight:700;color:var(--ink)}
+
+  footer{border-top:1px solid var(--line);padding:34px 0;font-size:13.5px;color:var(--muted)}
+  .foot-in{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap}
+</style>
+</head>
+<body>
+
+<div class="concept-bar"><b>CONCEPT MOCK</b> · SERPrecon homepage repositioning · July 2026 · Prepared by Amanda Friedt · Data drawn from a real 16-month engagement · Tap “Show rationale” for section-by-section reasoning vs. the current site</div>
+
+<button class="rationale-toggle" onclick="document.body.classList.toggle('show-notes');this.querySelector('i').textContent=document.body.classList.contains('show-notes')?'Hide rationale':'Show rationale'"><span>●</span><i style="font-style:normal">Show rationale</i></button>
+
+<nav>
+  <div class="wrap nav-in">
+    <div class="logo" aria-label="SERPrecon">S<span class="lg-e"><i></i><i></i><i></i></span>RP<em>recon</em></div>
+    <div class="nav-links">
+      <a href="#">How it works</a><a href="#">Who it's for</a><a href="#">Research</a><a href="#">Compare</a><a href="#">Pricing</a>
+    </div>
+    <div style="display:flex;gap:10px;align-items:center"><a href="#" style="font-size:14.5px;color:var(--ink-soft);text-decoration:none">Log in</a><a class="btn small" href="#">Diagnose a page free</a></div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <div class="kicker">Search visibility diagnosis · Google + AI</div>
+        <h1>Know why you're not the answer.</h1>
+        <p class="sub">Rank trackers tell you what happened. Content tools tell you to write more words. SERPrecon reads results the way engines do and tells you which problem you actually have — <b>content, intent, or authority</b> — across Google, ChatGPT, and Perplexity. Then it tells you what to fix.</p>
+        <div class="cta-row">
+          <a class="btn" href="#">Diagnose a page free</a>
+          <a class="btn ghost" href="#">See a live report</a>
+        </div>
+        <p class="micro">7-day free trial · No card required for your first diagnosis</p>
+      </div>
+      <div>
+        <div class="diag">
+          <div class="diag-head"><span class="q">query: “replacement door weather stripping”</span><span>yourstore.com/weather-stripping</span></div>
+          <div class="diag-body">
+            <div class="diag-row"><span class="pill pass">CONTENT ✓</span><div><b>Your copy beats the SERP average</b><span>Content score 60.1% vs. 53.9% avg across ranking pages</span></div></div>
+            <div class="diag-row"><span class="pill warn">INTENT ✕</span><div><b>You're framed wrong for this query</b><span>Your page reads transactional. The SERP rewards comparison &amp; fitment content.</span></div></div>
+            <div class="diag-row"><span class="pill fail">AUTHORITY ✕</span><div><b>Trust is the blocker</b><span>PageRank 1 vs. 17.1 average for pages that rank</span></div></div>
+            <div class="diag-row"><span class="pill fail">AI ANSWERS ✕</span><div><b>ChatGPT recommends your competitor</b><span>Share of Voice: cited 0 of 20 runs · competitor cited 14 of 20</span></div></div>
+            <div class="diag-verdict"><b>Verdict: stop rewriting this page.</b> Your words aren't the problem. Reframe for comparison intent, then earn authority — links, architecture, and citations move this page. Full fix list →</div>
+            <div style="font-size:11.5px;color:var(--muted);margin-top:10px">Illustrative composite of a real customer diagnosis + Share of Voice data. The one-screen verdict view is the concept this mock proposes.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="note"><b>Rationale — hero</b>Current site: “The Semantic Relevance Tool For Advanced SEO &amp; GEO” + “your missing semantic SEO content optimization layer.” That's mechanism-first and filters the audience down to SEO insiders. Concept leads with the buyer's question (why am I not the answer?) and the decision the tool enables. The hero visual is a real diagnosis card — the product's most differentiated output — using an actual finding pattern (content passes, authority fails, AI cites the competitor). CTA renamed from “Try Check Relevance” to “Diagnose a page free”: same feature, buyer language.</div>
+  </div>
+</header>
+
+<section>
+  <div class="wrap">
+    <div class="kicker">The problem</div>
+    <h2>The most expensive mistake in search is fixing the wrong problem.</h2>
+    <p class="lede">Most teams respond to invisibility the same way: rewrite the page, add words, chase a score. But pages fail for three different reasons — and two of them can't be fixed with copy. If you don't know which problem you have, every hour of optimization is a guess.</p>
+    <div class="grid g3" style="margin-top:34px">
+      <div class="card"><h3>Your rank tracker</h3><p>Tells you that you dropped. Not why. You're watching the scoreboard with no game film.</p></div>
+      <div class="card"><h3>Your content tool</h3><p>Grades your words against everyone else's words — and always prescribes the same medicine: more words.</p></div>
+      <div class="card"><h3>Your AI monitor</h3><p>Tells you ChatGPT didn't mention you. Then leaves. No diagnosis, no fix, no next step.</p></div>
+    </div>
+    <div class="note"><b>Rationale — problem section</b>New section; nothing like it exists on the current site. It names the tension in the buyer's own workflow and positions the three adjacent tool categories (rank trackers, content scorers, AI monitors) as incomplete — which sets up SERPrecon as the connective layer rather than a fourth point tool.</div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <div class="kicker" style="color:#7fd99a">The Visibility Triage</div>
+    <h2>Every invisible page has one of three problems. SERPrecon tells you which.</h2>
+    <p class="lede">We score your page the way engines score it — semantic and lexical relevance, intent classification, and authority signals — against every page that's winning your query.</p>
+    <div class="grid g3" style="margin-top:34px">
+      <div class="card"><h3>1 · Wrong words</h3><p><b style="color:#7fd99a">Content gap.</b> You're missing the entities, questions, and phrasing the winners cover. This is the only problem copy can fix — and SERPrecon gives you the exact gap list, not a grade.</p></div>
+      <div class="card"><h3>2 · Wrong framing</h3><p><b style="color:#7fd99a">Intent mismatch.</b> Your page sells while the SERP compares — or explains while the SERP sells. More words make this worse. SERPrecon shows the intent the result set actually rewards.</p></div>
+      <div class="card"><h3>3 · Not enough trust</h3><p><b style="color:#7fd99a">Authority gap.</b> Your content already beats the average and you still don't rank. No rewrite fixes this. SERPrecon proves it — so you invest in links and architecture instead of edits.</p></div>
+    </div>
+    <div class="note"><b>Rationale — framework section</b>This is the category-claiming move. The current site lists seven features with no organizing idea. A named framework (“The Visibility Triage”) turns the product's real behavior — separating content vs. intent vs. authority failures — into ownable language that survives screenshots, talks, and LLM citation. It also makes the anti-pitch explicit: sometimes the answer is “stop rewriting,” which no content-scoring competitor can say.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="kicker">One system, both surfaces</div>
+    <h2>Your customers ask Google <em>and</em> ChatGPT. You should only need one tool.</h2>
+    <p class="lede">SERPrecon tracks share of voice across Google, ChatGPT, and Perplexity on the queries tied to your revenue — and diagnoses the gap when the answer isn't you. The rest of the market makes you buy that as two products.</p>
+    <table class="vs-table">
+      <tr><th></th><th>Monitoring-only tools</th><th class="hl">SERPrecon</th><th>Enterprise AI platforms</th></tr>
+      <tr><td>Sees you're invisible</td><td>✓</td><td class="hl">✓</td><td>✓</td></tr>
+      <tr><td>Tells you <b>why</b></td><td>Partial (citation sources)</td><td class="hl">✓ Content / intent / authority</td><td>Partially</td></tr>
+      <tr><td>Tells you what to build next</td><td>—</td><td class="hl">✓ Fix list + fan-out queries</td><td>Services add-on</td></tr>
+      <tr><td>Covers classic Google SERPs too</td><td>—</td><td class="hl">✓ Same system</td><td>Varies / suite add-ons</td></tr>
+      <tr><td>Starts at</td><td>~$29/mo</td><td class="hl">$49/mo · AI tracking from $149</td><td>Sales-led / enterprise pricing</td></tr>
+    </table>
+    <div class="note"><b>Rationale — competitive frame</b>AI visibility is the most in-demand capability in the category right now, and on the current site it's a Pro-tier line item. Concept elevates it to a top-level section and plants SERPrecon in the open mid-market gap: Otterly-class tools monitor without diagnosing; Profound-class platforms start at $499 and sell to Fortune 500 teams. Competitors stay unnamed on the homepage (named comparisons live on /compare pages where the search intent is).</div>
+  </div>
+</section>
+
+<section style="background:var(--wash);border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+  <div class="wrap">
+    <div class="kicker">How it works</div>
+    <h2>From “why aren't we visible?” to a build list.</h2>
+    <div class="grid g4" style="margin-top:34px">
+      <div class="card"><div class="step-num">1</div><h3>Point it at a query</h3><p>The searches your revenue depends on — head terms, long-tail, or your whole map.</p></div>
+      <div class="card"><div class="step-num">2</div><h3>It scores the field</h3><p>Your page vs. everyone winning — semantic relevance, intent, authority, entities, questions.</p></div>
+      <div class="card"><div class="step-num">3</div><h3>It tells you why</h3><p>Content, intent, or authority — with the specific gaps and the queries AI engines fan out to.</p></div>
+      <div class="card"><div class="step-num">4</div><h3>It watches the answer</h3><p>Share of voice across Google, ChatGPT, and Perplexity as your fixes ship. Proof, monthly.</p></div>
+    </div>
+    <div class="note"><b>Rationale — how it works</b>The current site jumps from hero to feature list with no journey. This sequence mirrors how a real customer actually runs the tool (per 16 months of real usage: diagnose → decide → build → monitor), and step 4 quietly converts a one-time “report credit” purchase into a monthly monitoring habit — the retention story.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="quote">
+      <p class="q">“Every tool we'd used told us to rewrite our copy. SERPrecon proved our pages already beat the SERP average on content — we were losing on authority and intent. We stopped rewriting and pointed our effort where the data said it would actually move.”</p>
+      <p class="attr">— National home-improvement parts retailer · DTC e-commerce, legacy platform · 16-month engagement · anonymized at client's request · full case study: award submission + BrightonSEO</p>
+    </div>
+    <div class="grid g3" style="margin-top:26px">
+      <div class="card" style="text-align:center"><h3 style="font-size:30px;letter-spacing:-.02em;color:var(--brand)">37%</h3><p>AI citation rate on priority queries — from a 0% baseline, across Google AI, ChatGPT, and Perplexity.</p></div>
+      <div class="card" style="text-align:center"><h3 style="font-size:30px;letter-spacing:-.02em;color:var(--brand)">+41%</h3><p>share of voice on the core commercial keyword set — Google organic, Shopping, and AI surfaces combined.</p></div>
+      <div class="card" style="text-align:center"><h3 style="font-size:30px;letter-spacing:-.02em;color:var(--brand)">83</h3><p>semantic gaps documented from zero — an evidence-led build list replacing editorial guesswork.</p></div>
+    </div>
+    <div class="note"><b>Rationale — proof</b>The current site has no customer story. This quote is the entire repositioning in a customer's mouth — “the tool told us to stop rewriting” — and the tiles carry the same numbers as the co-branded case study (one data spine across every asset). When the award entry and BrightonSEO talk make the story public, this section links to the full named case study.</div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="kicker">Who it's for</div>
+    <h2>Built for the person who answers for the revenue.</h2>
+    <div class="grid g3" style="margin-top:30px">
+      <div class="card"><h3>In-house marketing leads</h3><p>You own the number, not the tooling stack. Get the why behind flat traffic in language you can take to a P&amp;L — and stop paying for four tools that each know a fourth of the story.</p></div>
+      <div class="card"><h3>Consultants &amp; fractional strategists</h3><p>Walk into any client and diagnose their visibility in a day. White-label-ready reports that justify your retainer with evidence, not opinions.</p></div>
+      <div class="card"><h3>SEO professionals</h3><p>You already think in entities and intent. Get the scoring layer that mirrors engine mechanics — BM25, semantic vectors, patent-derived fan-out — without duct-taping five tools together.</p></div>
+    </div>
+    <div class="note"><b>Rationale — audience</b>Current audience language (“Affordable Plans for Agencies and Individual SEOs”) targets the most crowded, most price-sensitive segment only. Concept re-ranks: revenue-accountable operators first (the unserved segment), consultants second (the distribution channel — one strategist carries the tool into every client), practitioners third (retained as the credibility base, addressed in their own register).</div>
+  </div>
+</section>
+
+<section class="band" style="padding:56px 0">
+  <div class="wrap" style="display:flex;gap:34px;flex-wrap:wrap;align-items:center;justify-content:space-between">
+    <div style="max-width:640px">
+      <div class="kicker" style="color:#7fd99a">Under the hood</div>
+      <h2 style="font-size:26px">Scored the way engines score. Not word counts.</h2>
+      <p style="color:#aab6ca;font-size:15.5px;margin-top:8px">Semantic vector relevance, BM25 lexical scoring, BERT-based topic extraction, intent classification, and query fan-out derived from search patents. The methodology is the moat — it's just not the headline.</p>
+    </div>
+    <a class="btn ghost" style="color:#fff;border-color:#3a4763" href="#">Read the methodology →</a>
+    <div class="note" style="flex-basis:100%"><b>Rationale — mechanism placement</b>The current site leads with this material. Concept keeps every credibility signal — BM25, vectors, BERT, patents — but moves it to a supporting band with a deep-dive link. Practitioners still find their proof; operators are no longer bounced off the hero by vocabulary.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="kicker">Pricing</div>
+    <h2>Priced like a tool. Works like a team.</h2>
+    <p class="lede">Every plan diagnoses pages, tracks share of voice, and ends in a decision. No per-seat games.</p>
+    <div class="grid g3" style="margin-top:38px">
+      <div class="card price-card">
+        <h3>Diagnose</h3><div class="amount">$49<small>/mo</small></div>
+        <p style="font-size:13.5px;color:var(--muted)">For one site that needs answers.</p>
+        <ul>
+          <li class="lead-feat">100 page diagnoses/mo</li>
+          <li>Google share of voice (20 runs)</li>
+          <li>10 projects</li>
+          <li>Pre-publish relevance check</li>
+          <li>AI fix lists &amp; content outlines</li>
+        </ul>
+        <a class="btn ghost" href="#" style="text-align:center">Start free trial</a>
+      </div>
+      <div class="card price-card" style="border-color:var(--brand);box-shadow:0 16px 40px rgba(31,79,255,.12)">
+        <span class="tag">MOST POPULAR</span>
+        <h3>Monitor</h3><div class="amount">$149<small>/mo</small></div>
+        <p style="font-size:13.5px;color:var(--muted)">For teams accountable to the number.</p>
+        <ul>
+          <li class="lead-feat">AI answer tracking — ChatGPT + Perplexity</li>
+          <li class="lead-feat">Unlimited share-of-voice runs</li>
+          <li>300 page diagnoses/mo</li>
+          <li>Unlimited projects</li>
+          <li>Automated monthly proof reports</li>
+        </ul>
+        <a class="btn" href="#" style="text-align:center">Start free trial</a>
+      </div>
+      <div class="card price-card">
+        <h3>Scale</h3><div class="amount">$349<small>/mo</small></div>
+        <p style="font-size:13.5px;color:var(--muted)">For consultants &amp; multi-site portfolios.</p>
+        <ul>
+          <li class="lead-feat">700 page diagnoses/mo</li>
+          <li>Everything in Monitor</li>
+          <li>Shareable client reports</li>
+          <li>Multi-site portfolio projects</li>
+        </ul>
+        <a class="btn ghost" href="#" style="text-align:center">Start free trial</a>
+      </div>
+    </div>
+    <div class="note"><b>Rationale — packaging</b>Same underlying tiers and prices — this is a messaging repack, not a price change. “Report credits” becomes “page diagnoses” (a unit of value, not a vending-machine token). Tier names shift from buyer-type labels (Standard/Pro/Agency) to job labels (Diagnose/Monitor/Scale). AI answer tracking moves to the first line of the hero tier because it's the reason mid-market buyers show up in 2026. “Agency” is retired from the tier name so operators stop reading themselves out of the pricing page. Feature bullets are directional — final page needs a line-by-line audit against actual plan entitlements before publish.</div>
+  </div>
+</section>
+
+<section class="band" style="text-align:center">
+  <div class="wrap">
+    <h2>Run your first diagnosis in the next ten minutes.</h2>
+    <p class="lede" style="margin:0 auto 30px;max-width:560px">Pick the query your revenue depends on. We'll tell you why you're not the answer — and what to do about it.</p>
+    <a class="btn" href="#" style="font-size:17px;padding:16px 34px">Diagnose a page free</a>
+    <p style="font-size:13px;color:#8894ab;margin-top:14px">7-day trial · Plans from $49/mo · Cancel anytime</p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot-in">
+    <div><b style="color:var(--ink)">SERPrecon</b> · Search visibility diagnosis for Google and AI</div>
+    <div>Research · Methodology · Compare · Pricing · Contact</div>
+  </div>
+</footer>
+
+</body>
+</html>
