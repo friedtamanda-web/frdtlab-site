@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  @page { size: letter; margin: 0; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: Arial, Helvetica, sans-serif; color: #202124; font-size: 9.5pt; line-height: 1.4; }
+  .page { width: 8.5in; height: 11in; padding: 0.42in 0.75in; position: relative; overflow: hidden; }
+  .brand { font-size: 8pt; font-weight: bold; letter-spacing: 3px; color: #5f6368; margin-bottom: 10px; }
+  .brand .lab { color: #1a73e8; }
+  h1 { font-size: 18pt; font-weight: bold; margin-bottom: 4px; }
+  .sub { color: #5f6368; margin-bottom: 8px; }
+  .rule { height: 3px; background: #e8eaed; margin-bottom: 10px; position: relative; }
+  .rule::before { content: ""; position: absolute; left: 0; top: 0; height: 3px; width: 150px; background: #1a73e8; }
+  .callout { border-left: 3px solid #1a73e8; background: #f8f9fa; padding: 8px 14px; margin-bottom: 10px; }
+  .callout b { display: block; margin-bottom: 2px; }
+  .kicker { font-size: 7.5pt; font-weight: bold; letter-spacing: 2.5px; color: #1a73e8; margin-bottom: 6px; }
+  .hero { border: 1px solid #e8eaed; border-radius: 8px; padding: 12px 18px; margin-bottom: 10px; border-top: 4px solid; border-image: linear-gradient(90deg,#1a73e8,#e8388a) 1; background: #fbfcfe; }
+  .hero-top { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 6px; }
+  .badge { display: inline-block; border: 1px solid #1a73e8; color: #1a73e8; font-size: 7pt; font-weight: bold; letter-spacing: 1.5px; padding: 3px 8px; border-radius: 4px; }
+  .price { text-align: right; }
+  .price .big { font-size: 22pt; font-weight: bold; }
+  .price .big span { font-size: 9pt; color: #5f6368; font-weight: normal; }
+  .price .under { font-size: 8pt; color: #5f6368; }
+  .hero h2 { font-size: 14pt; margin-bottom: 5px; }
+  .hero p { color: #444; margin-bottom: 10px; padding-bottom: 8px; border-bottom: 1px solid #e8eaed; }
+  .cols { display: flex; gap: 22px; }
+  .cols ul { flex: 1; }
+  ul { list-style: none; }
+  ul li { padding-left: 13px; position: relative; margin-bottom: 5px; }
+  ul li::before { content: "▪"; color: #1a73e8; position: absolute; left: 0; font-size: 8pt; }
+  .row { display: flex; gap: 12px; margin-bottom: 10px; }
+  .card { flex: 1; border: 1px solid #e8eaed; border-radius: 8px; padding: 10px 14px; background: #f8f9fa; }
+  .card.rec { background: #eef4fe; border-color: #bcd3f7; }
+  .card .opt { font-size: 7pt; font-weight: bold; letter-spacing: 1.5px; color: #5f6368; margin-bottom: 4px; }
+  .card.rec .opt { color: #1a73e8; }
+  .card h3 { font-size: 11.5pt; margin-bottom: 5px; }
+  .card p { color: #444; margin-bottom: 7px; padding-bottom: 7px; border-bottom: 1px solid #e0e0e0; }
+  .card .terms { font-size: 8.5pt; }
+  .card .terms b { color: #1a73e8; }
+  .wk b { color: #1a73e8; margin-right: 5px; }
+  .fine { background: #f1f3f4; border-radius: 6px; padding: 10px 14px; font-size: 8.5pt; color: #333; }
+  .h4 { font-size: 7.5pt; font-weight: bold; letter-spacing: 2px; color: #1a73e8; margin-bottom: 7px; }
+  .note { font-size: 8pt; color: #5f6368; margin-top: 6px; }
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="brand">F R D T <span class="lab">L A B</span> &nbsp;·&nbsp; GROWTH SYSTEMS</div>
+  <h1>Get found. Turn it into customers. Own all of it.</h1>
+  <p class="sub">A focused engagement to make Sweet Pointe the place people search for, drive to, and gift from — built in phases, inside your budget, and yours to keep. 8–10 weeks.</p>
+  <div class="rule"></div>
+
+  <div class="callout">
+    <b>You've probably been sold marketing before — reports instead of customers.</b>
+    This is the opposite: a small system that gets you found, turns that into bookings and gift orders, and stays yours when we're done. No vanity metrics, no long contract, every account in your name.
+  </div>
+
+  <div class="kicker">THE ENGAGEMENT</div>
+  <div class="hero">
+    <div class="hero-top">
+      <span class="badge">WEBSITE + LOCAL REVENUE &nbsp;·&nbsp; 8–10 WEEKS</span>
+      <div class="price">
+        <div class="big">$5,000 <span>base</span></div>
+        <div class="under">+ Revenue Pack to $7,000</div>
+      </div>
+    </div>
+    <h2>Search-first, on purpose.</h2>
+    <p>We wire the foundation that gets you found — Google, Maps, and AI answers for “candy near me” — <b>before</b> we touch design. Then the refreshed site and social turn that traffic into parties, boxes, and gift orders.</p>
+    <div class="cols">
+      <ul>
+        <li><b>Search-first foundation</b> — GA4, Search Console, GBP, schema, clean URLs — wired before design</li>
+        <li><b>Design update, mockup-first</b> — homepage + model page approved, then build-out</li>
+        <li><b>Mobile + speed + QA</b> — clear paths to order, visit, contact</li>
+      </ul>
+      <ul>
+        <li><b>Social foundation</b> — Facebook + Instagram aligned, templates, calendar</li>
+        <li><b>4 weeks of social support</b> — batched content + posting cadence</li>
+        <li><b>Playbook + training</b> — so your team runs it after handoff</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="kicker">WHAT THE MONEY BUYS</div>
+  <div class="row">
+    <div class="card rec">
+      <div class="opt">BASE · $5,000</div>
+      <h3>Foundation + Site + Social</h3>
+      <p>The get-found foundation, the website update, the social system with templates + calendar, email capture, four weeks of support, and a playbook. Yours to keep.</p>
+      <div class="terms"><b>Terms:</b> $2,500 at signing · $1,250 at launch · $1,250 at wrap.</div>
+    </div>
+    <div class="card">
+      <div class="opt">+ $2,000 · LOCAL REVENUE PACK</div>
+      <h3>Pull gifting forward</h3>
+      <p>A bookable parties page, three ready-to-gift boxes launched, and a corporate &amp; realtor gifting one-pager with a 20-name outreach starter — plus a welcome email flow.</p>
+      <div class="terms"><b>Terms:</b> Approved in writing; lands at $7,000 total.</div>
+    </div>
+    <div class="card" style="background:#fff;">
+      <div class="h4" style="color:#e8388a;">HOW WE WORK</div>
+      <ul style="font-size:8.5pt;">
+        <li><b>Customers, not reports.</b> We track what moves money, ignore the rest.</li>
+        <li><b>You own everything.</b> Every account and asset in your name.</li>
+        <li><b>Start small, prove it.</b> Each phase pays for itself first.</li>
+        <li><b>Runs without you.</b> A system, not more on your plate.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="card" style="background:#fff;">
+      <div class="h4">HOW IT ROLLS OUT</div>
+      <ul>
+        <li class="wk"><b>Wk 1</b> Onboard · read your real numbers · shot list</li>
+        <li class="wk"><b>Wk 2</b> Get-found foundation: GBP, schema, tracking</li>
+        <li class="wk"><b>Wk 3–6</b> Mockup → approve → build → launch · parties + boxes + gifting live</li>
+        <li class="wk"><b>Wk 6–10</b> Social support · gifting outreach · handoff</li>
+      </ul>
+      <div class="note">Goal windows, not fixed dates — steered against a milestone plan.</div>
+    </div>
+    <div class="card" style="background:#fbeef4; border-color:#f3c2d8;">
+      <div class="h4" style="color:#e8388a;">WHY GIFTING FIRST</div>
+      <ul>
+        <li><b>The loudest channel is the lowest-revenue room</b> — teens bring the crowd; gifting pays the rent</li>
+        <li><b>Corporate + realtor gifting</b> is highest-ticket, repeatable, and locally uncontested</li>
+        <li><b>One realtor's closing-gift program</b> can outweigh a month of walk-ins — so it's in the first build</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="fine">
+    <b>What we need from you:</b> real store + product photos (phone photos work — we send a shot list), domain + logins, GBP access, confirmed hours, prompt approvals. &nbsp;<b>We don't guarantee a number</b> — anyone who does is the thing you're avoiding. We guarantee the work: done well, fully transparent, and yours. Tool subscriptions billed to you directly; paid ads and shipping come later, once local is proven.
+  </div>
+</div>
+</body>
+</html>

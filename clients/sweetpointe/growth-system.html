@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Sweet Pointe Growth System · FRDT Lab</title>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0d0d0f; --char:#16171c; --char2:#1c1e24; --soft:#f4f4f6; --mut:#9aa0ab;
+    --blue:#2f6bff; --pink:#ff2e7e; --steel:#3a3d46; --line:rgba(255,255,255,.09);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:'Inter',system-ui,sans-serif;background:var(--ink);color:var(--soft);line-height:1.6;-webkit-font-smoothing:antialiased}
+  h1,h2,h3,.disp, .mark{font-family:'Manrope',sans-serif}
+  .sec{padding:96px 32px;position:relative}
+  .wrap{max-width:920px;margin:0 auto}
+  .char{background:var(--char)}
+  .char2{background:var(--char2)}
+  .mark{font-size:12px;font-weight:600;letter-spacing:5px;color:var(--mut)}
+  .mark .lab{color:var(--blue)}
+  .kick{font-size:12px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--blue);margin-bottom:20px}
+  .kick.pink{color:var(--pink)}
+  .rule{width:52px;height:3px;background:var(--pink);border-radius:2px;margin:22px 0}
+  h1{font-size:clamp(38px,7vw,74px);font-weight:800;letter-spacing:-2.5px;line-height:1.0}
+  h2{font-size:clamp(28px,4.6vw,46px);font-weight:800;letter-spacing:-1.4px;line-height:1.06;margin-bottom:22px}
+  h3{font-size:20px;font-weight:700;letter-spacing:-.3px;margin-bottom:6px}
+  .lead{font-size:clamp(17px,2.2vw,21px);color:#d7d9df;max-width:680px;margin-bottom:16px}
+  p{font-size:16.5px;color:#c8cbd3;margin-bottom:14px}
+  .big-quote{font-family:'Manrope';font-size:clamp(26px,4.4vw,44px);font-weight:800;letter-spacing:-1.2px;line-height:1.12;color:var(--soft)}
+  .big-quote em{font-style:normal;color:var(--pink)}
+  .accent{color:var(--blue)}
+  b{color:var(--soft);font-weight:700}
+
+  /* COVER */
+  #cover{min-height:100vh;display:flex;flex-direction:column;justify-content:center;background:radial-gradient(1100px 600px at 72% 18%,rgba(47,107,255,.16),transparent 60%),radial-gradient(900px 500px at 20% 92%,rgba(255,46,126,.13),transparent 60%),var(--ink)}
+  #cover .prepared{margin-top:26px;color:var(--mut);font-size:14px}
+  #cover .prepared b{color:#dfe1e7}
+  .cover-h{margin:26px 0 10px}
+  .cover-sub{font-size:clamp(17px,2.3vw,22px);color:#d7d9df;max-width:620px;margin-top:14px}
+  .scrollcue{margin-top:54px;font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--mut)}
+
+  /* affirm chips */
+  .chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
+  .chip{border:1px solid var(--line);border-radius:999px;padding:9px 16px;font-size:13.5px;color:#d7d9df;background:rgba(255,255,255,.02)}
+  .chip b{color:var(--soft)}
+
+  /* two-col points */
+  .cols{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:26px}
+  .card{border:1px solid var(--line);border-radius:16px;padding:22px 24px;background:rgba(255,255,255,.02)}
+  .card .t{font-family:'Manrope';font-weight:700;font-size:17px;margin-bottom:6px;color:var(--soft)}
+  .card p{font-size:15px;margin:0}
+  .card.blue{border-left:3px solid var(--blue)}
+  .card.pink{border-left:3px solid var(--pink)}
+
+  /* phase rail */
+  .phases{margin-top:26px;display:flex;flex-direction:column;gap:12px}
+  .phase{display:grid;grid-template-columns:118px 1fr;gap:20px;border:1px solid var(--line);border-radius:16px;padding:20px 24px;background:rgba(255,255,255,.02)}
+  .phase .ph{font-family:'Manrope';font-weight:800;color:var(--blue);font-size:15px;letter-spacing:.5px}
+  .phase.hot{border-left:3px solid var(--pink)}
+  .phase.hot .ph{color:var(--pink)}
+  .phase .win{font-size:12.5px;color:var(--mut);margin-top:3px}
+  .phase h3{font-size:18px;margin-bottom:5px}
+  .phase p{font-size:14.5px;margin:0}
+
+  /* timeline strip */
+  .tl{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:24px}
+  .tl .t{border:1px solid var(--line);border-radius:14px;padding:16px 18px;background:rgba(255,255,255,.02)}
+  .tl .t b{display:block;color:var(--blue);font-family:'Manrope';font-weight:800;margin-bottom:6px;font-size:14px}
+  .tl .t span{font-size:13.5px;color:#c8cbd3}
+
+  /* outcome checklist */
+  .out{display:grid;grid-template-columns:1fr 1fr;gap:12px 30px;margin-top:24px}
+  .out div{position:relative;padding-left:26px;font-size:15.5px;color:#d7d9df}
+  .out div::before{content:"→";position:absolute;left:0;color:var(--blue);font-weight:700}
+  .out div b{color:var(--soft)}
+
+  /* stat tiles */
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:26px}
+  .stat{border:1px solid var(--line);border-radius:16px;padding:24px 22px;background:rgba(255,255,255,.02)}
+  .stat .n{font-family:'Manrope';font-weight:800;font-size:clamp(30px,3.6vw,42px);letter-spacing:-1.5px;line-height:1;color:var(--soft)}
+  .stat .n.blue{color:var(--blue)} .stat .n.pink{color:var(--pink)}
+  .stat .l{font-size:13.5px;color:#c8cbd3;margin-top:10px}
+  /* how we work */
+  .hiw{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:24px}
+  .hiw div{border:1px solid var(--line);border-left:3px solid var(--blue);border-radius:14px;padding:18px 20px;background:rgba(255,255,255,.02);font-size:15px;color:#c8cbd3}
+  .hiw div b{display:block;font-family:'Manrope';font-weight:700;color:var(--soft);margin-bottom:5px;font-size:16px}
+
+  /* options */
+  .opts{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:30px;text-align:left}
+  .opt{border:1px solid var(--line);border-radius:18px;padding:26px 24px;background:rgba(255,255,255,.02);display:flex;flex-direction:column}
+  .opt.rec{border-color:rgba(255,46,126,.55);box-shadow:0 0 0 1px rgba(255,46,126,.22),0 24px 70px rgba(255,46,126,.10)}
+  .opt .tag{font-size:11px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--mut);margin-bottom:10px}
+  .opt.rec .tag{color:var(--pink)}
+  .opt .oname{font-family:'Manrope';font-weight:800;font-size:19px;color:var(--soft);margin-bottom:8px}
+  .opt .oprice{font-family:'Manrope';font-weight:800;font-size:34px;letter-spacing:-1.5px;color:var(--soft);line-height:1}
+  .opt .odep{font-size:12.5px;color:var(--mut);margin:4px 0 16px}
+  .opt ul{list-style:none;margin:0 0 18px;flex:1}
+  .opt ul li{position:relative;padding-left:20px;font-size:13.3px;color:#c8cbd3;margin-bottom:8px}
+  .opt ul li::before{content:"→";position:absolute;left:0;color:var(--blue)}
+  .opt ul li.plus{color:#9aa0ab;font-style:italic}.opt ul li.plus::before{content:"＋";color:var(--mut)}
+  .opt .obtn{display:block;width:100%;text-align:center;background:rgba(255,255,255,.07);color:#fff;font-family:'Manrope';font-weight:700;font-size:15px;padding:14px;border-radius:12px;text-decoration:none;border:1px solid var(--line);transition:transform .12s;cursor:pointer}
+  .opt.rec .obtn{background:var(--pink);border-color:var(--pink);box-shadow:0 8px 30px rgba(255,46,126,.3)}
+  .opt .obtn:hover{transform:translateY(-1px)}
+  .module{margin-top:16px;border:1px solid rgba(47,107,255,.42);border-radius:16px;padding:20px 26px;background:rgba(47,107,255,.06);text-align:left}
+  .mrow{display:flex;justify-content:space-between;align-items:center;gap:22px}
+  .mh{font-family:'Manrope';font-weight:700;color:var(--soft);font-size:15px;margin-bottom:5px}
+  .ms{font-size:13px;color:#c8cbd3;max-width:660px;line-height:1.5}
+  .mprice{font-family:'Manrope';font-weight:800;font-size:22px;color:var(--blue);white-space:nowrap;text-align:right}
+  .mprice span{display:block;font-family:'Inter';font-weight:500;font-size:11px;color:var(--mut);letter-spacing:.5px}
+  .addonbar{margin-top:16px;border:1px solid var(--line);border-radius:16px;padding:22px 26px;background:rgba(255,255,255,.02);text-align:left}
+  .addonbar .h{font-family:'Manrope';font-weight:700;color:var(--soft);font-size:15px;margin-bottom:4px}
+  .addonbar .hs{font-size:13px;color:var(--mut);margin-bottom:14px}
+  .addonrow{display:grid;grid-template-columns:1fr 1fr;gap:9px 34px}
+  .addonrow div{display:flex;justify-content:space-between;font-size:13.5px;color:#c8cbd3;border-bottom:1px solid rgba(255,255,255,.06);padding-bottom:7px}
+  .addonrow div b{color:#fff;font-weight:600;white-space:nowrap;padding-left:12px}
+  /* build your own */
+  .byo{margin-top:16px;border:1px solid var(--line);border-radius:18px;padding:26px 28px;background:rgba(255,255,255,.02);text-align:left}
+  .byohead{margin-bottom:20px}
+  .byohead .mh{font-size:17px}
+  .byogrid{display:grid;grid-template-columns:1fr 1fr;gap:22px 44px}
+  .byolabel{font-size:11px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--mut);margin-bottom:8px}
+  .byolabel.pink{color:var(--pink)}
+  .byoitem{display:flex;align-items:center;gap:12px;padding:9px 0;border-bottom:1px solid rgba(255,255,255,.06);cursor:pointer;font-size:13.6px;color:#d7d9df}
+  .byoitem span{flex:1}
+  .byoitem b{color:#fff;font-weight:600;white-space:nowrap}
+  .byoitem input{width:17px;height:17px;accent-color:var(--pink);cursor:pointer;flex-shrink:0}
+  .byoitem.locked{cursor:default;color:#aab0bb}
+  .byoitem.locked b{color:#c8cbd3}
+  .byoitem.locked .lk{font-size:9.5px;letter-spacing:1px;color:var(--blue);text-transform:uppercase;border:1px solid rgba(47,107,255,.4);border-radius:5px;padding:1px 5px;margin-left:auto}
+  .byototal{display:flex;justify-content:space-between;align-items:center;gap:20px;margin-top:22px;padding-top:22px;border-top:1px solid var(--line)}
+  .byott{font-family:'Manrope';font-weight:700;color:var(--soft);font-size:16px}
+  .byotsub{font-size:12px;color:var(--mut);margin-top:3px;max-width:340px}
+  .byonums{text-align:right}
+  .byobig{font-family:'Manrope';font-weight:800;font-size:38px;letter-spacing:-1.5px;color:var(--soft);line-height:1}
+  .byodep{font-size:13px;color:var(--mut);margin-top:5px}.byodep b{color:var(--pink)}
+  .byocta{margin-top:22px;text-align:center}
+  .byocta .talklink{display:inline-block;margin-top:14px;color:#9aa0ab;font-size:13px;border-bottom:1px solid rgba(255,255,255,.15)}
+  /* invest */
+  #invest{background:radial-gradient(900px 500px at 50% 0%,rgba(47,107,255,.15),transparent 60%),var(--ink);text-align:center}
+  .price-wrap{display:inline-flex;align-items:baseline;gap:14px;margin:8px 0 4px}
+  .price-big{font-family:'Manrope';font-size:clamp(58px,10vw,96px);font-weight:800;letter-spacing:-3px;color:var(--soft);line-height:1}
+  .price-sub{color:var(--mut);font-size:16px}
+  .invcards{display:grid;grid-template-columns:1fr 1fr;gap:16px;max-width:760px;margin:30px auto 0;text-align:left}
+  .invcard{border:1px solid var(--line);border-radius:16px;padding:22px 24px;background:rgba(255,255,255,.02)}
+  .invcard.base{border-top:3px solid var(--blue)}
+  .invcard.pack{border-top:3px solid var(--pink)}
+  .invcard .amt{font-family:'Manrope';font-weight:800;font-size:20px;color:var(--soft);margin-bottom:8px}
+  .invcard p{font-size:14.5px;margin:0}
+  .cta{display:inline-block;margin-top:34px;background:var(--pink);color:#fff;font-family:'Manrope';font-weight:800;font-size:18px;letter-spacing:-.2px;padding:20px 46px;border-radius:14px;text-decoration:none;box-shadow:0 10px 40px rgba(255,46,126,.35);transition:transform .12s}
+  .cta:hover{transform:translateY(-2px)}
+  .terms{margin-top:16px;color:var(--mut);font-size:14px}
+  .terms a{color:#d7d9df}
+  /* scope split */
+  .split{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:26px}
+  .splitcol{border:1px solid var(--line);border-radius:16px;padding:24px 26px;background:rgba(255,255,255,.02)}
+  .splitcol.yes{border-top:3px solid var(--blue)}
+  .splitcol.no{border-top:3px solid var(--steel)}
+  .splitcol h4{font-family:'Manrope';font-size:12px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:16px}
+  .splitcol.yes h4{color:var(--blue)} .splitcol.no h4{color:var(--mut)}
+  .splitcol ul{list-style:none;margin:0}
+  .splitcol li{position:relative;padding-left:24px;font-size:14.5px;color:#c8cbd3;margin-bottom:11px;line-height:1.45}
+  .splitcol.yes li::before{content:"✓";position:absolute;left:0;color:var(--blue);font-weight:700}
+  .splitcol.no li::before{content:"—";position:absolute;left:0;color:var(--mut)}
+  .splitcol.no li{color:#9aa0ab}
+  .note{margin-top:24px;border:1px solid rgba(255,46,126,.28);border-left:3px solid var(--pink);border-radius:12px;padding:18px 22px;background:rgba(255,46,126,.04);font-size:14.5px;color:#d7d9df}
+  .note b{color:var(--soft)}
+  /* signature */
+  .sig{display:grid;grid-template-columns:1fr 1fr;gap:40px;margin-top:36px}
+  .sigline{border-top:1px solid var(--steel);padding-top:10px;margin-top:52px;font-family:'Manrope';font-size:12.5px;letter-spacing:1px;text-transform:uppercase;color:var(--mut)}
+  @media(max-width:720px){.split,.sig{grid-template-columns:1fr}}
+  /* sign card */
+  .signwrap{border:1px solid var(--line);border-radius:18px;padding:28px 30px;background:rgba(255,255,255,.02);margin-top:28px;max-width:640px}
+  .signrow{margin-bottom:16px}
+  .signlab{font-size:11px;font-weight:600;letter-spacing:1.2px;text-transform:uppercase;color:var(--mut);margin-bottom:9px;display:block}
+  .rgroup{display:flex;flex-direction:column;gap:8px}
+  .ro{display:flex;align-items:center;gap:11px;border:1px solid var(--line);border-radius:10px;padding:11px 14px;cursor:pointer;font-size:14px;color:#d7d9df}
+  .ro input{accent-color:var(--pink);width:16px;height:16px;flex-shrink:0}
+  .ro b{color:#fff;margin-left:auto;white-space:nowrap;font-weight:600}
+  .ro.sel{border-color:rgba(255,46,126,.5);background:rgba(255,46,126,.05)}
+  .field{width:100%;background:rgba(255,255,255,.04);border:1px solid var(--line);border-radius:10px;padding:12px 14px;color:var(--soft);font-family:'Inter';font-size:15px;outline:none}
+  .field:focus{border-color:var(--blue)}
+  .field::placeholder{color:#6b6f7a}
+  .padwrap{position:relative}
+  canvas.pad{width:100%;height:130px;background:#fbfbfd;border-radius:10px;border:1px solid var(--line);touch-action:none;cursor:crosshair;display:block}
+  .padclear{position:absolute;top:8px;right:10px;font-size:11.5px;color:#5b5f6a;background:rgba(255,255,255,.92);border:1px solid #dcdce2;border-radius:6px;padding:3px 9px;cursor:pointer}
+  .padhint{position:absolute;left:16px;top:50%;transform:translateY(-50%);color:#b9bcc4;font-family:'Manrope';font-style:italic;font-size:19px;pointer-events:none;transition:opacity .15s}
+  .agree{display:flex;align-items:flex-start;gap:11px;font-size:13.5px;color:#c8cbd3;cursor:pointer;margin:2px 0 4px;line-height:1.45}
+  .agree input{accent-color:var(--pink);width:17px;height:17px;margin-top:2px;flex-shrink:0}
+  .signbtn{width:100%;text-align:center;background:var(--pink);border:1px solid var(--pink);color:#fff;font-family:'Manrope';font-weight:800;font-size:16px;padding:15px;border-radius:12px;cursor:pointer;box-shadow:0 8px 30px rgba(255,46,126,.3);transition:transform .12s,opacity .12s}
+  .signbtn:hover{transform:translateY(-1px)}
+  .signbtn:disabled{opacity:.35;cursor:not-allowed;box-shadow:none;transform:none}
+  .signerr{color:var(--pink);font-size:13px;margin-top:10px;min-height:15px}
+  .signed{border:1px solid rgba(47,107,255,.42);background:rgba(47,107,255,.06);border-radius:14px;padding:24px 26px;margin-top:20px;max-width:640px;display:none}
+  .signed.show{display:block}
+  .signed .chk{color:var(--blue);font-family:'Manrope';font-weight:800;font-size:18px;margin-bottom:6px}
+  .signed .who{font-size:14px;color:#d7d9df;margin-bottom:2px}
+  .signed .who b{color:var(--soft)}
+  .paybtn{display:inline-block;margin-top:16px;background:var(--pink);color:#fff;font-family:'Manrope';font-weight:800;font-size:16px;padding:15px 30px;border-radius:12px;text-decoration:none;box-shadow:0 8px 30px rgba(255,46,126,.3)}
+  .subtle{display:inline-block;margin-top:14px;color:#9aa0ab;font-size:13px;border-bottom:1px solid rgba(255,255,255,.16);cursor:pointer;text-decoration:none}
+  .subtle+.subtle{margin-left:20px}
+  .foot{border-top:1px solid var(--line);text-align:center;padding:34px;color:#6b6f7a;font-size:11.5px;letter-spacing:2px;text-transform:uppercase}
+
+  @media(max-width:720px){.cols,.hiw,.invcards,.out,.opts,.addonrow{grid-template-columns:1fr}.tl,.stats{grid-template-columns:1fr 1fr}.phase{grid-template-columns:1fr}.mrow{flex-direction:column;align-items:flex-start}.mprice{text-align:left}.byogrid{grid-template-columns:1fr}.byototal{flex-direction:column;align-items:flex-start}.byonums{text-align:left}.sec{padding:72px 22px}}
+</style>
+</head>
+<body>
+
+<!-- 1 · COVER -->
+<section class="sec" id="cover">
+  <div class="wrap">
+    <div class="mark">F R D T <span class="lab">L A B</span> &nbsp;·&nbsp; GROWTH SYSTEMS</div>
+    <h1 class="cover-h">Sweet Pointe<br>Growth System</h1>
+    <div class="rule"></div>
+    <div class="cover-sub">You already built something people love. This is the machine that carries it past the front door — and gets the rest of the city to drive for it.</div>
+    <div class="prepared">Prepared for <b>Dave &amp; the Sweet Pointe team</b> &nbsp;·&nbsp; By <b>Amanda Friedt · FRDT Lab</b> &nbsp;·&nbsp; July 13, 2026 &nbsp;·&nbsp; Valid through Aug 13, 2026</div>
+    <div class="scrollcue">Scroll ↓</div>
+  </div>
+</section>
+
+<!-- 2 · THE TRUTH -->
+<section class="sec char">
+  <div class="wrap">
+    <div class="kick">Start Here</div>
+    <div class="big-quote">You don't run a candy store.<br>You run a <em>destination.</em></div>
+    <p style="margin-top:24px;max-width:680px">People will drive thirty-five, fifty minutes for a place worth the trip. That one fact changes the math. It widens your reach far past the neighborhood, and it changes who you're really competing with — not the candy aisle at the grocery store, but a family's Saturday and a gift-buyer's click.</p>
+    <p style="max-width:680px">The sweetness is already handled. What's missing isn't better candy. It's the system that makes the whole region know you're here.</p>
+  </div>
+</section>
+
+<!-- 3 · WHAT YOU'VE ALREADY BUILT -->
+<section class="sec">
+  <div class="wrap">
+    <div class="kick">What You've Already Built</div>
+    <h2>Most shops spend years<br>trying to earn what you<br>already have.</h2>
+    <p class="lead">We're not walking in to fix you. You've done the hard, real part — the part that can't be faked. Our job is to amplify it.</p>
+    <div class="chips">
+      <div class="chip"><b>A 1932 legacy, reborn</b> — roots in a Detroit candy shop</div>
+      <div class="chip"><b>The cotton-candy spin</b> — a show people film</div>
+      <div class="chip"><b>The bulk wall</b> — 135 bins, pick by the pound</div>
+      <div class="chip"><b>Real reviews already rolling in</b> — a community that shows up</div>
+      <div class="chip"><b>The Kercheval corridor</b> — a brewery and a new bookshop on the block</div>
+      <div class="chip"><b>A real family behind the counter</b></div>
+    </div>
+    <p style="margin-top:26px;max-width:680px">Every one of those is something a national chain structurally can't copy. That's not the problem to solve — it's the raw signal to turn up.</p>
+  </div>
+</section>
+
+<!-- 4 · THE GAP IS REACH -->
+<section class="sec char">
+  <div class="wrap">
+    <div class="kick pink">The Real Gap</div>
+    <div class="big-quote">The work is done.<br>The <em>reach</em> isn't.</div>
+    <p style="margin-top:24px;max-width:680px">The people who'd happily drive forty minutes for a 1932 candy destination mostly don't know you exist yet. When they search "candy near me," or ask an AI where to find a birthday spot or a client gift, you're not in the answer — not because you're not worth it, but because nothing's telling the machine you're here.</p>
+    <div class="cols">
+      <div class="card pink">
+        <div class="t">The loudest room is the smallest one</div>
+        <p>Teens bring the crowd and the free content — but gifting and families are what pay the rent. We lead where the money already is, and let the noise amplify it.</p>
+      </div>
+      <div class="card blue">
+        <div class="t">One lane is wide open</div>
+        <p>Corporate &amp; realtor gifting is high-ticket, repeat, and locally uncontested. In this zip code, one realtor's closing-gift habit can outweigh a month of walk-ins.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 4b · THE OPPORTUNITY IN NUMBERS -->
+<section class="sec">
+  <div class="wrap">
+    <div class="kick">Where The Opportunity Is</div>
+    <h2>The demand is already<br>here. It's just going<br>somewhere else.</h2>
+    <p class="lead">We pulled the numbers for your zip code and your audience. Every one of them points the same direction — local, gift-driven, and searchable.</p>
+    <div class="stats">
+      <div class="stat"><div class="n blue">40,000</div><div class="l">monthly "candy near me" searches near you — that you're not showing up for yet.</div></div>
+      <div class="stat"><div class="n">65%</div><div class="l">of your buyers are 26–50 working professionals — not teens. That's the gifting lane.</div></div>
+      <div class="stat"><div class="n pink">#1</div><div class="l">gifting sits highest-margin and locally uncontested. One realtor's habit &gt; a month of walk-ins.</div></div>
+      <div class="stat"><div class="n">156k</div><div class="l">people in r/candy alone — plus r/Detroit, r/Michigan. Free reach your competitors ignore.</div></div>
+    </div>
+    <p style="margin-top:26px;max-width:720px">And where your buyers actually are: <b>YouTube, Facebook, Instagram, Reddit</b> — in that order. TikTok ranks last and is falling. So the social plan leads where the money is, not where the noise is. The whole system is built to catch demand that already exists — not manufacture it.</p>
+  </div>
+</section>
+
+<!-- 5 · THE STRATEGY -->
+<section class="sec">
+  <div class="wrap">
+    <div class="kick">The Strategy</div>
+    <h2>Get found. Turn it into<br>revenue. Keep the rhythm.</h2>
+    <p class="lead">One connected system, not a pile of tactics. Each piece feeds the next, and it keeps working when you're not in the room.</p>
+    <div class="cols" style="grid-template-columns:1fr 1fr 1fr">
+      <div class="card"><div class="t accent">Found</div><p>Wired so you show up in Google, on Maps, and in the AI answers people now ask first.</p></div>
+      <div class="card"><div class="t accent">Revenue</div><p>Parties, gift boxes, and the gifting lane — the fast, high-margin cash, pulled forward.</p></div>
+      <div class="card"><div class="t accent">Rhythm</div><p>A light content system your own team can run — the spin, the restocks, the reviews.</p></div>
+    </div>
+    <p style="margin-top:26px;max-width:680px">This is the part that outlives a campaign: your store becomes <b>machine-readable</b>. When someone asks an assistant for the best local candy gift under fifty dollars, the system is what puts your name in the reply.</p>
+  </div>
+</section>
+
+<!-- 5b · THE WEBSITE -->
+<section class="sec char">
+  <div class="wrap">
+    <div class="kick">The Website</div>
+    <h2>A smaller site.<br>Every foundation.</h2>
+    <p class="lead">A few pages, done right — not a sprawling rebuild you'll never finish updating. And we're not moving you off what already works.</p>
+    <p style="max-width:680px">You run Lightspeed. Your register, your inventory, your day live there. Re-platforming to Shopify means abandoning that or running two systems that fight each other — cost and risk a young shop doesn't need. So we don't migrate you. We build a small, fast, conversion-first site that plugs into Lightspeed and leaves it as your single source of truth. One place to update. No double entry.</p>
+    <div class="cols" style="grid-template-columns:1fr 1fr 1fr">
+      <div class="card blue"><div class="t">Built on what you have</div><p>Lightspeed stays the source of truth; the site syncs to it. No migration, nothing for your team to relearn.</p></div>
+      <div class="card blue"><div class="t">Small, but complete</div><p>Home plus the pages that make money — parties, gift boxes, gifting. Each one on the full foundation: local schema, tracking, mobile + speed, AI-findable.</p></div>
+      <div class="card blue"><div class="t">An easy button for your team</div><p>We build it with an agentic workflow and hand you a simple UI. Change a price, swap a photo, post a box — no developer, no ticket.</p></div>
+    </div>
+    <p style="margin-top:24px;max-width:680px">The site should be the easiest thing you touch all week — not the scariest.</p>
+  </div>
+</section>
+
+<!-- 5c · SOCIAL SUPPORT -->
+<section class="sec">
+  <div class="wrap">
+    <div class="kick pink">Social Support</div>
+    <h2>One shoot day.<br>A month of content.</h2>
+    <p class="lead">Your edge is already real — the spin, the wall, your team on camera. We turn one afternoon into a library, then hand your crew a system to keep it moving.</p>
+    <div class="cols" style="grid-template-columns:1fr 1fr 1fr">
+      <div class="card pink"><div class="t">A live shoot day</div><p>We come in and capture the spin, the bulk wall, taste-tests, the boxes — enough raw material to feed weeks of posts in a single session.</p></div>
+      <div class="card pink"><div class="t">A template system</div><p>Branded, reusable post templates so anything new drops into a look that's already yours. Consistent without a designer.</p></div>
+      <div class="card pink"><div class="t">A rhythm your team runs</div><p>Batched once a week, mirrored across Facebook and Instagram. Not a daily treadmill — a system that holds.</p></div>
+    </div>
+    <p style="margin-top:24px;max-width:680px">We'll also clean up and connect your profiles — one consistent handle, wired into the site so Google and the AI engines read every account as the same real business, not a stranger. It's small, cheap, and quietly one of the highest-leverage fixes on the list.</p>
+    <p style="max-width:680px">We don't run your social forever. We build the machine, prove it, and hand you the keys.</p>
+  </div>
+</section>
+
+<!-- 5d · CONTENT & FLOWS -->
+<section class="sec char">
+  <div class="wrap">
+    <div class="kick">The Machine Around The Site</div>
+    <h2>Pages don't sell.<br>Flows do.</h2>
+    <p class="lead">The site gets you found. The flows and content around it turn a visit into a booking, a box, or a gift order — and bring people back without you lifting a finger.</p>
+    <div class="cols" style="grid-template-columns:1fr 1fr 1fr">
+      <div class="card blue"><div class="t">Money flows</div><p>Party booking, gift-box order, and a corporate/realtor gifting inquiry → quote — plus a "which box is right?" gift-finder that lifts the average order.</p></div>
+      <div class="card blue"><div class="t">Email that runs itself</div><p>A welcome series built on your 1932 story, a birthday club that auto-sends a treat that month, and seasonal sends timed to the calendar that already spikes.</p></div>
+      <div class="card pink"><div class="t">Findable content</div><p>An FAQ hub written so AI lifts it word-for-word, the heritage story, and light gift guides that catch "teacher gifts under $30" and "retro candy michigan."</p></div>
+      <div class="card blue"><div class="t">A reviews engine</div><p>The single biggest lever for a place people drive to. We set up the ask, the response rhythm, and push your best reviews out across the site and your Google profile — not buried on one page.</p></div>
+      <div class="card pink"><div class="t">An agentic marketing layer</div><p>The part that keeps working after launch: workflows that draft posts, refresh gift guides, and flag SEO and schema gaps. You approve, they run — built on the tools you already pay for, not another subscription.</p></div>
+      <div class="card blue"><div class="t">Numbers you can see</div><p>GA4, Search Console, and social insights wired into one Looker dashboard on the four things that matter — party bookings, box orders, gifting inquiries, list signups. No vanity metrics.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 6 · THE PLAN -->
+<section class="sec char2">
+  <div class="wrap">
+    <div class="kick">The Plan · 8–10 Weeks</div>
+    <h2>Four phases. Each one<br>pays for itself before<br>the next begins.</h2>
+    <div class="phases">
+      <div class="phase">
+        <div><div class="ph">Phase 0</div><div class="win">Weeks 1–2</div></div>
+        <div><h3>Get found</h3><p>Google Business Profile dialed in, the reviews engine started, local schema, and full measurement — GA4, Search Console, and a Looker dashboard on your four numbers. Pure plumbing — the highest-return work in the whole plan.</p></div>
+      </div>
+      <div class="phase hot">
+        <div><div class="ph">Phase 1</div><div class="win">Weeks 3–8</div></div>
+        <div><h3>Local revenue — gifting first</h3><p>A refreshed, mockup-first site with two clear paths (book a party, order a box), three ready-to-gift boxes, and the corporate/realtor gifting lane opened with a real outreach list.</p></div>
+      </div>
+      <div class="phase">
+        <div><div class="ph">Phase 2</div><div class="win">Weeks 9–16</div></div>
+        <div><h3>Content &amp; retention</h3><p>Your team's real content — the spin, taste-tests, restocks — batched once a week, plus email flows that run on their own. Only once Phase 1 is producing.</p></div>
+      </div>
+      <div class="phase">
+        <div><div class="ph">Phase 3</div><div class="win">Month 5+</div></div>
+        <div><h3>Expansion</h3><p>Shipping, a subscription, paid reach — but only once the local system is proven and asking for it.</p></div>
+      </div>
+    </div>
+    <div class="tl">
+      <div class="t"><b>Wk 1</b><span>Onboard. We start by reading your real numbers.</span></div>
+      <div class="t"><b>Wk 2</b><span>Found: profile, schema, tracking live.</span></div>
+      <div class="t"><b>Wk 3–6</b><span>Site + boxes + gifting go live.</span></div>
+      <div class="t"><b>Wk 6–10</b><span>Support, gifting outreach, handoff.</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- 7 · WHAT YOU'LL HAVE -->
+<section class="sec">
+  <div class="wrap">
+    <div class="kick">What You'll Have</div>
+    <h2>A system that runs<br>when you're not<br>in the room.</h2>
+    <div class="out">
+      <div><b>A store that gets found</b> — Google, Maps, and AI answers</div>
+      <div><b>Two clear paths to money</b> — book a party, order a box</div>
+      <div><b>A gifting lane open</b> — corporate + realtor, outreach started</div>
+      <div><b>An email list you own</b> — with a welcome flow running</div>
+      <div><b>Your own content rhythm</b> — batched, not improvised</div>
+      <div><b>A reviews engine running</b> — asked for, answered, shown off</div>
+      <div><b>One dashboard on your four numbers</b> — GA4, Search Console, Looker</div>
+      <div><b>A playbook + training</b> — so your team runs it</div>
+      <div><b>Every account in your name</b> — nothing locked to us</div>
+      <div><b>The reach your store already earned</b></div>
+    </div>
+  </div>
+</section>
+
+<!-- 8 · HOW WE WORK -->
+<section class="sec char">
+  <div class="wrap">
+    <div class="kick">How We Work</div>
+    <h2>The opposite of what<br>you've been sold before.</h2>
+    <div class="hiw">
+      <div><b>Customers, not reports.</b> You'll know it's working because the phone rings and the boxes sell — not because a dashboard got longer.</div>
+      <div><b>You own everything.</b> Every account, login, and asset is yours from day one. When we hand off, it stays yours.</div>
+      <div><b>We start small and prove it.</b> Each phase pays for itself before the next. No big bet, no long contract to escape.</div>
+      <div><b>Built to run without you.</b> The point isn't more on your plate — it's a system that keeps generating.</div>
+      <div><b>One operator, not a handoff.</b> You work with the person who built the strategy. No junior telephone game.</div>
+      <div><b>We build on your stack, not around it.</b> Lightspeed, your Google profile, Meta, your email — we build on top of what you already run. New apps only when they clearly pay for themselves, and always your call.</div>
+    </div>
+  </div>
+</section>
+
+<!-- 9 · INVEST + PAY -->
+<section class="sec" id="invest">
+  <div class="wrap">
+    <div class="kick">Choose Your Start</div>
+    <h2 style="text-align:center">Three ways in.<br>Pick where you land.</h2>
+    <p class="lead" style="margin:0 auto;text-align:center">Every option is built on the same foundation and is yours to keep. Pick the one that fits, sign below, and your deposit reserves the slot and triggers Week 1.</p>
+
+    <div class="opts">
+      <div class="opt">
+        <div class="tag">Option 1</div>
+        <div class="oname">Get Found</div>
+        <div class="oprice">$5,000</div>
+        <div class="odep">$2,500 deposit to start</div>
+        <ul>
+          <li>Get-found foundation — GBP, reviews engine, local schema</li>
+          <li>Measurement — GA4, Search Console, Looker dashboard</li>
+          <li>Small site, every foundation, on Lightspeed</li>
+          <li>Social profiles cleaned + connected, templates, calendar</li>
+          <li>Email capture + 4 weeks support + playbook</li>
+        </ul>
+        <button class="obtn" type="button" onclick="chooseOpt(1)">Choose Get Found →</button>
+      </div>
+
+      <div class="opt rec">
+        <div class="tag">Option 2 · Recommended</div>
+        <div class="oname">Found + Local Revenue</div>
+        <div class="oprice">$7,000</div>
+        <div class="odep">$2,500 deposit to start</div>
+        <ul>
+          <li class="plus">Everything in Get Found, plus:</li>
+          <li>Bookable parties page + 3 gift boxes launched</li>
+          <li>Corporate &amp; realtor gifting flow + 20-name outreach</li>
+          <li>Welcome email flow</li>
+        </ul>
+        <button class="obtn" type="button" onclick="chooseOpt(2)">Choose this →</button>
+      </div>
+
+      <div class="opt">
+        <div class="tag">Option 3</div>
+        <div class="oname">The Content Engine</div>
+        <div class="oprice">$9,500</div>
+        <div class="odep">$3,500 deposit to start</div>
+        <ul>
+          <li class="plus">Everything in Local Revenue, plus:</li>
+          <li>Email suite — welcome, birthday club, seasonal</li>
+          <li>FAQ hub + AI-answer content + gift-finder flow</li>
+          <li>A live shoot day + templates + first content batch</li>
+        </ul>
+        <button class="obtn" type="button" onclick="chooseOpt(3)">Choose Content Engine →</button>
+      </div>
+    </div>
+
+    <div class="module">
+      <div class="mrow">
+        <div class="mleft">
+          <div class="mh">Tracking &amp; Reporting install — included in every option</div>
+          <div class="ms">GA4, Search Console, social console, and a Looker dashboard on your four numbers — party bookings, box orders, gifting inquiries, list signups. Priced separately so you see exactly what the measurement layer costs; it's already folded into the total above, not added on top.</div>
+        </div>
+        <div class="mprice">est. $750<span>in your total</span></div>
+      </div>
+    </div>
+
+    <div class="byo" id="byo">
+      <div class="byohead">
+        <div class="mh">Or build your own</div>
+        <div class="ms">Check your must-haves — the total updates as you go. The foundation stays on (it's what makes the rest work); everything else is yours to pick. Not sure? Start lean and add revenue pieces as they prove out.</div>
+      </div>
+      <div class="byogrid">
+        <div class="byocol">
+          <div class="byolabel">The foundation · always on</div>
+          <label class="byoitem locked"><input type="checkbox" checked disabled data-price="1500" data-name="Get-found foundation (GBP, reviews engine, local schema)"><span>Get found — GBP, reviews engine, local schema</span><b>$1,500</b><span class="lk">core</span></label>
+          <label class="byoitem locked"><input type="checkbox" checked disabled data-price="750" data-name="Tracking & Reporting (GA4, Search Console, Looker)"><span>Tracking &amp; reporting — GA4, Search Console, Looker</span><b>$750</b><span class="lk">core</span></label>
+          <div class="byolabel" style="margin-top:20px">Recommended</div>
+          <label class="byoitem"><input type="checkbox" checked data-price="1750" data-name="Small site on Lightspeed (every foundation)"><span>Small site on Lightspeed — every foundation</span><b>$1,750</b></label>
+          <label class="byoitem"><input type="checkbox" checked data-price="700" data-name="Social foundation (profiles cleaned + templates + calendar)"><span>Social foundation — profiles + templates + calendar</span><b>$700</b></label>
+          <label class="byoitem"><input type="checkbox" checked data-price="300" data-name="Email capture + 4 weeks support + playbook"><span>Email capture + support + playbook</span><b>$300</b></label>
+        </div>
+        <div class="byocol">
+          <div class="byolabel pink">Revenue</div>
+          <label class="byoitem"><input type="checkbox" data-price="700" data-name="Bookable parties page"><span>Bookable parties page</span><b>$700</b></label>
+          <label class="byoitem"><input type="checkbox" data-price="600" data-name="3 gift boxes launched"><span>3 gift boxes launched</span><b>$600</b></label>
+          <label class="byoitem"><input type="checkbox" data-price="500" data-name="Corporate & realtor gifting flow + outreach"><span>Corporate &amp; realtor gifting flow + outreach</span><b>$500</b></label>
+          <label class="byoitem"><input type="checkbox" data-price="200" data-name="Welcome email flow"><span>Welcome email flow</span><b>$200</b></label>
+          <div class="byolabel pink" style="margin-top:20px">Content &amp; reach</div>
+          <label class="byoitem"><input type="checkbox" data-price="600" data-name="Email suite (birthday club + seasonal)"><span>Email suite — birthday club + seasonal</span><b>$600</b></label>
+          <label class="byoitem"><input type="checkbox" data-price="900" data-name="FAQ hub + AI-answer content + gift-finder"><span>FAQ hub + AI-answer content + gift-finder</span><b>$900</b></label>
+          <label class="byoitem"><input type="checkbox" data-price="1000" data-name="Live shoot day + templates + first content batch"><span>Live shoot day + templates + first batch</span><b>$1,000</b></label>
+          <label class="byoitem"><input type="checkbox" data-price="500" data-name="Agentic marketing layer (ongoing workflows)"><span>Agentic marketing layer — ongoing workflows</span><b>$500</b></label>
+        </div>
+      </div>
+      <div class="byototal">
+        <div>
+          <div class="byott">Your build</div>
+          <div class="byotsub">50% reserves your slot · balance milestone-gated. I confirm the final number before anything runs.</div>
+        </div>
+        <div class="byonums">
+          <div class="byobig" id="byoTotal">$5,000</div>
+          <div class="byodep">Deposit <b id="byoDep">$2,500</b></div>
+        </div>
+      </div>
+      <div class="byocta">
+        <a class="obtn" id="byoReserve" style="display:inline-block;background:var(--pink);border-color:var(--pink);box-shadow:0 8px 30px rgba(255,46,126,.3);padding:14px 34px" href="mailto:friedt.amanda@gmail.com?subject=Sweet%20Pointe%20%E2%80%94%20My%20Build%20Selection">Send my build to Amanda →</a>
+        <div><a class="talklink" href="mailto:friedt.amanda@gmail.com?subject=Sweet%20Pointe%20%E2%80%94%20Let's%20talk%20priorities">Prefer to talk priorities first? →</a></div>
+      </div>
+    </div>
+
+    <div class="addonbar">
+      <div class="h">Add-ons — bolt onto any option</div>
+      <div class="hs">Pulled from the research and the original plan. Add now or later.</div>
+      <div class="addonrow">
+        <div>Additional live shoot day <b>$750</b></div>
+        <div>Gift-guide content pack — 3 occasion pages <b>$600</b></div>
+        <div>PTO "Yum-Raising" fundraiser storefront <b>$500</b></div>
+        <div>Kercheval cross-promo asset kit <b>$300</b></div>
+        <div>Advanced reporting — custom Looker views + monthly readout <b>$400</b></div>
+        <div>Extended social support <b>$750 / mo</b></div>
+      </div>
+    </div>
+
+    <div class="terms">Your deposit reserves your build slot and triggers Week 1; the balance is milestone-gated. <b style="color:#c8cbd3">Final payment is processed no later than the engagement end date — a change in timeline does not move the final payment date.</b> Fees exclude any new technology, app, or software subscriptions that may be required (booking tools, email/Klaviyo, hosting, apps), which are billed to you directly. Every account and asset is yours to keep. <a href="#scope" style="color:#c8cbd3;border-bottom:1px solid rgba(255,255,255,.2)">See the full scope &amp; terms →</a><br>Questions first? <a href="mailto:friedt.amanda@gmail.com?subject=Sweet%20Pointe%20Growth%20System">Email Amanda</a>.</div>
+  </div>
+</section>
+
+<!-- 10 · SCOPE -->
+<section class="sec char" id="scope">
+  <div class="wrap">
+    <div class="kick">Scope · What's In, What's Not</div>
+    <h2>Clear lines, so there<br>are no surprises.</h2>
+    <p class="lead">Every engagement is built on the same foundation. What you add on top depends on the option — or the pieces — you choose. Here's where the work starts and stops.</p>
+    <div class="split">
+      <div class="splitcol yes">
+        <h4>Included</h4>
+        <ul>
+          <li>Get-found foundation — Google Business Profile, reviews engine, local schema</li>
+          <li>Tracking &amp; reporting — GA4, Search Console, social console, Looker dashboard on your four numbers</li>
+          <li>A small, fast site built on Lightspeed — no re-platforming, no double entry</li>
+          <li>Social profiles cleaned, connected, and wired to the site (sameAs)</li>
+          <li>Revenue paths per your option — parties, gift boxes, corporate/realtor gifting</li>
+          <li>Agentic build + a simple UI your team runs without a developer</li>
+          <li>Mobile-responsive design and cross-device QA</li>
+          <li>A playbook + training so the system runs without us</li>
+          <li>Every account and asset in your name from day one</li>
+        </ul>
+      </div>
+      <div class="splitcol no">
+        <h4>Not Included</h4>
+        <ul>
+          <li>New technology, app, or software subscriptions (booking tools, email/Klaviyo, hosting, apps) — billed to you directly</li>
+          <li>Migration off Lightspeed or your payments platform</li>
+          <li>Ongoing content writing beyond what's listed in your chosen option</li>
+          <li>Paid advertising setup or management</li>
+          <li>Shipping/ecommerce fulfillment, subscriptions, or a loyalty program — deferred to a later phase</li>
+          <li>Photo/video production beyond the shoot day, if selected</li>
+          <li>A full site rebuild — this is a small, complete site, not every page you could imagine</li>
+        </ul>
+      </div>
+    </div>
+    <div class="note"><b>No surprise invoices.</b> Scope changes — extra pages, added workflow complexity, a bigger shoot — are quoted and approved before any work begins. Your deposit reserves your slot; the balance is milestone-gated, and final payment is processed no later than the engagement end date regardless of timeline shifts.</div>
+  </div>
+</section>
+
+<!-- 11 · SIGN & START -->
+<section class="sec" id="sign">
+  <div class="wrap">
+    <div class="kick pink">Sign &amp; Start</div>
+    <h2>Sign here, and<br>Week 1 begins.</h2>
+    <p class="lead">Confirm your start, sign below, and your deposit reserves the slot. A countersigned copy and the full agreement follow — nothing locks in until we both sign.</p>
+
+    <div class="signwrap" id="signForm">
+      <div class="signrow">
+        <span class="signlab">Starting with</span>
+        <div class="rgroup" id="planGroup">
+          <label class="ro"><input type="radio" name="plan" value="1" data-label="Get Found — $5,000" data-dep="$2,500 deposit" data-link="https://buy.stripe.com/bJe8wPfwu4bZ6eP3WW38400"><span>Get Found — $5,000</span><b>$2,500 deposit</b></label>
+          <label class="ro"><input type="radio" name="plan" value="2" data-label="Found + Local Revenue — $7,000" data-dep="$2,500 deposit" data-link="https://buy.stripe.com/bJe8wPfwu4bZ6eP3WW38400"><span>Found + Local Revenue — $7,000</span><b>$2,500 deposit</b></label>
+          <label class="ro"><input type="radio" name="plan" value="3" data-label="The Content Engine — $9,500" data-dep="$3,500 deposit" data-link="https://buy.stripe.com/dRm7sL4RQgYL6eP8dc38401"><span>The Content Engine — $9,500</span><b>$3,500 deposit</b></label>
+          <label class="ro"><input type="radio" name="plan" value="custom" data-label="Custom build (from the builder above)" data-dep="I'll confirm your number" data-link="mailto:friedt.amanda@gmail.com?subject=Sweet%20Pointe%20%E2%80%94%20Custom%20build"><span>Custom build — you pick the pieces</span><b>I'll confirm</b></label>
+        </div>
+      </div>
+
+      <div class="signrow">
+        <span class="signlab">Your name</span>
+        <input class="field" id="sigName" type="text" placeholder="Type your full name" autocomplete="name">
+      </div>
+
+      <div class="signrow">
+        <span class="signlab">Signature</span>
+        <div class="padwrap">
+          <canvas class="pad" id="sigPad"></canvas>
+          <div class="padhint" id="padHint">Sign here</div>
+          <div class="padclear" id="padClear">Clear</div>
+        </div>
+      </div>
+
+      <label class="agree"><input type="checkbox" id="sigAgree"><span>I, the signer, agree on behalf of Sweet Pointe Candy to the scope, deliverables, and terms as presented on this page. I understand the deposit reserves the build slot and that the full agreement follows for countersignature.</span></label>
+
+      <div class="signrow" style="margin:14px 0 0">
+        <button class="signbtn" id="signBtn" type="button" disabled>Sign &amp; continue to deposit →</button>
+        <div class="signerr" id="signErr"></div>
+      </div>
+    </div>
+
+    <div class="signed" id="signedBox">
+      <div class="chk">✓ Signed. You're all set.</div>
+      <div class="who">Signed by <b id="outName">—</b> · <span id="outDate">—</span></div>
+      <div class="who" id="outPlan">—</div>
+      <a class="paybtn" id="payBtn" href="#">Place your deposit →</a>
+      <div>
+        <a class="subtle" id="emailCopy" href="#">Email the signed record to Amanda →</a>
+        <a class="subtle" id="downloadCopy" href="#">Download signed copy</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="foot">FRDT LAB · GROWTH SYSTEMS · Confidential — prepared for Sweet Pointe Candy · July 13, 2026 · Valid 30 days<br><a href="#scope" style="color:#8b8f99;border-bottom:1px solid rgba(255,255,255,.18);padding-bottom:1px;letter-spacing:.5px">Read the full scope &amp; terms →</a></div>
+
+<script>
+(function(){
+  var box = document.getElementById('byo');
+  if(!box) return;
+  var items = box.querySelectorAll('input[type=checkbox]');
+  var totalEl = document.getElementById('byoTotal');
+  var depEl = document.getElementById('byoDep');
+  var reserve = document.getElementById('byoReserve');
+  function money(n){ return '$' + n.toLocaleString('en-US'); }
+  function update(){
+    var total = 0, picked = [];
+    items.forEach(function(cb){
+      if(cb.checked){ total += parseInt(cb.dataset.price, 10) || 0; picked.push(cb.dataset.name); }
+    });
+    var dep = Math.round(total * 0.5 / 50) * 50;
+    totalEl.textContent = money(total);
+    depEl.textContent = money(dep);
+    var body = 'Hi Amanda,\n\nHere are the pieces I want for Sweet Pointe:\n\n- ' +
+      picked.join('\n- ') +
+      '\n\nEstimated build: ' + money(total) + ' (deposit ' + money(dep) + ').\n\nLet me know the final number and we can get started.\n\nThanks,\nDave';
+    reserve.href = 'mailto:friedt.amanda@gmail.com?subject=' +
+      encodeURIComponent('Sweet Pointe — My Build Selection') +
+      '&body=' + encodeURIComponent(body);
+  }
+  items.forEach(function(cb){ cb.addEventListener('change', update); });
+  update();
+})();
+
+/* ---- SIGN & START ---- */
+function chooseOpt(n){
+  var r = document.querySelector('#planGroup input[value="'+n+'"]');
+  if(r){ r.checked = true; r.dispatchEvent(new Event('change',{bubbles:true})); }
+  var s = document.getElementById('sign');
+  if(s) s.scrollIntoView({behavior:'smooth'});
+}
+(function(){
+  var form = document.getElementById('signForm');
+  if(!form) return;
+  var pad = document.getElementById('sigPad'), ctx = pad.getContext('2d');
+  var hint = document.getElementById('padHint');
+  var nameEl = document.getElementById('sigName'), agreeEl = document.getElementById('sigAgree');
+  var btn = document.getElementById('signBtn'), errEl = document.getElementById('signErr');
+  var radios = document.querySelectorAll('#planGroup input[name=plan]');
+  var hasStroke = false, drawing = false, last = null;
+
+  function sizePad(){
+    var r = pad.getBoundingClientRect(), dpr = window.devicePixelRatio || 1;
+    pad.width = Math.round(r.width * dpr); pad.height = Math.round(r.height * dpr);
+    ctx.setTransform(dpr,0,0,dpr,0,0);
+    ctx.lineWidth = 2.2; ctx.lineCap = 'round'; ctx.lineJoin = 'round'; ctx.strokeStyle = '#16171c';
+  }
+  sizePad(); window.addEventListener('resize', function(){ var d=pad.toDataURL(); sizePad(); var img=new Image(); img.onload=function(){var r=pad.getBoundingClientRect();ctx.drawImage(img,0,0,r.width,r.height);}; img.src=d; });
+
+  function pos(e){
+    var r = pad.getBoundingClientRect();
+    var t = e.touches ? e.touches[0] : e;
+    return { x: t.clientX - r.left, y: t.clientY - r.top };
+  }
+  function start(e){ e.preventDefault(); drawing = true; last = pos(e); hint.style.opacity = 0; }
+  function move(e){
+    if(!drawing) return; e.preventDefault();
+    var p = pos(e);
+    ctx.beginPath(); ctx.moveTo(last.x,last.y); ctx.lineTo(p.x,p.y); ctx.stroke();
+    last = p; hasStroke = true; validate();
+  }
+  function end(){ drawing = false; }
+  pad.addEventListener('mousedown',start); pad.addEventListener('mousemove',move); window.addEventListener('mouseup',end);
+  pad.addEventListener('touchstart',start,{passive:false}); pad.addEventListener('touchmove',move,{passive:false}); pad.addEventListener('touchend',end);
+
+  document.getElementById('padClear').addEventListener('click', function(){
+    ctx.clearRect(0,0,pad.width,pad.height); hasStroke=false; hint.style.opacity=1; validate();
+  });
+
+  radios.forEach(function(r){ r.addEventListener('change', function(){
+    document.querySelectorAll('#planGroup .ro').forEach(function(l){ l.classList.remove('sel'); });
+    if(r.checked) r.closest('.ro').classList.add('sel');
+    validate();
+  });});
+  nameEl.addEventListener('input', validate);
+  agreeEl.addEventListener('change', validate);
+
+  function selectedPlan(){ return document.querySelector('#planGroup input[name=plan]:checked'); }
+  function validate(){
+    var ok = nameEl.value.trim().length >= 2 && agreeEl.checked && !!selectedPlan() && hasStroke;
+    btn.disabled = !ok;
+    if(ok) errEl.textContent = '';
+    return ok;
+  }
+
+  function today(){
+    var d = new Date();
+    return d.toLocaleDateString('en-US',{year:'numeric',month:'long',day:'numeric'});
+  }
+
+  btn.addEventListener('click', function(){
+    if(!validate()){
+      var miss = [];
+      if(!selectedPlan()) miss.push('choose what you’re starting with');
+      if(nameEl.value.trim().length < 2) miss.push('add your name');
+      if(!hasStroke) miss.push('sign in the box');
+      if(!agreeEl.checked) miss.push('check the agreement box');
+      errEl.textContent = 'Please ' + miss.join(', ') + '.';
+      return;
+    }
+    var plan = selectedPlan();
+    var name = nameEl.value.trim();
+    var date = today();
+    var label = plan.dataset.label, dep = plan.dataset.dep, link = plan.dataset.link;
+
+    document.getElementById('outName').textContent = name;
+    document.getElementById('outDate').textContent = date;
+    document.getElementById('outPlan').textContent = label + ' · ' + dep;
+
+    var payBtn = document.getElementById('payBtn');
+    if(plan.value === 'custom'){
+      payBtn.textContent = 'Send my build to Amanda →';
+      payBtn.href = link;
+    } else if(/REPLACE/.test(link)){
+      payBtn.textContent = 'Reserve my spot →';
+      payBtn.href = 'mailto:friedt.amanda@gmail.com?subject=' + encodeURIComponent('Sweet Pointe — Reserve ' + label) +
+        '&body=' + encodeURIComponent('Hi Amanda,\n\nI signed and want to start with ' + label + ' (' + dep + '). Please send my deposit link.\n\n' + name);
+    } else {
+      payBtn.textContent = 'Place your ' + dep.replace(' deposit','') + ' deposit →';
+      payBtn.href = link;
+    }
+
+    // email signed record
+    var body = 'Sweet Pointe Candy — signed agreement acknowledgment\n\n' +
+      'Signer: ' + name + '\nDate: ' + date + '\nStarting with: ' + label + ' (' + dep + ')\n\n' +
+      'The signer agreed on this page to the scope, deliverables, and terms as presented. ' +
+      'Signature captured on-page; deposit reserves the build slot.';
+    document.getElementById('emailCopy').href = 'mailto:friedt.amanda@gmail.com?subject=' +
+      encodeURIComponent('Sweet Pointe — Signed by ' + name) + '&body=' + encodeURIComponent(body);
+
+    // downloadable signed copy (PNG)
+    document.getElementById('downloadCopy').addEventListener('click', function(ev){
+      ev.preventDefault();
+      var W=900, H=560, c=document.createElement('canvas'); c.width=W; c.height=H;
+      var g=c.getContext('2d');
+      g.fillStyle='#ffffff'; g.fillRect(0,0,W,H);
+      g.fillStyle='#0d0d0f'; g.font='700 26px Manrope, sans-serif';
+      g.fillText('Sweet Pointe Growth System', 48, 64);
+      g.fillStyle='#2f6bff'; g.font='600 13px Inter, sans-serif';
+      g.fillText('SIGNED AGREEMENT ACKNOWLEDGMENT · FRDT LAB', 48, 92);
+      g.fillStyle='#2c2a26'; g.font='400 16px Inter, sans-serif';
+      g.fillText('Signer: ' + name, 48, 150);
+      g.fillText('Date: ' + date, 48, 182);
+      g.fillText('Starting with: ' + label + ' (' + dep + ')', 48, 214);
+      var wrap = 'The signer agreed on the Sweet Pointe Growth System page to the scope,';
+      var wrap2 = 'deliverables, and terms as presented. The deposit reserves the build slot;';
+      var wrap3 = 'the full agreement follows for countersignature.';
+      g.fillStyle='#5b5750'; g.font='400 14px Inter, sans-serif';
+      g.fillText(wrap, 48, 258); g.fillText(wrap2, 48, 280); g.fillText(wrap3, 48, 302);
+      // signature
+      g.strokeStyle='#e4e0d8'; g.beginPath(); g.moveTo(48,430); g.lineTo(430,430); g.stroke();
+      g.fillStyle='#8f8a80'; g.font='400 12px Inter, sans-serif'; g.fillText('Signature', 48, 452);
+      var sig=new Image();
+      sig.onload=function(){
+        g.drawImage(sig, 48, 340, 360, 84);
+        var a=document.createElement('a'); a.download='SweetPointe-Signed-'+name.replace(/\s+/g,'')+'.png';
+        a.href=c.toDataURL('image/png'); a.click();
+      };
+      sig.src = pad.toDataURL('image/png');
+    }, {once:false});
+
+    // lock form, show confirmation
+    form.style.display='none';
+    var box=document.getElementById('signedBox'); box.classList.add('show');
+    box.scrollIntoView({behavior:'smooth'});
+  });
+})();
+</script>
+</body>
+</html>

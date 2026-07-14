@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  @page { size: letter; margin: 0; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: Arial, Helvetica, sans-serif; color: #202124; font-size: 9.5pt; line-height: 1.4; }
+  .page { width: 8.5in; height: 11in; padding: 0.6in 0.75in; position: relative; page-break-after: always; }
+  .page:last-child { page-break-after: auto; }
+  .brand { font-size: 8pt; font-weight: bold; letter-spacing: 3px; color: #5f6368; margin-bottom: 12px; }
+  .brand .lab { color: #1a73e8; }
+  h1 { font-size: 16pt; font-weight: bold; margin-bottom: 5px; }
+  .sub { color: #5f6368; margin-bottom: 12px; }
+  .rule { height: 3px; background: #e8eaed; margin-bottom: 16px; position: relative; }
+  .rule::before { content: ""; position: absolute; left: 0; top: 0; height: 3px; width: 150px; background: #1a73e8; }
+  .kicker { font-size: 7.5pt; font-weight: bold; letter-spacing: 2.5px; color: #1a73e8; margin-bottom: 6px; }
+  .gantt { border: 1px solid #e8eaed; border-radius: 8px; padding: 8px 14px; margin-bottom: 11px; }
+  table.g { width: 100%; border-collapse: collapse; }
+  table.g th { font-size: 7.5pt; letter-spacing: 1px; color: #5f6368; text-align: left; padding: 4px 4px 8px 4px; border-bottom: 1px solid #e8eaed; font-weight: bold; }
+  table.g td { padding: 3.5px 4px; vertical-align: middle; }
+  .ws { width: 1.55in; }
+  .ws b { display: block; font-size: 9pt; }
+  .ws span { font-size: 7.5pt; color: #80868b; }
+  .barcell { position: relative; height: 20px; }
+  .bar { position: absolute; top: 1px; height: 18px; border-radius: 4px; color: #fff; font-size: 7pt; font-weight: bold; line-height: 18px; padding: 0 8px; white-space: nowrap; overflow: hidden; }
+  .b-blue { background: #1a73e8; }
+  .b-pink { background: #e8388a; }
+  .b-green { background: #34a853; }
+  .b-gray { background: #5f6368; }
+  .legend { font-size: 7.5pt; color: #5f6368; margin-top: 10px; border-top: 1px solid #e8eaed; padding-top: 8px; }
+  .legend span { margin-right: 16px; }
+  .dot { display: inline-block; width: 10px; height: 10px; border-radius: 2px; vertical-align: -1px; margin-right: 5px; }
+  .cards { display: flex; flex-wrap: wrap; gap: 9px; }
+  .mcard { width: calc(50% - 5px); border: 1px solid #e8eaed; border-radius: 8px; padding: 8px 12px; background: #fafbfc; }
+  .mcard .top { display: flex; justify-content: space-between; margin-bottom: 4px; }
+  .mcard .top b { font-size: 10.5pt; }
+  .mcard .goal { font-size: 8pt; font-weight: bold; color: #1a73e8; }
+  .mcard p { font-size: 8.5pt; color: #444; margin-bottom: 5px; }
+  .gate { font-size: 7.5pt; font-weight: bold; color: #34a853; }
+  .gate::before { content: "▶ "; }
+  .footline { position: absolute; bottom: 0.45in; left: 0.75in; right: 0.75in; display: flex; justify-content: space-between; font-size: 8pt; color: #5f6368; }
+  .footline .blue { color: #1a73e8; font-weight: bold; }
+  .footline .right { text-align: right; font-size: 7.5pt; letter-spacing: 1px; }
+  .outbox { border: 1px solid #e8eaed; border-top: 4px solid #34a853; border-radius: 8px; padding: 16px 18px; margin-bottom: 16px; }
+  .outbox h2 { font-size: 13pt; margin-bottom: 4px; }
+  .outbox .lede { font-size: 8.5pt; color: #5f6368; margin-bottom: 12px; }
+  .checkcols { display: flex; gap: 24px; }
+  .checkcols ul { flex: 1; list-style: none; }
+  .checkcols li { padding-left: 16px; position: relative; margin-bottom: 8px; font-size: 9pt; }
+  .checkcols li::before { content: "✓"; color: #34a853; position: absolute; left: 0; font-weight: bold; }
+  .guard { border: 1px solid #f3c2d8; border-left: 4px solid #e8388a; border-radius: 8px; padding: 14px 18px; }
+  .guard .gk { font-size: 7.5pt; font-weight: bold; letter-spacing: 2.5px; color: #e8388a; margin-bottom: 8px; }
+  .guard ul { list-style: none; }
+  .guard li { padding-left: 14px; position: relative; margin-bottom: 7px; font-size: 8.5pt; color: #333; }
+  .guard li::before { content: "■"; color: #e8388a; position: absolute; left: 0; font-size: 7pt; }
+</style>
+</head>
+<body>
+
+<!-- PAGE 1 -->
+<div class="page">
+  <div class="brand">F R D T <span class="lab">L A B</span> &nbsp;·&nbsp; PROJECT TIMELINE</div>
+  <h1>Sweet Pointe Website Update + Social Support — 8–10 Week Build</h1>
+  <p class="sub">Milestone-gated, steered against goal windows. The website work is front-loaded; social support runs through the tail so the rhythm holds after launch.</p>
+  <div class="rule"></div>
+
+  <div class="kicker">THE BUILD, AT A GLANCE</div>
+  <div class="gantt">
+    <table class="g">
+      <tr><th class="ws">WORKSTREAM</th><th>Wk 1</th><th>Wk 2–3</th><th>Wk 4–5</th><th>Wk 6</th><th>Wk 7–8</th><th>Wk 9–10</th></tr>
+      <tr>
+        <td class="ws"><b>Onboard &amp; Access</b><span>session · assets · priorities</span></td>
+        <td colspan="6" class="barcell"><div class="bar b-blue" style="left:0%; width:13%;">Kickoff</div></td>
+      </tr>
+      <tr>
+        <td class="ws"><b>Search Foundation</b><span>GA4 · GSC · GBP · schema</span></td>
+        <td colspan="6" class="barcell"><div class="bar b-blue" style="left:13%; width:22%;">Wired before design</div></td>
+      </tr>
+      <tr>
+        <td class="ws"><b>Design Update</b><span>mockup · build-out · QA</span></td>
+        <td colspan="6" class="barcell"><div class="bar b-blue" style="left:26%; width:39%;">Mockup · approve · build · QA</div></td>
+      </tr>
+      <tr>
+        <td class="ws"><b>Social Foundation</b><span>profiles · templates · calendar</span></td>
+        <td colspan="6" class="barcell"><div class="bar b-pink" style="left:45%; width:30%;">FB + IG aligned · templates</div></td>
+      </tr>
+      <tr>
+        <td class="ws"><b>Site Launch</b><span>goal: wk 5–6</span></td>
+        <td colspan="6" class="barcell"><div class="bar b-green" style="left:62%; width:14%;">Live</div></td>
+      </tr>
+      <tr>
+        <td class="ws"><b>Local Revenue Pack</b><span>parties · boxes · gifting</span></td>
+        <td colspan="6" class="barcell"><div class="bar" style="left:55%; width:33%; background:#f2a600;">Parties · 3 boxes · corporate/realtor gifting</div></td>
+      </tr>
+      <tr>
+        <td class="ws"><b>Social Support</b><span>batched content · cadence</span></td>
+        <td colspan="6" class="barcell"><div class="bar b-gray" style="left:66%; width:34%;">Check-ins · batches</div></td>
+      </tr>
+      <tr>
+        <td class="ws"><b>Wrap + Handoff</b><span>playbook · training</span></td>
+        <td colspan="6" class="barcell"><div class="bar b-green" style="left:88%; width:12%;">Handoff</div></td>
+      </tr>
+    </table>
+    <div class="legend">
+      <span><span class="dot b-blue"></span>Website + search</span>
+      <span><span class="dot b-pink"></span>Social system</span>
+      <span><span class="dot" style="background:#f2a600;"></span>Local revenue (gifting)</span>
+      <span><span class="dot b-green"></span>Launch gates</span>
+      <span><span class="dot b-gray"></span>Ongoing support</span>
+    </div>
+  </div>
+
+  <div class="kicker">MILESTONE GATES &amp; GOAL WINDOWS</div>
+  <div class="cards">
+    <div class="mcard"><div class="top"><b>M1 · Onboard</b><span class="goal">Week 1</span></div><p>Working session, review of the store's real numbers to set priorities, access + asset handoff, shot list.</p><div class="gate">Triggers start · $2,500 at signing</div></div>
+    <div class="mcard"><div class="top"><b>M2 · Foundation Ready</b><span class="goal">Goal: Wk 2</span></div><p>Tracking + Search Console verified, GBP cleaned, schema + URL map staged, email capture live.</p><div class="gate">Milestone gate</div></div>
+    <div class="mcard"><div class="top"><b>M3 · Mockup Approved</b><span class="goal">Goal: Wk 3–4</span></div><p>Homepage + one model page designed into the live stack, approved before build-out.</p><div class="gate">Milestone gate</div></div>
+    <div class="mcard"><div class="top"><b>M4 · Site Live</b><span class="goal">Goal: Wk 5–6</span></div><p>Build-out complete, QA passed (schema, speed, links), sitemap submitted.</p><div class="gate">Milestone gate · $1,250 at launch</div></div>
+    <div class="mcard"><div class="top"><b>M5 · Revenue + Social Live</b><span class="goal">Goal: Wk 6–8</span></div><p>Profiles + templates live. Revenue Pack: parties page, 3 boxes, gifting one-pager + outreach started.</p><div class="gate">Milestone gate</div></div>
+    <div class="mcard"><div class="top"><b>M6 · Wrap + Handoff</b><span class="goal">Goal: Wk 8–10</span></div><p>Support complete, welcome flow running, playbook delivered, team trained. Everything in your name.</p><div class="gate">Final gate · $1,250 at wrap</div></div>
+  </div>
+
+  <div class="footline">
+    <div>We build the presence <span class="blue">underneath</span> the counter traffic.</div>
+    <div class="right">FRDT LAB · GROWTH SYSTEMS<br>Sweet Pointe Candy · Page 1 of 2</div>
+  </div>
+</div>
+
+<!-- PAGE 2 -->
+<div class="page">
+  <div class="brand">F R D T <span class="lab">L A B</span> &nbsp;·&nbsp; PROJECT TIMELINE</div>
+  <h1>What You Have At The End</h1>
+  <p class="sub">Not a folder of recommendations. A refreshed presence your team operates.</p>
+  <div class="rule"></div>
+
+  <div class="outbox">
+    <h2>The Output — Week 10</h2>
+    <p class="lede">Everything below is live, documented, and in your team's hands — running whether or not anyone from FRDT is in the room.</p>
+    <div class="checkcols">
+      <ul>
+        <li><b>A site that gets found</b> — Google, Maps, and AI answers for "candy near me"</li>
+        <li><b>Two clear paths to money</b> — book a party, order a box, above the fold</li>
+        <li><b>A gifting lane open</b> — corporate + realtor one-pager, outreach started</li>
+        <li><b>An email list you own</b> — capture live, welcome flow running</li>
+      </ul>
+      <ul>
+        <li><b>Aligned social profiles</b> — Facebook + Instagram, with a template + calendar system</li>
+        <li><b>A first run of published content</b> — the rhythm already moving at handoff</li>
+        <li><b>Playbook + training</b> — so the team runs it without FRDT</li>
+        <li><b>Every account + asset in your name</b> — nothing locked to us</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="guard">
+    <div class="gk">SCOPE GUARDRAILS</div>
+    <ul>
+      <li><b>The fee covers the scoped update, not unlimited builds.</b> New systems, migrations, full e-commerce rebuilds, or major campaigns are scoped as separate batched builds.</li>
+      <li><b>Existing platform, refreshed.</b> The update happens on your current platform (or an agreed equivalent) — not an open-ended custom rebuild.</li>
+      <li><b>Goal windows, not fixed deadlines.</b> Launch targets are steered toward; timelines shift with content readiness and access. Milestones gate the work, not calendar dates.</li>
+      <li><b>A defined cadence.</b> Onboarding session plus weekly check-ins during the support window — not open-ended on-demand availability.</li>
+      <li><b>Client provides timely access &amp; assets.</b> Domain, logins, GBP access, confirmed hours, and real store + product photos (phone photos work — shot list provided at onboarding). Milestone clocks pause when access, assets, or sign-off is the blocker.</li>
+      <li><b>Tool fees + paid media are separate.</b> Subscriptions billed to client. Paid advertising is a distinct managed budget with its own scope.</li>
+    </ul>
+  </div>
+
+  <div class="footline">
+    <div>Sequence beats simultaneity. <span class="blue">One system at a time.</span></div>
+    <div class="right">FRDT LAB · GROWTH SYSTEMS<br>Sweet Pointe Candy · Page 2 of 2</div>
+  </div>
+</div>
+
+</body>
+</html>

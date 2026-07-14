@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  @page { size: letter; margin: 0; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: Arial, Helvetica, sans-serif; color: #17222e; font-size: 9.3pt; line-height: 1.4; }
+  .page { width: 8.5in; height: 11in; padding: 0.55in 0.8in 0.5in 0.8in; position: relative; page-break-after: always; overflow: hidden; }
+  .page:last-child { page-break-after: auto; }
+  .brand { font-size: 8pt; font-weight: bold; letter-spacing: 3px; color: #5b6672; margin-bottom: 12px; }
+  .brand .lab { color: #1a73e8; }
+  .kicker { font-size: 7.5pt; font-weight: bold; letter-spacing: 2.5px; color: #1a73e8; margin: 14px 0 5px 0; }
+  h1 { font-size: 20pt; font-weight: 800; letter-spacing: -0.8px; color: #0F2438; margin-bottom: 7px; line-height: 1.04; }
+  .sub { color: #5b6672; font-size: 10.5pt; margin-bottom: 5px; }
+  .rule { height: 3px; background: #e8eaed; margin: 9px 0 4px 0; position: relative; }
+  .rule::before { content: ""; position: absolute; left: 0; top: 0; height: 3px; width: 140px; background: #1a73e8; }
+  h2 { font-size: 12.5pt; font-weight: 800; color: #0F2438; margin: 13px 0 5px 0; padding-bottom: 3px; border-bottom: 2px solid #1a73e8; letter-spacing: -0.3px; }
+  p { margin-bottom: 6px; }
+  b.hot { color: #0F2438; }
+  .answer { background: #EAF2FD; border-left: 4px solid #1a73e8; border-radius: 0 8px 8px 0; padding: 12px 16px; margin: 6px 0 10px 0; }
+  .answer b { color: #0F2438; }
+  ul { list-style: none; margin: 3px 0 8px 0; }
+  ul li { padding-left: 15px; position: relative; margin-bottom: 4px; }
+  ul li::before { content: "▪"; color: #1a73e8; position: absolute; left: 2px; font-size: 8pt; }
+  ul.chk li::before { content: "✓"; color: #34a853; font-weight: bold; }
+  table { width: 100%; border-collapse: collapse; margin: 5px 0 9px 0; font-size: 8.3pt; }
+  th { background: #0F2438; color: #fff; text-align: left; padding: 5px 8px; font-size: 8pt; }
+  td { padding: 5px 8px; border: 1px solid #E4EAF1; vertical-align: top; }
+  tr.hl td { background: #EAF2FD; }
+  .win td { background: #eafaf0; }
+  .score { text-align: center; font-weight: bold; }
+  .note { font-size: 7.8pt; color: #5b6672; font-style: italic; }
+  .footer { position: absolute; bottom: 0.36in; left: 0.8in; right: 0.8in; display: flex; justify-content: space-between; font-size: 7.3pt; color: #9aa5b1; letter-spacing: .5px; }
+  .footer .blue { color: #1a73e8; font-weight: bold; }
+  .two { display: flex; gap: 16px; }
+  .two > div { flex: 1; }
+  .src { font-size: 7.3pt; color: #6b7280; margin-top: 2px; }
+  .src a, a { color: #1a73e8; text-decoration: none; }
+</style>
+</head>
+<body>
+
+<!-- PAGE 1 -->
+<div class="page">
+  <div class="brand">F R D T <span class="lab">L A B</span> &nbsp;·&nbsp; STRATEGY + SYSTEMS STUDIO</div>
+  <div class="kicker" style="margin-top:0;">WEBSITE DEFINITION · RESEARCH-BACKED · JULY 2026</div>
+  <h1>Sweet Pointe Candy —<br>What Your Website Will Be</h1>
+  <p class="sub">The platform, the pages, and the foundations — decided on evidence, built to get found, and kept on the system you already run.</p>
+  <div class="rule"></div>
+
+  <div class="answer">
+    <b>The short version.</b> We build a <b>small, fast site with every foundation</b> — home plus the handful of pages that make money — and we <b>keep Lightspeed as your single source of truth</b> instead of migrating you to Shopify. Your register and inventory stay exactly where they are. On top of that we add the layer Lightspeed doesn't do on its own: the schema and structure that get you named in Google, Maps, and AI answers when someone asks "candy near me." You get a simple UI to run it. No double entry, no re-platform, no developer on speed-dial.
+  </div>
+
+  <h2>The Platform Decision</h2>
+  <p>You run <b class="hot">Lightspeed Retail</b> — it's your register, your inventory, your day. The real question isn't "which website builder," it's <b class="hot">how to get a modern, findable site without breaking what already works.</b> We looked at four paths.</p>
+  <table>
+    <tr><th style="width:26%">Path</th><th>SEO basics</th><th>Schema / AI-answer</th><th>Team-edit</th><th>Inventory sync</th><th>Cost / risk</th></tr>
+    <tr class="win"><td><b>① Lightspeed eCom (E-Series) + a GEO layer</b> &nbsp;<span class="note">recommended</span></td><td class="score">Strong<br><span class="note">native</span></td><td class="score">Added<br><span class="note">we inject</span></td><td class="score">Easy</td><td class="score">Native<br><span class="note">one system</span></td><td class="score">Low</td></tr>
+    <tr><td><b>② Marketing front end + Lightspeed store</b> &nbsp;<span class="note">fallback</span></td><td class="score">Full</td><td class="score">Full</td><td class="score">Medium</td><td class="score">Native</td><td class="score">Med</td></tr>
+    <tr><td>③ Third-party sync bridge to another storefront</td><td class="score">Varies</td><td class="score">Varies</td><td class="score">Medium</td><td class="score">Bridged<br><span class="note">failure point</span></td><td class="score">Med</td></tr>
+    <tr><td>④ Migrate to Shopify</td><td class="score">Full</td><td class="score">Full</td><td class="score">Easy</td><td class="score"><b>Breaks</b><br><span class="note">2 systems or drop POS</span></td><td class="score"><b>High</b></td></tr>
+  </table>
+  <p><b class="hot">The finding:</b> Lightspeed's own eCom already covers the commerce SEO basics — clean URLs, an auto-generated sitemap, custom meta titles/descriptions, 301 redirects, and image alt text — and it keeps inventory synced to your POS as one system. Its one real gap is that it <b>doesn't add structured-data / schema on its own</b> — and schema is exactly what wins AI answers. So we build on Lightspeed and <b>inject the GEO layer ourselves.</b> If, once we're in, E-Series can't carry the custom pages and schema we need, we drop to the fallback — a fast marketing site for the get-found pages that links into your Lightspeed store for catalog and checkout. Either way, <b class="hot">you stay on Lightspeed.</b></p>
+  <p class="note">Why not Shopify: re-platforming means either abandoning the Lightspeed POS your team already runs, or running two inventory systems that fight each other (double entry, sync conflicts). That's cost and risk a seven-week-old shop doesn't need — and it's the opposite of "small site, all foundations."</p>
+  <div class="src">Sources: Lightspeed — <a>Improving SEO for eCom (E-Series)</a> (x-series-support.lightspeedhq.com); <a>Lightspeed eCom</a> (lightspeedhq.com/ecom); <a>Lightspeed vs Shopify POS comparison</a> (technologyadvice.com); <a>Lightspeed Retail integration / SKUPlugs</a>.</div>
+
+  <div class="footer"><div>We build the infrastructure <span class="blue">underneath</span> growth.</div><div>Sweet Pointe Candy · Website Definition · Page 1 of 3</div></div>
+</div>
+
+<!-- PAGE 2 -->
+<div class="page">
+  <div class="brand">F R D T <span class="lab">L A B</span> &nbsp;·&nbsp; STRATEGY + SYSTEMS STUDIO</div>
+
+  <h2>The Site — Every Page Earns Its Place</h2>
+  <p>Small doesn't mean thin. It means we build only the pages that capture real demand — each one on the full foundation, each with one clear job.</p>
+  <table>
+    <tr><th style="width:22%">Page</th><th>What it's for</th><th>Primary CTA</th><th style="width:12%">Phase</th></tr>
+    <tr class="hl"><td><b>Home</b></td><td>The destination + the 1932 heritage in one glance; sends people to the two money paths.</td><td>Book a Party / Shop Boxes</td><td>1</td></tr>
+    <tr><td><b>Parties</b></td><td>Packages, photos, what's included, booking. Plan-ahead revenue; "candy buffet grosse pointe."</td><td>Book / Inquire</td><td>1</td></tr>
+    <tr><td><b>Gift Boxes</b></td><td>The three hero boxes, styled as gifts by occasion. Lead with the occasion, not the ingredients.</td><td>Order a Box</td><td>1</td></tr>
+    <tr><td><b>Corporate &amp; Realtor Gifting</b></td><td>The underpriced lane: logo boxes, local delivery, net terms. High-ticket, repeat.</td><td>Request a Quote</td><td>1</td></tr>
+    <tr><td><b>Visit</b></td><td>Hours, map, parking, the Kercheval block. Feeds Google Business Profile + "near me."</td><td>Get Directions</td><td>1</td></tr>
+    <tr><td><b>About / 1932</b></td><td>The Lee's Grocery heritage — trust + the "retro candy michigan" nostalgia search.</td><td>Visit / Follow</td><td>1</td></tr>
+    <tr><td><b>FAQ hub</b></td><td>Engineered for AI extraction — plain-language answers AI engines lift verbatim.</td><td>(citation asset)</td><td>1</td></tr>
+    <tr><td>Full catalog / checkout</td><td>Stays in Lightspeed eCom, synced to inventory. Not rebuilt.</td><td>Add to Cart</td><td>Lightspeed</td></tr>
+    <tr><td>Shipping / subscriptions / gift guides</td><td>Deferred — added once the local system is proven.</td><td>—</td><td>Later</td></tr>
+  </table>
+
+  <h2>The Foundations — Day-One Checklist</h2>
+  <div class="two">
+    <div>
+      <ul class="chk">
+        <li><b>GA4 + Search Console</b> verified and tracking the four conversions</li>
+        <li><b>Google Business Profile</b> completed, categories Candy Store + Event Venue, weekly posts, monthly photos</li>
+        <li><b>Consistent NAP</b> (name/address/phone) everywhere — small mismatches cut AI trust</li>
+        <li><b>Clean URLs</b> + auto sitemap + robots (native to Lightspeed eCom)</li>
+      </ul>
+    </div>
+    <div>
+      <ul class="chk">
+        <li><b>LocalBusiness / CandyStore schema</b> — the core identifier AI reads</li>
+        <li><b>Product + Offer schema</b> on boxes; <b>Event schema</b> on parties/seasonal</li>
+        <li><b>FAQPage schema</b> on the FAQ hub and key pages</li>
+        <li><b>Core Web Vitals</b> — mobile-first, fast; ~80% of visits are phones</li>
+        <li><b>Review engine</b> — request within 24h, respond within 48h</li>
+      </ul>
+    </div>
+  </div>
+  <p class="note">The schema stack is the piece Lightspeed doesn't do natively — it's injected as JSON-LD. It's low-cost, mostly one-time, and it's what turns "a nice site" into "the store the AI names."</p>
+  <div class="src">Sources: <a>How local businesses show up in Google AI Overviews 2026</a> (oatmarketing.com); <a>Structured Data for AI Search — schema guide 2026</a> (stackmatix.com); <a>Local Business Schema Markup Guide 2026</a> (techcognate.com).</div>
+
+  <div class="footer"><div>Sequence beats simultaneity. <span class="blue">One system at a time.</span></div><div>Sweet Pointe Candy · Website Definition · Page 2 of 3</div></div>
+</div>
+
+<!-- PAGE 3 -->
+<div class="page">
+  <div class="brand">F R D T <span class="lab">L A B</span> &nbsp;·&nbsp; STRATEGY + SYSTEMS STUDIO</div>
+
+  <h2>Getting Named in AI Answers (GEO)</h2>
+  <p>Over half of searches now trigger an AI summary that cites a handful of sources. If you're not structured to be retrieved, you're invisible in the research phase. The fix is cheap and mostly one-time.</p>
+  <ul>
+    <li><b class="hot">Answer first.</b> A direct 40–80 word answer under each page's headline — AI lifts concise blocks.</li>
+    <li><b class="hot">Question-shaped headings.</b> "How much is a candy birthday party in Grosse Pointe?" mirrors how people actually ask.</li>
+    <li><b class="hot">The FAQ hub</b> built from real customer questions — allergies, party pricing, delivery radius, corporate minimums, retro finds.</li>
+    <li><b class="hot">Facts AI can cite</b> — prices, capacities, hours, the 1932 story, the service area — in plain, extractable text.</li>
+  </ul>
+  <p><b class="hot">Baseline to beat.</b> Today, asking ChatGPT / Google AI / Perplexity "best candy store near Grosse Pointe," "book a kids' candy party near Detroit," or "unique local corporate gift under $50" does not reliably name Sweet Pointe. That's the gap this closes — and it's measurable: we re-run the same prompts after launch.</p>
+  <p class="note">We will not fabricate a visibility score — the baseline is established by running the real prompts at kickoff and recording who gets named.</p>
+
+  <h2>How It Gets Built — And Who Runs It</h2>
+  <p>We build the site with an <b class="hot">agentic workflow</b> — faster and cheaper than a traditional agency drag — and hand your team a <b class="hot">simple UI</b>, not a codebase.</p>
+  <table>
+    <tr><th>Job</th><th>Who does it</th><th>How</th></tr>
+    <tr class="hl"><td>Site build, schema, foundations</td><td><b>FRDT</b></td><td>Agentic build pipeline; you approve a mockup first.</td></tr>
+    <tr><td>Change a price, swap a photo, publish a box or a party package</td><td><b>Your team</b></td><td>Simple UI — no developer, no ticket.</td></tr>
+    <tr><td>Post to social, add a seasonal box</td><td><b>Your team</b></td><td>Templates + the same UI.</td></tr>
+    <tr><td>Inventory + checkout</td><td><b>Lightspeed</b></td><td>Stays the source of truth; syncs automatically.</td></tr>
+    <tr><td>Schema / tracking / GEO upkeep</td><td><b>FRDT → handoff</b></td><td>Set once, documented in the playbook.</td></tr>
+  </table>
+
+  <h2>What Ships in 8–10 Weeks vs. Later</h2>
+  <div class="two">
+    <div>
+      <p style="font-weight:bold;color:#0F2438;margin-bottom:3px">Ships now</p>
+      <ul class="chk">
+        <li>The 7-page small site on the full foundation</li>
+        <li>Lightspeed integration (single source of truth)</li>
+        <li>Schema + GBP + tracking + FAQ hub</li>
+        <li>Two conversion paths + gifting inquiry</li>
+        <li>The team UI + playbook</li>
+      </ul>
+    </div>
+    <div>
+      <p style="font-weight:bold;color:#0F2438;margin-bottom:3px">Deferred (proven first)</p>
+      <ul>
+        <li>National shipping ecommerce</li>
+        <li>Subscription boxes</li>
+        <li>Gift-guide content hubs at scale</li>
+        <li>Paid media / retargeting</li>
+      </ul>
+    </div>
+  </div>
+  <p class="answer" style="margin-top:8px"><b>Bottom line for Dave:</b> a small, fast website that keeps your register where it is, gets you found when the neighborhood — and the AI — goes looking for candy, and hands you a simple way to run it. Built in weeks, not months. Yours to keep.</p>
+
+  <div class="footer"><div>We build the infrastructure <span class="blue">underneath</span> growth.</div><div>Sweet Pointe Candy · Website Definition · Page 3 of 3</div></div>
+</div>
+
+</body>
+</html>
