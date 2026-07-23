@@ -1,0 +1,4 @@
+# Private build artifacts — never publish. index.html (the encrypted gate) is the only
+# file that should ship. The plaintext source and builder must stay out of Pages.
+source.html
+build-encrypted-gate.py
