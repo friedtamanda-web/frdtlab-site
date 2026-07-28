@@ -1,0 +1,8 @@
+# Private build artifacts — never publish. The gated *.html files are the only
+# things that ship. Plaintext sources, PDFs, copy docs, and the builder must
+# stay out of GitHub Pages.
+_src/
+*.pdf
+*.md
+gate_build.py
+build-encrypted-gate.py

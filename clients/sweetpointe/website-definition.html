@@ -1,171 +1,55 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Client Proposal &middot; FRDT Lab</title>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-  @page { size: letter; margin: 0; }
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { font-family: Arial, Helvetica, sans-serif; color: #17222e; font-size: 9.3pt; line-height: 1.4; }
-  .page { width: 8.5in; height: 11in; padding: 0.55in 0.8in 0.5in 0.8in; position: relative; page-break-after: always; overflow: hidden; }
-  .page:last-child { page-break-after: auto; }
-  .brand { font-size: 8pt; font-weight: bold; letter-spacing: 3px; color: #5b6672; margin-bottom: 12px; }
-  .brand .lab { color: #1a73e8; }
-  .kicker { font-size: 7.5pt; font-weight: bold; letter-spacing: 2.5px; color: #1a73e8; margin: 14px 0 5px 0; }
-  h1 { font-size: 20pt; font-weight: 800; letter-spacing: -0.8px; color: #0F2438; margin-bottom: 7px; line-height: 1.04; }
-  .sub { color: #5b6672; font-size: 10.5pt; margin-bottom: 5px; }
-  .rule { height: 3px; background: #e8eaed; margin: 9px 0 4px 0; position: relative; }
-  .rule::before { content: ""; position: absolute; left: 0; top: 0; height: 3px; width: 140px; background: #1a73e8; }
-  h2 { font-size: 12.5pt; font-weight: 800; color: #0F2438; margin: 13px 0 5px 0; padding-bottom: 3px; border-bottom: 2px solid #1a73e8; letter-spacing: -0.3px; }
-  p { margin-bottom: 6px; }
-  b.hot { color: #0F2438; }
-  .answer { background: #EAF2FD; border-left: 4px solid #1a73e8; border-radius: 0 8px 8px 0; padding: 12px 16px; margin: 6px 0 10px 0; }
-  .answer b { color: #0F2438; }
-  ul { list-style: none; margin: 3px 0 8px 0; }
-  ul li { padding-left: 15px; position: relative; margin-bottom: 4px; }
-  ul li::before { content: "▪"; color: #1a73e8; position: absolute; left: 2px; font-size: 8pt; }
-  ul.chk li::before { content: "✓"; color: #34a853; font-weight: bold; }
-  table { width: 100%; border-collapse: collapse; margin: 5px 0 9px 0; font-size: 8.3pt; }
-  th { background: #0F2438; color: #fff; text-align: left; padding: 5px 8px; font-size: 8pt; }
-  td { padding: 5px 8px; border: 1px solid #E4EAF1; vertical-align: top; }
-  tr.hl td { background: #EAF2FD; }
-  .win td { background: #eafaf0; }
-  .score { text-align: center; font-weight: bold; }
-  .note { font-size: 7.8pt; color: #5b6672; font-style: italic; }
-  .footer { position: absolute; bottom: 0.36in; left: 0.8in; right: 0.8in; display: flex; justify-content: space-between; font-size: 7.3pt; color: #9aa5b1; letter-spacing: .5px; }
-  .footer .blue { color: #1a73e8; font-weight: bold; }
-  .two { display: flex; gap: 16px; }
-  .two > div { flex: 1; }
-  .src { font-size: 7.3pt; color: #6b7280; margin-top: 2px; }
-  .src a, a { color: #1a73e8; text-decoration: none; }
+  :root { --blue:#2f6bff; --pink:#ff2e7e; --navy:#0d0d0f; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:'Inter',system-ui,sans-serif; background:var(--navy); color:#f4f4f6; }
+  #gate { min-height:100vh; display:flex; flex-direction:column; align-items:center; justify-content:center;
+    background:radial-gradient(1000px 560px at 70% 20%,rgba(47,107,255,.16),transparent 60%),radial-gradient(800px 460px at 22% 88%,rgba(255,46,126,.12),transparent 60%),var(--navy); }
+  .gate-card { width:min(430px,90vw); text-align:center; padding:40px 22px; }
+  .gate-brand { font-size:12px; font-weight:600; letter-spacing:5px; color:rgba(255,255,255,.45); margin-bottom:28px; font-family:'Manrope',sans-serif; }
+  .gate-brand .lab { color:var(--blue); }
+  .gate-card h1 { font-family:'Manrope',sans-serif; color:#fff; font-size:32px; font-weight:800; letter-spacing:-1px; margin-bottom:10px; }
+  .gate-rule { width:48px; height:3px; background:var(--pink); border-radius:2px; margin:0 auto 18px; }
+  .gate-card p { color:rgba(255,255,255,.5); font-size:14px; margin-bottom:26px; }
+  .gate-card input { width:100%; padding:14px 16px; border-radius:10px; border:1px solid rgba(255,255,255,.14); background:rgba(255,255,255,.06); color:#fff; font-size:15px; margin-bottom:12px; outline:none; }
+  .gate-card input:focus { border-color:var(--blue); }
+  .gate-card button { width:100%; padding:14px; border:none; border-radius:10px; background:var(--pink); color:#fff; font-size:15px; font-weight:700; cursor:pointer; font-family:'Manrope',sans-serif; box-shadow:0 8px 30px rgba(255,46,126,.3); }
+  .gate-card button:hover { transform:translateY(-1px); }
+  #gate-err { color:#ff7b8a; font-size:13px; margin-top:14px; display:none; }
 </style>
 </head>
 <body>
-
-<!-- PAGE 1 -->
-<div class="page">
-  <div class="brand">F R D T <span class="lab">L A B</span> &nbsp;·&nbsp; STRATEGY + SYSTEMS STUDIO</div>
-  <div class="kicker" style="margin-top:0;">WEBSITE DEFINITION · RESEARCH-BACKED · JULY 2026</div>
-  <h1>Sweet Pointe Candy —<br>What Your Website Will Be</h1>
-  <p class="sub">The platform, the pages, and the foundations — decided on evidence, built to get found, and kept on the system you already run.</p>
-  <div class="rule"></div>
-
-  <div class="answer">
-    <b>The short version.</b> We build a <b>small, fast site with every foundation</b> — home plus the handful of pages that make money — and we <b>keep Lightspeed as your single source of truth</b> instead of migrating you to Shopify. Your register and inventory stay exactly where they are. On top of that we add the layer Lightspeed doesn't do on its own: the schema and structure that get you named in Google, Maps, and AI answers when someone asks "candy near me." You get a simple UI to run it. No double entry, no re-platform, no developer on speed-dial.
+<div id="gate">
+  <div class="gate-card">
+    <div class="gate-brand">F R D T <span class="lab">L A B</span> &middot; GROWTH SYSTEMS</div>
+    <h1>Sweet Pointe — Website Definition</h1>
+    <div class="gate-rule"></div>
+    <p>This page is private. Enter the passcode you were given to view it.</p>
+    <input type="password" id="pw" placeholder="Passcode" autocomplete="off" onkeydown="if(event.key==='Enter')unlock()">
+    <button onclick="unlock()">View Proposal</button>
+    <div id="gate-err">That passcode didn't work &mdash; check it and try again.</div>
   </div>
-
-  <h2>The Platform Decision</h2>
-  <p>You run <b class="hot">Lightspeed Retail</b> — it's your register, your inventory, your day. The real question isn't "which website builder," it's <b class="hot">how to get a modern, findable site without breaking what already works.</b> We looked at four paths.</p>
-  <table>
-    <tr><th style="width:26%">Path</th><th>SEO basics</th><th>Schema / AI-answer</th><th>Team-edit</th><th>Inventory sync</th><th>Cost / risk</th></tr>
-    <tr class="win"><td><b>① Lightspeed eCom (E-Series) + a GEO layer</b> &nbsp;<span class="note">recommended</span></td><td class="score">Strong<br><span class="note">native</span></td><td class="score">Added<br><span class="note">we inject</span></td><td class="score">Easy</td><td class="score">Native<br><span class="note">one system</span></td><td class="score">Low</td></tr>
-    <tr><td><b>② Marketing front end + Lightspeed store</b> &nbsp;<span class="note">fallback</span></td><td class="score">Full</td><td class="score">Full</td><td class="score">Medium</td><td class="score">Native</td><td class="score">Med</td></tr>
-    <tr><td>③ Third-party sync bridge to another storefront</td><td class="score">Varies</td><td class="score">Varies</td><td class="score">Medium</td><td class="score">Bridged<br><span class="note">failure point</span></td><td class="score">Med</td></tr>
-    <tr><td>④ Migrate to Shopify</td><td class="score">Full</td><td class="score">Full</td><td class="score">Easy</td><td class="score"><b>Breaks</b><br><span class="note">2 systems or drop POS</span></td><td class="score"><b>High</b></td></tr>
-  </table>
-  <p><b class="hot">The finding:</b> Lightspeed's own eCom already covers the commerce SEO basics — clean URLs, an auto-generated sitemap, custom meta titles/descriptions, 301 redirects, and image alt text — and it keeps inventory synced to your POS as one system. Its one real gap is that it <b>doesn't add structured-data / schema on its own</b> — and schema is exactly what wins AI answers. So we build on Lightspeed and <b>inject the GEO layer ourselves.</b> If, once we're in, E-Series can't carry the custom pages and schema we need, we drop to the fallback — a fast marketing site for the get-found pages that links into your Lightspeed store for catalog and checkout. Either way, <b class="hot">you stay on Lightspeed.</b></p>
-  <p class="note">Why not Shopify: re-platforming means either abandoning the Lightspeed POS your team already runs, or running two inventory systems that fight each other (double entry, sync conflicts). That's cost and risk a seven-week-old shop doesn't need — and it's the opposite of "small site, all foundations."</p>
-  <div class="src">Sources: Lightspeed — <a>Improving SEO for eCom (E-Series)</a> (x-series-support.lightspeedhq.com); <a>Lightspeed eCom</a> (lightspeedhq.com/ecom); <a>Lightspeed vs Shopify POS comparison</a> (technologyadvice.com); <a>Lightspeed Retail integration / SKUPlugs</a>.</div>
-
-  <div class="footer"><div>We build the infrastructure <span class="blue">underneath</span> growth.</div><div>Sweet Pointe Candy · Website Definition · Page 1 of 3</div></div>
 </div>
-
-<!-- PAGE 2 -->
-<div class="page">
-  <div class="brand">F R D T <span class="lab">L A B</span> &nbsp;·&nbsp; STRATEGY + SYSTEMS STUDIO</div>
-
-  <h2>The Site — Every Page Earns Its Place</h2>
-  <p>Small doesn't mean thin. It means we build only the pages that capture real demand — each one on the full foundation, each with one clear job.</p>
-  <table>
-    <tr><th style="width:22%">Page</th><th>What it's for</th><th>Primary CTA</th><th style="width:12%">Phase</th></tr>
-    <tr class="hl"><td><b>Home</b></td><td>The destination + the 1932 heritage in one glance; sends people to the two money paths.</td><td>Book a Party / Shop Boxes</td><td>1</td></tr>
-    <tr><td><b>Parties</b></td><td>Packages, photos, what's included, booking. Plan-ahead revenue; "candy buffet grosse pointe."</td><td>Book / Inquire</td><td>1</td></tr>
-    <tr><td><b>Gift Boxes</b></td><td>The three hero boxes, styled as gifts by occasion. Lead with the occasion, not the ingredients.</td><td>Order a Box</td><td>1</td></tr>
-    <tr><td><b>Corporate &amp; Realtor Gifting</b></td><td>The underpriced lane: logo boxes, local delivery, net terms. High-ticket, repeat.</td><td>Request a Quote</td><td>1</td></tr>
-    <tr><td><b>Visit</b></td><td>Hours, map, parking, the Kercheval block. Feeds Google Business Profile + "near me."</td><td>Get Directions</td><td>1</td></tr>
-    <tr><td><b>About / 1932</b></td><td>The Lee's Grocery heritage — trust + the "retro candy michigan" nostalgia search.</td><td>Visit / Follow</td><td>1</td></tr>
-    <tr><td><b>FAQ hub</b></td><td>Engineered for AI extraction — plain-language answers AI engines lift verbatim.</td><td>(citation asset)</td><td>1</td></tr>
-    <tr><td>Full catalog / checkout</td><td>Stays in Lightspeed eCom, synced to inventory. Not rebuilt.</td><td>Add to Cart</td><td>Lightspeed</td></tr>
-    <tr><td>Shipping / subscriptions / gift guides</td><td>Deferred — added once the local system is proven.</td><td>—</td><td>Later</td></tr>
-  </table>
-
-  <h2>The Foundations — Day-One Checklist</h2>
-  <div class="two">
-    <div>
-      <ul class="chk">
-        <li><b>GA4 + Search Console</b> verified and tracking the four conversions</li>
-        <li><b>Google Business Profile</b> completed, categories Candy Store + Event Venue, weekly posts, monthly photos</li>
-        <li><b>Consistent NAP</b> (name/address/phone) everywhere — small mismatches cut AI trust</li>
-        <li><b>Clean URLs</b> + auto sitemap + robots (native to Lightspeed eCom)</li>
-      </ul>
-    </div>
-    <div>
-      <ul class="chk">
-        <li><b>LocalBusiness / CandyStore schema</b> — the core identifier AI reads</li>
-        <li><b>Product + Offer schema</b> on boxes; <b>Event schema</b> on parties/seasonal</li>
-        <li><b>FAQPage schema</b> on the FAQ hub and key pages</li>
-        <li><b>Core Web Vitals</b> — mobile-first, fast; ~80% of visits are phones</li>
-        <li><b>Review engine</b> — request within 24h, respond within 48h</li>
-      </ul>
-    </div>
-  </div>
-  <p class="note">The schema stack is the piece Lightspeed doesn't do natively — it's injected as JSON-LD. It's low-cost, mostly one-time, and it's what turns "a nice site" into "the store the AI names."</p>
-  <div class="src">Sources: <a>How local businesses show up in Google AI Overviews 2026</a> (oatmarketing.com); <a>Structured Data for AI Search — schema guide 2026</a> (stackmatix.com); <a>Local Business Schema Markup Guide 2026</a> (techcognate.com).</div>
-
-  <div class="footer"><div>Sequence beats simultaneity. <span class="blue">One system at a time.</span></div><div>Sweet Pointe Candy · Website Definition · Page 2 of 3</div></div>
-</div>
-
-<!-- PAGE 3 -->
-<div class="page">
-  <div class="brand">F R D T <span class="lab">L A B</span> &nbsp;·&nbsp; STRATEGY + SYSTEMS STUDIO</div>
-
-  <h2>Getting Named in AI Answers (GEO)</h2>
-  <p>Over half of searches now trigger an AI summary that cites a handful of sources. If you're not structured to be retrieved, you're invisible in the research phase. The fix is cheap and mostly one-time.</p>
-  <ul>
-    <li><b class="hot">Answer first.</b> A direct 40–80 word answer under each page's headline — AI lifts concise blocks.</li>
-    <li><b class="hot">Question-shaped headings.</b> "How much is a candy birthday party in Grosse Pointe?" mirrors how people actually ask.</li>
-    <li><b class="hot">The FAQ hub</b> built from real customer questions — allergies, party pricing, delivery radius, corporate minimums, retro finds.</li>
-    <li><b class="hot">Facts AI can cite</b> — prices, capacities, hours, the 1932 story, the service area — in plain, extractable text.</li>
-  </ul>
-  <p><b class="hot">Baseline to beat.</b> Today, asking ChatGPT / Google AI / Perplexity "best candy store near Grosse Pointe," "book a kids' candy party near Detroit," or "unique local corporate gift under $50" does not reliably name Sweet Pointe. That's the gap this closes — and it's measurable: we re-run the same prompts after launch.</p>
-  <p class="note">We will not fabricate a visibility score — the baseline is established by running the real prompts at kickoff and recording who gets named.</p>
-
-  <h2>How It Gets Built — And Who Runs It</h2>
-  <p>We build the site with an <b class="hot">agentic workflow</b> — faster and cheaper than a traditional agency drag — and hand your team a <b class="hot">simple UI</b>, not a codebase.</p>
-  <table>
-    <tr><th>Job</th><th>Who does it</th><th>How</th></tr>
-    <tr class="hl"><td>Site build, schema, foundations</td><td><b>FRDT</b></td><td>Agentic build pipeline; you approve a mockup first.</td></tr>
-    <tr><td>Change a price, swap a photo, publish a box or a party package</td><td><b>Your team</b></td><td>Simple UI — no developer, no ticket.</td></tr>
-    <tr><td>Post to social, add a seasonal box</td><td><b>Your team</b></td><td>Templates + the same UI.</td></tr>
-    <tr><td>Inventory + checkout</td><td><b>Lightspeed</b></td><td>Stays the source of truth; syncs automatically.</td></tr>
-    <tr><td>Schema / tracking / GEO upkeep</td><td><b>FRDT → handoff</b></td><td>Set once, documented in the playbook.</td></tr>
-  </table>
-
-  <h2>What Ships in 8–10 Weeks vs. Later</h2>
-  <div class="two">
-    <div>
-      <p style="font-weight:bold;color:#0F2438;margin-bottom:3px">Ships now</p>
-      <ul class="chk">
-        <li>The 7-page small site on the full foundation</li>
-        <li>Lightspeed integration (single source of truth)</li>
-        <li>Schema + GBP + tracking + FAQ hub</li>
-        <li>Two conversion paths + gifting inquiry</li>
-        <li>The team UI + playbook</li>
-      </ul>
-    </div>
-    <div>
-      <p style="font-weight:bold;color:#0F2438;margin-bottom:3px">Deferred (proven first)</p>
-      <ul>
-        <li>National shipping ecommerce</li>
-        <li>Subscription boxes</li>
-        <li>Gift-guide content hubs at scale</li>
-        <li>Paid media / retargeting</li>
-      </ul>
-    </div>
-  </div>
-  <p class="answer" style="margin-top:8px"><b>Bottom line for Dave:</b> a small, fast website that keeps your register where it is, gets you found when the neighborhood — and the AI — goes looking for candy, and hands you a simple way to run it. Built in weeks, not months. Yours to keep.</p>
-
-  <div class="footer"><div>We build the infrastructure <span class="blue">underneath</span> growth.</div><div>Sweet Pointe Candy · Website Definition · Page 3 of 3</div></div>
-</div>
-
+<script>
+const PAYLOAD="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", SALT="gx6srk0V7VtO0vX37rcKBA==", IV="YCTKtZwEZaPuThVg";
+function b64ToBuf(b64){const s=atob(b64);const b=new Uint8Array(s.length);for(let i=0;i<s.length;i++)b[i]=s.charCodeAt(i);return b.buffer;}
+async function unlock(){
+  const pw=document.getElementById('pw').value; const err=document.getElementById('gate-err'); err.style.display='none';
+  try{
+    const km=await crypto.subtle.importKey('raw',new TextEncoder().encode(pw),'PBKDF2',false,['deriveKey']);
+    const key=await crypto.subtle.deriveKey({name:'PBKDF2',salt:b64ToBuf(SALT),iterations:310000,hash:'SHA-256'},km,{name:'AES-GCM',length:256},false,['decrypt']);
+    const plain=await crypto.subtle.decrypt({name:'AES-GCM',iv:b64ToBuf(IV)},key,b64ToBuf(PAYLOAD));
+    const html=new TextDecoder().decode(plain);
+    document.open(); document.write(html); document.close();
+  }catch(e){ err.style.display='block'; }
+}
+</script>
 </body>
 </html>

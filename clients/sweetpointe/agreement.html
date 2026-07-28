@@ -1,153 +1,55 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Client Proposal &middot; FRDT Lab</title>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-  @page { size: letter; margin: 0; }
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { font-family: Arial, Helvetica, sans-serif; color: #202124; font-size: 9.5pt; line-height: 1.32; }
-  .page { width: 8.5in; height: 11in; padding: 0.55in 0.9in 0.6in 0.9in; position: relative; page-break-after: always; overflow: hidden; }
-  .page:last-child { page-break-after: auto; }
-  .brand { font-size: 8.5pt; font-weight: bold; letter-spacing: 3px; color: #5f6368; margin-bottom: 20px; }
-  .brand .lab { color: #1a73e8; }
-  .brand .tag { font-weight: normal; letter-spacing: 2px; color: #80868b; }
-  .kicker { font-size: 8pt; font-weight: bold; letter-spacing: 2.5px; color: #1a73e8; margin-bottom: 4px; }
-  h1 { font-size: 21pt; font-weight: bold; color: #202124; margin-bottom: 10px; }
-  .intro { margin-bottom: 18px; }
-  h2 { font-size: 11.5pt; font-weight: bold; margin: 12px 0 3px 0; padding-bottom: 3px; border-bottom: 2px solid #1a73e8; }
-  h2 .num { margin-right: 6px; }
-  p { margin-bottom: 8px; }
-  ul { list-style: none; margin: 4px 0 10px 0; }
-  ul li { padding-left: 16px; position: relative; margin-bottom: 4px; }
-  ul li::before { content: "•"; color: #1a73e8; position: absolute; left: 2px; }
-  b.lead { color: #202124; }
-  table { width: 100%; border-collapse: collapse; margin: 10px 0 12px 0; font-size: 10pt; }
-  th { background: #111; color: #fff; text-align: left; padding: 7px 10px; font-size: 9.5pt; }
-  td { padding: 9px 10px; border: 1px solid #dadce0; vertical-align: top; }
-  tr.hl td { background: #eef4fe; }
-  .footer { position: absolute; bottom: 0.42in; left: 0; right: 0; text-align: center; font-size: 8pt; color: #80868b; }
-  .sig-block { display: flex; gap: 0.5in; margin-top: 24px; }
-  .sig-col { flex: 1; }
-  .sig-col h3 { font-size: 11.5pt; margin-bottom: 34px; }
-  .sig-line { border-top: 1px solid #999; margin-top: 44px; padding-top: 3px; font-size: 8.5pt; color: #5f6368; }
+  :root { --blue:#2f6bff; --pink:#ff2e7e; --navy:#0d0d0f; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:'Inter',system-ui,sans-serif; background:var(--navy); color:#f4f4f6; }
+  #gate { min-height:100vh; display:flex; flex-direction:column; align-items:center; justify-content:center;
+    background:radial-gradient(1000px 560px at 70% 20%,rgba(47,107,255,.16),transparent 60%),radial-gradient(800px 460px at 22% 88%,rgba(255,46,126,.12),transparent 60%),var(--navy); }
+  .gate-card { width:min(430px,90vw); text-align:center; padding:40px 22px; }
+  .gate-brand { font-size:12px; font-weight:600; letter-spacing:5px; color:rgba(255,255,255,.45); margin-bottom:28px; font-family:'Manrope',sans-serif; }
+  .gate-brand .lab { color:var(--blue); }
+  .gate-card h1 { font-family:'Manrope',sans-serif; color:#fff; font-size:32px; font-weight:800; letter-spacing:-1px; margin-bottom:10px; }
+  .gate-rule { width:48px; height:3px; background:var(--pink); border-radius:2px; margin:0 auto 18px; }
+  .gate-card p { color:rgba(255,255,255,.5); font-size:14px; margin-bottom:26px; }
+  .gate-card input { width:100%; padding:14px 16px; border-radius:10px; border:1px solid rgba(255,255,255,.14); background:rgba(255,255,255,.06); color:#fff; font-size:15px; margin-bottom:12px; outline:none; }
+  .gate-card input:focus { border-color:var(--blue); }
+  .gate-card button { width:100%; padding:14px; border:none; border-radius:10px; background:var(--pink); color:#fff; font-size:15px; font-weight:700; cursor:pointer; font-family:'Manrope',sans-serif; box-shadow:0 8px 30px rgba(255,46,126,.3); }
+  .gate-card button:hover { transform:translateY(-1px); }
+  #gate-err { color:#ff7b8a; font-size:13px; margin-top:14px; display:none; }
 </style>
 </head>
 <body>
-
-<!-- PAGE 1 -->
-<div class="page">
-  <div class="brand">F R D T <span class="lab">L A B</span> &nbsp;·&nbsp; <span class="tag">GROWTH SYSTEMS</span></div>
-  <div class="kicker">WEBSITE + SOCIAL AGREEMENT</div>
-  <h1>Sweet Pointe Website Update + Social Support</h1>
-  <p class="intro">This agreement is between <b>FRDT Lab LLC</b> (“FRDT Lab” or “FRDT”) and <b>Sweet Pointe Candy</b> (“Client”), Grosse Pointe Park, Michigan. Effective on the date of signature below.</p>
-
-  <h2><span class="num">1.</span> The Engagement</h2>
-  <p>FRDT will deliver a <b>search-first website update and social support engagement</b> over a goal window of <b>8–10 weeks</b>. The search infrastructure is wired first; the design update drops into it — so the refreshed site lands on a foundation that gets found.</p>
-  <p>Included in the base engagement:</p>
-  <ul>
-    <li><b class="lead">Search-first foundation —</b> GA4 and Search Console verified, Google Business Profile cleaned, LocalBusiness schema, clean URLs and sitemap — configured <b>before</b> design work begins.</li>
-    <li><b class="lead">Website design update —</b> mockup first (homepage + one model page) for approval, then build-out: refreshed design, updated copy and product presentation, mobile and speed cleanup, clear paths to order, visit, and contact. QA (schema validation, speed, links) before launch.</li>
-    <li><b class="lead">Social foundation —</b> Facebook and Instagram profiles cleaned and aligned, reusable post templates, and a monthly content calendar.</li>
-    <li><b class="lead">Email capture —</b> in-store and on-site list capture (the “Sweet List”) with a first-visit incentive.</li>
-    <li><b class="lead">Social support —</b> four (4) weeks of hands-on support post-launch: batched content, posting cadence, and coaching so the team can carry it forward.</li>
-    <li><b class="lead">Documentation + handoff —</b> a short playbook so the system keeps running when FRDT is not in the room.</li>
-  </ul>
-  <p>Optional <b>Local Revenue Pack</b> (see Section 2): a bookable parties page, three ready-to-gift boxes launched, a corporate &amp; realtor gifting one-pager with a 20-name outreach starter, and a welcome email flow.</p>
-
-  <h2><span class="num">2.</span> Investment &amp; Payment Terms</h2>
-  <p>Total engagement: <b>$5,000 base</b>, with an optional Local Revenue Pack to a maximum of <b>$7,000</b>.</p>
-  <table>
-    <tr><th>Item</th><th>Scope</th><th>Fee</th></tr>
-    <tr class="hl"><td><b>Base — Foundation + Site + Social</b></td><td>Search-first foundation, website update, social foundation, email capture, 4 weeks of social support, documentation + handoff</td><td><b>$5,000</b></td></tr>
-    <tr><td><b>Local Revenue Pack</b></td><td>Bookable parties page, three ready-to-gift boxes launched, corporate &amp; realtor gifting one-pager + 20-name outreach starter, welcome email flow</td><td>$2,000</td></tr>
-  </table>
-  <ul>
-    <li><b class="lead">Payment schedule:</b> $2,500 due at signing; $1,250 at site launch (M4); $1,250 at wrap + handoff (M6). The Local Revenue Pack, if taken, is approved in writing and invoiced at Phase 1 kickoff.</li>
-    <li><b class="lead">Tool subscriptions</b> (hosting, e-commerce plan, Klaviyo, apps) are billed directly to Client and are not held inside this agreement.</li>
-    <li><b class="lead">Paid advertising</b> is a separate managed budget with its own scope, engaged only if and when both parties agree to turn it on.</li>
-  </ul>
-  <div class="footer">FRDT Lab &nbsp;·&nbsp; Confidential &nbsp;·&nbsp; Page 1</div>
-</div>
-
-<!-- PAGE 2 -->
-<div class="page">
-  <div class="brand">F R D T <span class="lab">L A B</span> &nbsp;·&nbsp; <span class="tag">GROWTH SYSTEMS</span></div>
-
-  <h2><span class="num">3.</span> Milestones &amp; Goal Windows</h2>
-  <p>Work is gated by milestones and steered toward goal windows — not fixed calendar deadlines. Timelines shift with content readiness and Client access; milestones gate the work.</p>
-  <ul>
-    <li><b class="lead">M1 — Onboard (Week 1):</b> Working session, review of the store’s actual numbers to set priorities, access and asset handoff, photo shot list issued. Triggers the start.</li>
-    <li><b class="lead">M2 — Foundation Ready:</b> GA4 + Search Console verified, GBP cleaned and confirmed, LocalBusiness schema and clean URL map staged, email capture live — the infrastructure the design drops into. Goal: week 2.</li>
-    <li><b class="lead">M3 — Mockup Approved:</b> Homepage + one model page designed into the live stack, approved by Client before build-out. Goal: weeks 3–4.</li>
-    <li><b class="lead">M4 — Site Live:</b> Build-out complete, QA passed (schema, speed, links), site launched, sitemap submitted. Goal: weeks 5–6.</li>
-    <li><b class="lead">M5 — Revenue + Social Live:</b> Profiles aligned, templates and calendar delivered, first batch published. If the Revenue Pack is engaged: parties page live, three boxes launched, gifting one-pager published and outreach started. Goal: weeks 6–8.</li>
-    <li><b class="lead">M6 — Wrap + Handoff:</b> Support complete, welcome flow running, playbook delivered, team trained. Goal: weeks 8–10.</li>
-  </ul>
-
-  <h2><span class="num">4.</span> Scope Guardrails</h2>
-  <ul>
-    <li><b class="lead">Scope of the engagement:</b> This engagement covers the website update and social support described in Section 1. New systems, platform migrations, e-commerce rebuilds, or major campaigns beyond this scope are quoted as separate batched builds.</li>
-    <li><b class="lead">Website platform:</b> The update is performed on the Client’s existing platform (or an agreed equivalent) — a refresh and cleanup, not an open-ended custom rebuild. Custom development beyond the agreed scope is a separate line.</li>
-    <li><b class="lead">Sessions &amp; cadence:</b> Onboarding working session plus weekly check-ins during the support window — not open-ended on-demand availability.</li>
-    <li><b class="lead">Client responsibilities:</b> Client provides domain, logins, Google Business Profile access, logos, colors, confirmed hours, and <b>real store and product photos</b> (good phone photos work — FRDT provides a shot list at onboarding), plus approvals promptly. Milestone clocks pause when access, assets, or sign-off is the blocker.</li>
-    <li><b class="lead">Transparency &amp; ownership:</b> Client owns every account, login, domain, and asset from day one; nothing is locked to FRDT. FRDT reports against the few metrics that move revenue — bookings, box orders, gifting inquiries, and email signups — not vanity metrics.</li>
-    <li><b class="lead">Confidentiality:</b> Client’s business data is covered under a separate mutual NDA, executed alongside this agreement.</li>
-  </ul>
-
-  <h2><span class="num">5.</span> Scope, Change &amp; Approval</h2>
-  <p>This agreement reflects the parties’ <b>current understanding</b> of the project as of the effective date. The clauses below govern how scope, timing, and deliverables may evolve.</p>
-  <ul>
-    <li><b class="lead">Based on current understanding:</b> Deliverables and goal windows are based on FRDT’s current understanding of Client’s platforms, content, and objectives. As real access and insight surface during the build, specific deliverables may be refined or substituted for equivalent work of comparable value.</li>
-    <li><b class="lead">Timeline = scope:</b> A change to the timeline is a change to scope. Goal windows are targets steered toward, not fixed deadlines. Where Client requests acceleration, added phases, or new direction, FRDT will confirm the impact on timing and fees before proceeding.</li>
-    <li><b class="lead">Change requests:</b> Work beyond Sections 1 and 4 is handled as a separate batched build, quoted and approved in writing before work begins. FRDT is not obligated to perform out-of-scope work within this fee.</li>
-    <li><b class="lead">Client approval &amp; response:</b> Client provides approvals, feedback, and materials within a reasonable window (target: 3 business days); milestone clocks pause while FRDT awaits them.</li>
-  </ul>
-  <div class="footer">FRDT Lab &nbsp;·&nbsp; Confidential &nbsp;·&nbsp; Page 2</div>
-</div>
-
-<!-- PAGE 3 -->
-<div class="page">
-  <div class="brand">F R D T <span class="lab">L A B</span> &nbsp;·&nbsp; <span class="tag">GROWTH SYSTEMS</span></div>
-
-  <h2><span class="num">6.</span> General Terms</h2>
-  <ul>
-    <li><b class="lead">No guaranteed number:</b> FRDT does not guarantee specific revenue, ranking, traffic, or sales results — outcomes depend on Client execution, market conditions, and platform behavior. What FRDT guarantees is the work itself: delivered to a professional standard, reported transparently, and owned by Client.</li>
-    <li><b class="lead">Termination:</b> Either party may terminate with 30 days’ written notice. Client remains responsible for fees through the end of the notice period and for any milestone or batched work completed or in progress. Fees paid are earned upon the work performed; the signing payment covers front-loaded build effort and is non-refundable once work has begun.</li>
-    <li><b class="lead">Ownership &amp; IP:</b> Upon full payment, Client owns the deliverables, content, and configured systems built for Client. FRDT retains ownership of its underlying frameworks, methods, templates, and tooling, and may reuse these general methods with other clients. Client’s data and brand assets remain Client’s.</li>
-    <li><b class="lead">Invoicing &amp; late payment:</b> Invoices are due on receipt unless otherwise stated. Late or failed payments may pause work until resolved; paused work shifts affected goal windows.</li>
-    <li><b class="lead">Independent contractor:</b> FRDT acts as an independent contractor, not an employee, partner, or agent of Client. Nothing here creates a partnership, joint venture, or equity relationship.</li>
-    <li><b class="lead">Third-party platforms:</b> FRDT is not responsible for outages, data loss, policy or algorithm changes, pricing changes, deprecations, account suspensions, security incidents, or failures of any third-party platform, tool, or service (including but not limited to Google, Meta, Shopify, Klaviyo, and any other vendor). Where a third-party event disrupts the work, FRDT will work in good faith to adapt, but is not liable for resulting delays, losses, or performance impacts.</li>
-    <li><b class="lead">Liability &amp; force majeure:</b> Neither party is liable for delays or failures caused by events beyond reasonable control. FRDT’s total liability under this agreement will not exceed the fees paid by Client under this agreement.</li>
-    <li><b class="lead">Entire agreement:</b> This agreement, together with the mutual NDA, is the complete agreement between the parties and supersedes prior discussions. Changes must be in writing and agreed by both parties. Governed by the laws of the State of Michigan.</li>
-  </ul>
-
-  <h2><span class="num">7.</span> What Client Has at Wrap</h2>
-  <p>A working system — not a folder of recommendations: a site that gets found in Google, Maps, and AI answers; two clear paths to money (book a party, order a box); an email list Client owns with a welcome flow running; aligned social profiles with a template and calendar system; and — if the Revenue Pack is engaged — a live gifting lane with outreach started. Plus a playbook and training so the team runs it, with every account and asset in Client’s name.</p>
-
-  <h2><span class="num">8.</span> Acceptance</h2>
-  <p>By signing below, both parties agree to the engagement, investment, terms, milestones, and guardrails set out above.</p>
-  <div class="footer">FRDT Lab &nbsp;·&nbsp; Confidential &nbsp;·&nbsp; Page 3</div>
-</div>
-
-<!-- PAGE 4 -->
-<div class="page">
-  <div class="brand">F R D T <span class="lab">L A B</span> &nbsp;·&nbsp; <span class="tag">GROWTH SYSTEMS</span></div>
-  <div class="sig-block">
-    <div class="sig-col">
-      <h3>FRDT Lab</h3>
-      <div class="sig-line">Signature</div>
-      <div class="sig-line">Name / Title</div>
-      <div class="sig-line">Date</div>
-    </div>
-    <div class="sig-col">
-      <h3>Sweet Pointe Candy</h3>
-      <div class="sig-line">Signature</div>
-      <div class="sig-line">Name / Title</div>
-      <div class="sig-line">Date</div>
-    </div>
+<div id="gate">
+  <div class="gate-card">
+    <div class="gate-brand">F R D T <span class="lab">L A B</span> &middot; GROWTH SYSTEMS</div>
+    <h1>Sweet Pointe — Agreement</h1>
+    <div class="gate-rule"></div>
+    <p>This page is private. Enter the passcode you were given to view it.</p>
+    <input type="password" id="pw" placeholder="Passcode" autocomplete="off" onkeydown="if(event.key==='Enter')unlock()">
+    <button onclick="unlock()">View Proposal</button>
+    <div id="gate-err">That passcode didn't work &mdash; check it and try again.</div>
   </div>
-  <div class="footer">FRDT Lab &nbsp;·&nbsp; Confidential &nbsp;·&nbsp; Page 4</div>
 </div>
-
+<script>
+const PAYLOAD="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", SALT="sK6GSN7FlB2thdukDNhv0A==", IV="zYGI0KWK6PxHtEmh";
+function b64ToBuf(b64){const s=atob(b64);const b=new Uint8Array(s.length);for(let i=0;i<s.length;i++)b[i]=s.charCodeAt(i);return b.buffer;}
+async function unlock(){
+  const pw=document.getElementById('pw').value; const err=document.getElementById('gate-err'); err.style.display='none';
+  try{
+    const km=await crypto.subtle.importKey('raw',new TextEncoder().encode(pw),'PBKDF2',false,['deriveKey']);
+    const key=await crypto.subtle.deriveKey({name:'PBKDF2',salt:b64ToBuf(SALT),iterations:310000,hash:'SHA-256'},km,{name:'AES-GCM',length:256},false,['decrypt']);
+    const plain=await crypto.subtle.decrypt({name:'AES-GCM',iv:b64ToBuf(IV)},key,b64ToBuf(PAYLOAD));
+    const html=new TextDecoder().decode(plain);
+    document.open(); document.write(html); document.close();
+  }catch(e){ err.style.display='block'; }
+}
+</script>
 </body>
 </html>
