@@ -1,0 +1,1010 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FRDT Foundry — Websites & Search Infrastructure for Detroit Home Services</title>
+<meta name="description" content="Custom-coded websites and search infrastructure for Detroit HVAC, plumbing, electrical, and roofing companies. Built to be found by humans and machines. You own everything.">
+<!-- Set canonical + og:url to the real URL before launch -->
+<link rel="canonical" href="https://frdtlab.com/foundry">
+<meta name="robots" content="index, follow">
+<meta name="author" content="Amanda Friedt · FRDT LAB">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="FRDT LAB">
+<meta property="og:title" content="FRDT Foundry — Websites & Search Infrastructure for Detroit Home Services">
+<meta property="og:description" content="Custom-coded websites built to be found by humans and machines. Owned by you, not rented from a platform. A build program of FRDT LAB, Detroit.">
+<meta property="og:url" content="https://frdtlab.com/foundry">
+<meta property="og:image" content="https://frdtlab.com/foundry/frdt-foundry-og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="FRDT Foundry — Websites & Search Infrastructure for Detroit Home Services">
+<meta name="twitter:description" content="Custom-coded websites built to be found by humans and machines. Owned by you, not rented from a platform.">
+<meta name="twitter:image" content="https://frdtlab.com/foundry/frdt-foundry-og.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "ProfessionalService",
+      "@id": "#foundry",
+      "name": "FRDT Foundry",
+      "parentOrganization": {"@type": "Organization", "name": "FRDT LAB", "url": "https://frdtlab.com", "founder": {"@id": "#amanda"}},
+      "description": "Custom-coded websites and search infrastructure for Detroit home services companies — HVAC, plumbing, electrical, and roofing. Clients own their website, domain, content, and data.",
+      "areaServed": [
+        {"@type": "City", "name": "Detroit"}, {"@type": "AdministrativeArea", "name": "Wayne County, MI"},
+        {"@type": "AdministrativeArea", "name": "Oakland County, MI"}, {"@type": "AdministrativeArea", "name": "Macomb County, MI"}
+      ],
+      "knowsAbout": ["HVAC website design","plumber website design","electrician website design","roofing company website design","local SEO for home services","AI search visibility","schema markup","Core Web Vitals"],
+      "email": "hello@frdtlab.com",
+      "makesOffer": [
+        {"@type": "Offer", "name": "The Teardown — paid website & search audit", "priceSpecification": {"@type": "PriceSpecification", "price": "750", "priceCurrency": "USD"}, "description": "A hand-built audit of the site, local rankings, and AI-search visibility against direct competitors, delivered in writing within 5 business days. The full fee is credited toward a build if the client moves forward."},
+        {"@type": "Offer", "name": "Foundation — custom website build", "description": "Custom-coded website with service-by-city architecture, schema markup, call and form tracking. One-time build. Client owns 100%. Scoped and priced after the paid teardown."},
+        {"@type": "Offer", "name": "Signal — website plus local SEO", "description": "Foundation build plus local SEO, monthly content, review architecture, AI-search visibility upkeep, and revenue-tied reporting. Scoped and priced after the paid teardown."},
+        {"@type": "Offer", "name": "System — full growth infrastructure", "description": "Signal plus paid search management, landing pages, and quarterly strategy. Scoped and priced after the paid teardown."}
+      ]
+    },
+    {
+      "@type": "Person",
+      "@id": "#amanda",
+      "name": "Amanda Friedt",
+      "jobTitle": "Founder, FRDT LAB",
+      "homeLocation": {"@type": "City", "name": "Detroit, MI"},
+      "sameAs": ["https://www.linkedin.com/in/amandafriedt", "https://frdtlab.com"],
+      "description": "Marketing operator with 20 years building growth engines. As CMO, led her agency to nine consecutive Best Integrated Agency titles — the most decorated run in the category's history. Search Engine Land and MarTech author, and speaker at SMX Advanced and brightonSEO.",
+      "knowsAbout": ["AI search optimization","integrated search marketing","paid search","local SEO","marketing infrastructure","AI agent ecosystems"]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {"@type": "Question", "name": "Who builds FRDT Foundry websites?", "acceptedAnswer": {"@type": "Answer", "text": "FRDT Foundry is a build program of FRDT LAB in Detroit. Strategy and accountability sit with FRDT LAB; engineering is handled by a senior build team with 150+ custom sites shipped over 17 years. One contract, one invoice."}},
+        {"@type": "Question", "name": "Do I own my website?", "acceptedAnswer": {"@type": "Answer", "text": "Yes — completely. Domain, code, content, and tracking data belong to the client from day one. Everything keeps working and stays with the client even if the engagement ends."}},
+        {"@type": "Question", "name": "How much does a home services website cost?", "acceptedAnswer": {"@type": "Answer", "text": "FRDT Foundry prices after a paid teardown rather than from a rate card. The teardown is $750 — a hand-built audit of the site, local rankings, and AI-search visibility, delivered in writing within 5 business days — and the full fee is credited toward a build if the client moves forward. Engagements range from a one-time custom build to full monthly growth systems."}},
+        {"@type": "Question", "name": "How much is the website teardown and is it refundable?", "acceptedAnswer": {"@type": "Answer", "text": "The teardown is $750. It is a paid audit, not a free sales call — but the entire fee is credited toward the build if the client hires FRDT Foundry, so serious buyers effectively get it at no additional cost."}},
+        {"@type": "Question", "name": "How long does a website build take?", "acceptedAnswer": {"@type": "Answer", "text": "Six to eight weeks for most home services websites, from kickoff to launch. Larger multi-trade builds run longer, with a written timeline before work starts."}},
+        {"@type": "Question", "name": "What is the difference between FRDT Foundry and platforms like Scorpion?", "acceptedAnswer": {"@type": "Answer", "text": "Large home-services marketing platforms typically retain ownership of tracking numbers, landing pages, and site infrastructure — cancel and that equity leaves with them. FRDT Foundry builds everything on the client's own infrastructure, so the asset compounds for the business that paid for it."}}
+      ]
+    }
+  ]
+}
+</script>
+<style>
+/* ============================================================
+   FRDT FOUNDRY — Landing Page
+   FRDT LAB color system: near-black ground, warm white text,
+   ember orange as the working accent, electric blue sparingly.
+   No frameworks. No external dependencies.
+   ============================================================ */
+:root{
+  --ink:#0b0b0d;
+  --graphite:#141416;
+  --charcoal:#1c1c1f;
+  --line:#2a2a2e;
+  --white:#f2efe9;
+  --ivory:#e6e2d8;
+  --gray:#9a978f;
+  --ember:#ff5c1f;
+  --blue:#3d7bff;
+  --gold:#d9a441;
+  --max:1120px;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  background:var(--ink);
+  color:var(--white);
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+::selection{background:var(--ember);color:var(--ink);}
+
+/* ---------- type scale ---------- */
+h1,h2,h3{font-weight:700;letter-spacing:-0.02em;line-height:1.12;}
+h1{font-size:clamp(2.4rem,6vw,4.4rem);}
+h2{font-size:clamp(1.8rem,4vw,2.9rem);}
+h3{font-size:clamp(1.15rem,2vw,1.4rem);}
+p{color:var(--gray);font-size:clamp(1rem,1.4vw,1.125rem);}
+.lede{color:var(--ivory);font-size:clamp(1.1rem,1.8vw,1.35rem);line-height:1.55;}
+.kicker{
+  display:inline-block;
+  font-size:.75rem;
+  letter-spacing:.22em;
+  text-transform:uppercase;
+  color:var(--ember);
+  margin-bottom:1.25rem;
+  font-weight:600;
+}
+.kicker.blue{color:var(--blue);}
+a{color:inherit;}
+
+/* ---------- layout ---------- */
+section{padding:clamp(4.5rem,9vw,8rem) 1.5rem;}
+.wrap{max-width:var(--max);margin:0 auto;}
+.narrow{max-width:760px;}
+.grid{display:grid;gap:1.25rem;}
+@media(min-width:760px){
+  .grid-2{grid-template-columns:1fr 1fr;}
+  .grid-3{grid-template-columns:repeat(3,1fr);}
+}
+
+/* ---------- nav ---------- */
+nav{
+  position:sticky;top:0;z-index:50;
+  background:rgba(11,11,13,.85);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--line);
+}
+.nav-inner{
+  max-width:var(--max);margin:0 auto;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:1rem 1.5rem;
+}
+.logo{font-weight:800;letter-spacing:.06em;font-size:1rem;text-decoration:none;}
+.logo span{color:var(--ember);}
+.nav-links{display:none;gap:2rem;list-style:none;}
+.nav-links a{color:var(--gray);text-decoration:none;font-size:.9rem;transition:color .2s;}
+.nav-links a:hover{color:var(--white);}
+@media(min-width:860px){.nav-links{display:flex;}}
+
+/* ---------- buttons ---------- */
+.btn{
+  display:inline-block;
+  padding:.85rem 1.75rem;
+  border-radius:4px;
+  font-weight:600;
+  font-size:.95rem;
+  text-decoration:none;
+  transition:transform .2s,background .2s,color .2s;
+  cursor:pointer;
+  border:none;
+}
+.btn-primary{background:var(--ember);color:var(--ink);}
+.btn-primary:hover{transform:translateY(-2px);background:#ff7442;}
+.btn-ghost{border:1px solid var(--line);color:var(--ivory);background:transparent;}
+.btn-ghost:hover{border-color:var(--gray);}
+.btn-row{display:flex;gap:1rem;flex-wrap:wrap;margin-top:2.25rem;}
+
+/* ---------- hero ---------- */
+.hero{
+  min-height:88vh;
+  display:flex;align-items:center;
+  position:relative;overflow:hidden;
+  background:
+    radial-gradient(ellipse 70% 55% at 75% 10%,rgba(255,92,31,.10),transparent 60%),
+    radial-gradient(ellipse 55% 45% at 15% 95%,rgba(61,123,255,.07),transparent 60%),
+    var(--ink);
+}
+.hero .wrap{position:relative;z-index:2;}
+.hero-art{position:absolute;inset:0;z-index:0;pointer-events:none;}
+/* blueprint grid behind the hero */
+.hero-grid{
+  position:absolute;inset:0;
+  background-image:
+    linear-gradient(rgba(242,239,233,.035) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(242,239,233,.035) 1px,transparent 1px);
+  background-size:56px 56px;
+  mask-image:radial-gradient(ellipse 90% 80% at 60% 30%,#000 30%,transparent 75%);
+  -webkit-mask-image:radial-gradient(ellipse 90% 80% at 60% 30%,#000 30%,transparent 75%);
+}
+/* Detroit skyline silhouette pinned to hero base */
+.skyline{position:absolute;bottom:-2px;left:0;width:100%;height:auto;display:block;}
+/* rising signal beams over the skyline */
+.beam{animation:beam 5s ease-in-out infinite;}
+.beam.b2{animation-delay:1.6s;}
+.beam.b3{animation-delay:3.2s;}
+@keyframes beam{0%,100%{opacity:.05;}50%{opacity:.5;}}
+@media(prefers-reduced-motion:reduce){.beam{animation:none;opacity:.15;}}
+
+/* ---------- film grain overlay ---------- */
+body:after{
+  content:"";position:fixed;inset:0;z-index:99;pointer-events:none;opacity:.05;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)' opacity='0.6'/%3E%3C/svg%3E");
+}
+
+/* ---------- inline icons ---------- */
+.icon{width:44px;height:44px;display:block;margin-bottom:1.15rem;}
+.icon *{vector-effect:non-scaling-stroke;}
+
+/* ---------- compounding chart ---------- */
+.chart-wrap{max-width:820px;margin:3.5rem auto 0;}
+.chart-wrap svg{width:100%;height:auto;display:block;}
+.chart-legend{display:flex;gap:2rem;justify-content:center;margin-top:1.25rem;flex-wrap:wrap;}
+.chart-legend span{font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;color:var(--gray);display:flex;align-items:center;gap:.5rem;}
+.chart-legend i{width:22px;height:3px;border-radius:2px;display:inline-block;}
+.draw{stroke-dasharray:1200;stroke-dashoffset:1200;transition:stroke-dashoffset 2.4s ease .3s;}
+.in .draw{stroke-dashoffset:0;}
+@media(prefers-reduced-motion:reduce){.draw{stroke-dashoffset:0;transition:none;}}
+.hero h1 .accent{color:var(--ember);}
+.hero .lede{max-width:640px;margin-top:1.5rem;}
+
+/* ---------- proof bar ---------- */
+.proof{
+  border-top:1px solid var(--line);
+  border-bottom:1px solid var(--line);
+  background:var(--graphite);
+  padding:2rem 1.5rem;
+}
+.proof .wrap{
+  display:flex;flex-wrap:wrap;gap:2rem 3.5rem;
+  justify-content:center;text-align:center;
+}
+.proof strong{display:block;font-size:1.6rem;letter-spacing:-.01em;color:var(--white);}
+.proof span{font-size:.85rem;color:var(--gray);text-transform:uppercase;letter-spacing:.12em;}
+
+/* ---------- cards ---------- */
+.card{
+  background:var(--graphite);
+  border:1px solid var(--line);
+  border-radius:6px;
+  padding:2rem 1.75rem;
+  transition:border-color .25s,transform .25s;
+}
+.card:hover{border-color:#3d3d42;transform:translateY(-3px);}
+.card h3{margin-bottom:.75rem;}
+.card p{font-size:1rem;}
+.card .num{
+  font-size:.8rem;color:var(--ember);
+  letter-spacing:.18em;font-weight:700;
+  display:block;margin-bottom:1rem;
+}
+
+/* ---------- thesis strip ---------- */
+.thesis{background:var(--graphite);border-top:1px solid var(--line);border-bottom:1px solid var(--line);text-align:center;}
+.thesis h2{max-width:800px;margin:0 auto;}
+.thesis h2 em{font-style:normal;color:var(--ember);}
+.thesis p{margin-top:1.5rem;}
+
+/* ---------- process ---------- */
+.steps{counter-reset:step;display:grid;gap:0;margin-top:3rem;border-top:1px solid var(--line);}
+.step{
+  display:grid;grid-template-columns:70px 1fr;gap:1.25rem;
+  padding:1.75rem 0;border-bottom:1px solid var(--line);
+  align-items:start;
+}
+.step .n{
+  font-size:1.9rem;font-weight:800;color:var(--ember);
+  letter-spacing:-.03em;line-height:1;
+}
+.step h3{margin-bottom:.35rem;}
+.step p{font-size:1rem;}
+
+/* ---------- packages ---------- */
+.pkg{display:flex;flex-direction:column;}
+.pkg .tier{font-size:.75rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gray);margin-bottom:.75rem;}
+.pkg .price{font-size:2rem;font-weight:800;color:var(--white);margin:.5rem 0 .25rem;letter-spacing:-.02em;}
+.pkg .per{font-size:.85rem;color:var(--gray);margin-bottom:1.25rem;}
+.pkg ul{list-style:none;margin:0 0 1.75rem;flex:1;}
+.pkg li{
+  padding:.5rem 0 .5rem 1.5rem;position:relative;
+  color:var(--ivory);font-size:.95rem;border-bottom:1px solid rgba(42,42,46,.6);
+}
+.pkg li:before{content:"—";position:absolute;left:0;color:var(--ember);}
+.pkg.featured{border-color:var(--ember);position:relative;}
+.pkg.featured:after{
+  content:"MOST BUILT";
+  position:absolute;top:-11px;left:1.75rem;
+  background:var(--ember);color:var(--ink);
+  font-size:.65rem;font-weight:800;letter-spacing:.15em;
+  padding:.2rem .6rem;border-radius:3px;
+}
+.pkg .btn{text-align:center;}
+
+/* ---------- before / after sliders ---------- */
+.ba-card{padding:0;overflow:hidden;}
+.ba-frame{position:relative;aspect-ratio:16/10;user-select:none;overflow:hidden;}
+.ba-layer{position:absolute;inset:0;}
+.ba-layer img{width:100%;height:100%;object-fit:cover;object-position:top;display:block;}
+.ba-after{clip-path:inset(0 0 0 50%);}
+.ba-divider{
+  position:absolute;top:0;bottom:0;left:50%;width:2px;
+  background:var(--ember);pointer-events:none;
+}
+.ba-divider:after{
+  content:"◂ ▸";position:absolute;top:50%;left:50%;
+  transform:translate(-50%,-50%);
+  background:var(--ember);color:var(--ink);
+  font-size:.7rem;font-weight:800;letter-spacing:.05em;
+  padding:.35rem .5rem;border-radius:999px;white-space:nowrap;
+}
+.ba-range{
+  position:absolute;inset:0;width:100%;height:100%;
+  opacity:0;cursor:ew-resize;margin:0;
+}
+.ba-tag{
+  position:absolute;bottom:10px;font-size:.65rem;font-weight:800;
+  letter-spacing:.14em;padding:.25rem .6rem;border-radius:3px;pointer-events:none;
+}
+.ba-tag.before{left:10px;background:rgba(11,11,13,.8);color:var(--gray);}
+.ba-tag.after{right:10px;background:var(--ember);color:var(--ink);}
+.ba-meta{padding:1.5rem 1.75rem;}
+.ba-meta h3{margin-bottom:.35rem;}
+.ba-meta p{font-size:.95rem;}
+/* placeholder art shown until real screenshots are dropped in */
+.ba-ph{width:100%;height:100%;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:.5rem;}
+.ba-ph span{font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;}
+.ba-ph.old{background:repeating-linear-gradient(45deg,#1c1c1f 0 14px,#161618 14px 28px);color:#6f6d66;}
+.ba-ph.new{background:linear-gradient(135deg,#141416,#1c1c1f 60%,rgba(255,92,31,.12));color:var(--ivory);}
+
+/* ---------- operator section ---------- */
+.op-grid{display:grid;gap:2.5rem;margin-top:3rem;align-items:start;}
+@media(min-width:860px){.op-grid{grid-template-columns:340px 1fr;gap:3.5rem;}}
+.op-photo{position:relative;}
+.op-photo img{width:100%;display:block;border-radius:6px;filter:saturate(.9);}
+.op-photo:before{
+  content:"";position:absolute;inset:-14px 14px 14px -14px;
+  border:1px solid var(--ember);border-radius:6px;z-index:-1;
+}
+.op-photo:after{
+  content:"";position:absolute;inset:14px -14px -14px 14px;
+  border:1px solid var(--blue);border-radius:6px;z-index:-1;opacity:.6;
+}
+.op-stats{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:2rem;}
+.op-stats div{border-left:2px solid var(--ember);padding-left:1rem;}
+.op-stats strong{display:block;font-size:1.5rem;color:var(--white);letter-spacing:-.01em;}
+.op-stats span{font-size:.8rem;color:var(--gray);text-transform:uppercase;letter-spacing:.1em;line-height:1.4;display:block;margin-top:.2rem;}
+.op-quote{
+  margin-top:2rem;padding:1.25rem 1.5rem;border-left:3px solid var(--ember);
+  background:var(--graphite);border-radius:0 6px 6px 0;
+  color:var(--ivory);font-size:1.05rem;font-style:italic;
+}
+
+/* ---------- receipts data grid ---------- */
+.dl-grid{display:grid;gap:1px;background:var(--line);border:1px solid var(--line);border-radius:6px;overflow:hidden;}
+@media(min-width:640px){.dl-grid{grid-template-columns:repeat(3,1fr);}}
+.dl-stat{background:var(--ink);padding:1.4rem 1.25rem;}
+.dl-label{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--gray);display:block;margin-bottom:.5rem;}
+.dl-stat strong{display:block;font-size:1.7rem;color:var(--white);letter-spacing:-.02em;line-height:1;}
+.dl-sub{font-size:.82rem;color:var(--gray);display:block;margin-top:.5rem;line-height:1.4;}
+
+/* ---------- before/after columns ---------- */
+.ba-cols{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;}
+.ba-h{font-size:.7rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;padding:.2rem .55rem;border-radius:3px;display:inline-block;margin-bottom:.9rem;}
+.ba-h.before{background:rgba(154,151,143,.15);color:var(--gray);}
+.ba-h.after{background:var(--ember);color:var(--ink);}
+.ba-list{list-style:none;margin:0;}
+.ba-list li{font-size:.9rem;color:var(--ivory);padding:.4rem 0 .4rem 1rem;position:relative;line-height:1.4;}
+.ba-list li:before{content:"";position:absolute;left:0;top:.85rem;width:5px;height:5px;border-radius:50%;background:var(--ember);}
+
+/* ---------- form ---------- */
+.form-card{
+  background:var(--graphite);border:1px solid var(--line);
+  border-radius:8px;padding:2.5rem 2rem;max-width:640px;margin:3rem auto 0;
+}
+.form-grid{display:grid;gap:1rem;}
+@media(min-width:600px){.form-grid{grid-template-columns:1fr 1fr;}}
+.form-grid .full{grid-column:1/-1;}
+label{display:block;font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;color:var(--gray);margin-bottom:.4rem;}
+input,select{
+  width:100%;padding:.8rem 1rem;
+  background:var(--ink);border:1px solid var(--line);border-radius:4px;
+  color:var(--white);font-size:1rem;
+}
+input:focus,select:focus{outline:none;border-color:var(--ember);}
+.form-note{font-size:.85rem;margin-top:1rem;text-align:center;}
+
+/* ---------- faq ---------- */
+details{border-bottom:1px solid var(--line);padding:1.5rem 0;}
+summary{
+  cursor:pointer;font-weight:600;font-size:1.1rem;color:var(--ivory);
+  list-style:none;display:flex;justify-content:space-between;align-items:center;
+}
+summary::-webkit-details-marker{display:none;}
+summary:after{content:"+";color:var(--ember);font-size:1.4rem;font-weight:400;}
+details[open] summary:after{content:"–";}
+details p{margin-top:1rem;max-width:700px;}
+
+/* ---------- footer ---------- */
+footer{
+  border-top:1px solid var(--line);
+  padding:4rem 1.5rem 3rem;
+  background:var(--graphite);
+}
+.foot{max-width:var(--max);margin:0 auto;display:flex;flex-wrap:wrap;gap:2.5rem;justify-content:space-between;}
+.foot .mark{font-weight:800;letter-spacing:.06em;font-size:1.1rem;}
+.foot .mark span{color:var(--ember);}
+.foot p{font-size:.9rem;}
+.foot .tag{color:var(--ivory);line-height:1.4;}
+
+/* ---------- reveal on scroll ---------- */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease;}
+.reveal.in{opacity:1;transform:none;}
+@media(prefers-reduced-motion:reduce){
+  .reveal{opacity:1;transform:none;transition:none;}
+  html{scroll-behavior:auto;}
+}
+</style>
+</head>
+<body>
+
+<!-- ============ NAV ============ -->
+<nav aria-label="Main">
+  <div class="nav-inner">
+    <a class="logo" href="#top">FRDT<span>·</span>FOUNDRY</a>
+    <ul class="nav-links">
+      <li><a href="#problem">The Problem</a></li>
+      <li><a href="#build">What We Build</a></li>
+      <li><a href="#process">How It Works</a></li>
+      <li><a href="#packages">Packages</a></li>
+      <li><a href="#proof">Receipts</a></li>
+      <li><a href="#faq">FAQ</a></li>
+    </ul>
+    <a class="btn btn-primary" href="#teardown">Get the Teardown</a>
+  </div>
+</nav>
+
+<!-- ============ HERO ============ -->
+<header class="hero" id="top">
+  <!-- Hero art: blueprint grid + Detroit skyline silhouette + signal beams (all inline SVG/CSS) -->
+  <div class="hero-art" aria-hidden="true">
+    <div class="hero-grid"></div>
+    <svg class="skyline" viewBox="0 0 1440 220" preserveAspectRatio="xMidYMax slice" fill="none">
+      <defs>
+        <linearGradient id="sky-fill" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#1c1c1f"/><stop offset="1" stop-color="#0b0b0d"/>
+        </linearGradient>
+        <linearGradient id="beam-g" x1="0" y1="1" x2="0" y2="0">
+          <stop offset="0" stop-color="#ff5c1f" stop-opacity=".7"/><stop offset="1" stop-color="#ff5c1f" stop-opacity="0"/>
+        </linearGradient>
+        <linearGradient id="beam-b" x1="0" y1="1" x2="0" y2="0">
+          <stop offset="0" stop-color="#3d7bff" stop-opacity=".55"/><stop offset="1" stop-color="#3d7bff" stop-opacity="0"/>
+        </linearGradient>
+      </defs>
+      <!-- signal beams rising from the city -->
+      <rect class="beam" x="712" y="0" width="3" height="150" fill="url(#beam-g)"/>
+      <rect class="beam b2" x="352" y="40" width="2" height="120" fill="url(#beam-b)"/>
+      <rect class="beam b3" x="1088" y="30" width="2" height="130" fill="url(#beam-g)"/>
+      <!-- skyline silhouette (stylized Detroit: flat blocks flanking a central tower cluster) -->
+      <path fill="url(#sky-fill)" d="
+        M0,220 L0,180 L48,180 L48,158 L92,158 L92,180 L128,180 L128,140 L150,140 L150,132 L172,132 L172,180
+        L214,180 L214,150 L262,150 L262,180 L300,180 L300,120 L318,120 L318,112 L336,112 L336,120 L354,120 L354,180
+        L396,180 L396,144 L438,144 L438,180 L470,180 L470,126 L512,126 L512,180
+        L548,180 L548,150 L588,150 L588,180
+        L620,180 L620,104 L640,104 L640,96 L662,96 L662,104 L682,104 L682,180
+        L698,180 L698,60 L706,60 L706,48 L722,48 L722,60 L730,60 L730,180
+        L746,180 L746,92 L768,92 L768,84 L790,84 L790,92 L810,92 L810,180
+        L846,180 L846,136 L890,136 L890,180
+        L922,180 L922,116 L942,116 L942,108 L964,108 L964,116 L984,116 L984,180
+        L1020,180 L1020,148 L1064,148 L1064,180
+        L1080,180 L1080,98 L1096,98 L1096,90 L1114,90 L1114,98 L1130,98 L1130,180
+        L1166,180 L1166,140 L1210,140 L1210,180
+        L1246,180 L1246,124 L1288,124 L1288,180
+        L1320,180 L1320,156 L1364,156 L1364,180 L1400,180 L1400,168 L1440,168 L1440,220 Z"/>
+      <!-- scattered lit windows -->
+      <g fill="#ff5c1f" opacity=".35">
+        <rect x="706" y="70" width="3" height="4"/><rect x="716" y="88" width="3" height="4"/>
+        <rect x="756" y="104" width="3" height="4"/><rect x="778" y="118" width="3" height="4"/>
+        <rect x="308" y="132" width="3" height="4"/><rect x="330" y="146" width="3" height="4"/>
+        <rect x="632" y="118" width="3" height="4"/><rect x="656" y="134" width="3" height="4"/>
+        <rect x="934" y="128" width="3" height="4"/><rect x="1090" y="112" width="3" height="4"/>
+      </g>
+      <g fill="#f2efe9" opacity=".18">
+        <rect x="140" y="148" width="3" height="4"/><rect x="230" y="160" width="3" height="4"/>
+        <rect x="410" y="154" width="3" height="4"/><rect x="480" y="138" width="3" height="4"/>
+        <rect x="860" y="146" width="3" height="4"/><rect x="1035" y="158" width="3" height="4"/>
+        <rect x="1180" y="150" width="3" height="4"/><rect x="1260" y="136" width="3" height="4"/>
+      </g>
+    </svg>
+  </div>
+  <div class="wrap">
+    <span class="kicker">FRDT Foundry · A FRDT LAB Build Program · Detroit</span>
+    <h1>Your trucks are booked.<br>Your website is losing <span class="accent">the next ten years.</span></h1>
+    <p class="lede">Custom-built websites and search infrastructure for Detroit home services companies — HVAC, plumbing, electrical, roofing. Coded from scratch. Built to be found by humans and machines. Owned by you.</p>
+    <div class="btn-row">
+      <a class="btn btn-primary" href="#teardown">Get your teardown</a>
+      <a class="btn btn-ghost" href="#packages">See the packages</a>
+    </div>
+  </div>
+</header>
+
+<!-- ============ PROOF BAR ============ -->
+<div class="proof reveal">
+  <div class="wrap">
+    <div><strong>150+</strong><span>custom sites shipped</span></div>
+    <div><strong>17 years</strong><span>of build experience</span></div>
+    <div><strong>$100M+</strong><span>client revenue influenced</span></div>
+    <div><strong>Detroit</strong><span>rooted &amp; run</span></div>
+  </div>
+</div>
+
+<!-- ============ THE PROBLEM ============ -->
+<section id="problem">
+  <div class="wrap">
+    <span class="kicker reveal">The Problem</span>
+    <h2 class="reveal">The work didn't change.<br>The way people find you did.</h2>
+    <p class="lede reveal" style="max-width:700px;margin-top:1.5rem;">Metro Detroit runs on trades. Furnaces in January. Flooded basements in July. Panels that can't hold an EV charger. The demand is real and it's urgent — and it's won or lost in the thirty seconds someone spends searching.</p>
+    <div class="grid grid-3" style="margin-top:3.5rem;">
+      <div class="card reveal">
+        <span class="num">01</span>
+        <!-- icon: aging browser window, cracked -->
+        <svg class="icon" viewBox="0 0 48 48" fill="none" stroke="#9a978f" stroke-width="1.6" aria-hidden="true">
+          <rect x="5" y="9" width="38" height="30" rx="2"/>
+          <line x1="5" y1="17" x2="43" y2="17"/>
+          <circle cx="10" cy="13" r="1.2" fill="#9a978f" stroke="none"/>
+          <circle cx="15" cy="13" r="1.2" fill="#9a978f" stroke="none"/>
+          <path d="M18 39 L24 30 L28 34 L34 25" stroke="#ff5c1f"/>
+        </svg>
+        <h3>Your site was built in 2016. It shows.</h3>
+        <p>Template theme. Slow load. One services page doing the work of forty. Every well-run shop we look at has the same gap: a million-dollar operation behind a website that whispers.</p>
+      </div>
+      <div class="card reveal">
+        <span class="num">02</span>
+        <!-- icon: search node branching into an AI network -->
+        <svg class="icon" viewBox="0 0 48 48" fill="none" stroke="#9a978f" stroke-width="1.6" aria-hidden="true">
+          <circle cx="18" cy="18" r="9"/>
+          <line x1="25" y1="25" x2="31" y2="31"/>
+          <circle cx="36" cy="12" r="3" stroke="#3d7bff"/>
+          <circle cx="40" cy="26" r="3" stroke="#3d7bff"/>
+          <circle cx="36" cy="40" r="3" stroke="#3d7bff"/>
+          <line x1="26" y1="14" x2="33" y2="12.5" stroke="#3d7bff"/>
+          <line x1="27" y1="21" x2="37" y2="25" stroke="#3d7bff"/>
+          <line x1="31" y1="31" x2="34" y2="38" stroke="#3d7bff"/>
+        </svg>
+        <h3>Google isn't the only front door anymore.</h3>
+        <p>People now ask AI who to call. If your business isn't structured, marked up, and machine-readable, you don't exist in that answer. Not penalized — absent.</p>
+      </div>
+      <div class="card reveal">
+        <span class="num">03</span>
+        <!-- icon: building on rented ground — meter running -->
+        <svg class="icon" viewBox="0 0 48 48" fill="none" stroke="#9a978f" stroke-width="1.6" aria-hidden="true">
+          <rect x="12" y="14" width="24" height="24" rx="2"/>
+          <path d="M12 22 L36 22"/>
+          <rect x="17" y="27" width="5" height="11" stroke="#ff5c1f"/>
+          <rect x="26" y="27" width="5" height="6"/>
+          <path d="M20 14 V8 M28 14 V8" stroke-dasharray="2 3"/>
+          <path d="M8 42 L40 42" stroke-dasharray="3 4" stroke="#ff5c1f"/>
+        </svg>
+        <h3>The big platforms rent you everything.</h3>
+        <p>Tracking numbers, landing pages, sometimes the website itself. Cancel, and years of investment evaporates. That's not marketing. That's a lease with no equity.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ THESIS ============ -->
+<section class="thesis">
+  <div class="wrap">
+    <span class="kicker reveal">The Shift</span>
+    <h2 class="reveal">Campaigns fade. <em>Infrastructure compounds.</em></h2>
+    <p class="lede reveal narrow" style="margin:1.5rem auto 0;">Authority is becoming machine-readable. The shops that win the next decade won't be the ones spending the most on ads. They'll be the ones whose websites are built like infrastructure — fast, structured, legible to humans and intelligent systems alike.</p>
+
+    <!-- Compounding chart: ad spikes decay, infrastructure climbs -->
+    <div class="chart-wrap reveal">
+      <svg viewBox="0 0 820 300" fill="none" role="img" aria-label="Chart comparing campaign spend that spikes and decays against infrastructure value that compounds over time">
+        <!-- axis -->
+        <line x1="50" y1="260" x2="790" y2="260" stroke="#2a2a2e" stroke-width="1.5"/>
+        <line x1="50" y1="30" x2="50" y2="260" stroke="#2a2a2e" stroke-width="1.5"/>
+        <!-- gridlines -->
+        <g stroke="#1c1c1f" stroke-width="1">
+          <line x1="50" y1="200" x2="790" y2="200"/><line x1="50" y1="140" x2="790" y2="140"/>
+          <line x1="50" y1="80" x2="790" y2="80"/>
+        </g>
+        <!-- year ticks -->
+        <g fill="#9a978f" font-size="12" font-family="inherit" letter-spacing="1">
+          <text x="50" y="282">YEAR 1</text><text x="290" y="282">YEAR 2</text>
+          <text x="530" y="282">YEAR 3</text><text x="748" y="282">YEAR 4</text>
+        </g>
+        <!-- campaign spikes: burst, decay, burst, decay -->
+        <path class="draw" d="M50,258 C80,258 90,140 110,140 C130,140 140,250 170,252
+                 C200,254 210,120 235,120 C260,120 268,248 300,252
+                 C335,255 345,150 370,150 C395,150 405,250 440,254
+                 C480,257 490,135 515,135 C540,135 550,252 585,255 C640,258 700,258 790,258"
+              stroke="#9a978f" stroke-width="2.5" stroke-linecap="round" opacity=".8"/>
+        <!-- infrastructure curve: compounding -->
+        <path class="draw" d="M50,256 C180,252 300,240 420,214 C540,188 650,140 790,52"
+              stroke="#ff5c1f" stroke-width="3.5" stroke-linecap="round"/>
+        <!-- endpoint glow -->
+        <circle cx="790" cy="52" r="5" fill="#ff5c1f"/>
+        <circle cx="790" cy="52" r="11" fill="#ff5c1f" opacity=".2"/>
+      </svg>
+      <div class="chart-legend">
+        <span><i style="background:#9a978f;"></i>Ad campaigns — rented reach</span>
+        <span><i style="background:#ff5c1f;"></i>Owned infrastructure — compounding value</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WHAT WE BUILD ============ -->
+<section id="build">
+  <div class="wrap">
+    <span class="kicker reveal">What We Build</span>
+    <h2 class="reveal">A website that works like a machine.<br>Because it is one.</h2>
+    <div class="grid grid-3" style="margin-top:3.5rem;">
+      <div class="card reveal">
+        <!-- icon: code brackets -->
+        <svg class="icon" viewBox="0 0 48 48" fill="none" stroke="#9a978f" stroke-width="1.6" aria-hidden="true">
+          <path d="M16 14 L7 24 L16 34" stroke="#ff5c1f"/>
+          <path d="M32 14 L41 24 L32 34" stroke="#ff5c1f"/>
+          <line x1="27" y1="10" x2="21" y2="38"/>
+        </svg>
+        <h3>Coded from scratch</h3>
+        <p>No page builders. No templates. Every site is engineered — which is why they load fast and hold up under real traffic.</p>
+      </div>
+      <div class="card reveal">
+        <!-- icon: gauge, needle pinned -->
+        <svg class="icon" viewBox="0 0 48 48" fill="none" stroke="#9a978f" stroke-width="1.6" aria-hidden="true">
+          <path d="M8 34 A18 18 0 1 1 40 34"/>
+          <line x1="24" y1="34" x2="34" y2="20" stroke="#ff5c1f" stroke-width="2"/>
+          <circle cx="24" cy="34" r="2.5" fill="#ff5c1f" stroke="none"/>
+          <line x1="10" y1="28" x2="13" y2="29.5"/><line x1="16" y1="17" x2="18" y2="19.5"/>
+          <line x1="24" y1="13" x2="24" y2="16"/><line x1="32" y1="17" x2="30" y2="19.5"/>
+        </svg>
+        <h3>Built for speed</h3>
+        <p>Speed is a ranking factor, a conversion factor, and a trust factor. We treat it like one.</p>
+      </div>
+      <div class="card reveal">
+        <!-- icon: city grid with map pins -->
+        <svg class="icon" viewBox="0 0 48 48" fill="none" stroke="#9a978f" stroke-width="1.6" aria-hidden="true">
+          <rect x="7" y="7" width="34" height="34" rx="2"/>
+          <line x1="7" y1="24" x2="41" y2="24"/><line x1="24" y1="7" x2="24" y2="41"/>
+          <path d="M16 14 a3.4 3.4 0 0 1 3.4 3.4 c0 2.6 -3.4 5.6 -3.4 5.6 s-3.4 -3 -3.4 -5.6 A3.4 3.4 0 0 1 16 14 Z" stroke="#ff5c1f"/>
+          <circle cx="33" cy="33" r="2.5" stroke="#ff5c1f"/>
+        </svg>
+        <h3>Local architecture done right</h3>
+        <p>Service-by-city page structure that maps to how people search — without the thin, copy-pasted location pages that get filtered out.</p>
+      </div>
+      <div class="card reveal">
+        <!-- icon: node network / machine-readable structure -->
+        <svg class="icon" viewBox="0 0 48 48" fill="none" stroke="#9a978f" stroke-width="1.6" aria-hidden="true">
+          <circle cx="24" cy="10" r="4" stroke="#3d7bff"/>
+          <circle cx="10" cy="34" r="4"/><circle cx="38" cy="34" r="4"/><circle cx="24" cy="26" r="3" stroke="#3d7bff"/>
+          <line x1="24" y1="14" x2="24" y2="23"/>
+          <line x1="21.5" y1="28.5" x2="13" y2="31.5"/>
+          <line x1="26.5" y1="28.5" x2="35" y2="31.5"/>
+        </svg>
+        <h3>Visible to AI search</h3>
+        <p>Schema, entities, structured answers. When someone asks an AI who to call in Ferndale, the answer should be you.</p>
+      </div>
+      <div class="card reveal">
+        <!-- icon: key -->
+        <svg class="icon" viewBox="0 0 48 48" fill="none" stroke="#9a978f" stroke-width="1.6" aria-hidden="true">
+          <circle cx="16" cy="18" r="8" stroke="#ff5c1f"/>
+          <circle cx="16" cy="18" r="2.5"/>
+          <path d="M22 24 L38 40 M33 35 L37 31 M28 30 L31 27"/>
+        </svg>
+        <h3>You own everything</h3>
+        <p>Your domain. Your site. Your content. Your data. Walk away tomorrow and it all stays yours. We build equity, not leases.</p>
+      </div>
+      <div class="card reveal">
+        <!-- icon: rising bars with dollar signal -->
+        <svg class="icon" viewBox="0 0 48 48" fill="none" stroke="#9a978f" stroke-width="1.6" aria-hidden="true">
+          <line x1="8" y1="40" x2="40" y2="40"/>
+          <rect x="12" y="28" width="6" height="12"/>
+          <rect x="22" y="20" width="6" height="20"/>
+          <rect x="32" y="12" width="6" height="28" stroke="#ff5c1f"/>
+          <path d="M10 22 C18 18 26 12 38 6" stroke="#ff5c1f" stroke-dasharray="3 3"/>
+        </svg>
+        <h3>Measured in revenue</h3>
+        <p>Calls, bookings, jobs — tracked back to the pages and searches that produced them. You'll know what the machine is earning.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROCESS ============ -->
+<section id="process" style="background:var(--graphite);border-top:1px solid var(--line);border-bottom:1px solid var(--line);">
+  <div class="wrap narrow">
+    <span class="kicker blue reveal">How It Works</span>
+    <h2 class="reveal">Build the machine.<br>Then the machine builds momentum.</h2>
+    <div class="steps">
+      <div class="step reveal">
+        <span class="n">01</span>
+        <div><h3>Sense</h3><p>We tear down your current site, your market, and your competitors. You see exactly where the leaks are before we talk about anything else.</p></div>
+      </div>
+      <div class="step reveal">
+        <span class="n">02</span>
+        <div><h3>Structure</h3><p>Architecture before aesthetics. Services, cities, search intent — mapped into a site structure built to rank and convert.</p></div>
+      </div>
+      <div class="step reveal">
+        <span class="n">03</span>
+        <div><h3>Build</h3><p>Custom-coded, fast, machine-readable. Typical build: six to eight weeks from kickoff to launch.</p></div>
+      </div>
+      <div class="step reveal">
+        <span class="n">04</span>
+        <div><h3>Measure</h3><p>Calls and bookings attributed to source. Reporting you can read in five minutes, tied to jobs — not vanity metrics.</p></div>
+      </div>
+      <div class="step reveal">
+        <span class="n">05</span>
+        <div><h3>Compound</h3><p>Content, local signals, and AI visibility that build on each other month over month. The asset appreciates. That's the point.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PACKAGES ============ -->
+<section id="packages">
+  <div class="wrap">
+    <span class="kicker reveal">Packages</span>
+    <h2 class="reveal">Three ways in. One standard of build.</h2>
+    <p class="lede reveal" style="margin-top:1.25rem;max-width:640px;">Every engagement starts with the teardown — a paid audit, credited toward your build. Pricing follows the facts: scoped to your shop, delivered in writing, before any work begins.</p>
+    <div class="grid grid-3" style="margin-top:3.5rem;">
+
+      <div class="card pkg reveal">
+        <span class="tier">01 · The Build</span>
+        <h3>Foundation</h3>
+        <div class="per" style="margin-bottom:1.25rem;">One-time custom build · scoped after your teardown</div>
+        <ul>
+          <li>Custom-coded website, no templates</li>
+          <li>Service × city page architecture</li>
+          <li>Schema &amp; AI-search markup</li>
+          <li>Speed-engineered, mobile-first</li>
+          <li>Call &amp; form tracking installed</li>
+          <li>You own 100% of it</li>
+        </ul>
+        <a class="btn btn-ghost" href="#teardown">Start with the teardown</a>
+      </div>
+
+      <div class="card pkg featured reveal">
+        <span class="tier">02 · Build + Grow</span>
+        <h3>Signal</h3>
+        <div class="per" style="margin-bottom:1.25rem;">Monthly program · includes the Foundation build</div>
+        <ul>
+          <li>Everything in Foundation</li>
+          <li>Local SEO — maps, citations, reviews architecture</li>
+          <li>Monthly content built for real search demand</li>
+          <li>AI-visibility upkeep as search shifts</li>
+          <li>Monthly revenue-tied reporting</li>
+        </ul>
+        <a class="btn btn-primary" href="#teardown">Start with the teardown</a>
+      </div>
+
+      <div class="card pkg reveal">
+        <span class="tier">03 · Full System</span>
+        <h3>System</h3>
+        <div class="per" style="margin-bottom:1.25rem;">Monthly program · the whole growth machine</div>
+        <ul>
+          <li>Everything in Signal</li>
+          <li>Paid search management &amp; landing pages</li>
+          <li>Budget shifted to what's producing jobs</li>
+          <li>Quarterly strategy with Amanda</li>
+          <li>One team. One invoice. One system.</li>
+        </ul>
+        <a class="btn btn-ghost" href="#teardown">Start with the teardown</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ RECEIPTS / PROOF ============ -->
+<section id="proof" style="background:var(--graphite);border-top:1px solid var(--line);">
+  <div class="wrap">
+    <span class="kicker reveal">Receipts</span>
+    <h2 class="reveal">The work, with the numbers attached.</h2>
+    <p class="lede reveal" style="margin-top:1.25rem;max-width:660px;">Real rebuilds. The visible part is the design. The part that actually moves revenue is underneath — the data humans never see and machines read first.</p>
+
+    <!-- FEATURED: DIY Door Store migration data -->
+    <div class="card reveal" style="margin-top:3.5rem;padding:2.5rem 2rem;">
+      <div style="display:flex;flex-wrap:wrap;gap:.75rem 1.25rem;align-items:baseline;justify-content:space-between;margin-bottom:1.75rem;">
+        <div>
+          <span class="num" style="color:var(--ember);">FLAGSHIP REBUILD</span>
+          <h3 style="margin-top:.4rem;">DIY Door Store — Shift4Shop to Shopify</h3>
+        </div>
+        <p style="max-width:420px;font-size:.95rem;">Same catalog, rebuilt from the data up. A dated template hiding broken product data became a search-first store that Google Shopping could finally read.</p>
+      </div>
+      <div class="dl-grid">
+        <div class="dl-stat"><span class="dl-label">Product titles fixed</span><strong>958</strong><span class="dl-sub">981 were duplicates — 54% of the catalog</span></div>
+        <div class="dl-stat"><span class="dl-label">Images at Google's spec</span><strong>27% &rarr; 73%</strong><span class="dl-sub">1,203 rebuilt to 1500px</span></div>
+        <div class="dl-stat"><span class="dl-label">Shipping weights set</span><strong>1,639</strong><span class="dl-sub">every one was 0 lb — shipping was guesswork</span></div>
+        <div class="dl-stat"><span class="dl-label">Products categorized</span><strong>1,778</strong><span class="dl-sub">from uncategorized to Google-mapped</span></div>
+        <div class="dl-stat"><span class="dl-label">Reviews imported</span><strong>3,585</strong><span class="dl-sub">4.93&#9733; average — none were shown before</span></div>
+        <div class="dl-stat"><span class="dl-label">Redirects preserving SEO</span><strong>1,765</strong><span class="dl-sub">old URLs that would have 404'd at cutover</span></div>
+      </div>
+      <p style="margin-top:1.5rem;font-size:.95rem;border-left:2px solid var(--ember);padding-left:1rem;color:var(--ivory);">The storefront got prettier. But the invisible fixes — titles, images, categories, weights — are what let the store actually get found.</p>
+    </div>
+
+    <!-- Two door companies: before / after contrast -->
+    <div class="grid grid-2" style="margin-top:1.25rem;">
+
+      <div class="card reveal">
+        <span class="num" style="color:var(--ember);">REBUILD</span>
+        <h3 style="margin:.4rem 0 1.25rem;">Taylor Door</h3>
+        <div class="ba-cols">
+          <div>
+            <span class="ba-h before">Before</span>
+            <ul class="ba-list">
+              <li>Aging WordPress template</li>
+              <li>Slow, cluttered, dated layout</li>
+              <li>Reputation the site didn't match</li>
+            </ul>
+          </div>
+          <div>
+            <span class="ba-h after">After</span>
+            <ul class="ba-list">
+              <li>Custom static build — fast by design</li>
+              <li>Structured for local search</li>
+              <li>A site that finally matches the workmanship</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="card reveal">
+        <span class="num" style="color:var(--ember);">REBUILD</span>
+        <h3 style="margin:.4rem 0 1.25rem;">Service Pro Industrial Door &amp; Dock</h3>
+        <div class="ba-cols">
+          <div>
+            <span class="ba-h before">Before</span>
+            <ul class="ba-list">
+              <li>Legacy WordPress site</li>
+              <li>Thin structure, weak search footing</li>
+              <li>Industrial credibility gap online</li>
+            </ul>
+          </div>
+          <div>
+            <span class="ba-h after">After</span>
+            <ul class="ba-list">
+              <li>Custom static rebuild</li>
+              <li>Speed and machine-readable structure</li>
+              <li>Built to be found, not just seen</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <p class="reveal" style="margin-top:1.5rem;font-size:.85rem;color:var(--gray);">Live before/after walkthroughs available on request.</p>
+  </div>
+</section>
+
+<!-- ============ THE OPERATOR ============ -->
+<section id="operator">
+  <div class="wrap">
+    <span class="kicker reveal">The Operator</span>
+    <h2 class="reveal">Twenty years building growth machines.<br>Now building them for Detroit's trades.</h2>
+    <div class="op-grid">
+      <div class="op-photo reveal">
+        <img src="data:image/jpeg;base64,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" alt="Amanda Friedt, founder of FRDT LAB" width="520" height="520">
+      </div>
+      <div class="reveal">
+        <p class="lede">Amanda Friedt walked into a search agency in 2010 as a specialist and left a partner. As CMO, she led her agency to nine consecutive Best Integrated Agency titles — the most decorated run in the category's history — then ran growth in-house for a national e-commerce portfolio, rebuilding product catalogs into AI-discovery machines and deploying working AI agent ecosystems where silos used to be.</p>
+        <p style="margin-top:1.25rem;">Now she builds through FRDT LAB — her own creative intelligence lab, rooted in the city that taught her the difference between decoration and structure. Detroit, born of the rebuild. Former gallery owner. Mom of three boys. She reads the human before the data — then checks the data anyway.</p>
+        <div class="op-stats">
+          <div><strong>20 years</strong><span>building growth engines</span></div>
+          <div><strong>9&times;</strong><span>consecutive Best Integrated Agency titles led as CMO</span></div>
+          <div><strong>6&times;</strong><span>PPC Hero Top 25 most influential in paid search</span></div>
+          <div><strong>Author</strong><span>Search Engine Land &amp; MarTech &middot; mainstage at SMX Advanced &amp; brightonSEO</span></div>
+        </div>
+        <div class="op-quote">"Marketing no longer sits on top of the system. It runs through it. I build the through."</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TEARDOWN CTA ============ -->
+<section id="teardown" style="background:radial-gradient(ellipse 60% 50% at 50% 0%,rgba(255,92,31,.08),transparent 60%),var(--graphite);border-top:1px solid var(--line);">
+  <div class="wrap" style="text-align:center;">
+    <span class="kicker reveal">The Teardown · $750</span>
+    <h2 class="reveal">See what your website is costing you.</h2>
+    <p class="lede reveal narrow" style="margin:1.5rem auto 0;">A hand-built audit of your site, your local rankings, and your AI-search visibility — measured against the shops you actually compete with, delivered in plain English within five business days. Not a free sales call. A paid teardown, and the full $750 is credited toward your build if you move forward. If the numbers say your site is fine, we'll tell you that too.</p>
+
+    <!-- Teardown report mock: stylized audit document -->
+    <div class="reveal" style="max-width:420px;margin:3rem auto 0;" aria-hidden="true">
+      <svg viewBox="0 0 420 300" fill="none" style="width:100%;height:auto;display:block;filter:drop-shadow(0 24px 48px rgba(0,0,0,.5));">
+        <!-- page -->
+        <rect x="30" y="10" width="360" height="280" rx="6" fill="#141416" stroke="#2a2a2e"/>
+        <!-- header -->
+        <rect x="54" y="34" width="10" height="10" fill="#ff5c1f"/>
+        <rect x="72" y="35" width="120" height="8" rx="2" fill="#f2efe9" opacity=".85"/>
+        <rect x="54" y="52" width="180" height="6" rx="2" fill="#9a978f" opacity=".4"/>
+        <line x1="54" y1="72" x2="366" y2="72" stroke="#2a2a2e"/>
+        <!-- score rows -->
+        <g font-family="inherit">
+          <rect x="54" y="88" width="90" height="6" rx="2" fill="#9a978f" opacity=".55"/>
+          <rect x="54" y="100" width="312" height="8" rx="3" fill="#1c1c1f"/>
+          <rect x="54" y="100" width="96" height="8" rx="3" fill="#ff5c1f"/>
+          <rect x="54" y="126" width="120" height="6" rx="2" fill="#9a978f" opacity=".55"/>
+          <rect x="54" y="138" width="312" height="8" rx="3" fill="#1c1c1f"/>
+          <rect x="54" y="138" width="60" height="8" rx="3" fill="#ff5c1f"/>
+          <rect x="54" y="164" width="104" height="6" rx="2" fill="#9a978f" opacity=".55"/>
+          <rect x="54" y="176" width="312" height="8" rx="3" fill="#1c1c1f"/>
+          <rect x="54" y="176" width="196" height="8" rx="3" fill="#d9a441"/>
+          <rect x="54" y="202" width="86" height="6" rx="2" fill="#9a978f" opacity=".55"/>
+          <rect x="54" y="214" width="312" height="8" rx="3" fill="#1c1c1f"/>
+          <rect x="54" y="214" width="252" height="8" rx="3" fill="#3d7bff"/>
+        </g>
+        <!-- annotation circle, redline style -->
+        <ellipse cx="128" cy="104" rx="88" ry="18" stroke="#ff5c1f" stroke-width="1.5" stroke-dasharray="4 4"/>
+        <!-- footer note -->
+        <rect x="54" y="248" width="200" height="6" rx="2" fill="#9a978f" opacity=".35"/>
+        <rect x="54" y="260" width="150" height="6" rx="2" fill="#9a978f" opacity=".25"/>
+      </svg>
+      <p style="font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;margin-top:1rem;color:var(--gray);text-align:center;">Sample teardown — speed · local rankings · AI visibility · conversion</p>
+    </div>
+
+    <form class="form-card reveal" id="teardownForm" style="text-align:left;">
+      <div class="form-grid">
+        <div><label for="f-name">Name</label><input id="f-name" name="name" type="text" required></div>
+        <div><label for="f-company">Company</label><input id="f-company" name="company" type="text" required></div>
+        <div>
+          <label for="f-trade">Trade</label>
+          <select id="f-trade" name="trade">
+            <option>HVAC</option><option>Plumbing</option><option>Electrical</option>
+            <option>Roofing</option><option>Multi-trade</option><option>Other</option>
+          </select>
+        </div>
+        <div><label for="f-site">Website</label><input id="f-site" name="website" type="text" placeholder="yourcompany.com"></div>
+        <div class="full"><label for="f-email">Email</label><input id="f-email" name="email" type="email" required></div>
+        <div class="full"><button class="btn btn-primary" type="submit" style="width:100%;">Request my teardown — $750</button></div>
+      </div>
+      <p class="form-note">Delivered within 5 business days · credited toward your build · built by hand, not by software.</p>
+    </form>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section id="faq">
+  <div class="wrap narrow">
+    <span class="kicker reveal">Questions</span>
+    <h2 class="reveal">Asked by every shop owner.<br>Answered straight.</h2>
+    <div style="margin-top:2.5rem;">
+      <details class="reveal">
+        <summary>Who actually does the work?</summary>
+        <p>FRDT Foundry is a build program of FRDT LAB. Strategy, direction, and accountability sit here in Detroit with Amanda. The engineering is handled by our senior build team — the same crew behind 150+ custom sites over 17 years. One contract, one invoice, one person answerable to you.</p>
+      </details>
+      <details class="reveal">
+        <summary>Do I own the website?</summary>
+        <p>Completely. Domain, code, content, tracking data — all of it is yours from day one. If we ever part ways, everything keeps working and everything stays with you. That's the difference between infrastructure and a lease.</p>
+      </details>
+      <details class="reveal">
+        <summary>What does it cost?</summary>
+        <p>Every shop's situation is different — a two-truck electrician and a forty-truck HVAC operation don't need the same machine. So every engagement starts with the teardown: a $750 hand-built audit, delivered in writing, that scopes exactly what your business needs. If you move forward, the full $750 is credited toward your build — so serious buyers pay nothing extra for it. No rate card. No surprises.</p>
+      </details>
+      <details class="reveal">
+        <summary>How long does a build take?</summary>
+        <p>Six to eight weeks for most home services sites, from kickoff to launch. Larger multi-trade builds run longer. You'll have a real timeline in writing before anything starts.</p>
+      </details>
+      <details class="reveal">
+        <summary>Why not one of the big home-services marketing platforms?</summary>
+        <p>They're good at scale and bad at ownership. Their tracking numbers, landing pages, and dashboards live on their infrastructure — cancel and the equity walks out with them. We build the opposite way: everything on your infrastructure, compounding for you. You should be the one who owns the machine.</p>
+      </details>
+      <details class="reveal">
+        <summary>Is my current site salvageable?</summary>
+        <p>Sometimes, yes. The teardown will tell you honestly. If a rebuild isn't warranted, we'll say so and show you the smaller fixes that matter. We'd rather be right than be hired.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="foot">
+    <div>
+      <div class="mark">FRDT<span>·</span>LAB</div>
+      <p class="tag" style="margin-top:1rem;">Systems.<br>Stories.<br>Signal.</p>
+    </div>
+    <div>
+      <p class="tag">Detroit-rooted.<br>Future-facing.<br>Building what comes next.</p>
+    </div>
+    <div>
+      <p>FRDT Foundry is a program of FRDT LAB.<br>
+      <a href="mailto:hello@frdtlab.com" style="color:var(--ivory);">hello@frdtlab.com</a></p>
+      <p style="margin-top:1rem;font-size:.8rem;">© <span id="yr"></span> FRDT LAB. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* ---------- current year ---------- */
+document.getElementById('yr').textContent = new Date().getFullYear();
+
+/* ---------- scroll reveal ---------- */
+const io = new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });
+},{threshold:0.12});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+/* ---------- teardown form → email handoff ----------
+   Placeholder handling: composes an email to hello@frdtlab.com.
+   Swap for a real form endpoint (Formspree, Netlify, CRM webhook)
+   before launch. */
+document.getElementById('teardownForm').addEventListener('submit',function(ev){
+  ev.preventDefault();
+  const f = new FormData(this);
+  const body = encodeURIComponent(
+    `Teardown request\n\nName: ${f.get('name')}\nCompany: ${f.get('company')}\nTrade: ${f.get('trade')}\nWebsite: ${f.get('website')}\nEmail: ${f.get('email')}`
+  );
+  window.location.href = `mailto:hello@frdtlab.com?subject=${encodeURIComponent('Free Teardown — '+f.get('company'))}&body=${body}`;
+});
+</script>
+</body>
+</html>
