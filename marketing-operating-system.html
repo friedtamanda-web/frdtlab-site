@@ -121,7 +121,7 @@
   .chain{background:var(--ink);color:#F6F4F2;border-radius:10px;padding:28px 26px;margin-top:18px}
   .chain p{color:#DCDCE1;font-size:1.02rem}
   .chain .flow{font-family:'JetBrains Mono',ui-monospace,monospace;font-size:.9rem;line-height:2;color:#F6F4F2;margin-top:6px}
-  .chain .flow span{color:#E84393;padding:0 4px}
+  .chain .flow span{color:var(--pink-aa,#b81c66);padding:0 4px}
   .steps{display:grid;gap:16px;margin-top:20px}
   .step{border-left:3px solid var(--pink);background:var(--paper);padding:18px 22px;border-radius:0 8px 8px 0}
   .step .n{font-family:'JetBrains Mono',ui-monospace,monospace;font-size:.72rem;letter-spacing:.14em;color:var(--pink-aa);font-weight:600}
@@ -135,17 +135,17 @@
   .cta p{margin:0 auto 24px;max-width:52ch}
   .cta-row{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
   .btn{display:inline-block;padding:14px 28px;font-weight:700;font-size:.95rem;text-decoration:none;border-radius:4px}
-  .btn-primary{background:var(--pink-aa);color:#fff}
+  .btn-primary{background:var(--pink-aa);color:#0b0b0c}
   .btn-primary:hover{filter:brightness(1.08)}
   .btn-ghost{border:1px solid var(--ink);color:var(--ink)}
   .btn-ghost:hover{border-color:var(--pink-aa);color:var(--pink-aa)}
   footer{border-top:1px solid var(--line);background:#111114;color:#8E8E96;padding:40px 0;margin-top:20px}
   footer .foot{max-width:1080px;margin:0 auto;padding:0 24px;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;align-items:center}
   footer a{color:#B9B7BD;text-decoration:none;font-size:.82rem}
-  footer a:hover{color:#E84393}
+  footer a:hover{color:var(--pink-aa,#b81c66)}
   .foot-links{display:flex;gap:16px;flex-wrap:wrap}
   :focus-visible{outline:2px solid var(--pink-aa);outline-offset:2px}
-</style>
+.skip{position:absolute;left:-9999px;top:0;background:#fff;color:#0b0b0c;padding:10px 16px;border-radius:0 0 8px 0;font-weight:700;z-index:9999}.skip:focus{left:0}</style>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -164,6 +164,7 @@ gtag('js',new Date());gtag('config','G-1TGNWXQ27S');
 <script async type="text/javascript" src="https://static.klaviyo.com/onsite/js/Twvzce/klaviyo.js?company_id=Twvzce"></script>
 </head>
 <body>
+<a class="skip" href="#main">Skip to main content</a>
 
 <header class="site">
   <div class="nav">
@@ -178,7 +179,7 @@ gtag('js',new Date());gtag('config','G-1TGNWXQ27S');
   </div>
 </header>
 
-<main>
+<main id="main">
 
 <div class="wrap hero">
   <p class="eyebrow">Marketing Glossary &middot; FRDTLAB</p>
