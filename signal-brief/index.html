@@ -93,14 +93,15 @@ footer.site{max-width:760px;margin:0 auto;padding:30px 24px 70px;border-top:2px 
 .dlbtn{display:inline-block;background:#1F4FFF;color:#fff !important;border:none;border-bottom:none;padding:16px 28px;font-size:17px;font-weight:700;border-radius:2px;text-decoration:none}
 .dlbtn:hover{background:#C9277A}
 .dlnote{font-family:'SF Mono',Menlo,Consolas,monospace;font-size:12px;color:#8A8F98;letter-spacing:.3px;margin-top:16px}
-</style>
+.skip{position:absolute;left:-9999px;top:0;background:#fff;color:#0b0b0c;padding:10px 16px;border-radius:0 0 8px 0;font-weight:700;z-index:9999}.skip:focus{left:0}</style>
 </head>
 <body>
+<a class="skip" href="#main">Skip to main content</a>
 <header class="site">
   <a class="wordmark" href="https://frdtlab.com/">FRDT<span>LAB</span></a>
   <nav class="crumb"><a href="https://frdtlab.com/">HOME</a> / SIGNAL BRIEF</nav>
 </header>
-<div class="wrap">
+<div id="main" tabindex="-1" class="wrap">
   <div class="kicker">SIGNAL BRIEF · THIS WEEK</div>
   <h1>Marketing News to Ignore This Week</h1>
   <p class="byline">Amanda Friedt, FRDTLAB · August 2026 · The weekly signal-versus-noise filter</p>

@@ -24,7 +24,7 @@
 </script>
 <style>
   :root{--ground:#F6F4F2;--card:#FCFBFA;--panel:#F1EEEA;--line:#E2DEDA;--line-2:#D9D4CE;--ink:#111114;--body:#3f3f47;--faint:#6E6E76;
-    --pink:#E84393;--pink-acc:#b81c66;--cyan:#1f8fa3;--sans:'Inter',system-ui,-apple-system,sans-serif;--mono:'JetBrains Mono',ui-monospace,monospace;--max:760px}
+    --pink:#E84393; --pink-aa:#b81c66;--pink-acc:#b81c66;--cyan:#1f8fa3;--sans:'Inter',system-ui,-apple-system,sans-serif;--mono:'JetBrains Mono',ui-monospace,monospace;--max:760px}
   *{margin:0;padding:0;box-sizing:border-box}
   html{-webkit-font-smoothing:antialiased;scroll-behavior:smooth}
   body{background:var(--ground);color:var(--body);font-family:var(--sans);font-size:18px;line-height:1.68}
@@ -50,7 +50,7 @@
   .lead-in{font-size:1.22rem;color:var(--ink);font-weight:500}
   .band{margin:40px -26px;padding:46px 30px;background:#111114;text-align:center}
   .band p{font-family:var(--sans);font-weight:800;font-size:clamp(1.4rem,3.2vw,2rem);line-height:1.16;letter-spacing:-.02em;color:#F6F4F2;margin:0;max-width:24ch;margin-inline:auto}
-  .band p em{font-style:normal;color:var(--pink)}
+  .band p em{font-style:normal;color:var(--pink-aa,#b81c66)}
   .band .src{font-family:var(--mono);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:#8E8E96;margin-top:16px}
   figure{margin:34px -26px}
   figure img{width:100%;border-radius:0}
@@ -64,20 +64,21 @@
   .cta-end{background:#111114;border-radius:16px;padding:42px 34px;text-align:center;margin:48px 0 10px}
   .cta-end h2{color:#F6F4F2;margin:0 0 10px}
   .cta-end p{color:#B9B7BD;max-width:46ch;margin:0 auto 22px}
-  .btn{display:inline-block;background:var(--pink);color:#fff;font-weight:700;padding:15px 30px;border-radius:10px;text-decoration:none;margin:4px}
+  .btn{display:inline-block;background:var(--pink);color:#0b0b0c;font-weight:700;padding:15px 30px;border-radius:10px;text-decoration:none;margin:4px}
   .btn.ghost{background:transparent;border:1px solid #3a3a40;color:#F6F4F2}
   footer{background:#111114;color:#9A9AA2;padding:40px 0;text-align:center;font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;margin-top:40px}
-  footer a{color:#B9B7BD}footer a:hover{color:var(--pink)}
-</style>
+  footer a{color:#B9B7BD}footer a:hover{color:var(--pink-aa,#b81c66)}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto!important}}.skip{position:absolute;left:-9999px;top:0;background:#fff;color:#0b0b0c;padding:10px 16px;border-radius:0 0 8px 0;font-weight:700;z-index:9999}.skip:focus{left:0}</style>
 <style id="mob">@media(max-width:600px){figure,.band{margin-left:-26px;margin-right:-26px}html,body{overflow-x:hidden}}</style>
 <!-- Klaviyo onsite (account Twvzce) -->
 <script async type="text/javascript" src="https://static.klaviyo.com/onsite/js/Twvzce/klaviyo.js?company_id=Twvzce"></script>
 <script type="text/javascript">!function(){if(!window.klaviyo){window._klOnsite=window._klOnsite||[];try{window.klaviyo=new Proxy({},{get:function(n,i){return"push"===i?function(){var n;(n=window._klOnsite).push.apply(n,arguments)}:function(){for(var n=arguments.length,o=new Array(n),w=0;w<n;w++)o[w]=arguments[w];var t="function"==typeof o[o.length-1]?o.pop():void 0,e=new Promise((function(n){window._klOnsite.push([i].concat(o,[function(i){t&&t(i),n(i)}]))}));return e}}})}catch(n){window.klaviyo=window.klaviyo||[],window.klaviyo.push=function(){var n;(n=window._klOnsite).push.apply(n,arguments)}}}}();</script>
 </head>
 <body>
+<a class="skip" href="#main">Skip to main content</a>
 <nav><a href="index.html" class="brand">FRDT<b>LAB</b></a><a href="frameworks.html" class="back">← Frameworks</a></nav>
 
-<header class="hero"><div class="wrap">
+<header id="main" tabindex="-1" class="hero"><div class="wrap">
   <span class="kicker">Infrastructure Era Marketing</span>
   <h1>The AI-Powered Marketing Machine</h1>
   <p class="standfirst">SEO and paid are training the same intelligence machine. Most teams have them in different rooms, not speaking. That is the whole problem, and it is fixable.</p>

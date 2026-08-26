@@ -18,7 +18,7 @@
 </script>
 <style>
   :root{--ground:#F6F4F2;--card:#FCFBFA;--line:#E2DEDA;--ink:#111114;--body:#3f3f47;--faint:#6E6E76;
-    --pink:#E84393;--pink-acc:#b81c66;--sans:'Inter',system-ui,sans-serif;--mono:'JetBrains Mono',ui-monospace,monospace;--max:880px}
+    --pink:#E84393; --pink-aa:#b81c66;--pink-acc:#b81c66;--sans:'Inter',system-ui,sans-serif;--mono:'JetBrains Mono',ui-monospace,monospace;--max:880px}
   *{margin:0;padding:0;box-sizing:border-box}
   html{-webkit-font-smoothing:antialiased;scroll-behavior:smooth}
   body{background:var(--ground);color:var(--body);font-family:var(--sans);font-size:17px;line-height:1.65}
@@ -45,16 +45,16 @@
   .f .cite{font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--faint);margin-top:12px}
   .band{margin:40px 0;padding:44px 30px;background:#111114;text-align:center;border-radius:16px}
   .band p{font-weight:800;font-size:clamp(1.4rem,3vw,2rem);line-height:1.16;letter-spacing:-.02em;color:#F6F4F2;margin:0;max-width:26ch;margin-inline:auto}
-  .band p em{font-style:normal;color:var(--pink)}
+  .band p em{font-style:normal;color:var(--pink-aa,#b81c66)}
   .gate{background:#111114;border-radius:16px;padding:42px 34px;text-align:center;margin:44px 0}
-  .gate .kicker{color:var(--pink)}
+  .gate .kicker{color:var(--pink-aa,#b81c66)}
   .gate h2{color:#F6F4F2;margin:0 0 10px}
   .gate p{color:#B9B7BD;max-width:46ch;margin:0 auto 20px}
   .gform{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;max-width:460px;margin:0 auto}
   .gform input{flex:1 1 240px;padding:14px 16px;border:1px solid #34343a;background:#1c1c20;color:#F6F4F2;border-radius:10px;font:400 1rem var(--sans)}
-  .gform button{background:var(--pink);color:#fff;font-weight:700;border:none;border-radius:10px;padding:14px 26px;cursor:pointer;font:700 1rem var(--sans)}
-  .gerr{display:none;color:var(--pink);font-size:.9rem;margin-top:10px}
-  #gdone{display:none}#gdone a{display:inline-block;background:var(--pink);color:#fff;font-weight:700;border-radius:10px;padding:14px 28px;margin-top:6px}
+  .gform button{background:var(--pink);color:#0b0b0c;font-weight:700;border:none;border-radius:10px;padding:14px 26px;cursor:pointer;font:700 1rem var(--sans)}
+  .gerr{display:none;color:var(--pink-aa,#b81c66);font-size:.9rem;margin-top:10px}
+  #gdone{display:none}#gdone a{display:inline-block;background:var(--pink);color:#0b0b0c;font-weight:700;border-radius:10px;padding:14px 28px;margin-top:6px}
   .gfine{font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:#8E8E96;margin-top:14px}
   .sources{font-size:13.5px;line-height:1.55;color:var(--faint);border-top:1px solid var(--line);margin-top:40px;padding-top:22px}
   .sources h2{font-size:1rem;color:var(--ink);margin:0 0 12px}
@@ -63,15 +63,16 @@
   .sources a{color:var(--pink-acc);word-break:break-word}
   footer{background:#111114;color:#9A9AA2;padding:40px 0;text-align:center;font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;margin-top:40px}
   footer a{color:#B9B7BD}
-</style>
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto!important}}.skip{position:absolute;left:-9999px;top:0;background:#fff;color:#0b0b0c;padding:10px 16px;border-radius:0 0 8px 0;font-weight:700;z-index:9999}.skip:focus{left:0}</style>
 <style id="mob">@media(max-width:600px){html,body{overflow-x:hidden}}</style>
 <script async type="text/javascript" src="https://static.klaviyo.com/onsite/js/Twvzce/klaviyo.js?company_id=Twvzce"></script>
 <script type="text/javascript">!function(){if(!window.klaviyo){window._klOnsite=window._klOnsite||[];try{window.klaviyo=new Proxy({},{get:function(n,i){return"push"===i?function(){var n;(n=window._klOnsite).push.apply(n,arguments)}:function(){for(var n=arguments.length,o=new Array(n),w=0;w<n;w++)o[w]=arguments[w];var t="function"==typeof o[o.length-1]?o.pop():void 0,e=new Promise((function(n){window._klOnsite.push([i].concat(o,[function(i){t&&t(i),n(i)}]))}));return e}}})}catch(n){window.klaviyo=window.klaviyo||[],window.klaviyo.push=function(){var n;(n=window._klOnsite).push.apply(n,arguments)}}}}();</script>
 </head>
 <body>
+<a class="skip" href="#main">Skip to main content</a>
 <nav><a href="index.html" class="brand">FRDT<b>LAB</b></a><a href="competence-trap.html" class="back">← Competence Trap</a></nav>
 
-<header class="hero"><div class="wrap">
+<header id="main" tabindex="-1" class="hero"><div class="wrap">
   <span class="kicker">The Research Lab</span>
   <h1>What we <em>found.</em></h1>
   <p class="standfirst">We study one phenomenon from two sides: what happens to capable people, and what happens to capable businesses. Here is what the data actually says. The pattern is the same from both ends of the hallway.</p>

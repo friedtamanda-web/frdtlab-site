@@ -34,7 +34,7 @@
 }
 </script>
 <style>
-:root{--ground:#F6F4F2;--ink:#111114;--body:#4A4A52;--muted:#5d5d66;--line:#E2DEDA;--card:#FCFBFA;--pink:#E84393;--pink-acc:#b81c66;--max:1080px}
+:root{--ground:#F6F4F2;--ink:#111114;--body:#4A4A52;--muted:#5d5d66;--line:#E2DEDA;--card:#FCFBFA;--pink:#E84393; --pink-aa:#b81c66;--pink-acc:#b81c66;--max:1080px}
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased}
 body{background:var(--ground);color:var(--ink);font-family:'Inter',system-ui,sans-serif;font-size:18px;line-height:1.6}
@@ -54,7 +54,7 @@ nav a.back:hover{color:var(--pink-acc)}
 .hero h1 .pink{color:var(--pink)}
 .hero .sub{margin-top:22px;font-size:clamp(1.1rem,2vw,1.35rem);line-height:1.45;max-width:40ch;color:var(--body)}
 .hero .sub b{color:var(--ink)}
-.btn{display:inline-block;margin-top:30px;background:var(--pink-acc);color:#fff;font-weight:700;font-size:14px;letter-spacing:.06em;text-transform:uppercase;padding:16px 30px;border-radius:8px;text-decoration:none;transition:transform .2s,background .2s}
+.btn{display:inline-block;margin-top:30px;background:var(--pink-acc);color:#0b0b0c;font-weight:700;font-size:14px;letter-spacing:.06em;text-transform:uppercase;padding:16px 30px;border-radius:8px;text-decoration:none;transition:transform .2s,background .2s}
 .btn:hover{background:var(--ink);transform:translateY(-2px)}
 .sec{padding:56px 0;border-top:1px solid var(--line)}
 .sec h2{font-size:clamp(1.6rem,3.4vw,2.4rem);font-weight:800;letter-spacing:-.01em;max-width:20ch}
@@ -70,7 +70,7 @@ nav a.back:hover{color:var(--pink-acc)}
 .area{background:var(--ink);color:var(--ground);border-radius:16px;padding:36px 30px;margin-top:8px}
 .area h2{color:#fff}
 .area p{color:#d8d3ca;margin-top:14px;max-width:60ch}
-.area .pink{color:var(--pink)}
+.area .pink{color:var(--pink-aa,#b81c66)}
 .form-card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:34px 30px;max-width:640px}
 .form-card label{display:block;font-size:13px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--muted);margin:16px 0 6px}
 .form-card input,.form-card select,.form-card textarea{width:100%;padding:13px 14px;border:1px solid var(--line);border-radius:9px;font-family:inherit;font-size:1rem;background:#fff;color:var(--ink)}
@@ -83,18 +83,19 @@ nav a.back:hover{color:var(--pink-acc)}
 footer{border-top:1px solid var(--line);padding:40px 0;margin-top:20px;text-align:center;color:var(--muted);font-size:.9rem}
 footer a{color:var(--pink-acc);font-weight:600;text-decoration:none}
 @media(max-width:760px){.grid{grid-template-columns:1fr}}
-</style>
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto!important}}.skip{position:absolute;left:-9999px;top:0;background:#fff;color:#0b0b0c;padding:10px 16px;border-radius:0 0 8px 0;font-weight:700;z-index:9999}.skip:focus{left:0}</style>
 <script async type="text/javascript" src="https://static.klaviyo.com/onsite/js/Twvzce/klaviyo.js?company_id=Twvzce"></script>
 <script>!function(){if(!window.klaviyo){window._klOnsite=window._klOnsite||[];try{window.klaviyo=new Proxy({},{get:function(n,i){return"push"===i?function(){var n;(n=window._klOnsite).push.apply(n,arguments)}:function(){for(var n=arguments.length,o=new Array(n),w=0;w<n;w++)o[w]=arguments[w];var t="function"==typeof o[o.length-1]?o.pop():void 0,e=new Promise((function(n){window._klOnsite.push([i].concat(o,[function(i){t&&t(i),n(i)}]))}));return e}}})}catch(n){window.klaviyo=window.klaviyo||[],window.klaviyo.push=function(){var n;(n=window._klOnsite).push.apply(n,arguments)}}}}();</script>
 <style id="mob-grid-fix">@media(max-width:600px){[style*="grid-template-columns"]{grid-template-columns:1fr!important}img,svg,video{max-width:100%!important;height:auto!important}html,body{overflow-x:hidden!important}}</style>
 </head>
 <body>
+<a class="skip" href="#main">Skip to main content</a>
 <nav>
   <a href="index.html" class="brand">FRDT<b>LAB</b></a>
   <a href="index.html" class="back">&larr; Back to the Lab</a>
 </nav>
 
-<header class="hero">
+<header id="main" tabindex="-1" class="hero">
   <div class="wrap">
     <div class="eyebrow">Washington Township &amp; Romeo, Michigan</div>
     <h1>Audrey&rsquo;s Laundry. Where cleaning is an <span class="pink">energetic reset.</span></h1>

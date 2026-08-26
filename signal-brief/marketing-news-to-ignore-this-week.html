@@ -127,11 +127,12 @@
     .slide:last-child{break-after:auto;page-break-after:auto}
     @page{size:1080px 1350px;margin:0}
   }
-</style>
+.skip{position:absolute;left:-9999px;top:0;background:#fff;color:#0b0b0c;padding:10px 16px;border-radius:0 0 8px 0;font-weight:700;z-index:9999}.skip:focus{left:0}</style>
 </head>
 <body>
+<a class="skip" href="#main">Skip to main content</a>
 
-<div class="toolbar">
+<div id="main" tabindex="-1" class="toolbar">
   <a href="./">&larr; Signal Brief</a>
   <span>FRDT / SIGNAL BRIEF</span>
   <a class="print" href="#" onclick="window.print();return false;">Save as PDF / Print</a>

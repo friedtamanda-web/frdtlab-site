@@ -89,7 +89,7 @@
   .opts label:has(input:checked){border-color:var(--pink-aa);background:#FBEAF2;color:var(--ink);font-weight:600}
   .runbar{margin-top:26px;display:flex;align-items:center;gap:16px;flex-wrap:wrap}
   .btn{display:inline-block;padding:14px 28px;font-weight:700;font-size:.95rem;text-decoration:none;border-radius:4px;border:none;cursor:pointer;font-family:inherit}
-  .btn-primary{background:var(--pink-aa);color:#fff}
+  .btn-primary{background:var(--pink-aa);color:#0b0b0c}
   .btn-primary:hover{filter:brightness(1.08)}
   .btn-ghost{border:1px solid var(--ink);color:var(--ink);background:transparent}
   .btn-ghost:hover{border-color:var(--pink-aa);color:var(--pink-aa)}
@@ -98,7 +98,7 @@
   /* result */
   #result{scroll-margin-top:90px}
   .scorecard{background:var(--ink);color:#F6F4F2;border-radius:14px;padding:30px 28px;margin-top:6px}
-  .scorecard .band{font-family:'JetBrains Mono',ui-monospace,monospace;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:#E84393;font-weight:600}
+  .scorecard .band{font-family:'JetBrains Mono',ui-monospace,monospace;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--pink-aa,#b81c66);font-weight:600}
   .scorecard .num{font-size:3.2rem;font-weight:800;letter-spacing:-.03em;line-height:1;margin:6px 0 2px}
   .scorecard .num small{font-size:1.1rem;color:#9A9AA2;font-weight:600}
   .scorecard .verdict{color:#DCDCE1;font-size:1.05rem;max-width:60ch;margin-top:10px}
@@ -127,10 +127,10 @@
   footer{border-top:1px solid var(--line);background:#111114;color:#8E8E96;padding:40px 0;margin-top:20px}
   footer .foot{max-width:1080px;margin:0 auto;padding:0 24px;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;align-items:center}
   footer a{color:#B9B7BD;text-decoration:none;font-size:.82rem}
-  footer a:hover{color:#E84393}
+  footer a:hover{color:var(--pink-aa,#b81c66)}
   .foot-links{display:flex;gap:16px;flex-wrap:wrap}
   :focus-visible{outline:2px solid var(--pink-aa);outline-offset:2px}
-</style>
+.skip{position:absolute;left:-9999px;top:0;background:#fff;color:#0b0b0c;padding:10px 16px;border-radius:0 0 8px 0;font-weight:700;z-index:9999}.skip:focus{left:0}</style>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -149,6 +149,7 @@ gtag('js',new Date());gtag('config','G-1TGNWXQ27S');
 <script async type="text/javascript" src="https://static.klaviyo.com/onsite/js/Twvzce/klaviyo.js?company_id=Twvzce"></script>
 </head>
 <body>
+<a class="skip" href="#main">Skip to main content</a>
 
 <header class="site">
   <div class="nav">
@@ -163,7 +164,7 @@ gtag('js',new Date());gtag('config','G-1TGNWXQ27S');
   </div>
 </header>
 
-<main>
+<main id="main">
 
 <div class="wrap hero">
   <p class="eyebrow">Free Diagnostic &middot; FRDTLAB</p>

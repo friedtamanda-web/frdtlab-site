@@ -442,7 +442,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--blue);outline-offse
 .fl-foot-links{display:flex;gap:18px;flex-wrap:wrap}
 .fl-foot-links a{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--mid-gray);text-decoration:none;transition:color .3s}
 .fl-foot-links a:hover{color:var(--pink)}
-</style>
+.skip{position:absolute;left:-9999px;top:0;background:#fff;color:#0b0b0c;padding:10px 16px;border-radius:0 0 8px 0;font-weight:700;z-index:9999}.skip:focus{left:0}</style>
 <style id="mob-safe">img,svg,video{max-width:100%;height:auto}html,body{overflow-x:hidden}@media(max-width:560px){.grid,.svc,.cols{grid-template-columns:1fr!important}}</style>
 <!-- Klaviyo onsite (account Twvzce) -->
 <script async type="text/javascript" src="https://static.klaviyo.com/onsite/js/Twvzce/klaviyo.js?company_id=Twvzce"></script>
@@ -477,7 +477,7 @@ nav.scrolled{background:rgba(246,244,242,.92)!important;border-bottom:1px solid 
 .nav-links a:hover,.nav-links a.current{color:#E84393!important}
 .brand b,.brand .sig{color:#E84393!important}
 .nav-cta{border:1px solid #111114!important;color:#111114!important;background:transparent!important}
-.nav-cta:hover{background:#E84393!important;border-color:#E84393!important;color:#fff!important}
+.nav-cta:hover{background:#E84393!important;border-color:#E84393!important;color:#0b0b0c!important}
 /* DARK bands stay ink (hero/accent), text light */
 .dark{background:#111114!important;color:#F6F4F2!important}
 .dark h1,.dark h2,.dark h3,.dark h4,.dark p,.dark .lead,.dark li,.dark .sub,.dark span{color:#F6F4F2}
@@ -488,7 +488,7 @@ nav.scrolled{background:rgba(246,244,242,.92)!important;border-bottom:1px solid 
 /* cards / panels on light */
 [class*="card"],[class*="col"],.stat,.recog-fig,.shift-col,.svc,.stage{border-color:#E2DEDA!important}
 /* buttons: pink = the one signal */
-.btn-primary,.gumroad-button{background:#E84393!important;color:#fff!important;border:none!important}
+.btn-primary,.gumroad-button{background:#E84393!important;color:#0b0b0c!important;border:none!important}
 .btn-primary:hover{background:#111114!important;color:#fff!important}
 .btn-ghost{border:1px solid #111114!important;color:#111114!important;background:transparent!important}
 .btn-ghost:hover{border-color:#E84393!important;color:#E84393!important}
@@ -499,7 +499,7 @@ footer a{color:#B9B7BD!important}
 footer a:hover{color:#E84393!important}
 footer .foot-tag,footer .meta{color:#8E8E96!important}
 /* selection */
-::selection{background:#E84393;color:#fff}
+::selection{background:#E84393;color:#0b0b0c}
 
 /* === rebrand-v2-fix: legibility for dark feature islands (kept as ink accents) === */
 .shift-col.to{background:linear-gradient(160deg,#1b1d24,#111114)!important;border-color:#111114!important}
@@ -542,6 +542,7 @@ footer h4,footer h5,footer .foot-col-title{color:#F6F4F2!important}
 <style id="mob-grid-fix">@media(max-width:600px){[style*="grid-template-columns"]{grid-template-columns:1fr!important}img,svg,video{max-width:100%!important;height:auto!important}html,body{overflow-x:hidden!important}}</style>
 </head>
 <body>
+<a class="skip" href="#main">Skip to main content</a>
 <nav class="fl-nav">
   <a href="index.html" class="brand">FRDT<b>LAB</b></a>
   <button class="fl-menu" aria-label="Toggle menu" aria-expanded="false" onclick="var l=document.getElementById('flLinks');var o=l.classList.toggle('open');this.setAttribute('aria-expanded',o)">Menu</button>
@@ -556,7 +557,7 @@ footer h4,footer h5,footer .foot-col-title{color:#F6F4F2!important}
 </nav>
 
 <!-- HERO -->
-<div class="hero">
+<div id="main" tabindex="-1" class="hero">
   <div class="label">SMX Advanced Training · Complete Guide</div>
   <h1>Infrastructure Era Marketing:<br><span>Build Your Own System</span></h1>
   <p class="sub">The practitioner's guide for SEO and PPC professionals. Three verticals · ecommerce, luxury, B2B SaaS · same six-layer framework. Visual step-by-step for every layer, with exercises you can run on your own accounts this week.</p>

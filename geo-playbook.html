@@ -211,12 +211,13 @@
   .foot-links a:hover,.foot-links a:focus-visible{color:var(--text);}
   .copyright{color:var(--muted);font-size:.78rem;margin-top:28px;}
   :focus-visible{outline:2px solid var(--signal);outline-offset:2px;}
-</style>
+.skip{position:absolute;left:-9999px;top:0;background:#fff;color:#0b0b0c;padding:10px 16px;border-radius:0 0 8px 0;font-weight:700;z-index:9999}.skip:focus{left:0}</style>
 <!-- Klaviyo onsite (account Twvzce) -->
 <script async type="text/javascript" src="https://static.klaviyo.com/onsite/js/Twvzce/klaviyo.js?company_id=Twvzce"></script>
 <script type="text/javascript">!function(){if(!window.klaviyo){window._klOnsite=window._klOnsite||[];try{window.klaviyo=new Proxy({},{get:function(n,i){return"push"===i?function(){var n;(n=window._klOnsite).push.apply(n,arguments)}:function(){for(var n=arguments.length,o=new Array(n),w=0;w<n;w++)o[w]=arguments[w];var t="function"==typeof o[o.length-1]?o.pop():void 0,e=new Promise((function(n){window._klOnsite.push([i].concat(o,[function(i){t&&t(i),n(i)}]))}));return e}}})}catch(n){window.klaviyo=window.klaviyo||[],window.klaviyo.push=function(){var n;(n=window._klOnsite).push.apply(n,arguments)}}}}();</script>
 </head>
 <body>
+<a class="skip" href="#main">Skip to main content</a>
 
 <header>
   <div class="wrap nav">
@@ -233,7 +234,7 @@
   </div>
 </header>
 
-<main>
+<main id="main">
 
 <div class="wrap hero">
   <p class="eyebrow">FRDTLAB · Field Guide · $97</p>
