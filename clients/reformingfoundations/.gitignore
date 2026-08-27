@@ -2,3 +2,4 @@
 # file that should ship. The plaintext source and builder must stay out of Pages.
 source.html
 build-encrypted-gate.py
+DEV-BRIEF-alex.md
