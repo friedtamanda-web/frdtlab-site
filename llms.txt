@@ -1,6 +1,6 @@
 # FRDTLAB
 
-> FRDTLAB is a systems & intelligence lab for marketing — helping brands and small businesses win in AI-era search, integrated growth, and marketing infrastructure. Founded by Amanda Friedt (professionally also known as Amanda Farley), a Detroit-based growth and marketing operator, keynote speaker (SMX, Pubcon), and host of the Amplify podcast.
+> FRDTLAB is a systems & intelligence lab for marketing — helping brands and small businesses win in AI-era search, integrated growth, and marketing infrastructure. Founded by Amanda Friedt (professionally also known as Amanda Farley), a Detroit-based growth and marketing operator, keynote speaker (SMX, Pubcon).
 
 ## Start here
 - [The Lab (home)](https://frdtlab.com/): What FRDTLAB is and how it builds.
@@ -10,6 +10,9 @@
 - [About Amanda Friedt](https://frdtlab.com/about.html): Founder profile — who Amanda Friedt (also known as Amanda Farley) is, the two brands (FRDTLAB + The Unapologetic Leader), and what she does.
 
 ## Services
+- [The Foundry - SMB growth system](https://frdtlab.com/foundry): Done-with-you growth system install for small businesses, scoped by trade.
+- [AI Visibility Audit](https://frdtlab.com/ai-visibility-audit.html): Cross-channel audit of what is working, what is breaking, and where the highest-value opportunities are hiding.
+- [Workshops and Trainings](https://frdtlab.com/workshops.html): Executive and team sessions on agentic marketing, search evolution, AI visibility, and growth systems.
 - [Fractional CMO / VP of Growth](https://frdtlab.com/fractional-cmo.html): Senior marketing leadership part-time for companies at $1M–$50M — growth strategy plus the operating system underneath it. $5,000–$15,000/month. Detroit-rooted, remote across the US.
 - [Fractional CMO in Detroit](https://frdtlab.com/fractional-cmo-detroit.html): Detroit-rooted fractional CMO / VP of Growth for Detroit and Michigan companies — in person locally, remote across the US. $5,000–$15,000/month.
 - [AI Adoption for Marketing Teams](https://frdtlab.com/ai-adoption.html): Put AI to real work — campaign, content, reporting, and QA workflows with prompts, guardrails, and SOPs. $8,000–$25,000/project.
