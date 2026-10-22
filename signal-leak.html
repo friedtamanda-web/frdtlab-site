@@ -301,7 +301,7 @@ document.getElementById('diagnostic').addEventListener('submit', function(e){
   var band, verdict;
   if(total <= 6){ band="Tight"; verdict="Your system holds. Most of your signal is making it across the gaps. The move now is not patching leaks, it is compounding: widen the lead."; }
   else if(total <= 14){ band="Leaking"; verdict="You have a stack, not yet a system. Signal is reaching some layers and dying in others. The fix is wiring, not more tools. Close your top two leaks and the rest starts to compound."; }
-  else { band="Hemorrhaging"; verdict="Your channels are running as islands. Real money is draining in the gaps between them. Connecting these layers is the highest-leverage thing you could do this quarter, and it is usually cheaper than the rebuild you are picturing."; }
+  else { band="Hemorrhaging"; verdict="Your channels are running as islands. Real money is draining in the gaps between them. Connecting these layers is the highest-impact thing you could do this quarter, and it is usually cheaper than the rebuild you are picturing."; }
 
   document.getElementById('scoreNum').textContent = total;
   document.getElementById('band').textContent = band;
