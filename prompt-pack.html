@@ -301,6 +301,9 @@ footer h4,footer h5,footer .foot-col-title{color:#F6F4F2!important}
 h1,h2,h3,h4,h5{font-family:'Archivo',system-ui,sans-serif!important;font-weight:900!important;letter-spacing:-.01em}
 .brand,.foot-brand,.pop{font-family:'Archivo',system-ui,sans-serif!important}
 </style>
+<!-- Google tag (FRDT Lab property) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-1CDWBM46D5"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-1CDWBM46D5');</script>
 </head>
 <body>
 <nav id="nav">
@@ -379,7 +382,7 @@ h1,h2,h3,h4,h5{font-family:'Archivo',system-ui,sans-serif!important;font-weight:
         <a href="workshops.html">Workshops</a>
         <a href="work-with-me.html">Work With Me</a>
         <a href="https://theunapologeticleader.com">Unapologetic</a>
-        <a href="shop.html">Shop</a><a href="geo-playbook.html">GEO Playbook</a><a href="starter-kit.html">Starter Kit</a><a href="https://afrdtlab.substack.com/">Newsletter</a>
+        <a href="shop.html">Shop</a><a href="lipstick-and-receipts.html">Lipstick &amp; Receipts</a><a href="geo-playbook.html">GEO Playbook</a><a href="starter-kit.html">Starter Kit</a><a href="https://afrdtlab.substack.com/">Newsletter</a>
         <a href="mailto:hello@frdtlab.com">Contact</a>
       </div>
     </div>
@@ -398,7 +401,7 @@ document.addEventListener('submit',function(e){
   fd.forEach(function(v,k){ if(k.charAt(0)!=='_'&&v){ p[k]=p[k]?p[k]+', '+v:''+v; } });
   var email=p.email||p.Email||'';
   try{ if(window.klaviyo){ if(email){window.klaviyo.push(['identify',Object.assign({'$email':email},p)]);} window.klaviyo.push(['track', f.getAttribute('data-kl-event'), p]); window.klaviyo.push(['track','New Lead',Object.assign({form:f.getAttribute('data-kl-event'),brand:'FRDTLAB'},p)]); } }catch(err){}
-  try{ if(window.gtag){ gtag('event','generate_lead',{event_category:'form',event_label:f.getAttribute('data-kl-event'),form_name:f.getAttribute('data-kl-event'),send_to:'G-1TGNWXQ27S'}); } }catch(err){}
+  try{ if(window.gtag){ gtag('event','generate_lead',{event_category:'form',event_label:f.getAttribute('data-kl-event'),form_name:f.getAttribute('data-kl-event'),send_to:'G-1CDWBM46D5'}); } }catch(err){}
   var msg=document.createElement('p'); msg.className='form-note'; msg.style.cssText='font-size:1.05rem;margin-top:8px'; msg.textContent='Thank you, we got it. We will be in touch.';
   f.parentNode.insertBefore(msg,f.nextSibling); f.style.display='none';
 });
