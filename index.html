@@ -165,6 +165,7 @@ nav.scrolled{background:rgba(11,11,12,.8);backdrop-filter:blur(14px);border-bott
 .reveal{opacity:1;transform:none}
 html.js .reveal{opacity:0;transform:translateY(28px);transition:opacity 1s var(--ease),transform 1s var(--ease)}
 html.js .reveal.in{opacity:1;transform:none}
+html.js .hero .reveal,html.js .page-hero .reveal,html.js .do-hero .reveal{opacity:1;transform:none;transition:none}
 
 section{position:relative}
 .sec{padding:120px 0;border-top:1px solid var(--line)}
@@ -280,7 +281,7 @@ footer{background:var(--black);border-top:1px solid var(--line);padding:88px 0 4
 </style>
 <style id="mob-safe">img,svg,video{max-width:100%;height:auto}html,body{overflow-x:hidden}@media(max-width:560px){.grid,.svc,.cols{grid-template-columns:1fr!important}}</style>
 <!-- Klaviyo onsite (account Twvzce) -->
-<script async type="text/javascript" src="https://static.klaviyo.com/onsite/js/Twvzce/klaviyo.js?company_id=Twvzce"></script>
+<script>addEventListener("load",function(){var s=document.createElement("script");s.async=1;s.src="https://static.klaviyo.com/onsite/js/Twvzce/klaviyo.js?company_id=Twvzce";document.head.appendChild(s);});</script>
 <script type="text/javascript">
 !function(){if(!window.klaviyo){window._klOnsite=window._klOnsite||[];try{window.klaviyo=new Proxy({},{get:function(n,i){return"push"===i?function(){var n;(n=window._klOnsite).push.apply(n,arguments)}:function(){for(var n=arguments.length,o=new Array(n),w=0;w<n;w++)o[w]=arguments[w];var t="function"==typeof o[o.length-1]?o.pop():void 0,e=new Promise((function(n){window._klOnsite.push([i].concat(o,[function(i){t&&t(i),n(i)}]))}));return e}}})}catch(n){window.klaviyo=window.klaviyo||[],window.klaviyo.push=function(){var n;(n=window._klOnsite).push.apply(n,arguments)}}}}();
 </script>
@@ -454,7 +455,7 @@ h1,h2,h3,h4,h5{font-family:'Archivo',system-ui,sans-serif!important;font-weight:
       </div>
     </div>
     <div class="hero-photo reveal">
-      <img src="img/detroit.jpg" width="1100" height="1467" alt="Detroit cityscape, the lab's home ground">
+      <picture><source srcset="img/detroit.webp" type="image/webp"><img src="img/detroit.jpg" width="1100" height="1467" alt="Detroit cityscape, the lab's home ground" fetchpriority="high" decoding="async"></picture>
       <span class="tag">Detroit-rooted · Future-facing</span>
     </div>
   </div>
