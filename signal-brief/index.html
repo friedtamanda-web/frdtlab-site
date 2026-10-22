@@ -168,13 +168,13 @@ h1,h2,h3,h4,h5{font-family:'Archivo',system-ui,sans-serif!important;font-weight:
   <div class="unlocked hidden" id="unlocked">
     <h2>Deck unlocked</h2>
     <p>Open it below. Use the "Save as PDF / Print" control inside the deck to keep a copy.</p>
-    <a class="dlbtn" id="dlLink" href="marketing-news-to-ignore-this-week.html" target="_blank" rel="noopener" data-cta="signal-brief-deck">Open the Signal Brief deck &rarr;</a>
+    <a class="dlbtn" id="dlLink" href="/signal-brief/marketing-news-to-ignore-this-week" target="_blank" rel="noopener" data-cta="signal-brief-deck">Open the Signal Brief deck &rarr;</a>
     <p class="dlnote">Also sent to your inbox. Bookmark this page for next week's brief.</p>
   </div>
 </div>
 
 <hr />
-<p><em>Signal Brief is the weekly filter from <a href="https://frdtlab.com/">Amanda Friedt, FRDTLAB</a>. For the deeper work behind the calls, read the <a href="https://frdtlab.com/confidence-engineering/">Confidence Engineering</a> field notes or run the <a href="https://frdtlab.com/scorecard.html">AI visibility scorecard</a> on your own brand.</em></p>
+<p><em>Signal Brief is the weekly filter from <a href="https://frdtlab.com/">Amanda Friedt, FRDTLAB</a>. For the deeper work behind the calls, read the <a href="https://frdtlab.com/confidence-engineering/">Confidence Engineering</a> field notes or run the <a href="https://frdtlab.com/scorecard">AI visibility scorecard</a> on your own brand.</em></p>
 <p><strong>What are you ignoring this week?</strong></p>
 </div>
 <footer class="site">
@@ -195,8 +195,8 @@ document.getElementById('dlForm').addEventListener('submit', function(e){
   try{
     var _learnq = window._learnq || [];
     _learnq.push(['identify', {'$email': email, 'Signal Brief Lead': true}]);
-    _learnq.push(['track', 'Signal Brief Download', {'deck': 'Marketing News to Ignore This Week', 'source': 'signal-brief/index.html'}]);
-    try{ window.klaviyo.push(['track','New Lead',{form:'Signal Brief Deck', brand:'FRDTLAB', source:'signal-brief/index.html'}]); }catch(e){}
+    _learnq.push(['track', 'Signal Brief Download', {'deck': 'Marketing News to Ignore This Week', 'source': '/signal-brief/signal-brief/'}]);
+    try{ window.klaviyo.push(['track','New Lead',{form:'Signal Brief Deck', brand:'FRDTLAB', source:'/signal-brief/signal-brief/'}]); }catch(e){}
   }catch(err){}
   try{ if(window.gtag){ gtag('event','signal_brief_lead',{deck:'marketing-news-to-ignore'}); } }catch(err){}
   document.getElementById('dlForm').classList.add('hidden');
