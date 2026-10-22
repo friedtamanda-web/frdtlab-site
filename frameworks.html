@@ -40,7 +40,9 @@
   "The Agentic Operating System",
   "The Agentic Stack Blueprint",
   "Lifecycle Intelligence Engine",
-  "Audience Intelligence Pipeline"
+  "Audience Intelligence Pipeline",
+  "The Autonomy Gradient",
+  "The Validation Loop"
  ],
  "author": {
   "@type": "Person",
@@ -265,6 +267,68 @@ footer h4,footer h5,footer .foot-col-title{color:#F6F4F2!important}
 .tier.hot{border-color:#b81c66;color:#b81c66}
 @media(max-width:900px){.gates{grid-template-columns:repeat(3,1fr)}}
 </style>
+<style id="fw-gradient-loop">
+/* Autonomy Gradient + Validation Loop (added Oct 2026) */
+.ag-ladder{display:grid;grid-template-columns:1fr 1fr 1fr 64px 1fr 1fr;gap:10px;align-items:stretch}
+.ag-t{background:#FCFBFA;border:1px solid #E2DEDA;padding:20px 18px 18px;display:flex;flex-direction:column;gap:8px;border-top:4px solid #3D5BB8}
+.ag-t.p{border-top-color:#b81c66}
+.ag-t.s{border-top-color:#6E6E76}
+.ag-t .lv{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#3D5BB8;font-weight:600}
+.ag-t.p .lv{color:#b81c66}
+.ag-t.s .lv{color:#5d5d66}
+.ag-t h4{font-family:'Archivo',system-ui,sans-serif;font-weight:900;font-size:1.15rem;line-height:1.1;color:#111114;text-transform:uppercase}
+.ag-t p{font-family:var(--sans);font-size:.9rem;line-height:1.45;color:#4A4A52}
+.ag-t .ex{margin-top:auto;padding-top:10px;border-top:1px solid #E2DEDA;font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:#5d5d66}
+.ag-line{position:relative;display:flex;align-items:center;justify-content:center}
+.ag-line::before{content:"";position:absolute;top:0;bottom:0;left:50%;border-left:2px dashed #b81c66}
+.ag-line span{position:relative;writing-mode:vertical-rl;transform:rotate(180deg);background:#F6F4F2;padding:10px 0;font-family:var(--mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#b81c66;font-weight:700}
+.ag-bar{display:grid;grid-template-columns:1fr 1fr 1fr 64px 1fr 1fr;gap:10px;margin-top:10px}
+.ag-bar i{height:6px;background:#3D5BB8;border-radius:2px}
+.ag-bar i.l{background:transparent}
+.ag-bar i.p{background:#b81c66}
+.ag-bar i.s{background:#6E6E76}
+@media(max-width:900px){.ag-ladder,.ag-bar{grid-template-columns:1fr}.ag-bar{display:none}.ag-line{min-height:44px}.ag-line::before{top:50%;bottom:auto;left:0;right:0;border-left:none;border-top:2px dashed #b81c66}.ag-line span{writing-mode:horizontal-tb;transform:none;padding:0 12px}}
+.ag-sub{font-family:'Archivo',system-ui,sans-serif;font-weight:900;text-transform:uppercase;font-size:1.25rem;color:#111114;margin:56px 0 6px}
+.ag-subp{font-family:var(--sans);color:#4A4A52;max-width:64ch;font-size:1rem;line-height:1.55}
+.ag-gauge{display:flex;gap:3px;height:62px;margin-top:22px;border-radius:4px;overflow:hidden}
+.ag-gauge div{display:flex;flex-direction:column;justify-content:center;padding:0 12px;color:#fff;font-family:var(--mono);font-weight:700;font-size:12px;letter-spacing:.06em;min-width:0}
+.ag-gauge small{font-weight:500;font-size:10px;opacity:.9;letter-spacing:.02em;margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.ag-gauge .a{background:#2E6B57;flex-grow:5}.ag-gauge .c{background:#8A6412;flex-grow:3}.ag-gauge .r{background:#b81c66;flex-grow:2}.ag-gauge .n{background:#111114;flex-grow:1}
+.ag-gcap{font-family:var(--mono);font-size:11px;letter-spacing:.08em;color:#5d5d66;margin-top:8px}
+.ag-perm{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:20px}
+@media(max-width:900px){.ag-perm{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.ag-perm{grid-template-columns:1fr}.ag-gauge small{display:none}.ag-gauge div{padding:0 6px;font-size:10.5px}}
+.ag-p{background:#FCFBFA;border:1px solid #E2DEDA;border-top:4px solid var(--c);padding:18px 16px}
+.ag-p b{display:block;font-family:var(--mono);font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--c);margin-bottom:8px}
+.ag-p p{font-family:var(--sans);font-size:.92rem;line-height:1.45;color:#111114}
+.ag-p p.e{color:#5d5d66;font-size:.85rem;margin-top:8px}
+.ag-rule{margin-top:56px;border:2px solid #b81c66;background:#FCFBFA;padding:34px 32px;display:grid;grid-template-columns:1fr 1fr;gap:32px}
+@media(max-width:820px){.ag-rule{grid-template-columns:1fr;padding:24px 20px}}
+.ag-rule h3{font-family:'Archivo',system-ui,sans-serif;font-weight:900;text-transform:uppercase;font-size:clamp(1.5rem,3vw,2.1rem);line-height:1.02;color:#111114;margin-bottom:14px}
+.ag-rule h3 em{font-style:normal;color:#b81c66}
+.ag-rule p{font-family:var(--sans);color:#4A4A52;font-size:1rem;line-height:1.6;margin-top:10px}
+.ag-rule p strong{color:#111114}
+.ag-sides{display:flex;flex-direction:column;gap:1px;background:#E2DEDA;border:1px solid #E2DEDA;align-self:start}
+.ag-side{background:#F6F4F2;padding:16px 18px}
+.ag-side .lb{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:#3D5BB8;margin-bottom:8px}
+.ag-side.r .lb{color:#b81c66}
+.ag-side ul{list-style:none;display:flex;flex-direction:column;gap:6px}
+.ag-side li{font-family:var(--sans);font-size:.93rem;color:#4A4A52;padding-left:18px;position:relative;line-height:1.4}
+.ag-side li::before{content:"";position:absolute;left:0;top:.45em;width:7px;height:7px;border:1.5px solid #3D5BB8;border-radius:1px}
+.ag-side.r li::before{border-color:#b81c66}
+.ag-foot{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-top:22px;font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#5d5d66}
+.fw-links{display:flex;gap:14px 28px;flex-wrap:wrap;margin-top:30px}
+.fw-links a{font-family:var(--mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#b81c66;font-weight:600;text-decoration:none;border-bottom:1px solid #b81c66;padding-bottom:2px}
+.fw-links a:hover{color:#111114;border-color:#111114}
+.vl-fig{background:#FCFBFA;border:1px solid #E2DEDA;padding:22px 20px 14px;margin:0}
+.vl-fig svg{display:block;width:100%;height:auto;font-family:'Inter',system-ui,sans-serif}
+.vl-fig .vl-m{display:none;max-width:380px;margin:0 auto}
+@media(max-width:760px){.vl-fig .vl-d{display:none}.vl-fig .vl-m{display:block}}
+.vl-fig figcaption{font-family:var(--sans);font-size:.9rem;color:#4A4A52;border-top:1px solid #E2DEDA;margin-top:12px;padding-top:12px;line-height:1.5}
+.vl-rule{display:flex;gap:18px;align-items:center;border:1px solid #b81c66;background:#FBEAF2;padding:16px 20px;margin-bottom:22px}
+.vl-rule .m{font-family:'Archivo',system-ui,sans-serif;font-weight:900;font-size:2rem;color:#b81c66;line-height:1}
+.vl-rule p{font-family:var(--sans);font-size:1rem;color:#111114;line-height:1.5}
+</style>
 <style id="type-2027">
 /* bolder display face: Archivo Black for everything that shouts */
 :root{--display:'Archivo',system-ui,sans-serif}
@@ -464,6 +528,173 @@ h1,h2,h3,h4,h5{font-family:'Archivo',system-ui,sans-serif!important;font-weight:
       <div class="stage"><div class="bar"></div><span class="s-num">&rarr; 06</span><h4>Measure &amp; Learn</h4><p>Feedback loops and predictive insight feed the next turn.</p></div>
     </div>
     <p class="note">Deeper understanding · smarter targeting · compounding competitive advantage</p>
+  </div>
+</section>
+
+<!-- THE AUTONOMY GRADIENT -->
+<section class="sec" id="autonomy-gradient">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">The Autonomy Gradient</div>
+      <h2>Where the machine stops and you start.</h2>
+      <p class="lead">The argument about AI autonomy usually gets framed as a dial: more or less, faster or safer. It isn't a dial. <span class="hl">It's a line</span>, and it sits between deciding and doing. Everything before it can be taken back. Everything after it spends money, time, or trust, and those don't come back.</p>
+    </div>
+
+    <div class="ag-ladder" role="list" aria-label="Five tiers of agent autonomy, with the line between Tier 2 and Tier 3">
+      <div class="ag-t" role="listitem"><span class="lv">Tier 0</span><h4>Observe</h4><p>Watches and logs. Changes nothing, claims nothing. You still do all the reading.</p><span class="ex">Where most teams are</span></div>
+      <div class="ag-t" role="listitem"><span class="lv">Tier 1</span><h4>Interpret</h4><p>Tells you what changed and what it means, in your language, without five open tabs.</p><span class="ex">Signals · reconcile</span></div>
+      <div class="ag-t" role="listitem"><span class="lv">Tier 2</span><h4>Recommend</h4><p>Ranks, routes, and drafts. Has an opinion about what matters most. Nothing has happened yet.</p><span class="ex">Prioritize · route · learn</span></div>
+      <div class="ag-line" role="listitem" aria-label="The line: reversibility"><span>Reversibility is the line</span></div>
+      <div class="ag-t p" role="listitem"><span class="lv">Tier 3</span><h4>Act on approval</h4><p>Does the thing once a person says yes. The yes is explicit, specific, and logged.</p><span class="ex">Approve · execute · record</span></div>
+      <div class="ag-t s" role="listitem"><span class="lv">Tier 4</span><h4>Act alone</h4><p>Acts without asking, inside limits set in advance. Only for actions that are cheap, reversible, and boring.</p><span class="ex">Earned, never assumed</span></div>
+    </div>
+    <div class="ag-bar" aria-hidden="true"><i></i><i></i><i></i><i class="l"></i><i class="p"></i><i class="s"></i></div>
+
+    <h3 class="ag-sub">Four permissions, not two</h3>
+    <p class="ag-subp">Every action an agent might take gets sorted before it ever runs. The width is roughly how much of an agent's day should live in each.</p>
+    <div class="ag-gauge" role="img" aria-label="Permission gauge: Allow is the widest share, then Conditional, then Approval, then a narrow Never.">
+      <div class="a">ALLOW<small>runs alone</small></div>
+      <div class="c">CONDITIONAL<small>inside a guardrail</small></div>
+      <div class="r">APPROVAL<small>waits for you</small></div>
+      <div class="n">NEVER<small>fixed list</small></div>
+    </div>
+    <p class="ag-gcap">Width ≈ share of an agent's day in each tier</p>
+    <div class="ag-perm">
+      <div class="ag-p" style="--c:#2E6B57"><b>Allow</b><p>Reversible, stays inside your own systems, touches no money.</p><p class="e">Draft a report, tag files, refresh a tracker.</p></div>
+      <div class="ag-p" style="--c:#8A6412"><b>Conditional</b><p>Reversible, but crosses a line you set in advance. Runs alone while it stays inside the guardrail.</p><p class="e">Publish from an approved calendar, nudge a bid within a set percentage.</p></div>
+      <div class="ag-p" style="--c:#b81c66"><b>Approval</b><p>Visible outside your team, or expensive to unwind. The agent prepares it; a person clicks send.</p><p class="e">A client-facing report, a real budget increase.</p></div>
+      <div class="ag-p" style="--c:#111114"><b>Never</b><p>A short, fixed list. No context, urgency, or approval opens it up.</p><p class="e">Moving money, unrecoverable deletes, changing account ownership.</p></div>
+    </div>
+
+    <div class="ag-rule">
+      <div>
+        <h3>Reversibility <em>is the line</em>.</h3>
+        <p>A misread email costs nothing. A wrong priority costs a few minutes. A misrouted task costs a search.</p>
+        <p><strong>A sent message cannot be unsent. A charge cannot be uncharged.</strong></p>
+        <p>That's the whole rule. Not model confidence, not accuracy scores, not how impressive the demo was. Can it be taken back?</p>
+      </div>
+      <div class="ag-sides">
+        <div class="ag-side"><p class="lb">Left of the line · reversible</p><ul><li>Reading, extracting, summarizing</li><li>Comparing sources and flagging conflicts</li><li>Ranking and proposing</li><li>Drafting anything, sending nothing</li><li>Filing into systems you control</li></ul></div>
+        <div class="ag-side r"><p class="lb">Right of the line · spends something</p><ul><li>Money, at any amount</li><li>Anything sent in your name</li><li>Anything that commits your time</li><li>Anything a third party will act on</li><li>Anything that touches a relationship</li></ul></div>
+      </div>
+    </div>
+    <div class="ag-foot"><span>frdtlab.com</span><span>FRDTLAB · The Autonomy Gradient</span></div>
+    <div class="fw-links">
+      <a href="/ai-for-small-business#agent-sorter">Try it: should this agent act alone? &rarr;</a>
+      <a href="/agent-governance-kit">Write your policy: the Agent Governance Builder Kit &rarr;</a>
+    </div>
+  </div>
+</section>
+
+<!-- THE VALIDATION LOOP -->
+<section class="sec" id="validation-loop">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">The Validation Loop</div>
+      <h2>No single source clears a decision alone.</h2>
+      <p class="lead">Ad platforms grade their own homework. Organic tools see demand, not sales. Real sales settle the argument but arrive last. So nothing gets built, excluded, or funded until <span class="hl">at least two independent sources agree</span>.</p>
+    </div>
+    <div class="vl-rule"><span class="m">2+</span><p>Every recommendation needs at least two independent sources agreeing before it ships. A platform's own dashboard doesn't count as one of its own two witnesses.</p></div>
+    <figure class="vl-fig">
+      <svg class="vl-d" viewBox="0 0 1000 450" width="1000" height="450" role="img" aria-labelledby="vl-dt">
+        <title id="vl-dt">Three lanes, paid platform data, organic search data, and real sales, all feed one checkpoint where two or more sources must agree. Cleared findings fan out to build, exclude, or fund decisions, with funding held until real sales can vote. Everything rolls into a monthly report that restarts the loop.</title>
+        <defs>
+          <marker id="vlk" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#6E6E76"/></marker>
+          <marker id="vlp" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#b81c66"/></marker>
+        </defs>
+        <rect x="20" y="40" width="390" height="104" rx="8" fill="#E8EEFB"/>
+        <text x="36" y="62" font-size="11" font-weight="700" letter-spacing="1.6" fill="#2B4A9E" font-family="JetBrains Mono, monospace">PAID PLATFORM DATA</text>
+        <rect x="36" y="74" width="172" height="56" rx="6" fill="#fff" stroke="#9FB3E0" stroke-width="1.5"/>
+        <text x="48" y="96" font-size="14" font-weight="700" fill="#111114">Ad platform</text>
+        <text x="48" y="116" font-size="11.5" fill="#4A4A52">spend, clicks, its own wins</text>
+        <rect x="222" y="74" width="172" height="56" rx="6" fill="#fff" stroke="#9FB3E0" stroke-width="1.5"/>
+        <text x="234" y="96" font-size="14" font-weight="700" fill="#111114">Independent audit</text>
+        <text x="234" y="116" font-size="11.5" fill="#4A4A52">which conversions count</text>
+        <rect x="20" y="164" width="390" height="104" rx="8" fill="#E3F1EE"/>
+        <text x="36" y="186" font-size="11" font-weight="700" letter-spacing="1.6" fill="#1F6F6B" font-family="JetBrains Mono, monospace">ORGANIC SEARCH DATA</text>
+        <rect x="36" y="198" width="172" height="56" rx="6" fill="#fff" stroke="#8CC2B8" stroke-width="1.5"/>
+        <text x="48" y="220" font-size="14" font-weight="700" fill="#111114">Rank and demand</text>
+        <text x="48" y="240" font-size="11.5" fill="#4A4A52">position and volume, by term</text>
+        <rect x="222" y="198" width="172" height="56" rx="6" fill="#fff" stroke="#8CC2B8" stroke-width="1.5"/>
+        <text x="234" y="220" font-size="14" font-weight="700" fill="#111114">Coverage gap</text>
+        <text x="234" y="240" font-size="11.5" fill="#4A4A52">demand paid isn't reaching</text>
+        <rect x="20" y="288" width="390" height="104" rx="8" fill="#EFEDEA" stroke="#A9A6A0" stroke-width="1.5" stroke-dasharray="5 5"/>
+        <text x="36" y="310" font-size="11" font-weight="700" letter-spacing="1.6" fill="#4A4A52" font-family="JetBrains Mono, monospace">REAL SALES · THE DECIDING VOTE</text>
+        <rect x="36" y="322" width="172" height="56" rx="6" fill="#fff" stroke="#A9A6A0" stroke-width="1.5"/>
+        <text x="48" y="344" font-size="14" font-weight="700" fill="#111114">Analytics</text>
+        <text x="48" y="364" font-size="11.5" fill="#4A4A52">reconciled, never alone</text>
+        <rect x="222" y="322" width="172" height="56" rx="6" fill="#fff" stroke="#A9A6A0" stroke-width="1.5"/>
+        <text x="234" y="344" font-size="14" font-weight="700" fill="#111114">Store orders</text>
+        <text x="234" y="364" font-size="11.5" fill="#4A4A52">what customers paid for</text>
+        <path d="M410,92 C 450,110 470,160 488,190" fill="none" stroke="#6E6E76" stroke-width="1.6" marker-end="url(#vlk)"/>
+        <path d="M410,216 L 460,216" fill="none" stroke="#6E6E76" stroke-width="1.6" marker-end="url(#vlk)"/>
+        <path d="M410,340 C 450,322 470,272 488,242" fill="none" stroke="#6E6E76" stroke-width="1.6" stroke-dasharray="4 3" marker-end="url(#vlk)"/>
+        <polygon points="560,126 650,216 560,306 470,216" fill="#FBEAF2" stroke="#b81c66" stroke-width="2"/>
+        <text x="560" y="204" text-anchor="middle" font-size="14" font-weight="800" fill="#b81c66" letter-spacing=".5">CHECKPOINT</text>
+        <text x="560" y="226" text-anchor="middle" font-size="12" fill="#111114">2+ sources</text>
+        <text x="560" y="242" text-anchor="middle" font-size="12" fill="#111114">must agree</text>
+        <rect x="712" y="56" width="268" height="62" rx="6" fill="#fff" stroke="#b81c66" stroke-width="1.5"/>
+        <text x="728" y="81" font-size="14" font-weight="700" fill="#111114">Build</text>
+        <text x="728" y="101" font-size="11.5" fill="#4A4A52">campaigns and pages, reviewed first</text>
+        <rect x="712" y="146" width="268" height="62" rx="6" fill="#fff" stroke="#b81c66" stroke-width="1.5"/>
+        <text x="728" y="171" font-size="14" font-weight="700" fill="#111114">Exclude</text>
+        <text x="728" y="191" font-size="11.5" fill="#4A4A52">negatives and labels, triaged</text>
+        <rect x="712" y="236" width="268" height="62" rx="6" fill="#EFEDEA" stroke="#A9A6A0" stroke-width="1.5" stroke-dasharray="4 3"/>
+        <text x="728" y="261" font-size="14" font-weight="700" fill="#111114">Fund</text>
+        <text x="728" y="281" font-size="11.5" fill="#4A4A52">held until real sales can vote</text>
+        <path d="M650,216 C 680,200 680,100 708,88" fill="none" stroke="#b81c66" stroke-width="1.6" marker-end="url(#vlp)"/>
+        <path d="M650,216 C 680,214 690,178 708,178" fill="none" stroke="#b81c66" stroke-width="1.6" marker-end="url(#vlp)"/>
+        <path d="M650,216 C 680,220 690,266 708,266" fill="none" stroke="#A9A6A0" stroke-width="1.6" stroke-dasharray="4 3" marker-end="url(#vlk)"/>
+        <rect x="712" y="332" width="268" height="58" rx="6" fill="#111114"/>
+        <text x="846" y="357" text-anchor="middle" font-size="14" font-weight="800" fill="#F6F4F2">Monthly report</text>
+        <text x="846" y="376" text-anchor="middle" font-size="11.5" fill="#C9C9CF">every open item, one table</text>
+        <line x1="846" y1="298" x2="846" y2="328" stroke="#6E6E76" stroke-width="1.6" marker-end="url(#vlk)"/>
+        <path d="M846,390 V428 H10 V24 H215 V36" fill="none" stroke="#6E6E76" stroke-width="1.3" stroke-dasharray="2 4" marker-end="url(#vlk)"/>
+        <text x="430" y="444" text-anchor="middle" font-size="10.5" letter-spacing="1.4" fill="#5d5d66" font-family="JetBrains Mono, monospace">MONTHLY CYCLE REPEATS</text>
+      </svg>
+      <svg class="vl-m" viewBox="0 0 360 760" width="360" height="760" role="img" aria-labelledby="vl-mt">
+        <title id="vl-mt">Paid platform data, organic search data, and real sales feed one checkpoint where two or more sources must agree. Cleared findings become build, exclude, or fund decisions, with funding held until real sales can vote, then roll into a monthly report that restarts the loop.</title>
+        <defs>
+          <marker id="vlk2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#6E6E76"/></marker>
+          <marker id="vlp2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#b81c66"/></marker>
+        </defs>
+        <rect x="22" y="10" width="330" height="66" rx="8" fill="#E8EEFB"/>
+        <text x="36" y="34" font-size="11" font-weight="700" letter-spacing="1.4" fill="#2B4A9E" font-family="JetBrains Mono, monospace">PAID PLATFORM DATA</text>
+        <text x="36" y="56" font-size="13" fill="#111114">Ad platform + independent audit</text>
+        <rect x="22" y="88" width="330" height="66" rx="8" fill="#E3F1EE"/>
+        <text x="36" y="112" font-size="11" font-weight="700" letter-spacing="1.4" fill="#1F6F6B" font-family="JetBrains Mono, monospace">ORGANIC SEARCH DATA</text>
+        <text x="36" y="134" font-size="13" fill="#111114">Rank, demand, coverage gaps</text>
+        <rect x="22" y="166" width="330" height="66" rx="8" fill="#EFEDEA" stroke="#A9A6A0" stroke-width="1.5" stroke-dasharray="5 5"/>
+        <text x="36" y="190" font-size="11" font-weight="700" letter-spacing="1.4" fill="#4A4A52" font-family="JetBrains Mono, monospace">REAL SALES · DECIDING VOTE</text>
+        <text x="36" y="212" font-size="13" fill="#111114">Analytics, reconciled + store orders</text>
+        <line x1="187" y1="234" x2="187" y2="266" stroke="#6E6E76" stroke-width="1.6" marker-end="url(#vlk2)"/>
+        <polygon points="187,270 262,340 187,410 112,340" fill="#FBEAF2" stroke="#b81c66" stroke-width="2"/>
+        <text x="187" y="330" text-anchor="middle" font-size="13" font-weight="800" fill="#b81c66">CHECKPOINT</text>
+        <text x="187" y="349" text-anchor="middle" font-size="11.5" fill="#111114">2+ sources</text>
+        <text x="187" y="364" text-anchor="middle" font-size="11.5" fill="#111114">must agree</text>
+        <line x1="187" y1="412" x2="187" y2="440" stroke="#b81c66" stroke-width="1.6" marker-end="url(#vlp2)"/>
+        <rect x="22" y="444" width="330" height="54" rx="6" fill="#fff" stroke="#b81c66" stroke-width="1.5"/>
+        <text x="36" y="467" font-size="13.5" font-weight="700" fill="#111114">Build</text>
+        <text x="36" y="486" font-size="11.5" fill="#4A4A52">campaigns and pages, reviewed first</text>
+        <rect x="22" y="506" width="330" height="54" rx="6" fill="#fff" stroke="#b81c66" stroke-width="1.5"/>
+        <text x="36" y="529" font-size="13.5" font-weight="700" fill="#111114">Exclude</text>
+        <text x="36" y="548" font-size="11.5" fill="#4A4A52">negatives and labels, triaged</text>
+        <rect x="22" y="568" width="330" height="54" rx="6" fill="#EFEDEA" stroke="#A9A6A0" stroke-width="1.5" stroke-dasharray="4 3"/>
+        <text x="36" y="591" font-size="13.5" font-weight="700" fill="#111114">Fund</text>
+        <text x="36" y="610" font-size="11.5" fill="#4A4A52">held until real sales can vote</text>
+        <line x1="187" y1="624" x2="187" y2="652" stroke="#6E6E76" stroke-width="1.6" marker-end="url(#vlk2)"/>
+        <rect x="22" y="656" width="330" height="56" rx="6" fill="#111114"/>
+        <text x="187" y="680" text-anchor="middle" font-size="13.5" font-weight="800" fill="#F6F4F2">Monthly report</text>
+        <text x="187" y="699" text-anchor="middle" font-size="11.5" fill="#C9C9CF">every open item, one table</text>
+        <path d="M22,700 H8 V43 H18" fill="none" stroke="#6E6E76" stroke-width="1.3" stroke-dasharray="2 4" marker-end="url(#vlk2)"/>
+        <text x="187" y="740" text-anchor="middle" font-size="10" letter-spacing="1.2" fill="#5d5d66" font-family="JetBrains Mono, monospace">MONTHLY CYCLE REPEATS</text>
+      </svg>
+      <figcaption><strong>Three lanes feed one checkpoint.</strong> Paid and organic data both have to confirm a finding before it moves right. Real sales is dashed because it arrives last and sometimes not at all: until it can vote, budget increases stay held, even when the platform reports a strong return. Everything that clears rolls into the monthly report, which restarts the loop.</figcaption>
+    </figure>
+    <div class="fw-links">
+      <a href="/analytics-coverage-calculator">How much of your revenue does analytics see? &rarr;</a>
+      <a href="/sample-report">See what the monthly report looks like &rarr;</a>
+    </div>
   </div>
 </section>
 

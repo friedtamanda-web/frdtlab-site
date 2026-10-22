@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Analytics Coverage Calculator · FRDTLAB</title>
+<meta name="description" content="Free calculator: compare the revenue your analytics reports with your real revenue to see how much of your sales your tracking and ad bidding can see.">
+<link rel="canonical" href="https://frdtlab.com/analytics-coverage-calculator">
+<meta name="theme-color" content="#0b0b0c">
+<meta name="author" content="Amanda Friedt">
+<meta property="og:site_name" content="FRDTLAB">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://frdtlab.com/analytics-coverage-calculator">
+<meta property="og:title" content="How much of your revenue does your analytics see?">
+<meta property="og:description" content="Two numbers, one percentage. Find out how blind your reporting and ad bidding really are, and what the gap means.">
+<meta property="og:image" content="https://frdtlab.com/og-ai-visibility-audit.jpg">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="How much of your revenue does your analytics see?">
+<meta name="twitter:description" content="Two numbers, one percentage. Find out how blind your reporting and ad bidding really are, and what the gap means.">
+<meta name="twitter:image" content="https://frdtlab.com/og-ai-visibility-audit.jpg">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "WebApplication",
+ "name": "Analytics Coverage Calculator",
+ "url": "https://frdtlab.com/analytics-coverage-calculator",
+ "applicationCategory": "BusinessApplication",
+ "operatingSystem": "Any",
+ "description": "Compare the revenue your analytics reports with the revenue in your books to see what share of real sales your tracking can see.",
+ "offers": {
+  "@type": "Offer",
+  "price": "0",
+  "priceCurrency": "USD"
+ },
+ "creator": {
+  "@type": "Person",
+  "name": "Amanda Friedt",
+  "url": "https://frdtlab.com/about",
+  "sameAs": [
+   "https://www.linkedin.com/in/amandafriedt/",
+   "https://afrdtlab.substack.com/"
+  ]
+ },
+ "publisher": {
+  "@type": "Organization",
+  "name": "FRDTLAB",
+  "url": "https://frdtlab.com/",
+  "logo": {
+   "@type": "ImageObject",
+   "url": "https://frdtlab.com/favicon.svg"
+  }
+ }
+}
+</script>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "FAQPage",
+ "mainEntity": [
+  {
+   "@type": "Question",
+   "name": "What is analytics revenue coverage?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "The share of your real revenue that your analytics tool can see. Divide the revenue your analytics reports by the revenue in your books or store platform for the same dates. 100% means it sees everything. 42% means more than half your sales are invisible to it."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "What's a normal coverage number?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Somewhere around 85% to 95% is typical for a well-wired store. Consent banners, ad blockers, and people switching devices always cost a little. Under 85% usually means something in the setup, not just the internet being the internet."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Why does low coverage matter if my store platform has the right number?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Because your ad platforms bid on what analytics and tracking report, not on your books. If tracking sees 40% of sales, automated bidding is optimizing toward 40% of reality and reporting a return that isn't real in either direction."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "What if my coverage is over 100%?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Your analytics is counting sales that didn't happen. The usual causes are duplicate purchase events, test orders, refunds and cancellations never deducted, or tax and shipping counted on one side and not the other."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Do you store the numbers I enter?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "No. The math runs in your browser. Nothing you type in the calculator is sent anywhere. If you ask for the checklist, only your email and your coverage percentage are sent."
+   }
+  }
+ ]
+}
+</script>
+
+<style>
+  :root{
+    --ground:#0b0b0c;
+    --surface:#141416;
+    --line:#26262a;
+    --text:#f5f5f4;
+    --muted:#a1a1aa;
+    --signal:#E84393;
+    --good:#4ad6a0;
+    --warn:#ffb454;
+    --bad:#ff6b6b;
+    --blue:#6f9bff;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  @media (prefers-reduced-motion: reduce){html{scroll-behavior:auto;}}
+  body{background:var(--ground);color:var(--text);font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased;}
+  a{color:inherit;}
+  img,svg{max-width:100%;height:auto;}
+  .wrap{max-width:1060px;margin:0 auto;padding:0 24px;}
+  header{border-bottom:1px solid var(--line);}
+  .nav{display:flex;justify-content:space-between;align-items:center;padding:20px 24px;flex-wrap:wrap;gap:12px;}
+  .mark{font-size:1.1rem;letter-spacing:.02em;text-decoration:none;}
+  .mark b{font-weight:800;}
+  .nav-links{display:flex;gap:20px;flex-wrap:wrap;}
+  .nav-links a{font-size:.85rem;color:var(--muted);text-decoration:none;}
+  .nav-links a:hover,.nav-links a:focus-visible,.nav-links a.active{color:var(--text);}
+  .eyebrow{font-size:.75rem;text-transform:uppercase;letter-spacing:.18em;color:var(--signal);font-weight:600;margin-bottom:16px;}
+  .hero{padding:88px 24px 72px;}
+  h1{font-size:clamp(2.1rem,5.5vw,3.6rem);font-weight:800;letter-spacing:-.03em;line-height:1.08;max-width:20ch;margin-bottom:24px;}
+  h1 em{font-style:italic;color:var(--signal);}
+  .sub{font-size:1.15rem;color:var(--muted);max-width:58ch;margin-bottom:36px;}
+  .byline{font-size:.85rem;color:var(--muted);margin:-12px 0 32px;text-transform:uppercase;letter-spacing:.14em;}
+  .cta-row{display:flex;gap:16px;align-items:center;flex-wrap:wrap;}
+  .btn{display:inline-block;padding:14px 28px;font-weight:700;font-size:.95rem;text-decoration:none;border-radius:2px;}
+  .btn-primary{background:var(--signal);color:#0b0b0c;}
+  .btn-primary:hover,.btn-primary:focus-visible{filter:brightness(1.1);}
+  .btn-ghost{border:1px solid var(--line);color:var(--text);}
+  .btn-ghost:hover,.btn-ghost:focus-visible{border-color:var(--signal);}
+  .price-note{font-size:.85rem;color:var(--muted);}
+  section{padding:72px 0;border-top:1px solid var(--line);}
+  h2{font-size:clamp(1.6rem,3.5vw,2.4rem);font-weight:800;letter-spacing:-.02em;line-height:1.15;max-width:28ch;margin-bottom:20px;}
+  h2 em{font-style:italic;color:var(--signal);}
+  h3{font-size:1.15rem;font-weight:700;letter-spacing:-.01em;}
+  .lede{color:var(--muted);max-width:62ch;font-size:1.05rem;}
+  .lede + .lede{margin-top:18px;}
+  .lede b,.lede strong{color:var(--text);}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;margin-top:44px;}
+  .card{background:var(--surface);border:1px solid var(--line);padding:28px;border-radius:4px;}
+  .card .k{font-size:.72rem;text-transform:uppercase;letter-spacing:.16em;color:var(--signal);font-weight:600;margin-bottom:12px;}
+  .card h3{font-size:1.15rem;font-weight:700;margin-bottom:10px;letter-spacing:-.01em;}
+  .card p,.card li{color:var(--muted);font-size:.95rem;}
+  .card ul{margin:12px 0 0 1.1em;}
+  .card li{padding:3px 0;}
+  .def{background:var(--surface);border-left:3px solid var(--signal);padding:28px 32px;margin-top:36px;max-width:72ch;border-radius:0 4px 4px 0;}
+  .def p{color:var(--text);font-size:1.05rem;}
+  .def p + p{margin-top:12px;}
+  .def .src{color:var(--muted);font-size:.8rem;margin-top:12px;text-transform:uppercase;letter-spacing:.14em;}
+  ul.plain{list-style:none;margin-top:28px;max-width:64ch;}
+  ul.plain li{padding:16px 0;border-bottom:1px solid var(--line);color:var(--muted);font-size:1rem;}
+  ul.plain li b{color:var(--text);font-weight:700;}
+  .faq-item{border-bottom:1px solid var(--line);padding:24px 0;max-width:72ch;}
+  .faq-item h3{font-size:1.05rem;font-weight:700;margin-bottom:8px;}
+  .faq-item p{color:var(--muted);font-size:.95rem;}
+  .faq-item a,.lede a,.card a:not(.btn),.note a{color:var(--signal);}
+  .close{text-align:center;}
+  .close h2{margin:0 auto 22px;max-width:24ch;}
+  .close .lede{margin:0 auto 26px;}
+  .close .cta-row{justify-content:center;}
+  footer{border-top:1px solid var(--line);padding:48px 0;margin-top:24px;}
+  .foot{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;}
+  .foot .tag{color:var(--muted);font-size:.85rem;margin-top:8px;}
+  .foot-links{display:flex;gap:18px;flex-wrap:wrap;}
+  .foot-links a{font-size:.82rem;color:var(--muted);text-decoration:none;}
+  .foot-links a:hover,.foot-links a:focus-visible{color:var(--text);}
+  .copyright{color:var(--muted);font-size:.78rem;margin-top:28px;}
+  :focus-visible{outline:2px solid var(--signal);outline-offset:2px;}
+  /* shared additions */
+  .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;}
+  form.lead{display:flex;gap:10px;flex-wrap:wrap;max-width:540px;margin-top:8px;}
+  form.lead input[type=email]{flex:1 1 240px;min-width:0;padding:13px 14px;border:1px solid #2c2d33;background:#0f0f12;color:#f6f5f2;border-radius:2px;font-size:1rem;font-family:inherit;}
+  form.lead button{background:var(--signal);color:#0b0b0c;font-weight:700;border:none;border-radius:2px;padding:13px 22px;cursor:pointer;font-size:.95rem;font-family:inherit;}
+  form.lead button:hover,form.lead button:focus-visible{filter:brightness(1.1);}
+  .form-fine{font-size:.82rem;color:var(--muted);margin-top:10px;max-width:60ch;}
+  .tbl-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:4px;background:var(--surface);margin-top:28px;-webkit-overflow-scrolling:touch;}
+  table{border-collapse:collapse;width:100%;font-size:.92rem;}
+  th,td{padding:12px 14px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top;}
+  th{font-size:.7rem;text-transform:uppercase;letter-spacing:.12em;color:var(--muted);font-weight:600;white-space:nowrap;}
+  td{color:var(--muted);}
+  td b,td strong{color:var(--text);}
+  tr:last-child td{border-bottom:none;}
+  .num{font-variant-numeric:tabular-nums;white-space:nowrap;}
+  .note{font-size:.85rem;color:var(--muted);margin-top:14px;max-width:72ch;}
+  .pill{display:inline-block;font-size:.68rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:3px 9px;border-radius:999px;white-space:nowrap;border:1px solid var(--line);color:var(--muted);}
+  .pill.g{color:var(--good);border-color:var(--good);}
+  .pill.w{color:var(--warn);border-color:var(--warn);}
+  .pill.b{color:var(--blue);border-color:var(--blue);}
+  .pill.r{color:var(--bad);border-color:var(--bad);}
+  .pill.s{color:var(--signal);border-color:var(--signal);}
+  @media (max-width:520px){
+    .hero{padding:56px 24px 48px;}
+    section{padding:56px 0;}
+    .card{padding:22px;}
+    .def{padding:22px 20px;}
+    .nav-links{gap:14px;}
+  }
+
+  .calc{background:var(--surface);border:1px solid var(--line);border-top:3px solid var(--signal);border-radius:4px;padding:30px 32px;max-width:760px;}
+  .calc .fields{display:grid;grid-template-columns:1fr 1fr;gap:18px;}
+  @media (max-width:640px){.calc .fields{grid-template-columns:1fr;}}
+  .calc label{display:block;font-weight:700;font-size:.95rem;margin-bottom:4px;}
+  .calc .hint{display:block;color:var(--muted);font-size:.82rem;margin-bottom:8px;font-weight:400;}
+  .calc input[type=text]{width:100%;padding:13px 14px;border:1px solid #2c2d33;background:#0f0f12;color:#f6f5f2;border-radius:2px;font-size:1.1rem;font-family:inherit;font-variant-numeric:tabular-nums;}
+  .calc input[aria-invalid=true]{border-color:var(--bad);}
+  .calc .err{color:var(--bad);font-size:.85rem;margin-top:12px;min-height:1.2em;}
+  .out{margin-top:22px;border-top:1px solid var(--line);padding-top:22px;}
+  .out .pct{font-family:'Archivo',system-ui,sans-serif;font-weight:900;font-size:clamp(3rem,10vw,4.6rem);line-height:1;letter-spacing:-.03em;}
+  .out .pct small{font-family:'Inter',sans-serif;font-size:1rem;font-weight:600;color:var(--muted);letter-spacing:0;margin-left:10px;}
+  .meter{position:relative;height:18px;background:#1f1f23;border-radius:999px;margin:18px 0 6px;overflow:hidden;}
+  .meter span{display:block;height:100%;width:0;background:var(--signal);border-radius:999px;transition:width .5s ease;}
+  @media (prefers-reduced-motion: reduce){.meter span{transition:none;}}
+  .scale{display:flex;justify-content:space-between;font-size:.72rem;color:var(--muted);letter-spacing:.08em;}
+  .band{margin-top:18px;padding:16px 18px;border-left:3px solid var(--line);background:#101013;}
+  .band h3{font-size:1.05rem;margin-bottom:6px;}
+  .band p{color:var(--muted);font-size:.95rem;}
+  .band.g{border-color:var(--good);} .band.g h3{color:var(--good);}
+  .band.b{border-color:var(--blue);} .band.b h3{color:var(--blue);}
+  .band.w{border-color:var(--warn);} .band.w h3{color:var(--warn);}
+  .band.r{border-color:var(--bad);} .band.r h3{color:var(--bad);}
+  .bands{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:4px;overflow:hidden;margin-top:28px;}
+  .bands div{background:var(--surface);padding:20px 18px;}
+  .bands b{display:block;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;margin-bottom:8px;}
+  .bands p{color:var(--muted);font-size:.9rem;}
+  .bands h3{font-size:1rem;margin-bottom:6px;}
+  .tables{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:16px;margin-top:28px;}
+  .tables .card code{font-family:'JetBrains Mono',ui-monospace,monospace;font-size:.9rem;color:var(--text);}
+  @media (max-width:520px){.calc{padding:22px 18px;}}
+
+</style>
+<!-- Klaviyo onsite (account Twvzce) -->
+<script>addEventListener("load",function(){var s=document.createElement("script");s.async=1;s.src="https://static.klaviyo.com/onsite/js/Twvzce/klaviyo.js?company_id=Twvzce";document.head.appendChild(s);});</script>
+<script type="text/javascript">!function(){if(!window.klaviyo){window._klOnsite=window._klOnsite||[];try{window.klaviyo=new Proxy({},{get:function(n,i){return"push"===i?function(){var n;(n=window._klOnsite).push.apply(n,arguments)}:function(){for(var n=arguments.length,o=new Array(n),w=0;w<n;w++)o[w]=arguments[w];var t="function"==typeof o[o.length-1]?o.pop():void 0,e=new Promise((function(n){window._klOnsite.push([i].concat(o,[function(i){t&&t(i),n(i)}]))}));return e}}})}catch(n){window.klaviyo=window.klaviyo||[],window.klaviyo.push=function(){var n;(n=window._klOnsite).push.apply(n,arguments)}}}}();</script>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@700;800;900&display=swap" rel="stylesheet">
+<style id="type-2027">
+/* bolder display face: Archivo Black for everything that shouts */
+:root{--display:'Archivo',system-ui,sans-serif}
+h1,h2,h3,h4,h5{font-family:'Archivo',system-ui,sans-serif!important;font-weight:900!important;letter-spacing:-.01em}
+.brand,.foot-brand,.pop{font-family:'Archivo',system-ui,sans-serif!important}
+</style>
+<!-- Google tag (FRDT Lab property) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-1CDWBM46D5"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-1CDWBM46D5');</script>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="mark" href="https://frdtlab.com/">FRDT<b>LAB</b></a>
+    <nav class="nav-links" aria-label="Main">
+      <a href="https://frdtlab.com/">The Lab</a>
+      <a href="https://frdtlab.com/about">About</a>
+      <a href="https://frdtlab.com/work-with-me">Work With Me</a>
+      <a href="https://frdtlab.com/in-motion">In Motion</a>
+      <a href="https://theunapologeticleader.com">Unapologetic</a>
+      <a href="https://frdtlab.com/shop">Shop</a>
+      <a href="https://afrdtlab.substack.com/">Subscribe</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<div class="wrap hero">
+  <p class="eyebrow">Free tool · Measurement</p>
+  <h1>How much of your revenue does your analytics <em>actually see</em>?</h1>
+  <p class="sub">Two numbers from the same date range. One from your analytics, one from your books or store platform. The gap between them is how blind your reporting and your ad bidding really are.</p>
+
+  <div class="calc" id="calc">
+    <div class="fields">
+      <div>
+        <label for="seen">Revenue your analytics reports <span class="hint">GA4 or your analytics tool, purchase revenue for the period</span></label>
+        <input id="seen" type="text" inputmode="decimal" autocomplete="off" placeholder="e.g. 52000">
+      </div>
+      <div>
+        <label for="actual">Actual revenue, same period <span class="hint">From your books, store platform, or payment processor</span></label>
+        <input id="actual" type="text" inputmode="decimal" autocomplete="off" placeholder="e.g. 61000">
+      </div>
+    </div>
+    <p class="err" id="err" role="alert"></p>
+    <div class="out" id="out" aria-live="polite">
+      <div class="pct" id="pct">--<small>of revenue seen</small></div>
+      <div class="meter" aria-hidden="true"><span id="bar"></span></div>
+      <div class="scale" aria-hidden="true"><span>0%</span><span>50%</span><span>100%</span></div>
+      <div class="band" id="band"><h3>Enter both numbers</h3><p>Use the same dates and the same definition of revenue on both sides: with or without tax and shipping, before or after refunds. Pick one and match it.</p></div>
+    </div>
+    <p class="form-fine" style="margin-top:16px">The math runs in your browser. Nothing you type here is sent anywhere.</p>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <p class="eyebrow">Reading your number</p>
+    <h2>Five bands, and what each one <em>means</em>.</h2>
+    <div class="bands">
+      <div><b style="color:var(--good)">95% to 105%</b><h3>Tight</h3><p>Your analytics sees nearly every sale. Trust it for decisions, and keep checking it monthly.</p></div>
+      <div><b style="color:var(--blue)">85% to 95%</b><h3>Normal leakage</h3><p>Consent banners, ad blockers, and device switching. Expected. Note it on reports and move on.</p></div>
+      <div><b style="color:var(--warn)">60% to 85%</b><h3>Meaningful gap</h3><p>Something in the setup is dropping sales. Bidding and reporting are working on a partial picture.</p></div>
+      <div><b style="color:var(--bad)">Under 60%</b><h3>Blind spot</h3><p>Your tools are steering on less than most of reality. Fix this before you scale spend or change platforms.</p></div>
+      <div><b style="color:var(--bad)">Over 105%</b><h3>Over-counting</h3><p>Analytics is counting sales that didn't happen. Duplicate events, test orders, or refunds never deducted.</p></div>
+    </div>
+    <div class="def">
+      <p>On one retailer we audited, GA4 saw about 42% of real web revenue. It had sat there for months, and automated bidding had been steering on roughly 40% of reality the whole time. Nobody had compared the two numbers side by side.</p>
+      <p class="src">FRDTLAB · From an audit, client details removed</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <p class="eyebrow">Where the gap comes from</p>
+    <h2>Low coverage is almost always <em>wiring</em>, not the internet.</h2>
+    <ul class="plain">
+      <li><b>The purchase tag doesn't fire on every checkout path.</b> Express checkout, a payment redirect, or a thank-you page that some orders never reach.</li>
+      <li><b>Orders that never touch the website.</b> Phone orders, invoices, marketplace sales, and repeat orders placed by your team.</li>
+      <li><b>Consent and blockers.</b> The honest, expected slice. Usually single digits, not half your revenue.</li>
+      <li><b>Mismatched definitions.</b> Analytics counts revenue before tax and shipping; your books count it after refunds. Same store, two different numbers.</li>
+      <li><b>Duplicate conversion actions.</b> Two purchase events both counted as primary, so the ad platform reports more than happened while analytics reports less.</li>
+    </ul>
+    <p class="lede" style="margin-top:28px">Here's why it matters beyond reporting: <b>your ad platforms bid on what tracking reports, not on your books.</b> If tracking sees 40% of sales, automated bidding learns from 40% of your customers and grades itself on a return that isn't real in either direction.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <p class="eyebrow">The fix: a measurement layer</p>
+    <h2>One place where spend, sessions, and orders sit in <em>the same table</em>.</h2>
+    <p class="lede">Every platform grades its own homework. The ad platform scores the ad platform. Analytics undercounts. A measurement layer is a small warehouse every source writes into, so you get one return-on-spend number that isn't the platform's claim. Most of it is click-to-enable exports, not custom code.</p>
+    <div class="tables">
+      <div class="card"><div class="k">Table 1</div><h3><code>spend</code></h3><p>Every paid source, daily, in one shape.</p></div>
+      <div class="card"><div class="k">Table 2</div><h3><code>sessions</code></h3><p>Analytics traffic, re-labeled so "organic" means the same thing everywhere.</p></div>
+      <div class="card"><div class="k">Table 3</div><h3><code>orders</code></h3><p>Real orders from the store platform. The denominator for everything.</p></div>
+      <div class="card"><div class="k">Table 4</div><h3><code>channels</code></h3><p>The one table you own by hand: which campaign or source belongs to which channel.</p></div>
+    </div>
+    <div style="margin-top:40px;max-width:640px">
+      <h3 style="margin-bottom:8px">Get the measurement layer checklist</h3>
+      <p class="lede" style="margin-bottom:14px">The sources, the four tables, and the order to switch them on. One email.</p>
+      <form class="lead" data-kl-event="Analytics Coverage Calculator" data-kl-subscribe="QYJzYY">
+      <label class="sr-only" for="calc-email">Email address</label>
+      <input id="calc-email" name="email" type="email" required autocomplete="email" placeholder="you@email.com"><input type="hidden" name="coverage_pct" id="coverage_pct" value="">
+      <button type="submit">Send me the checklist</button>
+    </form>
+      <p class="form-fine">We'll send your coverage percentage with your email so the reply fits your number. Never the revenue figures.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <p class="eyebrow">FAQ</p>
+    <h2>Questions, answered.</h2>
+    <div class="faq-item">
+      <h3>What is analytics revenue coverage?</h3>
+      <p>The share of your real revenue that your analytics tool can see. Divide the revenue your analytics reports by the revenue in your books or store platform for the same dates. 100% means it sees everything. 42% means more than half your sales are invisible to it.</p>
+    </div>
+    <div class="faq-item">
+      <h3>What's a normal coverage number?</h3>
+      <p>Somewhere around 85% to 95% is typical for a well-wired store. Consent banners, ad blockers, and people switching devices always cost a little. Under 85% usually means something in the setup, not just the internet being the internet.</p>
+    </div>
+    <div class="faq-item">
+      <h3>Why does low coverage matter if my store platform has the right number?</h3>
+      <p>Because your ad platforms bid on what analytics and tracking report, not on your books. If tracking sees 40% of sales, automated bidding is optimizing toward 40% of reality and reporting a return that isn't real in either direction.</p>
+    </div>
+    <div class="faq-item">
+      <h3>What if my coverage is over 100%?</h3>
+      <p>Your analytics is counting sales that didn't happen. The usual causes are duplicate purchase events, test orders, refunds and cancellations never deducted, or tax and shipping counted on one side and not the other.</p>
+    </div>
+    <div class="faq-item">
+      <h3>Do you store the numbers I enter?</h3>
+      <p>No. The math runs in your browser. Nothing you type in the calculator is sent anywhere. If you ask for the checklist, only your email and your coverage percentage are sent.</p>
+    </div>
+  </div>
+</section>
+
+<section class="close">
+  <div class="wrap">
+    <p class="eyebrow">Close the gap</p>
+    <h2>Find out what your tracking is <em>missing</em>, and fix it once.</h2>
+    <p class="lede">Start with the audit. If the gap is wiring, the measurement layer is quoted to your stack.</p>
+    <div class="cta-row">
+      <a class="btn btn-primary" href="https://frdtlab.com/ai-visibility-audit">The Audit, $497</a>
+      <a class="btn btn-ghost" href="mailto:hello@frdtlab.com?subject=Measurement%20layer%20quote">Measurement layer setup: request a quote</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div>
+        <a class="mark" href="https://frdtlab.com/">FRDT<b>LAB</b></a>
+        <p class="tag">Systems. Stories. Signal.<br>Detroit-rooted · Future-facing</p>
+      </div>
+      <nav class="foot-links" aria-label="Footer">
+        <a href="https://frdtlab.com/in-motion">In Motion</a>
+        <a href="https://frdtlab.com/frameworks">Frameworks</a>
+        <a href="https://frdtlab.com/scorecard">AI Scorecard</a>
+        <a href="https://frdtlab.com/geo-playbook">Get Recommended by AI</a>
+        <a href="https://frdtlab.com/work-with-me">Work With Me</a>
+        <a href="https://frdtlab.com/shop">Shop</a>
+        <a href="https://afrdtlab.substack.com/">Newsletter</a>
+        <a href="mailto:hello@frdtlab.com">Contact</a>
+      </nav>
+    </div>
+    <p class="copyright">© 2026 FRDTLAB · Building what comes next</p>
+  </div>
+</footer>
+
+<script>/* kl-lead-handler */
+document.addEventListener('submit',function(e){
+  var f=e.target; if(!f||!f.getAttribute||!f.getAttribute('data-kl-event'))return;
+  e.preventDefault();
+  var fd=new FormData(f),p={};
+  fd.forEach(function(v,k){ if(k.charAt(0)!=='_'&&v){ p[k]=p[k]?p[k]+', '+v:''+v; } });
+  var email=p.email||p.Email||'';
+  try{ if(window.klaviyo){ if(email){window.klaviyo.push(['identify',Object.assign({'$email':email},p)]);} window.klaviyo.push(['track', f.getAttribute('data-kl-event'), p]); window.klaviyo.push(['track','New Lead',Object.assign({form:f.getAttribute('data-kl-event'),brand:'FRDTLAB'},p)]); } }catch(err){}
+  try{ if(window.gtag){ gtag('event','generate_lead',{event_category:'form',event_label:f.getAttribute('data-kl-event'),form_name:f.getAttribute('data-kl-event'),send_to:'G-1CDWBM46D5'}); } }catch(err){}
+  var listId=f.getAttribute('data-kl-subscribe');
+  if(listId&&email){ try{ fetch('https://a.klaviyo.com/client/subscriptions/?company_id=Twvzce',{method:'POST',keepalive:true,headers:{'Content-Type':'application/json','revision':'2024-10-15'},body:JSON.stringify({data:{type:'subscription',attributes:{custom_source:(f.getAttribute('data-kl-event')||'Website'),profile:{data:{type:'profile',attributes:{email:email}}}},relationships:{list:{data:{type:'list',id:listId}}}}})}); }catch(err){} }
+  var msg=document.createElement('p'); msg.className='form-note'; msg.style.cssText='font-size:1.05rem;margin-top:8px'; msg.setAttribute('role','status'); msg.textContent='Thank you, we got it. We will be in touch.';
+  f.parentNode.insertBefore(msg,f.nextSibling); f.style.display='none';
+});
+</script>
+<script>
+(function(){
+  var seen=document.getElementById('seen'),actual=document.getElementById('actual'),
+      pct=document.getElementById('pct'),bar=document.getElementById('bar'),band=document.getElementById('band'),
+      err=document.getElementById('err'),hid=document.getElementById('coverage_pct');
+  function num(el){var v=(el.value||'').replace(/[^0-9.]/g,'');if(v==='')return null;var n=parseFloat(v);return isFinite(n)?n:NaN;}
+  function setBand(cls,h,p){band.className='band '+cls;band.innerHTML='';var h3=document.createElement('h3');h3.textContent=h;var pp=document.createElement('p');pp.textContent=p;band.appendChild(h3);band.appendChild(pp);}
+  function reset(msg){pct.innerHTML='--<small>of revenue seen</small>';bar.style.width='0';if(hid)hid.value='';setBand('','Enter both numbers','Use the same dates and the same definition of revenue on both sides: with or without tax and shipping, before or after refunds. Pick one and match it.');err.textContent=msg||'';seen.removeAttribute('aria-invalid');actual.removeAttribute('aria-invalid');}
+  function calc(){
+    var s=num(seen),a=num(actual);
+    if(s===null||a===null){reset();return;}
+    if(isNaN(s)||isNaN(a)){reset('Numbers only, please.');return;}
+    if(a<=0){reset('Actual revenue needs to be more than zero.');actual.setAttribute('aria-invalid','true');return;}
+    err.textContent='';seen.removeAttribute('aria-invalid');actual.removeAttribute('aria-invalid');
+    var r=s/a*100,shown=r>=10?Math.round(r):Math.round(r*10)/10;
+    pct.innerHTML='';pct.appendChild(document.createTextNode(shown+'%'));var sm=document.createElement('small');sm.textContent='of revenue seen';pct.appendChild(sm);
+    bar.style.width=Math.min(r,100)+'%';
+    bar.style.background=r>105?'#ff6b6b':r>=95?'#4ad6a0':r>=85?'#6f9bff':r>=60?'#ffb454':'#ff6b6b';
+    if(hid)hid.value=String(shown);
+    var miss=Math.max(0,Math.round(100-r));
+    if(r>105)setBand('r','Over-counting','Your analytics reports more revenue than you actually took in. Look for duplicate purchase events, test orders, refunds and cancellations never deducted, or tax and shipping counted on one side only. Your ad platforms may be bidding on sales that never happened.');
+    else if(r>=95)setBand('g','Tight','Your analytics sees nearly every sale. Trust it for decisions, keep comparing the two numbers monthly, and re-check after any checkout or platform change.');
+    else if(r>=85)setBand('b','Normal leakage','About '+miss+'% of revenue is invisible to analytics. That is in the range consent banners, ad blockers, and device switching usually cost. Note it on reports so nobody reads the gap as a drop.');
+    else if(r>=60)setBand('w','Meaningful gap','About '+miss+'% of revenue is invisible to analytics. Something in the setup is dropping sales: a checkout path the tag misses, orders placed off the site, or mismatched definitions. Your bidding is learning from part of your customers.');
+    else setBand('r','Blind spot','About '+miss+'% of revenue is invisible to analytics. Your reporting and your automated bidding are steering on less than most of reality. Fix the wiring before you scale spend or migrate platforms, or the gap moves with you.');
+  }
+  seen.addEventListener('input',calc);actual.addEventListener('input',calc);
+})();
+</script>
+</body>
+</html>
