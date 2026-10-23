@@ -57,7 +57,7 @@
    "name": "What exactly do I get?",
    "acceptedAnswer": {
     "@type": "Answer",
-    "text": "A guided worksheet of 29 questions in five blocks, five fill-in templates your answers turn into (agent register and permission matrix, approval gates, report QA checklist, logging rules, incident flag), and ten stress-test scenarios with a 30-day review. It opens in your browser and prints cleanly if you prefer a pen."
+    "text": "A guided worksheet of 29 questions in five blocks, five fill-in templates your answers turn into (agent register and permission matrix, approval gates, report QA checklist, logging rules, incident flag), and ten stress-test scenarios with a 30-day review. It comes as a PDF workbook with fillable fields, plus editable Word templates. Type into it or print it and use a pen."
    }
   },
   {
@@ -73,7 +73,7 @@
    "name": "How long does it take?",
    "acceptedAnswer": {
     "@type": "Answer",
-    "text": "Plan on an afternoon for the worksheet. The templates fill themselves in from your answers, so most of the time goes into the decisions, not the formatting."
+    "text": "Plan on 60 to 90 minutes for the worksheet and the rest of an afternoon for the templates and stress test. Each block tells you which template it feeds, so most of the time goes into the decisions, not the formatting."
    }
   },
   {
@@ -233,6 +233,7 @@
   .chip{display:inline-block;font-weight:800;font-size:.68rem;letter-spacing:.06em;padding:2px 8px;border-radius:2px;margin-right:6px;vertical-align:1px;}
   .chip.auto{background:var(--blue);color:#0b0b0c;}
   .chip.ask{border:1.5px solid var(--signal);color:var(--signal);}
+  .chip.cond{border:1.5px dashed var(--blue);color:var(--blue);}
   .chip.never{background:var(--text);color:#0b0b0c;}
   .key{display:flex;flex-wrap:wrap;gap:10px 24px;margin-top:22px;color:var(--muted);font-size:.92rem;}
   .wgh{display:inline-flex;gap:6px;}
@@ -317,7 +318,7 @@ h1,h2,h3,h4,h5{font-family:'Archivo',system-ui,sans-serif!important;font-weight:
       <div class="card">
         <div class="k">Part 1 · The worksheet</div>
         <h3>29 questions, in five blocks</h3>
-        <p>Answered in order, because each block makes the next one easier. Type in your browser or print it. Answers stay on your device.</p>
+        <p>Answered in order, because each block makes the next one easier. Type into the fillable PDF or print it. Editable Word templates come with it.</p>
       </div>
       <div class="card">
         <div class="k">Part 2 · Five templates</div>
@@ -344,11 +345,12 @@ h1,h2,h3,h4,h5{font-family:'Archivo',system-ui,sans-serif!important;font-weight:
       <div class="blk"><div class="l" aria-hidden="true">E</div><h3>Breakage</h3><p>What broken looks like, and who hears first.</p><span class="q">5 questions</span></div>
     </div>
     <div class="key" aria-label="Permission key">
-      <span><span class="chip auto">AUTO</span>Runs alone. Logged.</span>
-      <span><span class="chip ask">ASK</span>Stops and waits for a named person.</span>
+      <span><span class="chip auto">ALLOW</span>Runs alone. Logged.</span>
+      <span><span class="chip cond">CONDITIONAL</span>Runs alone inside limits you set.</span>
+      <span><span class="chip ask">APPROVAL</span>Stops and waits for a named person.</span>
       <span><span class="chip never">NEVER</span>No approval opens it up.</span>
     </div>
-    <p class="note">Every action your agents can take lands in one of those three cells. The kit walks you through sorting them. The thinking behind it is <a href="https://frdtlab.com/frameworks#autonomy-gradient">the Autonomy Gradient</a>.</p>
+    <p class="note">Every action your agents can take lands in one of those four cells. The kit walks you through sorting them. The thinking behind it is <a href="https://frdtlab.com/frameworks#autonomy-gradient">the Autonomy Gradient</a>.</p>
   </div>
 </section>
 
@@ -399,7 +401,7 @@ h1,h2,h3,h4,h5{font-family:'Archivo',system-ui,sans-serif!important;font-weight:
     <h2>Questions, answered.</h2>
     <div class="faq-item">
       <h3>What exactly do I get?</h3>
-      <p>A guided worksheet of 29 questions in five blocks, five fill-in templates your answers turn into (agent register and permission matrix, approval gates, report QA checklist, logging rules, incident flag), and ten stress-test scenarios with a 30-day review. It opens in your browser and prints cleanly if you prefer a pen.</p>
+      <p>A guided worksheet of 29 questions in five blocks, five fill-in templates your answers turn into (agent register and permission matrix, approval gates, report QA checklist, logging rules, incident flag), and ten stress-test scenarios with a 30-day review. It comes as a PDF workbook with fillable fields, plus editable Word templates. Type into it or print it and use a pen.</p>
     </div>
     <div class="faq-item">
       <h3>Do I need to be technical?</h3>
@@ -407,7 +409,7 @@ h1,h2,h3,h4,h5{font-family:'Archivo',system-ui,sans-serif!important;font-weight:
     </div>
     <div class="faq-item">
       <h3>How long does it take?</h3>
-      <p>Plan on an afternoon for the worksheet. The templates fill themselves in from your answers, so most of the time goes into the decisions, not the formatting.</p>
+      <p>Plan on 60 to 90 minutes for the worksheet and the rest of an afternoon for the templates and stress test. Each block tells you which template it feeds, so most of the time goes into the decisions, not the formatting.</p>
     </div>
     <div class="faq-item">
       <h3>Which AI tools does it work with?</h3>
