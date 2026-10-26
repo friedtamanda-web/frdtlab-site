@@ -26,9 +26,9 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Archivo:wght@700;800;900&family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap">
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@700;800;900&family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
-<noscript><link href="https://fonts.googleapis.com/css2?family=Archivo:wght@700;800;900&family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"></noscript>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Archivo:wght@700;800;900&family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=optional">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@700;800;900&family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=optional" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Archivo:wght@700;800;900&family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=optional" rel="stylesheet"></noscript>
 
 <!-- JSON-LD: machine-readable authority -->
 <script type="application/ld+json">
@@ -203,7 +203,8 @@ section{position:relative}
 .flow{display:grid;grid-template-columns:repeat(5,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
 .step{background:var(--charcoal);padding:34px 24px;display:flex;flex-direction:column;gap:12px;transition:background .4s}
 .step:hover{background:var(--panel)}
-.step .s-num{font-family:var(--mono);font-size:11px;letter-spacing:.2em;color:var(--pink)}
+.step .s-num{font-family:var(--mono);font-size:11px;letter-spacing:.2em;color:#F47DB8}
+.imc p a{color:#F47DB8}
 .step h3,.step h4{font-family:var(--display);font-weight:700;text-transform:uppercase;font-size:1.5rem;line-height:1;color:var(--white)}
 .step ul{list-style:none;display:flex;flex-direction:column;gap:5px}
 .step li{font-size:.92rem;color:var(--body-text);font-weight:400}
@@ -466,7 +467,7 @@ h1,h2,h3,h4,h5{font-family:'Archivo',system-ui,sans-serif!important;font-weight:
       </div>
     </div>
     <div class="hero-photo reveal">
-      <picture><source srcset="img/detroit.webp" type="image/webp"><img src="img/detroit.jpg" width="1100" height="1467" alt="Detroit cityscape, the lab's home ground" fetchpriority="high" decoding="async"></picture>
+      <picture><source srcset="img/detroit-480.webp 480w, img/detroit-720.webp 720w, img/detroit-920.webp 920w" sizes="(max-width: 900px) 92vw, 460px" type="image/webp"><img src="img/detroit.jpg" width="920" height="1226" alt="Amanda Friedt, founder of FRDTLAB, outside a historic brick home in Detroit" fetchpriority="high" decoding="async"></picture>
       <span class="tag">Detroit-rooted · Future-facing</span>
     </div>
   </div>
