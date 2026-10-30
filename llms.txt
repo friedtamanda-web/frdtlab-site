@@ -19,6 +19,8 @@
 - [The Validation Loop](https://frdtlab.com/frameworks#validation-loop): Paid, organic, and real-sales data; two or more sources must agree before a decision ships.
 - [Agent Governance Builder Kit](https://frdtlab.com/agent-governance-kit): $47 kit, early access. Worksheet, templates, and stress tests that become a written permission policy for AI agents.
 
+- [The Work](https://frdtlab.com/the-work/): Dated proof logs from FRDTLAB. Entry 001: seven on-brand deliverables (logo suite, print-ready cards, team tech budget, priority sheet, Word templates, taglines, team handoff) shipped in one working day on an integrated marketing infrastructure: brand system, human voice and lived IP, proof library, content system, AI agents behind a human gate.
+
 ## Services
 - [The Foundry - SMB growth system](https://frdtlab.com/foundry): Done-with-you growth system install for small businesses, scoped by trade.
 - [AI Visibility Audit](https://frdtlab.com/ai-visibility-audit): Cross-channel audit of what is working, what is breaking, and where the highest-value opportunities are hiding. $497 for one brand, $1,250 with competitor benchmarking. One week.
