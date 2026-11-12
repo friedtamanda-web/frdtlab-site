@@ -1,0 +1,281 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>The AI-Powered Marketing Machine | FRDTLAB</title>
+  <meta name="description" content="Learn to turn customer signals into marketing tests you can ship, measure, and build on. Subscribe for course updates from Amanda Friedt and FRDTLAB.">
+  <link rel="canonical" href="https://frdtlab.com/marketing-machine/">
+  <link rel="icon" href="https://frdtlab.com/favicon.svg" type="image/svg+xml">
+  <meta name="theme-color" content="#141217">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="FRDTLAB">
+  <meta property="og:title" content="The AI-Powered Marketing Machine">
+  <meta property="og:description" content="Turn customer signals into marketing tests you can ship. Subscribe for course updates.">
+  <meta property="og:url" content="https://frdtlab.com/marketing-machine/">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@700;800;900&family=IBM+Plex+Mono:wght@500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root { color-scheme:dark; --ink:#141217; --panel:#201b22; --cream:#fff4e5; --muted:#d5c6ce; --pink:#ff529a; --line:#493b46; --head:Archivo,Arial,sans-serif; --mono:"IBM Plex Mono",monospace; }
+    [hidden] { display:none !important; }
+    *,*::before,*::after { box-sizing:border-box; }
+    body { margin:0; background:var(--ink); color:var(--cream); font:1rem/1.6 Inter,system-ui,sans-serif; }
+    h1,h2,h3,p { margin:0; }
+    h1,h2,h3 { font-family:var(--head); line-height:1.04; }
+    a { color:inherit; }
+    a:focus-visible,button:focus-visible,input:focus-visible { outline:3px solid var(--pink); outline-offset:4px; }
+    .wrap { width:min(1180px,calc(100% - 72px)); margin-inline:auto; }
+    .skip { position:absolute; left:12px; top:-90px; z-index:2; padding:10px; background:var(--cream); color:var(--ink); }
+    .skip:focus { top:10px; }
+    header { border-bottom:1px solid var(--line); }
+    .mast { min-height:74px; display:flex; align-items:center; justify-content:space-between; gap:20px; }
+    .brand { font:900 1.42rem/1 var(--head); letter-spacing:-.055em; text-decoration:none; }
+    .brand span { color:var(--pink); }
+    .mast nav { display:flex; gap:28px; align-items:center; font-size:.86rem; font-weight:700; }
+    .mast nav a { text-decoration:none; }
+    .mast nav a:hover { text-decoration:underline; }
+    .mast nav a:last-child { color:var(--pink); }
+    .hero { display:grid; grid-template-columns:1.18fr .82fr; align-items:center; gap:clamp(24px,5vw,70px); padding-block:clamp(58px,8vw,110px) 72px; }
+    .eyebrow { display:block; color:var(--pink); font:600 .76rem/1.3 var(--mono); text-transform:uppercase; letter-spacing:.15em; }
+    h1 { font-size:clamp(2.7rem,6.1vw,6.1rem); font-weight:900; text-transform:uppercase; letter-spacing:-.066em; margin:16px 0 22px; }
+    h1 span { display:block; color:var(--pink); }
+    .lead { max-width:51ch; color:var(--muted); font-size:clamp(1.03rem,1.7vw,1.23rem); }
+    .lead strong { color:var(--cream); }
+    .graphic { overflow:hidden; background-color:#1d171e; background-image:linear-gradient(#4a354777 1px,transparent 1px),linear-gradient(90deg,#4a354777 1px,transparent 1px); background-size:29px 29px; min-height:220px; display:grid; place-items:center; border:1px solid var(--line); margin:0; }
+    .graphic svg { width:100%; height:auto; display:block; }
+    .signup { margin-top:26px; max-width:560px; scroll-margin-top:24px; }
+    .signup label { display:block; margin-bottom:6px; font-size:.85rem; font-weight:700; }
+    .signup-row { display:flex; gap:8px; }
+    .signup input { min-width:0; flex:1; border:1px solid #786374; padding:13px 14px; border-radius:0; background:var(--panel); color:var(--cream); font:inherit; }
+    .signup input::placeholder { color:#c1aeb9; }
+    .button { min-height:48px; display:inline-flex; justify-content:center; align-items:center; padding:10px 16px; border:1px solid transparent; background:var(--pink); color:#1b1018; font:700 .92rem/1.3 Inter,system-ui,sans-serif; text-decoration:none; cursor:pointer; }
+    .button:hover { background:#ff80b4; }
+    .button:disabled { opacity:.6; cursor:wait; }
+    .fine { color:var(--muted); font-size:.77rem; margin-top:8px; }
+    #signup-status:not(:empty) { padding-top:8px; font-size:.9rem; color:var(--cream); }
+    #signup-status[data-error] { color:#ffabc8; }
+    .band { border-block:1px solid var(--line); background:var(--panel); }
+    .section { padding-block:clamp(50px,7vw,90px); }
+    h2 { margin:12px 0 18px; font-size:clamp(2rem,4.3vw,3.65rem); letter-spacing:-.051em; }
+    .steps { list-style:none; padding:0; margin:32px 0 0; display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:1px; background:var(--line); border:1px solid var(--line); }
+    .steps li { background:var(--ink); padding:22px; }
+    .step-no { color:var(--pink); font:.83rem var(--mono); }
+    .steps h3 { margin:10px 0 8px; font-size:1.2rem; }
+    .steps p,.section p,.takeaways { color:var(--muted); }
+    .details { display:grid; grid-template-columns:1fr 1fr; gap:clamp(30px,7vw,90px); }
+    .takeaways { padding-left:1.2em; margin-bottom:0; }
+    .takeaways li + li { margin-top:8px; }
+    .person { display:flex; align-items:center; gap:18px; margin-top:22px; }
+    .person img { width:74px; height:74px; object-fit:cover; border:1px solid var(--line); }
+    .person strong { display:block; }
+    .impact { display:grid; grid-template-columns:1fr 1fr; gap:clamp(24px,5vw,60px); align-items:start; }
+    .impact .metric { display:block; font:900 clamp(2.8rem,6vw,5.6rem)/.95 var(--head); letter-spacing:-.06em; color:var(--pink); }
+    .case { border-left:3px solid var(--pink); padding:6px 0 6px 20px; }
+    .case p { margin-top:9px; }
+    @media(max-width:750px) { .impact { grid-template-columns:1fr; } }
+    .teaser-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:16px; margin-top:28px; }
+    .teaser { min-width:0; border:1px solid var(--line); padding:14px; background:var(--panel); }
+    .teaser video { display:block; width:100%; max-height:330px; aspect-ratio:9/16; background:#171419; object-fit:contain; }
+    .teaser h3 { font-size:1.14rem; margin:14px 0 5px; }
+    .teaser p { font-size:.9rem; }
+    .teaser-grid + .button { margin-top:22px; }
+    @media(max-width:750px) { .teaser-grid { grid-template-columns:repeat(2,minmax(0,1fr)); } }
+    @media(max-width:400px) { .teaser-grid { grid-template-columns:1fr; } }
+    .bottom { display:flex; justify-content:space-between; gap:20px; align-items:center; padding-block:34px; }
+    .bottom h2 { font-size:clamp(1.6rem,3.6vw,2.5rem); margin:0; }
+    footer { padding-block:22px; border-top:1px solid var(--line); color:var(--muted); font-size:.82rem; }
+    footer .wrap { display:flex; flex-wrap:wrap; justify-content:space-between; gap:12px; }
+    @media(max-width:850px) { .hero { grid-template-columns:1fr; gap:30px; } .graphic { max-width:560px; } .details { grid-template-columns:1fr; } }
+    @media(max-width:600px) { .wrap { width:calc(100% - 36px); } .mast { min-height:60px; } .mast nav { gap:13px; } .mast nav a:first-child { display:none; } .hero { padding-block:44px; } .steps { grid-template-columns:1fr; } .signup-row,.bottom { flex-direction:column; align-items:stretch; } .graphic { min-height:150px; } }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header><div class="wrap mast">
+    <a class="brand" href="https://frdtlab.com/" aria-label="FRDTLAB home">FRDT<span>LAB</span></a>
+    <nav aria-label="Course navigation"><a href="#curriculum">What you’ll learn</a><a href="#teasers">Previews</a><a href="#signup">Course updates</a></nav>
+  </div></header>
+  <main id="main">
+    <section class="wrap hero" aria-labelledby="course-title">
+      <div>
+        <span class="eyebrow">New course · Amanda Friedt</span>
+        <h1 id="course-title">The AI-Powered Marketing <span>Machine</span></h1>
+        <p class="lead"><strong>Turn customer signals into tests you can ship.</strong> Take one real customer question through research, validation, and release. Tie the change to sales or qualified leads, then decide what to do next week.</p>
+        <div class="signup" id="signup">
+          <form id="course-signup" method="post" hidden>
+            <label for="course-email">Email address</label>
+            <div class="signup-row">
+              <input id="course-email" name="email" type="email" autocomplete="email" required maxlength="254" placeholder="you@example.com" aria-describedby="signup-consent">
+              <button class="button" type="submit">Subscribe for course updates</button>
+            </div>
+            <p class="fine" id="signup-consent">By subscribing, you agree to receive emails from FRDTLAB. Unsubscribe anytime. <a href="https://frdtlab.com/privacy.html">Privacy policy</a>.</p>
+          </form>
+          <a id="newsletter-fallback" class="button" href="https://afrdtlab.substack.com/">Subscribe to FRDTLAB</a>
+          <p id="signup-status" role="status" aria-live="polite"></p>
+        </div>
+      </div>
+      <figure class="graphic" aria-hidden="true">
+        <svg viewBox="0 0 480 360" fill="none">
+          <defs><marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="3.2" markerHeight="3.2" orient="auto"><path d="M0 0l10 5-10 5z" fill="#ff529a"/></marker></defs>
+          <circle cx="330" cy="180" r="110" stroke="#704361" stroke-dasharray="4 9"/>
+          <path d="M0 180h42c24 0 23-49 46-49s24 98 47 98 24-98 47-98 23 49 47 49h25" stroke="#ff529a" stroke-width="5"/>
+          <path d="M254 180a76 76 0 0 1 122-60M402 154a76 76 0 0 1-44 96M317 255a76 76 0 0 1-59-50" stroke="#ff529a" stroke-width="5" marker-end="url(#arrow)"/>
+          <circle cx="254" cy="180" r="9" fill="#ff529a"/><circle cx="330" cy="180" r="12" stroke="#fff4e5" stroke-width="2"/><circle cx="330" cy="180" r="3" fill="#fff4e5"/>
+        </svg>
+      </figure>
+    </section>
+    <section class="band" id="curriculum">
+      <div class="wrap section">
+        <span class="eyebrow">The workflow</span>
+        <h2>One signal. Six decisions.</h2>
+        <ol class="steps">
+          <li><span class="step-no" aria-hidden="true">01</span><h3>Sense</h3><p>Capture the customer’s actual words and where they got stuck.</p></li>
+          <li><span class="step-no" aria-hidden="true">02</span><h3>Structure</h3><p>Define the audience, the action you want them to take, and the decision you need to make.</p></li>
+          <li><span class="step-no" aria-hidden="true">03</span><h3>Research</h3><p>Use AI to plan the research. Open the original sources and check what they support.</p></li>
+          <li><span class="step-no" aria-hidden="true">04</span><h3>Validate</h3><p>Write the test and set your pass criteria before you see the results.</p></li>
+          <li><span class="step-no" aria-hidden="true">05</span><h3>Build and Ship</h3><p>Make one reviewable change. Check the mobile path, tracking, and rollback.</p></li>
+          <li><span class="step-no" aria-hidden="true">06</span><h3>Measure and Compound</h3><p>Compare against your baseline and decide whether to keep, revise, or stop.</p></li>
+        </ol>
+      </div>
+    </section>
+    <section class="band" aria-labelledby="impact-heading">
+      <div class="wrap section impact">
+        <div>
+          <span class="eyebrow">Revenue and impact</span>
+          <h2 id="impact-heading">Know where the next marketing dollar should go.</h2>
+          <p>Find the demand you’re missing, choose a test your team can deliver, and measure what changed in sales, qualified leads, or returns. Turn what you learn into a check your team can run again next week.</p>
+          <ul class="takeaways">
+            <li>Compare paid and organic search coverage to decide which gap deserves the next dollar or hour.</li>
+            <li>Check inventory, fulfillment, or appointment capacity before spending to drive more demand.</li>
+            <li>When you change product copy, read return rate alongside units sold to see whether you’re protecting revenue.</li>
+          </ul>
+        </div>
+        <div class="case">
+          <span class="metric">+19.8%</span>
+          <p><strong>Trailing 90-day revenue growth recorded by a Michigan retailer</strong></p>
+          <p>During the engagement, the team repaired measurement and rebuilt product data used by search and shopping. This is an observed result from past client work. In the course, you’ll define and measure the outcome for your own project.</p>
+        </div>
+      </div>
+    </section>
+    <section class="wrap section" id="teasers" aria-labelledby="teaser-heading">
+      <span class="eyebrow">Course previews</span>
+      <h2 id="teaser-heading">See the workflow in action.</h2>
+      <p>Six short previews follow one fictional bike shop from a booking question to a test it can measure.</p>
+      <div class="teaser-grid">
+          <article class="teaser">
+            <video controls muted playsinline preload="none" poster="./videos/sense.webp" aria-label="Sense course teaser">
+              <source src="./videos/sense.mp4?v=silent" type="video/mp4">
+              <track kind="captions" src="./videos/sense.vtt" srclang="en" label="English">
+              <a href="./videos/sense.mp4?v=silent">Download the Sense teaser</a>
+            </video>
+            <h3>Sense</h3><p>Find where a customer gets stuck.</p>
+          </article>
+          <article class="teaser">
+            <video controls muted playsinline preload="none" poster="./videos/structure.webp" aria-label="Structure course teaser">
+              <source src="./videos/structure.mp4?v=silent" type="video/mp4">
+              <track kind="captions" src="./videos/structure.vtt" srclang="en" label="English">
+              <a href="./videos/structure.mp4?v=silent">Download the Structure teaser</a>
+            </video>
+            <h3>Structure</h3><p>Turn an observation into a decision brief.</p>
+          </article>
+          <article class="teaser">
+            <video controls muted playsinline preload="none" poster="./videos/research.webp" aria-label="Research course teaser">
+              <source src="./videos/research.mp4?v=silent" type="video/mp4">
+              <track kind="captions" src="./videos/research.vtt" srclang="en" label="English">
+              <a href="./videos/research.mp4?v=silent">Download the Research teaser</a>
+            </video>
+            <h3>Research</h3><p>Give AI a research task and verify the sources.</p>
+          </article>
+          <article class="teaser">
+            <video controls muted playsinline preload="none" poster="./videos/validate.webp" aria-label="Validate course teaser">
+              <source src="./videos/validate.mp4?v=silent" type="video/mp4">
+              <track kind="captions" src="./videos/validate.vtt" srclang="en" label="English">
+              <a href="./videos/validate.mp4?v=silent">Download the Validate teaser</a>
+            </video>
+            <h3>Validate</h3><p>Set a pass rule before the test.</p>
+          </article>
+          <article class="teaser">
+            <video controls muted playsinline preload="none" poster="./videos/build.webp" aria-label="Build and Ship course teaser">
+              <source src="./videos/build.mp4?v=silent" type="video/mp4">
+              <track kind="captions" src="./videos/build.vtt" srclang="en" label="English">
+              <a href="./videos/build.mp4?v=silent">Download the Build and Ship teaser</a>
+            </video>
+            <h3>Build and Ship</h3><p>Check the path, tracking, and rollback before release.</p>
+          </article>
+          <article class="teaser">
+            <video controls muted playsinline preload="none" poster="./videos/measure.webp" aria-label="Measure and Compound course teaser">
+              <source src="./videos/measure.mp4?v=silent" type="video/mp4">
+              <track kind="captions" src="./videos/measure.vtt" srclang="en" label="English">
+              <a href="./videos/measure.mp4?v=silent">Download the Measure and Compound teaser</a>
+            </video>
+            <h3>Measure and Compound</h3><p>Compare results and decide what to keep.</p>
+          </article>
+      </div>
+      <a href="#signup" class="button">Subscribe for course updates</a>
+    </section>
+    <section class="wrap section details" aria-label="Course details">
+      <div><span class="eyebrow">What you’ll build</span><h2>A test you can run again.</h2>
+        <ul class="takeaways">
+          <li>A one-page brief and a source log that shows what’s verified.</li>
+          <li>A test plan, one change to ship, and a release checklist.</li>
+          <li>A weekly review template for results, decisions, and handoffs.</li>
+        </ul>
+      </div>
+      <div><span class="eyebrow">Who it’s for</span><h2>People who own the work.</h2>
+        <p>For in-house marketers, consultants, and small teams making decisions across search, paid media, content, and analytics. Bring a project or work through the guided example.</p>
+        <div class="person"><img src="https://frdtlab.com/img/headshot.jpg" alt="" width="74" height="74" loading="lazy"><div><strong>Amanda Friedt</strong><p>Course instructor · Founder, FRDTLAB</p></div></div>
+      </div>
+    </section>
+    <section class="band"><div class="wrap bottom"><h2>Get the course announcement.</h2><a href="#signup" class="button">Subscribe for course updates</a></div></section>
+  </main>
+  <footer><div class="wrap"><a href="https://frdtlab.com/">FRDTLAB</a><a href="https://frdtlab.com/privacy.html">Privacy policy</a></div></footer>
+  <script>
+    (() => {
+      if (!window.fetch || !window.AbortSignal?.timeout) return;
+      const form = document.querySelector('#course-signup');
+      const emailInput = document.querySelector('#course-email');
+      const button = form.querySelector('button');
+      const status = document.querySelector('#signup-status');
+      const fallback = document.querySelector('#newsletter-fallback');
+      form.hidden = false;
+      fallback.hidden = true;
+      form.addEventListener('submit', async event => {
+        event.preventDefault();
+        if (button.disabled || !form.reportValidity()) return;
+        const email = emailInput.value.trim();
+        button.disabled = true;
+        status.removeAttribute('data-error');
+        status.textContent = 'Submitting…';
+        fallback.hidden = true;
+        try {
+          const response = await fetch('https://a.klaviyo.com/client/subscriptions/?company_id=Twvzce', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/vnd.api+json', revision: '2026-10-15' },
+            signal: AbortSignal.timeout(12000),
+            body: JSON.stringify({
+              data: {
+                type: 'subscription',
+                attributes: {
+                  custom_source: 'FRDTLAB | AI-Powered Marketing Machine Course',
+                  profile: { data: { type: 'profile', attributes: { email } } }
+                },
+                relationships: { list: { data: { type: 'list', id: 'QYJzYY' } } }
+              }
+            })
+          });
+          if (response.status !== 202) throw new Error('Subscription request failed.');
+          status.textContent = 'Signup requested. If you receive a confirmation email, follow the link to finish.';
+          form.reset();
+        } catch {
+          status.setAttribute('data-error', '');
+          status.textContent = 'We couldn’t confirm your signup. Try again or use the FRDTLAB newsletter link.';
+          fallback.hidden = false;
+        } finally {
+          button.disabled = false;
+        }
+      });
+    })();
+  </script>
+</body>
+</html>
