@@ -1,0 +1,13 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:05.042
+Pick the smallest change that addresses the specific friction you are testing.
+
+00:00:05.042 --> 00:00:10.792
+Check the path on mobile, verify the tracking fires once, and write down the rollback.
+
+00:00:10.792 --> 00:00:16.208
+The fictional shop tries one clearer link: Book a bike repair. It opens the form.
+
+00:00:16.208 --> 00:00:20.458
+Save the change and its release date. Make sure you can undo it.
