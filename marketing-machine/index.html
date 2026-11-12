@@ -4,15 +4,20 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>The AI-Powered Marketing Machine | FRDTLAB</title>
-  <meta name="description" content="Learn to turn customer signals into marketing tests you can ship, measure, and build on. Subscribe for course updates from Amanda Friedt and FRDTLAB.">
+  <meta name="description" content="Learn to turn customer signals into marketing tests you can ship, measure, and build on. Get course launch updates from Amanda Friedt and FRDTLAB.">
   <link rel="canonical" href="https://frdtlab.com/marketing-machine/">
   <link rel="icon" href="https://frdtlab.com/favicon.svg" type="image/svg+xml">
   <meta name="theme-color" content="#141217">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="FRDTLAB">
   <meta property="og:title" content="The AI-Powered Marketing Machine">
-  <meta property="og:description" content="Turn customer signals into marketing tests you can ship. Subscribe for course updates.">
+  <meta property="og:description" content="Know where the next marketing dollar should go. Build a one-page test brief and get course launch updates.">
   <meta property="og:url" content="https://frdtlab.com/marketing-machine/">
+  <meta property="og:image" content="https://frdtlab.com/marketing-machine/course-share.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="FRDTLAB. The AI-Powered Marketing Machine. Know where the next marketing dollar should go.">
+  <meta name="twitter:card" content="summary_large_image">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@700;800;900&family=IBM+Plex+Mono:wght@500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -41,6 +46,7 @@
     h1 { font-size:clamp(2.7rem,6.1vw,6.1rem); font-weight:900; text-transform:uppercase; letter-spacing:-.066em; margin:16px 0 22px; }
     h1 span { display:block; color:var(--pink); }
     .lead { max-width:51ch; color:var(--muted); font-size:clamp(1.03rem,1.7vw,1.23rem); }
+    .hero-promise { margin:0 0 12px; font:800 clamp(1.35rem,2.6vw,2.05rem)/1.13 var(--head); color:var(--cream); letter-spacing:-.035em; }
     .lead strong { color:var(--cream); }
     .graphic { overflow:hidden; background-color:#1d171e; background-image:linear-gradient(#4a354777 1px,transparent 1px),linear-gradient(90deg,#4a354777 1px,transparent 1px); background-size:29px 29px; min-height:220px; display:grid; place-items:center; border:1px solid var(--line); margin:0; }
     .graphic svg { width:100%; height:auto; display:block; }
@@ -74,6 +80,10 @@
     .case { border-left:3px solid var(--pink); padding:6px 0 6px 20px; }
     .case p { margin-top:9px; }
     @media(max-width:750px) { .impact { grid-template-columns:1fr; } }
+    .featured-teaser { display:grid; grid-template-columns:minmax(0, 172px) minmax(0, 1fr); align-items:center; gap:clamp(16px,4vw,44px); margin-top:24px; padding:clamp(12px,2.4vw,26px); }
+    .featured-teaser video { max-height:none; }
+    .featured-teaser h3 { font-size:clamp(1.15rem,3vw,2.2rem); margin:8px 0; }
+    @media(max-width:400px) { .featured-teaser { grid-template-columns:minmax(0, 110px) minmax(0, 1fr); } }
     .teaser-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:16px; margin-top:28px; }
     .teaser { min-width:0; border:1px solid var(--line); padding:14px; background:var(--panel); }
     .teaser video { display:block; width:100%; max-height:330px; aspect-ratio:9/16; background:#171419; object-fit:contain; }
@@ -101,17 +111,18 @@
       <div>
         <span class="eyebrow">New course · Amanda Friedt</span>
         <h1 id="course-title">The AI-Powered Marketing <span>Machine</span></h1>
-        <p class="lead"><strong>Turn customer signals into tests you can ship.</strong> Take one real customer question through research, validation, and release. Tie the change to sales or qualified leads, then decide what to do next week.</p>
+        <p class="hero-promise">Know where the next marketing dollar should go.</p>
+        <p class="lead">Bring one real growth question. Use customer evidence to find the gap, choose a test your team can deliver, and decide how to measure it in sales, qualified leads, or returns. <strong>Leave with a one-page test brief your team can run and review.</strong></p>
         <div class="signup" id="signup">
           <form id="course-signup" method="post" hidden>
             <label for="course-email">Email address</label>
             <div class="signup-row">
               <input id="course-email" name="email" type="email" autocomplete="email" required maxlength="254" placeholder="you@example.com" aria-describedby="signup-consent">
-              <button class="button" type="submit">Subscribe for course updates</button>
+              <button class="button" type="submit">Get course launch updates</button>
             </div>
             <p class="fine" id="signup-consent">By subscribing, you agree to receive emails from FRDTLAB. Unsubscribe anytime. <a href="https://frdtlab.com/privacy.html">Privacy policy</a>.</p>
           </form>
-          <a id="newsletter-fallback" class="button" href="https://afrdtlab.substack.com/">Subscribe to FRDTLAB</a>
+          <a id="newsletter-fallback" class="button" href="https://afrdtlab.substack.com/">Read the FRDTLAB newsletter</a>
           <p id="signup-status" role="status" aria-live="polite"></p>
         </div>
       </div>
@@ -143,7 +154,7 @@
       <div class="wrap section impact">
         <div>
           <span class="eyebrow">Revenue and impact</span>
-          <h2 id="impact-heading">Know where the next marketing dollar should go.</h2>
+          <h2 id="impact-heading">Choose what to test before you spend.</h2>
           <p>Find the demand you’re missing, choose a test your team can deliver, and measure what changed in sales, qualified leads, or returns. Turn what you learn into a check your team can run again next week.</p>
           <ul class="takeaways">
             <li>Compare paid and organic search coverage to decide which gap deserves the next dollar or hour.</li>
@@ -162,15 +173,15 @@
       <span class="eyebrow">Course previews</span>
       <h2 id="teaser-heading">See the workflow in action.</h2>
       <p>Six short previews follow one fictional bike shop from a booking question to a test it can measure.</p>
-      <div class="teaser-grid">
-          <article class="teaser">
+      <article class="teaser featured-teaser">
             <video controls muted playsinline preload="none" poster="./videos/sense.webp" aria-label="Sense course teaser">
               <source src="./videos/sense.mp4?v=silent" type="video/mp4">
               <track kind="captions" src="./videos/sense.vtt" srclang="en" label="English">
               <a href="./videos/sense.mp4?v=silent">Download the Sense teaser</a>
             </video>
-            <h3>Sense</h3><p>Find where a customer gets stuck.</p>
-          </article>
+            <div><span class="eyebrow">Start here · Sense</span><h3>Where do customers get stuck?</h3><p>In 18 seconds, see how one customer question becomes the starting point for a booking test.</p></div>
+      </article>
+      <div class="teaser-grid">
           <article class="teaser">
             <video controls muted playsinline preload="none" poster="./videos/structure.webp" aria-label="Structure course teaser">
               <source src="./videos/structure.mp4?v=silent" type="video/mp4">
@@ -212,7 +223,7 @@
             <h3>Measure and Compound</h3><p>Compare results and decide what to keep.</p>
           </article>
       </div>
-      <a href="#signup" class="button">Subscribe for course updates</a>
+      <a href="#signup" class="button">Get course launch updates</a>
     </section>
     <section class="wrap section details" aria-label="Course details">
       <div><span class="eyebrow">What you’ll build</span><h2>A test you can run again.</h2>
@@ -227,17 +238,25 @@
         <div class="person"><img src="https://frdtlab.com/img/headshot.jpg" alt="" width="74" height="74" loading="lazy"><div><strong>Amanda Friedt</strong><p>Course instructor · Founder, FRDTLAB</p></div></div>
       </div>
     </section>
-    <section class="band"><div class="wrap bottom"><h2>Get the course announcement.</h2><a href="#signup" class="button">Subscribe for course updates</a></div></section>
+    <section class="band"><div class="wrap bottom"><h2>Get the course announcement.</h2><a href="#signup" class="button">Get course launch updates</a></div></section>
   </main>
   <footer><div class="wrap"><a href="https://frdtlab.com/">FRDTLAB</a><a href="https://frdtlab.com/privacy.html">Privacy policy</a></div></footer>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-1CDWBM46D5"></script>
   <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { window.dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-1CDWBM46D5');
+
     (() => {
+      const fallback = document.querySelector('#newsletter-fallback');
+      fallback.addEventListener('click', () => gtag('event', 'course_newsletter_fallback_click'));
+
       if (!window.fetch || !window.AbortSignal?.timeout) return;
       const form = document.querySelector('#course-signup');
       const emailInput = document.querySelector('#course-email');
       const button = form.querySelector('button');
       const status = document.querySelector('#signup-status');
-      const fallback = document.querySelector('#newsletter-fallback');
       form.hidden = false;
       fallback.hidden = true;
       form.addEventListener('submit', async event => {
@@ -245,6 +264,7 @@
         if (button.disabled || !form.reportValidity()) return;
         const email = emailInput.value.trim();
         button.disabled = true;
+        gtag('event', 'course_signup_submit');
         status.removeAttribute('data-error');
         status.textContent = 'Submitting…';
         fallback.hidden = true;
@@ -266,6 +286,7 @@
           });
           if (response.status !== 202) throw new Error('Subscription request failed.');
           status.textContent = 'Signup requested. If you receive a confirmation email, follow the link to finish.';
+          gtag('event', 'course_signup_requested');
           form.reset();
         } catch {
           status.setAttribute('data-error', '');
