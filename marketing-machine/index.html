@@ -90,6 +90,12 @@
     .teaser h3 { font-size:1.14rem; margin:14px 0 5px; }
     .teaser p { font-size:.9rem; }
     .teaser-grid + .button { margin-top:22px; }
+    .brief { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:1px; background:var(--line); border:1px solid var(--line); margin:24px 0; }
+    .brief div { padding:18px 20px; background:var(--panel); min-width:0; }
+    .brief dt { color:var(--pink); font:.8rem var(--mono); text-transform:uppercase; }
+    .brief dd { margin:7px 0 0; color:var(--cream); }
+    .sample-link { display:inline-block; margin-top:15px; font-weight:700; }
+    @media(max-width:540px){ .brief { grid-template-columns:1fr; } }
     @media(max-width:750px) { .teaser-grid { grid-template-columns:repeat(2,minmax(0,1fr)); } }
     @media(max-width:400px) { .teaser-grid { grid-template-columns:1fr; } }
     .bottom { display:flex; justify-content:space-between; gap:20px; align-items:center; padding-block:34px; }
@@ -104,7 +110,7 @@
   <a class="skip" href="#main">Skip to content</a>
   <header><div class="wrap mast">
     <a class="brand" href="https://frdtlab.com/" aria-label="FRDTLAB home">FRDT<span>LAB</span></a>
-    <nav aria-label="Course navigation"><a href="#curriculum">What you’ll learn</a><a href="#teasers">Previews</a><a href="#signup">Course updates</a></nav>
+    <nav aria-label="Course navigation"><a href="#test-brief">Sample brief</a><a href="#teasers">Previews</a><a href="#signup">Course updates</a></nav>
   </div></header>
   <main id="main">
     <section class="wrap hero" aria-labelledby="course-title">
@@ -124,6 +130,7 @@
           </form>
           <a id="newsletter-fallback" class="button" href="https://afrdtlab.substack.com/">Read the FRDTLAB newsletter</a>
           <p id="signup-status" role="status" aria-live="polite"></p>
+          <a class="sample-link" href="#test-brief">See the one-page test brief ↓</a>
         </div>
       </div>
       <figure class="graphic" aria-hidden="true">
@@ -135,6 +142,20 @@
           <circle cx="254" cy="180" r="9" fill="#ff529a"/><circle cx="330" cy="180" r="12" stroke="#fff4e5" stroke-width="2"/><circle cx="330" cy="180" r="3" fill="#fff4e5"/>
         </svg>
       </figure>
+    </section>
+    <section class="wrap section" id="test-brief" aria-labelledby="brief-title">
+      <span class="eyebrow">Worked example · Fictional bike shop</span>
+      <h2 id="brief-title">Turn one question into a test.</h2>
+      <p>Use these six fields to pick one change your team can deliver and decide how you’ll read the result.</p>
+      <dl class="brief">
+        <div><dt>Customer signal</dt><dd>“Can I book a repair online?” Check the original question and the mobile booking page.</dd></div>
+        <div><dt>One change</dt><dd>Change the mobile button to “Book a repair assessment” so visitors know what they’re booking.</dd></div>
+        <div><dt>Success measure</dt><dd>Completed bookings divided by eligible booking-page visits. Compare equivalent windows.</dd></div>
+        <div><dt>Capacity and guardrail</dt><dd>Check how many assessment slots the shop can fill. Track bookings for the wrong service.</dd></div>
+        <div><dt>Owner and review date</dt><dd>Shop lead. Review after two weeks and repull once the booking data has settled.</dd></div>
+        <div><dt>Decision</dt><dd>Keep, revise, or collect more data. Record what the evidence supports and who owns the next step.</dd></div>
+      </dl>
+      <p><a href="#teasers">Watch the brief walkthrough</a> · <a href="#signup">Get course launch updates</a></p>
     </section>
     <section class="band" id="curriculum">
       <div class="wrap section">
@@ -172,14 +193,20 @@
     <section class="wrap section" id="teasers" aria-labelledby="teaser-heading">
       <span class="eyebrow">Course previews</span>
       <h2 id="teaser-heading">See the workflow in action.</h2>
-      <p>Six short previews follow one fictional bike shop from a booking question to a test it can measure.</p>
+      <p>Start with the brief walkthrough. The six lessons below follow the same fictional bike shop from a booking question to a test it can measure.</p>
+      <article class="teaser featured-teaser">
+        <video controls muted playsinline preload="metadata" aria-label="One-page test brief silent walkthrough">
+          <source src="./videos/one-page-brief-visual.mp4" type="video/mp4">
+        </video>
+        <div><span class="eyebrow">Start here · 20 seconds</span><h3>Can your team act on your report?</h3><p>See the customer question, one change to test, and the measure that tells you what happened.</p><a class="sample-link" href="#test-brief">Read the worked example →</a></div>
+      </article>
       <article class="teaser featured-teaser">
             <video controls muted playsinline preload="none" poster="./videos/sense.webp" aria-label="Sense course teaser">
               <source src="./videos/sense.mp4?v=silent" type="video/mp4">
               <track kind="captions" src="./videos/sense.vtt" srclang="en" label="English">
               <a href="./videos/sense.mp4?v=silent">Download the Sense teaser</a>
             </video>
-            <div><span class="eyebrow">Start here · Sense</span><h3>Where do customers get stuck?</h3><p>In 18 seconds, see how one customer question becomes the starting point for a booking test.</p></div>
+            <div><span class="eyebrow">Lesson 1 · Sense</span><h3>Where do customers get stuck?</h3><p>In 18 seconds, see how one customer question becomes the starting point for a booking test.</p></div>
       </article>
       <div class="teaser-grid">
           <article class="teaser">
@@ -300,3 +327,4 @@
   </script>
 </body>
 </html>
+
