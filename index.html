@@ -262,10 +262,10 @@ section{position:relative}
 
 /* FOUNDER */
 .founder{display:grid;grid-template-columns:200px 1fr;gap:48px;align-items:center}
-.founder .photo-fig{width:200px;aspect-ratio:1}
+.founder .photo-fig{width:100%;aspect-ratio:2/3}
 .founder blockquote{font-family:var(--serif);font-weight:300;font-size:clamp(1.3rem,2.4vw,1.9rem);line-height:1.32;color:var(--white)}
 .founder .role{display:block;margin-top:16px;font-family:var(--mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--steel-dim)}
-@media(max-width:600px){.founder{grid-template-columns:1fr;gap:28px}.founder .photo-fig{width:140px}}
+@media(max-width:600px){.founder{grid-template-columns:1fr;gap:28px}.founder .photo-fig{width:min(100%,240px)}}
 
 /* FOOTER */
 footer{background:var(--black);border-top:1px solid var(--line);padding:88px 0 48px}
@@ -653,7 +653,7 @@ h1,h2,h3,h4,h5{font-family:'Archivo',system-ui,sans-serif!important;font-weight:
   <div class="wrap">
     <div class="founder reveal">
       <div class="photo-fig">
-        <img src="img/headshot.jpg" width="600" height="600" loading="lazy" alt="Amanda Friedt, founder of FRDTLAB">
+        <img src="img/founder-awards.webp" width="640" height="960" loading="lazy" decoding="async" alt="Amanda Friedt holding two trophies at the US Search Awards">
       </div>
       <div>
         <blockquote>"I've spent nearly 20 years watching where growth teams lose signal, context, time, and revenue. FRDT Lab is where those operating lessons become <span class="hl">systems that learn and compound</span>."</blockquote>
