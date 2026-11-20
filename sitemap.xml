@@ -9,6 +9,9 @@
   <url><loc>https://frdtlab.com/whose-is-this.html</loc><lastmod>2026-11-20</lastmod></url>
   <url><loc>https://frdtlab.com/shop</loc><lastmod>2026-10-22</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
 
+  <!-- Service offers -->
+  <url><loc>https://frdtlab.com/growth-teardown/</loc><lastmod>2026-11-20</lastmod></url>
+
   <!-- Offers, priced -->
   <url><loc>https://frdtlab.com/foundry</loc><lastmod>2026-10-22</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
   <url><loc>https://frdtlab.com/ai-visibility-audit</loc><lastmod>2026-10-22</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
