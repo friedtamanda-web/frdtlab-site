@@ -44,8 +44,22 @@
         <h2 id="guide-title">Setup steps</h2>
         <p>Route one form into a lead log, prepare an email draft, and notify the person who owns the follow-up. Start with a test lead.</p>
         <div id="lead-guide">
+          <h3>Copy this Tally intake form</h3>
+          <pre>Form title: Tell us what you need
+Name — Short answer, required
+Work email — Email, required
+What can we help you with? — Short answer, required
+Anything else we should know? — Long answer, optional
+Button: Send inquiry
+Confirmation: Thanks. We received your inquiry and will follow up by email.</pre>
+          <p>Create the form in Tally, add the fields above, and publish it. In Make, add Tally → Watch New Responses, connect your Tally account, and select the published form. Choose Run once and submit a test response to load the fields for mapping.</p>
+          <div class="partner" id="tally-partner" hidden>
+            <small>I may earn a commission if you choose a paid Tally plan through this link.</small><br>
+            <a rel="sponsored" data-tool="tally">Create your intake form in Tally</a>
+          </div>
+          <p><a href="https://tally.so/help/make-integration">Tally’s Make integration instructions</a></p>
           <ol>
-            <li><strong>Trigger.</strong> Connect the form’s new-submission trigger in Make. Capture the submission ID, name, email, service requested, and submission time.</li>
+            <li><strong>Trigger.</strong> Map Tally’s response ID, name, email, requested service, and submission time. Use the response ID as your unique submission ID.</li>
             <li><strong>Log.</strong> Search your lead sheet for that submission ID. Add a row only when it is new. Use these columns:</li>
           </ol>
           <pre>Submission ID, Received at, Name, Email, Service, Status, Draft ID, Alerted at, Owner</pre>
@@ -74,7 +88,7 @@ Thanks for reaching out about [service]. We received your request. What timing a
   </main>
   <script>
     // Fill these in with the approved program URLs. Empty values keep offers hidden.
-    const affiliateLinks = { make: '', shopify: '' };
+    const affiliateLinks = { tally: '', make: '' };
 
     function record(event, properties) {
       window.dataLayer = window.dataLayer || [];
@@ -97,6 +111,7 @@ Thanks for reaching out about [service]. We received your request. What timing a
         const guide = document.getElementById(button.dataset.download);
         const parts = [];
         for (const block of guide.children) {
+          if (block.hidden || block.classList.contains('partner')) continue;
           if (block.tagName === 'OL') {
             const start = block.start || 1;
             parts.push(Array.from(block.children, (item, index) =>
