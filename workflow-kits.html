@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Free Marketing Workflow Kits | FRDTLAB</title>
+  <meta name="description" content="Get the FRDTLAB lead follow-up template and Shopify launch checklist.">
+  <link rel="canonical" href="https://frdtlab.com/workflow-kits.html">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <style>
+    :root { color-scheme: dark; background: #0b0b0c; color: #f8f6f3; font: 17px/1.6 system-ui, sans-serif; }
+    body { max-width: 76rem; margin: auto; padding: 1.5rem clamp(1rem, 5vw, 5rem) 4rem; }
+    header { padding: 0 0 1rem; border-bottom: 1px solid #453b42; }
+    a { color: #ff8bc0; text-underline-offset: .2em; }
+    a:focus-visible, button:focus-visible { outline: 3px solid #f8f6f3; outline-offset: 4px; }
+    h1, h2, h3 { line-height: 1.12; }
+    h1 { font-size: clamp(2.8rem, 8vw, 6.5rem); letter-spacing: -.065em; max-width: 11ch; margin: 2rem 0 .5rem; }
+    h2 { font-size: clamp(1.65rem, 4vw, 2.4rem); margin-top: 0; }
+    h3 { margin-bottom: .35rem; }
+    p, li { max-width: 66ch; }
+    li + li { margin-top: .45rem; }
+    .intro { color: #d4cbd2; margin-bottom: 2rem; }
+    .kits { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 24rem), 1fr)); gap: 1rem; align-items: start; }
+    section { border: 1px solid #453b42; background: #171317; border-radius: .6rem; padding: clamp(1rem, 3vw, 2rem); }
+    button { background: #ff8bc0; color: #170d14; border: 0; border-radius: .3rem; padding: .6rem 1rem; font: inherit; font-weight: 750; cursor: pointer; }
+    pre { white-space: pre-wrap; overflow-wrap: anywhere; background: #0b0b0c; padding: .75rem; }
+    .partner { margin-top: 1rem; }
+  </style>
+</head>
+<body>
+  <header><a href="/">FRDTLAB</a></header>
+  <main>
+    <h1>Build it once.</h1>
+    <p class="intro">Two free workflow kits for handling new leads and getting a Shopify store ready to take real orders.</p>
+    <div class="kits">
+      <section id="lead-follow-up" aria-labelledby="lead-title">
+        <h2 id="lead-title">Lead Follow-Up in 15 Minutes</h2>
+        <p>Route one form into a lead log, prepare an email draft, and notify the person who owns the follow-up. Start with a test lead.</p>
+        <div id="lead-guide">
+          <ol>
+            <li><strong>Trigger.</strong> Connect the form’s new-submission trigger in Make. Capture the submission ID, name, email, service requested, and submission time.</li>
+            <li><strong>Log.</strong> Search your lead sheet for that submission ID. Add a row only when it is new. Use these columns:</li>
+          </ol>
+          <pre>Submission ID, Received at, Name, Email, Service, Status, Draft ID, Alerted at, Owner</pre>
+          <ol start="3">
+            <li><strong>Draft.</strong> Create a Gmail draft addressed to the submitter. Save the draft ID and set the row status to Ready for review. Keep sending manual.</li>
+            <li><strong>Alert.</strong> Send the owner the lead ID and a link to the lead sheet. Set Alerted at after delivery. On retry, resume at the first unfinished step. Check Gmail and the alert channel before rerunning a failed write-back.</li>
+            <li><strong>Test.</strong> Submit your own address, replay the same submission ID, and confirm one lead, one draft, and one alert. Then enable the scenario.</li>
+          </ol>
+          <h3>Reply draft</h3>
+          <pre>Subject: Your request about [service]
+
+Hi [first name],
+
+Thanks for reaching out about [service]. We received your request. What timing are you working with, and is there anything else we should know before we follow up?
+
+[team name]</pre>
+        </div>
+        <button type="button" data-download="lead-guide" data-filename="frdtlab-lead-follow-up.txt" hidden>Download the template</button>
+        <div class="partner" id="make-partner" hidden>
+          <small>I may earn a commission if you sign up for Make through this link.</small><br>
+          <a rel="sponsored" data-tool="make">Set up the workflow in Make</a>
+        </div>
+      </section>
+      <section id="shopify-launch" aria-labelledby="shopify-title">
+        <h2 id="shopify-title">Shopify Launch Checklist</h2>
+        <p>Take a test order all the way from checkout to fulfillment before you invite customers in.</p>
+        <div id="shopify-guide">
+          <ol>
+            <li><strong>Open the store.</strong> Confirm who owns the Shopify account and who handles payments, inventory, and customer support.</li>
+            <li><strong>Build a sellable catalog.</strong> Confirm product and variant prices, inventory, photos, weights, and availability.</li>
+            <li><strong>Configure checkout.</strong> Set up payments, taxes, shipping and local pickup as applicable. Review contact, returns, and privacy pages.</li>
+            <li><strong>Test two paths.</strong> Place a test order for each enabled fulfillment method. Check the customer confirmation, staff notification, fulfillment steps, and refund workflow. Confirm mobile checkout.</li>
+            <li><strong>Connect the domain.</strong> Confirm the primary URL and SSL, check redirects from any prior site, verify Google Search Console, and update the website URL in your Google Business Profile if applicable.</li>
+            <li><strong>Go live.</strong> Disable test mode, remove the storefront password when ready, and assign someone to watch the first real orders and support messages.</li>
+          </ol>
+        </div>
+        <button type="button" data-download="shopify-guide" data-filename="frdtlab-shopify-launch-checklist.txt" hidden>Download the checklist</button>
+        <div class="partner" id="shopify-partner" hidden>
+          <small>I’m a Shopify Affiliate and may earn a commission if you start a store through this link.</small><br>
+          <a rel="sponsored" data-tool="shopify">Open a Shopify store</a>
+        </div>
+      </section>
+    </div>
+  </main>
+  <script>
+    // Fill these in with the approved program URLs. Empty values keep offers hidden.
+    const affiliateLinks = { make: '', shopify: '' };
+
+    function record(event, properties) {
+      window.dataLayer = window.dataLayer || [];
+      const source = new URLSearchParams(window.location.search).get('utm_source');
+      window.dataLayer.push({ event, ...properties, kit_source: source || 'direct' });
+    }
+
+    for (const link of document.querySelectorAll('[data-tool]')) {
+      const tool = link.dataset.tool;
+      const url = affiliateLinks[tool];
+      if (!url || new URL(url).protocol !== 'https:') continue;
+      link.href = url;
+      link.closest('.partner').hidden = false;
+      link.addEventListener('click', () => record('affiliate_click', { affiliate_tool: tool }));
+    }
+
+    for (const button of document.querySelectorAll('[data-download]')) {
+      button.hidden = false;
+      button.addEventListener('click', () => {
+        const guide = document.getElementById(button.dataset.download);
+        const parts = [];
+        for (const block of guide.children) {
+          if (block.tagName === 'OL') {
+            const start = block.start || 1;
+            parts.push(Array.from(block.children, (item, index) =>
+              (start + index) + '. ' + item.textContent.trim()
+            ).join('\n'));
+          } else {
+            parts.push(block.textContent.trim());
+          }
+        }
+        const title = button.closest('section').querySelector('h2').textContent;
+        const file = new Blob([[title, ...parts].join('\n\n') + '\n'], { type: 'text/plain;charset=utf-8' });
+        const url = URL.createObjectURL(file);
+        const download = document.createElement('a');
+        download.href = url;
+        download.download = button.dataset.filename;
+        document.body.append(download);
+        download.click();
+        download.remove();
+        setTimeout(() => URL.revokeObjectURL(url), 1000);
+        record('workflow_kit_download', { workflow_kit: button.dataset.download });
+      });
+    }
+  </script>
+</body>
+</html>
