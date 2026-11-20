@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Shopify Launch Checklist for New Stores | FRDTLAB</title>
+  <meta name="description" content="Get a free Shopify launch checklist for products, payments, shipping, local pickup, test orders, and domain setup before opening your online store.">
+  <link rel="canonical" href="https://frdtlab.com/shopify-launch-checklist.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="FRDTLAB">
+  <meta property="og:title" content="Shopify Launch Checklist for New Stores">
+  <meta property="og:description" content="Get a free Shopify launch checklist for products, payments, shipping, local pickup, test orders, and domain setup before opening your online store.">
+  <meta property="og:url" content="https://frdtlab.com/shopify-launch-checklist.html">
+  <meta property="og:image" content="https://frdtlab.com/og-home.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <style>
+    :root { color-scheme: dark; background: #0b0b0c; color: #f8f6f3; font: 17px/1.6 system-ui, sans-serif; }
+    body { max-width: 76rem; margin: auto; padding: 1.5rem clamp(1rem, 5vw, 5rem) 4rem; }
+    header { padding: 0 0 1rem; border-bottom: 1px solid #453b42; }
+    a { color: #ff8bc0; text-underline-offset: .2em; }
+    a:focus-visible, button:focus-visible { outline: 3px solid #f8f6f3; outline-offset: 4px; }
+    h1, h2, h3 { line-height: 1.12; }
+    h1 { font-size: clamp(2.8rem, 8vw, 6.5rem); letter-spacing: -.065em; max-width: 17ch; margin: 2rem 0 .5rem; }
+    h2 { font-size: clamp(1.65rem, 4vw, 2.4rem); margin-top: 0; }
+    h3 { margin-bottom: .35rem; }
+    p, li { max-width: 66ch; }
+    li + li { margin-top: .45rem; }
+    .intro { color: #d4cbd2; margin-bottom: 2rem; }
+    .kits { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 24rem), 1fr)); gap: 1rem; align-items: start; }
+    section { border: 1px solid #453b42; background: #171317; border-radius: .6rem; padding: clamp(1rem, 3vw, 2rem); }
+    button { background: #ff8bc0; color: #170d14; border: 0; border-radius: .3rem; padding: .6rem 1rem; font: inherit; font-weight: 750; cursor: pointer; }
+    pre { white-space: pre-wrap; overflow-wrap: anywhere; background: #0b0b0c; padding: .75rem; }
+    .partner { margin-top: 1rem; }
+  </style>
+  <script src="https://s.skimresources.com/js/313384X1802103.skimlinks.js"></script>
+</head>
+<body>
+  <header><a href="/">FRDTLAB</a></header>
+  <main>
+    <h1>Shopify Launch Checklist</h1>
+    <p class="intro">Get a free Shopify launch checklist for products, payments, shipping, local pickup, test orders, and domain setup before opening your online store.</p>
+    <section id="shopify-launch" aria-labelledby="guide-title">
+        <h2 id="guide-title">Setup steps</h2>
+        <p>Take a test order all the way from checkout to fulfillment before you invite customers in.</p>
+        <div id="shopify-guide">
+          <ol>
+            <li><strong>Open the store.</strong> Confirm who owns the Shopify account and who handles payments, inventory, and customer support.</li>
+            <li><strong>Build a sellable catalog.</strong> Confirm product and variant prices, inventory, photos, weights, and availability.</li>
+            <li><strong>Configure checkout.</strong> Set up payments, taxes, shipping and local pickup as applicable. Review contact, returns, and privacy pages.</li>
+            <li><strong>Test two paths.</strong> Place a test order for each enabled fulfillment method. Check the customer confirmation, staff notification, fulfillment steps, and refund workflow. Confirm mobile checkout.</li>
+            <li><strong>Connect the domain.</strong> Confirm the primary URL and SSL, check redirects from any prior site, verify Google Search Console, and update the website URL in your Google Business Profile if applicable.</li>
+            <li><strong>Go live.</strong> Disable test mode, remove the storefront password when ready, and assign someone to watch the first real orders and support messages.</li>
+          </ol>
+        </div>
+        <button type="button" data-download="shopify-guide" data-filename="frdtlab-shopify-launch-checklist.txt" hidden>Download the checklist</button>
+        <div class="partner" id="shopify-partner" hidden>
+          <small>I’m a Shopify Affiliate and may earn a commission if you start a store through this link.</small><br>
+          <a rel="sponsored" data-tool="shopify">Open a Shopify store</a>
+        </div>
+      </section>
+    <h2>What to verify before removing the storefront password</h2><p>Have someone place an order on a phone using each fulfillment option you offer. Confirm that inventory updates correctly, the customer receives an order confirmation, and your team knows who handles the first pickup, shipment, or refund. Make sure live payments are enabled before opening the store.</p>
+    <p>Related guide: <a href="/lead-follow-up-template.html">Lead follow-up automation template</a>.</p>
+  </main>
+  <script>
+    // Fill these in with the approved program URLs. Empty values keep offers hidden.
+    const affiliateLinks = { make: '', shopify: '' };
+
+    function record(event, properties) {
+      window.dataLayer = window.dataLayer || [];
+      const source = new URLSearchParams(window.location.search).get('utm_source');
+      window.dataLayer.push({ event, ...properties, kit_source: source || 'direct' });
+    }
+
+    for (const link of document.querySelectorAll('[data-tool]')) {
+      const tool = link.dataset.tool;
+      const url = affiliateLinks[tool];
+      if (!url?.startsWith('https://')) continue;
+      link.href = url;
+      link.closest('.partner').hidden = false;
+      link.addEventListener('click', () => record('affiliate_click', { affiliate_tool: tool }));
+    }
+
+    for (const button of document.querySelectorAll('[data-download]')) {
+      button.hidden = false;
+      button.addEventListener('click', () => {
+        const guide = document.getElementById(button.dataset.download);
+        const parts = [];
+        for (const block of guide.children) {
+          if (block.tagName === 'OL') {
+            const start = block.start || 1;
+            parts.push(Array.from(block.children, (item, index) =>
+              (start + index) + '. ' + item.textContent.trim()
+            ).join('\n'));
+          } else {
+            parts.push(block.textContent.trim());
+          }
+        }
+        const title = button.closest('section').querySelector('h2').textContent;
+        const file = new Blob([[title, ...parts].join('\n\n') + '\n'], { type: 'text/plain;charset=utf-8' });
+        const url = URL.createObjectURL(file);
+        const download = document.createElement('a');
+        download.href = url;
+        download.download = button.dataset.filename;
+        document.body.append(download);
+        download.click();
+        download.remove();
+        setTimeout(() => URL.revokeObjectURL(url), 1000);
+        record('workflow_kit_download', { workflow_kit: button.dataset.download });
+      });
+    }
+  </script>
+</body>
+</html>
