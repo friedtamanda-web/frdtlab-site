@@ -404,12 +404,20 @@ document.addEventListener('submit',function(e){
   var fd=new FormData(f),p={};
   fd.forEach(function(v,k){ if(k.charAt(0)!=='_'&&v){ p[k]=p[k]?p[k]+', '+v:''+v; } });
   var email=p.email||p.Email||'';
-  try{ if(window.klaviyo){ if(email){window.klaviyo.push(['identify',Object.assign({'$email':email},p)]);} window.klaviyo.push(['track', f.getAttribute('data-kl-event'), p]); window.klaviyo.push(['track','New Lead',Object.assign({form:f.getAttribute('data-kl-event'),brand:'FRDTLAB'},p)]); } }catch(err){}
-  try{ if(window.gtag){ gtag('event','generate_lead',{event_category:'form',event_label:f.getAttribute('data-kl-event'),form_name:f.getAttribute('data-kl-event'),send_to:'G-1CDWBM46D5'}); } }catch(err){}
-  var listId=f.getAttribute('data-kl-subscribe');
-  if(listId&&email){ try{ fetch('https://a.klaviyo.com/client/subscriptions/?company_id=Twvzce',{method:'POST',keepalive:true,headers:{'Content-Type':'application/json','revision':'2024-10-15'},body:JSON.stringify({data:{type:'subscription',attributes:{custom_source:(f.getAttribute('data-kl-event')||'Website'),profile:{data:{type:'profile',attributes:{email:email}}}},relationships:{list:{data:{type:'list',id:listId}}}}})}); }catch(err){} }
-  var msg=document.createElement('p'); msg.className='form-note'; msg.style.cssText='font-size:1.05rem;margin-top:8px'; msg.setAttribute('role','status'); msg.textContent='Thank you, we got it. We will be in touch.';
-  f.parentNode.insertBefore(msg,f.nextSibling); f.style.display='none';
+  var listId=f.getAttribute('data-kl-subscribe'), btn=f.querySelector('button,[type=submit]');
+  function done(){
+    try{ if(window.klaviyo){ if(email){window.klaviyo.push(['identify',Object.assign({'$email':email},p)]);} window.klaviyo.push(['track', f.getAttribute('data-kl-event'), p]); window.klaviyo.push(['track','New Lead',Object.assign({form:f.getAttribute('data-kl-event'),brand:'FRDTLAB'},p)]); } }catch(err){}
+    try{ if(window.gtag){ gtag('event','generate_lead',{event_category:'form',event_label:f.getAttribute('data-kl-event'),form_name:f.getAttribute('data-kl-event'),send_to:'G-1CDWBM46D5'}); } }catch(err){}
+    var msg=document.createElement('p'); msg.className='form-note'; msg.style.cssText='font-size:1.05rem;margin-top:8px'; msg.setAttribute('role','status'); msg.textContent='Thank you, we got it. We will be in touch.';
+    f.parentNode.insertBefore(msg,f.nextSibling); f.style.display='none';
+  }
+  function fail(){ if(btn)btn.disabled=false; var n=f.querySelector('.kl-err')||document.createElement('p'); n.className='form-note kl-err'; n.setAttribute('role','alert'); n.style.cssText='font-size:1rem;margin-top:8px'; n.textContent="That didn't go through. Please try again, or email hello@frdtlab.com."; if(!n.parentNode)f.appendChild(n); }
+  if(!listId||!email){ done(); return; }
+  if(btn)btn.disabled=true;
+  /* kl-lead-handler v2: subscribe per https://developers.klaviyo.com/en/v2024-10-15/reference/create_client_subscription, show success only on a 2xx. */
+  fetch('https://a.klaviyo.com/client/subscriptions?company_id=Twvzce',{method:'POST',keepalive:true,headers:{'Content-Type':'application/vnd.api+json','revision':'2024-10-15'},body:JSON.stringify({data:{type:'subscription',attributes:{custom_source:(f.getAttribute('data-kl-event')||'Website'),profile:{data:{type:'profile',attributes:{email:email,subscriptions:{email:{marketing:{consent:'SUBSCRIBED'}}}}}}},relationships:{list:{data:{type:'list',id:listId}}}}})})
+    .then(function(r){ if(!r.ok) throw new Error('HTTP '+r.status); done(); })
+    .catch(fail);
 });
 </script>
 
