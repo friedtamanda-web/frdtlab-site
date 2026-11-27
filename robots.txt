@@ -1,23 +1,33 @@
 User-agent: *
 Allow: /
+Disallow: /FRDTLAB-Signal-Report.pdf
 
 User-agent: GPTBot
 Allow: /
+Disallow: /FRDTLAB-Signal-Report.pdf
 User-agent: OAI-SearchBot
 Allow: /
+Disallow: /FRDTLAB-Signal-Report.pdf
 User-agent: ChatGPT-User
 Allow: /
+Disallow: /FRDTLAB-Signal-Report.pdf
 User-agent: ClaudeBot
 Allow: /
+Disallow: /FRDTLAB-Signal-Report.pdf
 User-agent: Claude-Web
 Allow: /
+Disallow: /FRDTLAB-Signal-Report.pdf
 User-agent: PerplexityBot
 Allow: /
+Disallow: /FRDTLAB-Signal-Report.pdf
 User-agent: Google-Extended
 Allow: /
+Disallow: /FRDTLAB-Signal-Report.pdf
 User-agent: Applebot-Extended
 Allow: /
+Disallow: /FRDTLAB-Signal-Report.pdf
 User-agent: Bingbot
 Allow: /
+Disallow: /FRDTLAB-Signal-Report.pdf
 
 Sitemap: https://frdtlab.com/sitemap.xml

@@ -659,12 +659,11 @@ footer{background:var(--ink);padding:clamp(64px,8vw,110px) 0 calc(40px + env(saf
 <span class="eyebrow">Free · The Signal Report</span>
 <h2>What changed. What matters. What to do next.</h2>
 <p class="lede">Research on AI discovery, search, marketing systems, agentic workflows, customer behavior, and growth infrastructure. <span class="hl-ink">No trend-chasing. No dashboard theater.</span></p>
-<form class="signup" data-kl-event="Signal Report Request" data-kl-subscribe="QYJzYY">
+<form class="signup" data-kl-event="Signal Report Request" data-kl-subscribe="QYJzYY" data-kl-thanks="It's on its way. Check your inbox in a few minutes.">
 <input id="signal-email" name="email" type="email" required placeholder="you@email.com" autocomplete="email" aria-label="Email">
 <button type="submit" class="btn btn-primary">Send me the report</button>
 </form>
 <div class="magnet-links">
-<p><a href="FRDTLAB-Signal-Report.pdf">Or download the Signal Report now &rarr;</a></p>
 <p>Not sure where you stand? <a href="/scorecard">Take the 2-minute AI Visibility Scorecard &rarr;</a></p>
 <p>Want it done for you? <a href="/ai-visibility-audit">The AI Visibility Audit &rarr;</a></p>
 </div>
@@ -872,7 +871,7 @@ document.addEventListener('submit',function(e){
   function done(){
     try{ if(window.klaviyo){ if(email){window.klaviyo.push(['identify',Object.assign({'$email':email},p)]);} window.klaviyo.push(['track', f.getAttribute('data-kl-event'), p]); window.klaviyo.push(['track','New Lead',Object.assign({form:f.getAttribute('data-kl-event'),brand:'FRDTLAB'},p)]); } }catch(err){}
     try{ if(window.gtag){ gtag('event','generate_lead',{event_category:'form',event_label:f.getAttribute('data-kl-event'),form_name:f.getAttribute('data-kl-event'),send_to:'G-1CDWBM46D5'}); } }catch(err){}
-    var msg=document.createElement('p'); msg.className='form-note'; msg.style.cssText='font-size:1.05rem;margin-top:8px'; msg.textContent='Thank you, we got it. We will be in touch.';
+    var msg=document.createElement('p'); msg.className='form-note'; msg.style.cssText='font-size:1.05rem;margin-top:8px'; msg.textContent=f.getAttribute('data-kl-thanks')||'Thank you, we got it. We will be in touch.';
     f.parentNode.insertBefore(msg,f.nextSibling); f.style.display='none';
   }
   function fail(){ if(btn)btn.disabled=false; var n=f.querySelector('.kl-err')||document.createElement('p'); n.className='form-note kl-err'; n.setAttribute('role','alert'); n.style.cssText='font-size:1rem;margin-top:8px'; n.textContent="That didn't go through. Please try again, or email hello@frdtlab.com."; if(!n.parentNode)f.appendChild(n); }
