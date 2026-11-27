@@ -8,11 +8,9 @@
 <button id="go" style="margin-top:8px;padding:8px 14px">Run test</button>
 <pre id="out" style="white-space:pre-wrap;background:#f3f3f3;padding:12px;margin-top:12px"></pre>
 <script>
-function body(email,withSource){var a={profile:{data:{type:'profile',attributes:{email:email,subscriptions:{email:{marketing:{consent:'SUBSCRIBED'}}}}}}};if(withSource)a.custom_source='Diag test';return JSON.stringify({data:{type:'subscription',attributes:a,relationships:{list:{data:{type:'list',id:'QYJzYY'}}}}});}
+function body(email,withSource){var a={profile:{data:{type:'profile',attributes:{email:email}}}};if(withSource)a.custom_source='Diag test';return JSON.stringify({data:{type:'subscription',attributes:a,relationships:{list:{data:{type:'list',id:'QYJzYY'}}}}});}
 var tests=[
- {name:'A current form (vnd.api+json, custom_source)',url:'https://a.klaviyo.com/client/subscriptions?company_id=Twvzce',ct:'application/vnd.api+json',src:true},
- {name:'B no custom_source',url:'https://a.klaviyo.com/client/subscriptions?company_id=Twvzce',ct:'application/vnd.api+json',src:false},
- {name:'C scorecard style (application/json, trailing slash)',url:'https://a.klaviyo.com/client/subscriptions/?company_id=Twvzce',ct:'application/json',src:false}
+ {name:'D corrected body (no subscriptions field, custom_source)',url:'https://a.klaviyo.com/client/subscriptions?company_id=Twvzce',ct:'application/vnd.api+json',src:true},
 ];
 document.getElementById('go').onclick=async function(){
  var em=document.getElementById('em').value.trim(), out=document.getElementById('out'); out.textContent='';
