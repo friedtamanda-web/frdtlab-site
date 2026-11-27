@@ -1,4 +1,5 @@
 /* FRDTLAB · Signal Room C · site nav behaviour (scrolled state + mobile menu). No copy, no tracking. */
+(function(){var d=document.documentElement;function s(){d.style.setProperty('--sbw',Math.max(0,innerWidth-d.clientWidth)+'px');}s();addEventListener('resize',s,{passive:true});addEventListener('load',s);})();
 (function(){
   var nav=document.getElementById('nav');
   if(!nav)return;

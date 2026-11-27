@@ -14,7 +14,7 @@ body.src{overflow-x:clip;margin:0}
 body.src img{max-width:100%}
 body.src-dark{background-color:var(--sr-ink)!important;color:var(--sr-chalk)}
 body.src-paper{background-color:var(--sr-paper)!important}
-.src-bleed{width:100vw;max-width:100vw;margin-left:calc(50% - 50vw)!important;margin-right:0!important}
+.src-bleed{width:calc(100vw - var(--sbw,0px));max-width:calc(100vw - var(--sbw,0px));margin-left:calc(50% - 50vw + var(--sbw,0px) / 2)!important;margin-right:0!important}
 
 /* ---------- 1. site nav (pattern: index.html / in-motion.html) ---------- */
 body.src nav#nav{position:sticky;top:0;z-index:1100;isolation:isolate;display:flex;align-items:center;justify-content:space-between;gap:24px;
@@ -74,6 +74,7 @@ body.src .src-hero-text{min-width:0;max-width:none;margin:0;padding:0;text-align
 body.src .src-hero-text > *{margin-left:0!important;margin-right:0!important;text-align:left!important}
 body.src .src-band :is(h1,h2,h3){color:var(--sr-white)!important}
 body.src .src-band h1{margin-top:22px!important;margin-bottom:0;font-family:var(--sr-display);font-weight:820;font-variation-settings:"wdth" 122;text-transform:uppercase;line-height:.92;letter-spacing:-.03em;font-size:clamp(1.9rem,5.4vw,5.4rem);font-size:clamp(1.9rem,9cqi,5.4rem);max-width:15ch;overflow-wrap:break-word;hyphens:manual}
+body.src .src-band h1.sr-long{font-size:clamp(1.6rem,7.4cqi,5rem)}
 body.src .src-band h1 em,body.src .src-band h1 span{font-style:normal}
 body.src .src-band h1 em{color:var(--sr-signal)!important}
 body.src .src-hero.is-solo{grid-template-columns:minmax(0,1fr)!important}
@@ -203,6 +204,7 @@ body.src-signal .btn{border-radius:2px!important;text-transform:uppercase;letter
 body.src-gt main > .hero{padding-top:clamp(3.25rem,8vw,6rem)}
 body.src-gt h1,body.src-gt h2{font-family:var(--sr-display);font-weight:820;font-variation-settings:"wdth" 118;text-transform:uppercase;letter-spacing:-.03em;line-height:.94}
 body.src-gt h1 em{color:var(--sr-signal);font-style:normal}
+body.src-gt h1{max-width:12ch;font-size:clamp(2.4rem,9.5vw,6.65rem);overflow-wrap:normal}
 body.src-gt :is(.eyebrow,.tag,.phone-label,.report-head,.node,.rank,.code-line){font-family:var(--sr-mono)!important}
 body.src-gt .btn{border-radius:2px;font-family:var(--sr-mono);font-weight:500;letter-spacing:.14em;text-transform:uppercase;font-size:.8rem}
 body.src-gt .proof .src-photo{max-width:300px;margin:0 0 22px}
