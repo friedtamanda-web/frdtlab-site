@@ -659,7 +659,7 @@ footer{background:var(--ink);padding:clamp(64px,8vw,110px) 0 calc(40px + env(saf
 <span class="eyebrow">Free · The Signal Report</span>
 <h2>What changed. What matters. What to do next.</h2>
 <p class="lede">Research on AI discovery, search, marketing systems, agentic workflows, customer behavior, and growth infrastructure. <span class="hl-ink">No trend-chasing. No dashboard theater.</span></p>
-<form class="signup" data-kl-event="Signal Report Request" data-kl-subscribe="QYJzYY" data-kl-thanks="It's on its way. Check your inbox in a few minutes.">
+<form class="signup" data-kl-event="Signal Report Request" data-kl-subscribe="QYJzYY" data-kl-fallback="/FRDTLAB-Signal-Report.pdf" data-kl-thanks="It's on its way. Check your inbox in a few minutes.">
 <input id="signal-email" name="email" type="email" required placeholder="you@email.com" autocomplete="email" aria-label="Email">
 <button type="submit" class="btn btn-primary">Send me the report</button>
 </form>
@@ -874,7 +874,7 @@ document.addEventListener('submit',function(e){
     var msg=document.createElement('p'); msg.className='form-note'; msg.style.cssText='font-size:1.05rem;margin-top:8px'; msg.textContent=f.getAttribute('data-kl-thanks')||'Thank you, we got it. We will be in touch.';
     f.parentNode.insertBefore(msg,f.nextSibling); f.style.display='none';
   }
-  function fail(){ if(btn)btn.disabled=false; var n=f.querySelector('.kl-err')||document.createElement('p'); n.className='form-note kl-err'; n.setAttribute('role','alert'); n.style.cssText='font-size:1rem;margin-top:8px'; n.textContent="That didn't go through. Please try again, or email hello@frdtlab.com."; if(!n.parentNode)f.appendChild(n); }
+  function fail(){ if(btn)btn.disabled=false; var n=f.querySelector('.kl-err')||document.createElement('p'); n.className='form-note kl-err'; n.setAttribute('role','alert'); n.style.cssText='font-size:1rem;margin-top:8px'; n.textContent="That didn't go through. Please try again, or email hello@frdtlab.com."; var fb=f.getAttribute('data-kl-fallback'); if(fb){ n.appendChild(document.createTextNode(' ')); var a=document.createElement('a'); a.href=fb; a.textContent='Or download the report here.'; n.appendChild(a); } if(!n.parentNode)f.appendChild(n); }
   if(!listId||!email){ done(); return; }
   if(btn)btn.disabled=true;
   /* kl-lead-handler v2: subscribe per https://developers.klaviyo.com/en/v2024-10-15/reference/create_client_subscription, show success only on a 2xx. */
