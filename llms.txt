@@ -42,6 +42,7 @@
 - [Lipstick & Receipts](https://frdtlab.com/lipstick-and-receipts): Coming soon. Decks, diagnostics and everyday objects for high-capacity women, from Amanda Friedt. First drop: The Desk Oracle (pre-order on theunapologeticleader.com).
 - [AI Visibility Scorecard](https://frdtlab.com/scorecard): Free: can AI search engines see your brand? 7 questions, instant score.
 - [AI Marketing Prompt Pack](https://frdtlab.com/prompt-pack): 50 operator-grade AI prompts. $49, instant PDF.
+- [DAM Agent](https://frdtlab.com/dam-agent): a Claude skill for creators and marketing teams that names every asset to one grammar, tracks usage rights with expiry dates, and traces each clip to its source. Creator edition $49, Team edition $249, instant download.
 
 ## Author
 Amanda Friedt, also known as Amanda Farley. Detroit-based growth & marketing leader specializing in paid search, SEO, and AI-era (generative engine) optimization. Founder of FRDTLAB, creator of Unapologetic Leadership. LinkedIn: amandafriedt. Two decades in integrated marketing and AI-era search.
