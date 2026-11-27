@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-sr="dark">
+<html lang="en" data-sr="dark" data-srb="b">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -207,33 +207,31 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&amp;family=Newsreader:ital,opsz,wght@0,6..72,300..500;1,6..72,300..500&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap">
 <link rel="stylesheet" href="/assets/signal-room.css">
+<link rel="stylesheet" href="/assets/signal-room-b.css">
 <script src="/assets/signal-room.js" defer></script>
+<script src="/assets/signal-room-b.js" defer></script>
 </head>
 <body>
 
-<header>
-  <div class="wrap nav">
-    <a class="mark" href="https://frdtlab.com/">FRDT<b>LAB</b></a>
-    <nav class="nav-links" aria-label="Main">
-      <a href="https://frdtlab.com/">The Lab</a>
-      <a href="https://frdtlab.com/about">About</a>
-      <a href="https://frdtlab.com/the-work/">The Work</a>
-      <a href="https://frdtlab.com/work-with-me">Work With Me</a>
-      <a href="https://frdtlab.com/in-motion">In Motion</a>
-      <a href="https://theunapologeticleader.com">Unapologetic</a>
-      <a href="https://frdtlab.com/shop">Shop</a>
-      <a href="https://afrdtlab.substack.com/">Subscribe</a>
-    </nav>
-  </div>
-</header>
+<nav id="nav" aria-label="Main">
+  <a href="/" class="brand">FRDT<b>LAB</b></a>
+  <button class="menu-btn" id="menuBtn" aria-label="Toggle menu" aria-expanded="false" aria-controls="navLinks">Menu</button>
+  <div class="nav-links" id="navLinks"><a href="/">The Lab</a><a href="/about">About</a><a href="/the-work/">The Work</a><a href="/#build">How We Build</a><a href="/work-with-me" class="nav-primary">Work With Me</a><a href="/in-motion">In Motion</a><a href="https://theunapologeticleader.com">Unapologetic</a><a href="/shop">Shop</a><a href="https://afrdtlab.substack.com/" class="nav-cta">Subscribe</a></div>
+</nav>
 
 <main>
 
-<div class="wrap hero fn">
+<div class="wrap hero fn srb-hero">
+<div class="srb-hero-text">
   <p class="eyebrow">FRDTLAB · Field Note · PPC infrastructure</p>
   <h1>The PPC Shift: Why the Next Era of Performance Marketing Is Being Built <em>Beneath</em> the Surface</h1>
   <p class="byline">By Amanda Friedt · November 27, 2026</p>
   <p class="sub">The biggest shift in PPC isn’t happening in your ad account. It’s in the infrastructure beneath it. But in 2026, performance is increasingly dictated by how well your systems talk to each other: how data moves, how AI parses signals, how seamlessly paid and organic work in tandem.</p>
+</div>
+  <figure class="srb-media">
+    <picture><source srcset="/img/frameworks/integrated-growth-systems.webp" type="image/webp"><img src="/img/frameworks/integrated-growth-systems.jpg" width="1200" height="561" alt="Illustration contrasting reactive channel marketing, with disconnected channels and siloed teams, against integrated growth systems with connected discovery and shared intelligence" fetchpriority="high" decoding="async"></picture>
+    <figcaption class="srb-tag">Illustration · Integrated growth systems</figcaption>
+  </figure>
 </div>
 
 <section class="fn" style="padding-top:0;border-top:none">
@@ -354,13 +352,13 @@
 
 </main>
 
-<footer>
+<footer id="footer">
   <div class="wrap">
-    <div class="foot">
-      <div>
-        <a class="mark" href="https://frdtlab.com/">FRDT<b>LAB</b></a>
-        <p class="tag">Systems. Stories. Signal.<br>Detroit-rooted · Future-facing</p>
-      </div>
+    <div class="foot-top">
+      <a class="foot-brand" href="https://frdtlab.com/">FRDT<b>LAB</b></a>
+      <p class="foot-tag">Systems. Stories. Signal.<span>Detroit-rooted · Future-facing</span></p>
+    </div>
+    <div class="foot-bottom">
       <nav class="foot-links" aria-label="Footer">
         <a href="https://frdtlab.com/in-motion">In Motion</a>
         <a href="https://frdtlab.com/the-work/">The Work</a>
@@ -372,8 +370,8 @@
         <a href="https://afrdtlab.substack.com/">Newsletter</a>
         <a href="mailto:hello@frdtlab.com">Contact</a>
       </nav>
+      <span class="meta">© 2026 FRDTLAB · Building what comes next</span>
     </div>
-    <p class="copyright">© 2026 FRDTLAB · Building what comes next</p>
   </div>
 </footer>
 
