@@ -117,20 +117,29 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&amp;family=Newsreader:ital,opsz,wght@0,6..72,300..500;1,6..72,300..500&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap">
 <link rel="stylesheet" href="/assets/signal-room.css">
 <script src="/assets/signal-room.js" defer></script>
+<link rel="stylesheet" href="/assets/signal-room-c.css">
+<script src="/assets/signal-room-c.js" defer></script>
 </head>
-<body>
-<nav><a href="/" class="brand">FRDT<b>LAB</b></a><a href="/frameworks" class="back">← Frameworks</a></nav>
+<body class="src src-paper src-score">
+<nav id="nav">
+<a href="/" class="brand">FRDT<b>LAB</b></a>
+<button class="menu-btn" id="menuBtn" aria-label="Toggle menu" aria-expanded="false" aria-controls="navLinks">Menu</button>
+<div class="nav-links" id="navLinks"><a href="/">The Lab</a><a href="/about">About</a><a href="/the-work/">The Work</a><a href="/#build">How We Build</a><a href="/work-with-me" class="nav-primary">Work With Me</a><a href="/in-motion">In Motion</a><a href="https://theunapologeticleader.com">Unapologetic</a><a href="/shop">Shop</a><a href="https://afrdtlab.substack.com/" class="nav-cta">Subscribe</a></div>
+</nav>
 
 <div class="wrap">
 
   <!-- INTRO / QUIZ -->
   <div id="quiz">
-    <header class="hero">
+    <header class="hero src-band src-bleed"><div class="src-hero"><div class="src-hero-text">
+      <a class="src-crumb" href="/frameworks" data-src-moved>← Frameworks</a>
       <span class="kicker">The Signal System · Free Scorecard</span>
       <h1>Can the machines that recommend you actually <em>see</em> you?</h1>
       <p class="lede">ChatGPT, Perplexity, and Google's AI answers now decide who gets named when a buyer asks for "the best ___." Seven questions tells you where you stand, and what to fix first.</p>
       <p class="nores">No email required to get your score</p>
-    </header>
+    </div>
+    <figure class="src-photo frame is-diagram"><picture><source srcset="/img/signals-to-recommendation.webp" type="image/webp"><img src="/img/signals-to-recommendation.jpg" width="1200" height="675" alt="Diagram: search, social, reviews, commerce, and first-party data flow into a confidence engine that cleans, connects, and interprets them, then into an agentic step and a recommendation, with a learning loop back and human judgment underneath." fetchpriority="high" decoding="async"></picture><span class="src-tag" data-src-added>The Signal System · Diagram</span></figure>
+    </div></header>
 
     <div class="progress"><span id="bar"></span></div>
     <form id="qform" onsubmit="return false;"></form>
@@ -170,12 +179,34 @@
     <button type="button" class="restart" onclick="FRDT.restart()">Retake the scorecard</button>
   </div>
 
-  <footer style="background:none;padding:0;margin-top:40px"><p class="meta" style="color:var(--faint)">FRDTLAB · You are no longer marketing on top of the system. You are marketing through it.</p></footer>
+  <p class="meta src-signoff">FRDTLAB · You are no longer marketing on top of the system. You are marketing through it.</p>
 </div>
 
-<footer><div class="wrap">
-  <p class="meta">FRDTLAB · The Signal Lab · Detroit &nbsp;·&nbsp; <a href="/">Home</a> · <a href="/frameworks">Frameworks</a> · <a href="/prompt-pack">Prompt Pack</a> · <a href="/shop">Shop</a> · <a href="https://afrdtlab.substack.com/">Newsletter</a></p>
-</div></footer>
+<footer id="footer">
+<div class="wrap">
+<div class="foot-top">
+<div class="foot-brand">FRDT<b>LAB</b></div>
+<div class="foot-tag">Systems. Stories. Signal.<span>Detroit-rooted · Future-facing</span></div>
+</div>
+<div class="foot-bottom">
+<span class="meta">FRDTLAB · The Signal Lab · Detroit</span>
+<div class="foot-links">
+<a href="/">Home</a>
+<a href="/frameworks">Frameworks</a>
+<a href="/work-with-me">Work With Me</a>
+<a href="https://theunapologeticleader.com">Unapologetic</a>
+<a href="/prompt-pack">Prompt Pack</a>
+<a href="/shop">Shop</a>
+<a href="/lipstick-and-receipts">Lipstick &amp; Receipts</a>
+<a href="https://afrdtlab.substack.com/">Newsletter</a>
+<a href="https://www.linkedin.com/in/amandafriedt/">LinkedIn</a>
+<a href="https://www.instagram.com/unapologetic_leader/">Instagram</a>
+<a href="https://www.tiktok.com/@unapologeticleadership">TikTok</a>
+<a href="mailto:hello@frdtlab.com">Contact</a>
+</div>
+</div>
+</div>
+</footer>
 
 <script>
 /* ===== TIER LOGIC, single source of truth (score 0-100) ===== */
