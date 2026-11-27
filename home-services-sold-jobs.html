@@ -66,6 +66,7 @@
 .bq button[type=submit]{font:inherit;font-weight:700;font-size:1rem;padding:.8rem 1.1rem;border:0;border-radius:.35rem;background:var(--sr-signal,#e84393);color:#fff;cursor:pointer}
 .bq button[type=submit]:disabled{opacity:.6}
 .bq a:focus-visible,.bq button:focus-visible,.bq input:focus-visible,.bq select:focus-visible{outline:3px solid var(--sr-white,#fafaf8);outline-offset:3px}
+@media (max-width:600px){.bq table{min-width:0}.bq thead{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}.bq table,.bq tbody,.bq tr,.bq td{display:block;width:100%}.bq td{padding:.5rem 0;border:0;border-bottom:1px solid var(--line,rgba(255,255,255,.12))}.bq td::before{content:attr(data-label);display:block;font-weight:700;color:var(--white,inherit)}}
 </style>
 </head>
 <body class="src src-dark">
@@ -84,7 +85,7 @@
 <blockquote data-ledger="E25"><p>&ldquo;Anyone dealing with big numbers of spam leads on Google ads lately&rdquo;</p><cite>A poster asking about home services, r/PPC</cite></blockquote>
 <h2>Line up one group of leads</h2>
 <p>One campaign, one recent month, the same leads all the way across:</p>
-<div class="bq-tablewrap"><table><thead><tr><th>Leads the ads reported</th><th>Real calls and forms</th><th>Your area, a job you do</th><th>Appointments booked</th><th>Jobs sold</th></tr></thead><tbody><tr><td>From the ads account</td><td>People who actually reached you</td><td>Worth sending a tech or estimator</td><td>On the calendar</td><td>Signed or paid</td></tr></tbody></table></div>
+<div class="bq-tablewrap"><table><thead><tr><th>Leads the ads reported</th><th>Real calls and forms</th><th>Your area, a job you do</th><th>Appointments booked</th><th>Jobs sold</th></tr></thead><tbody><tr><td data-label="Leads the ads reported">From the ads account</td><td data-label="Real calls and forms">People who actually reached you</td><td data-label="Your area, a job you do">Worth sending a tech or estimator</td><td data-label="Appointments booked">On the calendar</td><td data-label="Jobs sold">Signed or paid</td></tr></tbody></table></div>
 <ul>
 <li>Count the leads you can&rsquo;t match in their own row instead of dropping them.</li>
 <li>Stop at the last step you can confirm. A shaky last column is worse than an honest shorter table.</li>

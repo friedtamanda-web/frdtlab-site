@@ -66,6 +66,7 @@
 .bq button[type=submit]{font:inherit;font-weight:700;font-size:1rem;padding:.8rem 1.1rem;border:0;border-radius:.35rem;background:var(--sr-signal,#e84393);color:#fff;cursor:pointer}
 .bq button[type=submit]:disabled{opacity:.6}
 .bq a:focus-visible,.bq button:focus-visible,.bq input:focus-visible,.bq select:focus-visible{outline:3px solid var(--sr-white,#fafaf8);outline-offset:3px}
+@media (max-width:600px){.bq table{min-width:0}.bq thead{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}.bq table,.bq tbody,.bq tr,.bq td{display:block;width:100%}.bq td{padding:.5rem 0;border:0;border-bottom:1px solid var(--line,rgba(255,255,255,.12))}.bq td::before{content:attr(data-label);display:block;font-weight:700;color:var(--white,inherit)}}
 </style>
 </head>
 <body class="src src-dark">
@@ -89,9 +90,9 @@
 <div class="bq-tablewrap"><table>
 <thead><tr><th>Route</th><th>Choose it when</th><th>What it costs you, and what you get</th></tr></thead>
 <tbody>
-<tr><td><b>Fix it with your current team</b></td><td>The break is visible and someone has time to act on it</td><td>Team time. Ship one fix, then check the affected step against where it was before.</td></tr>
-<tr><td><b>Get an independent diagnosis</b></td><td>The records don&rsquo;t agree, or nobody can isolate the cause</td><td>A one-time fee. Findings, what&rsquo;s still unknown, and fixes in order. Doing the fixes is separate.</td></tr>
-<tr><td><b>Hire ongoing help</b></td><td>The problem is clear, needs recurring work, and is more than your team can carry</td><td>A recurring fee. Someone owns the agreed work and scheduled reviews. You keep ownership of the account and approval of the budget.</td></tr>
+<tr><td data-label="Route"><b>Fix it with your current team</b></td><td data-label="Choose it when">The break is visible and someone has time to act on it</td><td data-label="What it costs you, and what you get">Team time. Ship one fix, then check the affected step against where it was before.</td></tr>
+<tr><td data-label="Route"><b>Get an independent diagnosis</b></td><td data-label="Choose it when">The records don&rsquo;t agree, or nobody can isolate the cause</td><td data-label="What it costs you, and what you get">A one-time fee. Findings, what&rsquo;s still unknown, and fixes in order. Doing the fixes is separate.</td></tr>
+<tr><td data-label="Route"><b>Hire ongoing help</b></td><td data-label="Choose it when">The problem is clear, needs recurring work, and is more than your team can carry</td><td data-label="What it costs you, and what you get">A recurring fee. Someone owns the agreed work and scheduled reviews. You keep ownership of the account and approval of the budget.</td></tr>
 </tbody></table></div>
 
 <h2>You may not need a rebuild</h2>

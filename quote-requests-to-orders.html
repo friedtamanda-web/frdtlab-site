@@ -66,6 +66,7 @@
 .bq button[type=submit]{font:inherit;font-weight:700;font-size:1rem;padding:.8rem 1.1rem;border:0;border-radius:.35rem;background:var(--sr-signal,#e84393);color:#fff;cursor:pointer}
 .bq button[type=submit]:disabled{opacity:.6}
 .bq a:focus-visible,.bq button:focus-visible,.bq input:focus-visible,.bq select:focus-visible{outline:3px solid var(--sr-white,#fafaf8);outline-offset:3px}
+@media (max-width:600px){.bq table{min-width:0}.bq thead{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}.bq table,.bq tbody,.bq tr,.bq td{display:block;width:100%}.bq td{padding:.5rem 0;border:0;border-bottom:1px solid var(--line,rgba(255,255,255,.12))}.bq td::before{content:attr(data-label);display:block;font-weight:700;color:var(--white,inherit)}}
 </style>
 </head>
 <body class="src src-dark">
@@ -84,7 +85,7 @@
 <blockquote data-ledger="E06"><p>&ldquo;If someone inquires using gmail or hotmail they treat them as junk leads.&rdquo;</p><cite>An in-house marketer at a B2B seller describing a management rule, r/PPC</cite></blockquote>
 <h2>Line up one group of leads</h2>
 <p>One campaign, one recent month, the same leads all the way across:</p>
-<div class="bq-tablewrap"><table><thead><tr><th>Quote requests the ads reported</th><th>Real requests</th><th>Ones your team could work</th><th>Quotes sent</th><th>Orders</th></tr></thead><tbody><tr><td>From the ads account</td><td>A person who wanted a price</td><td>Products and quantities you supply</td><td>Priced and sent</td><td>Placed, or still pending</td></tr></tbody></table></div>
+<div class="bq-tablewrap"><table><thead><tr><th>Quote requests the ads reported</th><th>Real requests</th><th>Ones your team could work</th><th>Quotes sent</th><th>Orders</th></tr></thead><tbody><tr><td data-label="Quote requests the ads reported">From the ads account</td><td data-label="Real requests">A person who wanted a price</td><td data-label="Ones your team could work">Products and quantities you supply</td><td data-label="Quotes sent">Priced and sent</td><td data-label="Orders">Placed, or still pending</td></tr></tbody></table></div>
 <ul>
 <li>Count the leads you can&rsquo;t match in their own row instead of dropping them.</li>
 <li>Stop at the last step you can confirm. A shaky last column is worse than an honest shorter table.</li>

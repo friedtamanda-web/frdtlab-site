@@ -66,6 +66,7 @@
 .bq button[type=submit]{font:inherit;font-weight:700;font-size:1rem;padding:.8rem 1.1rem;border:0;border-radius:.35rem;background:var(--sr-signal,#e84393);color:#fff;cursor:pointer}
 .bq button[type=submit]:disabled{opacity:.6}
 .bq a:focus-visible,.bq button:focus-visible,.bq input:focus-visible,.bq select:focus-visible{outline:3px solid var(--sr-white,#fafaf8);outline-offset:3px}
+@media (max-width:600px){.bq table{min-width:0}.bq thead{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}.bq table,.bq tbody,.bq tr,.bq td{display:block;width:100%}.bq td{padding:.5rem 0;border:0;border-bottom:1px solid var(--line,rgba(255,255,255,.12))}.bq td::before{content:attr(data-label);display:block;font-weight:700;color:var(--white,inherit)}}
 </style>
 </head>
 <body class="src src-dark">
@@ -87,7 +88,7 @@
 <p>Same campaign, same period, same group of leads all the way across:</p>
 <div class="bq-tablewrap"><table>
 <thead><tr><th scope="col">What the ads report</th><th scope="col">Real calls and forms</th><th scope="col">Good-fit inquiries</th><th scope="col">Appointments booked</th><th scope="col">Jobs sold</th></tr></thead>
-<tbody><tr><td>From the ads account</td><td>People who actually reached you</td><td>Right area, right job</td><td>On the calendar</td><td>Signed or paid</td></tr></tbody>
+<tbody><tr><td data-label="What the ads report">From the ads account</td><td data-label="Real calls and forms">People who actually reached you</td><td data-label="Good-fit inquiries">Right area, right job</td><td data-label="Appointments booked">On the calendar</td><td data-label="Jobs sold">Signed or paid</td></tr></tbody>
 </table></div>
 <ul>
 <li><b>Show the leads you can&rsquo;t match:</b> count them in their own row instead of dropping them.</li>
@@ -100,10 +101,10 @@
 <div class="bq-tablewrap"><table>
 <thead><tr><th scope="col">Biggest drop</th><th scope="col">Look here first</th></tr></thead>
 <tbody>
-<tr><td>Ads report &rarr; real calls and forms</td><td>What the account counts, and spam on the form</td></tr>
-<tr><td>Real &rarr; good fit</td><td>Location, services and the offer in the ad</td></tr>
-<tr><td>Good fit &rarr; appointment</td><td>Response time, scheduling and capacity</td></tr>
-<tr><td>Appointment &rarr; sold</td><td>The visit, the quote and pricing, which ads can&rsquo;t fix</td></tr>
+<tr><td data-label="Biggest drop">Ads report &rarr; real calls and forms</td><td data-label="Look here first">What the account counts, and spam on the form</td></tr>
+<tr><td data-label="Biggest drop">Real &rarr; good fit</td><td data-label="Look here first">Location, services and the offer in the ad</td></tr>
+<tr><td data-label="Biggest drop">Good fit &rarr; appointment</td><td data-label="Look here first">Response time, scheduling and capacity</td></tr>
+<tr><td data-label="Biggest drop">Appointment &rarr; sold</td><td data-label="Look here first">The visit, the quote and pricing, which ads can&rsquo;t fix</td></tr>
 </tbody></table></div>
 
 <h2>You may already have the answer</h2>
