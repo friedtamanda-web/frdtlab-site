@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en" data-sr="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Marketing Implementation: Bolted On vs. Built Through</title>
+<meta name="description" content="Bad AI marketing implementation bolts tools onto broken silos. Integrated marketing wires one signal system. A field note on the difference, with receipts.">
+<link rel="canonical" href="https://frdtlab.com/field-note-bolted-on-vs-built-through">
+<meta name="theme-color" content="#0b0b0c">
+<meta name="author" content="Amanda Friedt">
+<meta property="og:site_name" content="FRDTLAB">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://frdtlab.com/field-note-bolted-on-vs-built-through">
+<meta property="og:title" content="Bolted On vs. Built Through: What Bad AI Marketing Implementation Actually Looks Like">
+<meta property="og:description" content="Bolting an AI tool onto each channel just makes four silos faster at being disconnected. A FRDTLAB field note by Amanda Friedt, with receipts.">
+<meta property="og:image" content="https://frdtlab.com/og-frameworks.jpg">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Bolted On vs. Built Through: What Bad AI Marketing Implementation Actually Looks Like">
+<meta name="twitter:description" content="Bolting an AI tool onto each channel just makes four silos faster at being disconnected. A FRDTLAB field note by Amanda Friedt, with receipts.">
+<meta name="twitter:image" content="https://frdtlab.com/og-frameworks.jpg">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "Article",
+ "headline": "Bolted On vs. Built Through: What Bad AI Marketing Implementation Actually Looks Like",
+ "description": "Bad AI marketing implementation bolts tools onto broken silos. Integrated marketing wires one signal system. A field note on the difference, with receipts.",
+ "author": {
+  "@type": "Person",
+  "name": "Amanda Friedt",
+  "url": "https://frdtlab.com/about",
+  "sameAs": [
+   "https://www.linkedin.com/in/amandafriedt/",
+   "https://afrdtlab.substack.com/"
+  ]
+ },
+ "publisher": {
+  "@type": "Organization",
+  "name": "FRDTLAB",
+  "url": "https://frdtlab.com/",
+  "logo": {
+   "@type": "ImageObject",
+   "url": "https://frdtlab.com/favicon.svg"
+  }
+ },
+ "datePublished": "2026-11-27",
+ "dateModified": "2026-11-27",
+ "mainEntityOfPage": "https://frdtlab.com/field-note-bolted-on-vs-built-through",
+ "image": "https://frdtlab.com/og-frameworks.jpg",
+ "articleSection": "Field Notes",
+ "keywords": "AI marketing implementation, integrated marketing AI, fragmented martech AI, bad AI implementation, marketing operations, AI governance, product feed"
+}
+</script>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "BreadcrumbList",
+ "itemListElement": [
+  {"@type": "ListItem", "position": 1, "name": "FRDTLAB", "item": "https://frdtlab.com/"},
+  {"@type": "ListItem", "position": 2, "name": "The Work", "item": "https://frdtlab.com/the-work/"},
+  {"@type": "ListItem", "position": 3, "name": "Bolted On vs. Built Through", "item": "https://frdtlab.com/field-note-bolted-on-vs-built-through"}
+ ]
+}
+</script>
+
+<style>
+  :root{
+    --ground:#0b0b0c;
+    --surface:#141416;
+    --line:#26262a;
+    --text:#f5f5f4;
+    --muted:#a1a1aa;
+    --signal:#E84393;
+    --good:#4ad6a0;
+    --warn:#ffb454;
+    --bad:#ff6b6b;
+    --blue:#6f9bff;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  @media (prefers-reduced-motion: reduce){html{scroll-behavior:auto;}}
+  body{background:var(--ground);color:var(--text);font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased;}
+  a{color:inherit;}
+  img,svg{max-width:100%;height:auto;}
+  .wrap{max-width:1060px;margin:0 auto;padding:0 24px;}
+  header{border-bottom:1px solid var(--line);}
+  .nav{display:flex;justify-content:space-between;align-items:center;padding:20px 24px;flex-wrap:wrap;gap:12px;}
+  .mark{font-size:1.1rem;letter-spacing:.02em;text-decoration:none;}
+  .mark b{font-weight:800;}
+  .nav-links{display:flex;gap:20px;flex-wrap:wrap;}
+  .nav-links a{font-size:.85rem;color:var(--muted);text-decoration:none;}
+  .nav-links a:hover,.nav-links a:focus-visible,.nav-links a.active{color:var(--text);}
+  .eyebrow{font-size:.75rem;text-transform:uppercase;letter-spacing:.18em;color:var(--signal);font-weight:600;margin-bottom:16px;}
+  .hero{padding:88px 24px 72px;}
+  h1{font-size:clamp(2.1rem,5.5vw,3.6rem);font-weight:800;letter-spacing:-.03em;line-height:1.08;max-width:20ch;margin-bottom:24px;}
+  h1 em{font-style:italic;color:var(--signal);}
+  .sub{font-size:1.15rem;color:var(--muted);max-width:58ch;margin-bottom:36px;}
+  .byline{font-size:.85rem;color:var(--muted);margin:-12px 0 32px;text-transform:uppercase;letter-spacing:.14em;}
+  .cta-row{display:flex;gap:16px;align-items:center;flex-wrap:wrap;}
+  .btn{display:inline-block;padding:14px 28px;font-weight:700;font-size:.95rem;text-decoration:none;border-radius:2px;}
+  .btn-primary{background:var(--signal);color:#0b0b0c;}
+  .btn-primary:hover,.btn-primary:focus-visible{filter:brightness(1.1);}
+  .btn-ghost{border:1px solid var(--line);color:var(--text);}
+  .btn-ghost:hover,.btn-ghost:focus-visible{border-color:var(--signal);}
+  .price-note{font-size:.85rem;color:var(--muted);}
+  section{padding:72px 0;border-top:1px solid var(--line);}
+  h2{font-size:clamp(1.6rem,3.5vw,2.4rem);font-weight:800;letter-spacing:-.02em;line-height:1.15;max-width:28ch;margin-bottom:20px;}
+  h2 em{font-style:italic;color:var(--signal);}
+  h3{font-size:1.15rem;font-weight:700;letter-spacing:-.01em;}
+  .lede{color:var(--muted);max-width:62ch;font-size:1.05rem;}
+  .lede + .lede{margin-top:18px;}
+  .lede b,.lede strong{color:var(--text);}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;margin-top:44px;}
+  .card{background:var(--surface);border:1px solid var(--line);padding:28px;border-radius:4px;}
+  .card .k{font-size:.72rem;text-transform:uppercase;letter-spacing:.16em;color:var(--signal);font-weight:600;margin-bottom:12px;}
+  .card h3{font-size:1.15rem;font-weight:700;margin-bottom:10px;letter-spacing:-.01em;}
+  .card p,.card li{color:var(--muted);font-size:.95rem;}
+  .card ul{margin:12px 0 0 1.1em;}
+  .card li{padding:3px 0;}
+  .def{background:var(--surface);border-left:3px solid var(--signal);padding:28px 32px;margin-top:36px;max-width:72ch;border-radius:0 4px 4px 0;}
+  .def p{color:var(--text);font-size:1.05rem;}
+  .def p + p{margin-top:12px;}
+  .def .src{color:var(--muted);font-size:.8rem;margin-top:12px;text-transform:uppercase;letter-spacing:.14em;}
+  ul.plain{list-style:none;margin-top:28px;max-width:64ch;}
+  ul.plain li{padding:16px 0;border-bottom:1px solid var(--line);color:var(--muted);font-size:1rem;}
+  ul.plain li b{color:var(--text);font-weight:700;}
+  .faq-item{border-bottom:1px solid var(--line);padding:24px 0;max-width:72ch;}
+  .faq-item h3{font-size:1.05rem;font-weight:700;margin-bottom:8px;}
+  .faq-item p{color:var(--muted);font-size:.95rem;}
+  .faq-item a,.lede a,.card a:not(.btn),.note a{color:var(--signal);}
+  .close{text-align:center;}
+  .close h2{margin:0 auto 22px;max-width:24ch;}
+  .close .lede{margin:0 auto 26px;}
+  .close .cta-row{justify-content:center;}
+  footer{border-top:1px solid var(--line);padding:48px 0;margin-top:24px;}
+  .foot{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;}
+  .foot .tag{color:var(--muted);font-size:.85rem;margin-top:8px;}
+  .foot-links{display:flex;gap:18px;flex-wrap:wrap;}
+  .foot-links a{font-size:.82rem;color:var(--muted);text-decoration:none;}
+  .foot-links a:hover,.foot-links a:focus-visible{color:var(--text);}
+  .copyright{color:var(--muted);font-size:.78rem;margin-top:28px;}
+  :focus-visible{outline:2px solid var(--signal);outline-offset:2px;}
+  /* shared additions */
+  .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;}
+  form.lead{display:flex;gap:10px;flex-wrap:wrap;max-width:540px;margin-top:8px;}
+  form.lead input[type=email]{flex:1 1 240px;min-width:0;padding:13px 14px;border:1px solid #2c2d33;background:#0f0f12;color:#f6f5f2;border-radius:2px;font-size:1rem;font-family:inherit;}
+  form.lead button{background:var(--signal);color:#0b0b0c;font-weight:700;border:none;border-radius:2px;padding:13px 22px;cursor:pointer;font-size:.95rem;font-family:inherit;}
+  form.lead button:hover,form.lead button:focus-visible{filter:brightness(1.1);}
+  .form-fine{font-size:.82rem;color:var(--muted);margin-top:10px;max-width:60ch;}
+  .tbl-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:4px;background:var(--surface);margin-top:28px;-webkit-overflow-scrolling:touch;}
+  table{border-collapse:collapse;width:100%;font-size:.92rem;}
+  th,td{padding:12px 14px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top;}
+  th{font-size:.7rem;text-transform:uppercase;letter-spacing:.12em;color:var(--muted);font-weight:600;white-space:nowrap;}
+  td{color:var(--muted);}
+  td b,td strong{color:var(--text);}
+  tr:last-child td{border-bottom:none;}
+  .num{font-variant-numeric:tabular-nums;white-space:nowrap;}
+  .note{font-size:.85rem;color:var(--muted);margin-top:14px;max-width:72ch;}
+  .pill{display:inline-block;font-size:.68rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:3px 9px;border-radius:999px;white-space:nowrap;border:1px solid var(--line);color:var(--muted);}
+  .pill.g{color:var(--good);border-color:var(--good);}
+  .pill.w{color:var(--warn);border-color:var(--warn);}
+  .pill.b{color:var(--blue);border-color:var(--blue);}
+  .pill.r{color:var(--bad);border-color:var(--bad);}
+  .pill.s{color:var(--signal);border-color:var(--signal);}
+  @media (max-width:520px){
+    .hero{padding:56px 24px 48px;}
+    section{padding:56px 0;}
+    .card{padding:22px;}
+    .def{padding:22px 20px;}
+    .nav-links{gap:14px;}
+  }
+
+  .fn{--graphite:#a1a1aa;--signal-ink:#ff7bb0;}
+  .art{max-width:760px;}
+  .art p{color:var(--muted);font-size:1.05rem;margin-top:16px;max-width:68ch;}
+  .art p b{color:var(--text);}
+  .art p.eyebrow{color:var(--signal);font-size:.75rem;margin-top:0;}
+  .art p.note{font-size:.85rem;}
+  .art h2{margin-top:56px;}
+  .callout{background:var(--surface);border:1px solid var(--line);border-left:3px solid var(--signal);padding:20px 24px;margin:28px 0;border-radius:0 4px 4px 0;}
+  .callout p{margin:0;color:var(--text);}
+  figure.dia{margin:36px 0 8px;padding:22px 20px 14px;background:var(--surface);border:1px solid var(--line);border-radius:4px;}
+  figure.dia svg{display:block;width:100%;height:auto;color:var(--text);font-family:Inter,system-ui,sans-serif;}
+  figure.dia .d-mobile{display:none;max-width:360px;margin:0 auto;}
+  @media (max-width:760px){figure.dia .d-wide{display:none;} figure.dia .d-mobile{display:block;}}
+  figure.dia figcaption{font-size:.85rem;color:var(--muted);margin-top:12px;border-top:1px solid var(--line);padding-top:12px;}
+  .stages td.s{font-weight:800;color:var(--text);white-space:nowrap;}
+  .stages table{min-width:720px;}
+  .three{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin-top:24px;}
+  .three .card p{font-size:.93rem;}
+  .pink{color:#ff7bb0;font-weight:600;}
+  ul.tight{margin:16px 0 0 1.2em;max-width:68ch;}
+  ul.tight li{color:var(--muted);padding:6px 0;font-size:1.02rem;}
+  ul.tight li b{color:var(--text);}
+
+</style>
+<!-- Klaviyo onsite (account Twvzce) -->
+<script>addEventListener("load",function(){var s=document.createElement("script");s.async=1;s.src="https://static.klaviyo.com/onsite/js/Twvzce/klaviyo.js?company_id=Twvzce";document.head.appendChild(s);});</script>
+<script type="text/javascript">!function(){if(!window.klaviyo){window._klOnsite=window._klOnsite||[];try{window.klaviyo=new Proxy({},{get:function(n,i){return"push"===i?function(){var n;(n=window._klOnsite).push.apply(n,arguments)}:function(){for(var n=arguments.length,o=new Array(n),w=0;w<n;w++)o[w]=arguments[w];var t="function"==typeof o[o.length-1]?o.pop():void 0,e=new Promise((function(n){window._klOnsite.push([i].concat(o,[function(i){t&&t(i),n(i)}]))}));return e}}})}catch(n){window.klaviyo=window.klaviyo||[],window.klaviyo.push=function(){var n;(n=window._klOnsite).push.apply(n,arguments)}}}}();</script>
+<!-- Google tag (FRDT Lab property) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-1CDWBM46D5"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-1CDWBM46D5');</script>
+<script type="text/javascript" src="https://s.skimresources.com/js/313384X1802103.skimlinks.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&amp;family=Newsreader:ital,opsz,wght@0,6..72,300..500;1,6..72,300..500&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap">
+<link rel="stylesheet" href="/assets/signal-room.css">
+<script src="/assets/signal-room.js" defer></script>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="mark" href="https://frdtlab.com/">FRDT<b>LAB</b></a>
+    <nav class="nav-links" aria-label="Main">
+      <a href="https://frdtlab.com/">The Lab</a>
+      <a href="https://frdtlab.com/about">About</a>
+      <a href="https://frdtlab.com/the-work/">The Work</a>
+      <a href="https://frdtlab.com/work-with-me">Work With Me</a>
+      <a href="https://frdtlab.com/in-motion">In Motion</a>
+      <a href="https://theunapologeticleader.com">Unapologetic</a>
+      <a href="https://frdtlab.com/shop">Shop</a>
+      <a href="https://afrdtlab.substack.com/">Subscribe</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<div class="wrap hero fn">
+  <p class="eyebrow">FRDTLAB · Field Note · AI implementation</p>
+  <h1>Bolted On vs. Built <em>Through</em>: What Bad AI Marketing Implementation Actually Looks Like</h1>
+  <p class="byline">By Amanda Friedt · November 27, 2026</p>
+  <p class="sub">I keep walking into the same room. Three AI subscriptions. A folder of prompts nobody finished. An SEO person, a paid person, a social person and an email person, each with a new tool and a new dashboard. Everyone is busier than they were last year, and nobody can tell me whether any of it is working.</p>
+</div>
+
+<section class="fn" style="padding-top:0;border-top:none">
+  <div class="wrap">
+    <div class="art">
+      <div class="callout">
+        <p><b>TL;DR.</b></p>
+        <ul class="tight">
+          <li>Bolting an AI tool onto each channel just makes four silos faster at being disconnected.</li>
+          <li>Integrated marketing used to mean every channel saying the same thing. Now it means every channel learning from the same data.</li>
+          <li>AI calculates confidence. Diagnose which of four layers is failing (identity, coverage, corroboration, variance) before anything gets built.</li>
+          <li>Reversibility is the line. Anything sent in your name or anything that spends money waits for a person.</li>
+          <li>When the tools don't share a brain, somebody has to be the brain. Smart implementation moves state into the system.</li>
+        </ul>
+      </div>
+
+      <p>That's what bad AI implementation looks like in practice. It looks like activity, and activity is easy to mistake for progress.</p>
+
+      <h2>What bolted-on AI implementation looks like</h2>
+      <p>The reflex is to bolt an AI tool onto each channel and call it transformation. That just makes four silos faster at being disconnected.</p>
+      <p>Here's the pattern I see most often:</p>
+      <ul class="tight">
+        <li><b>Tools on top, no wiring underneath.</b> Every channel gets its own assistant. None of them read the same data. What paid learns in 48 hours never reaches the product page or the feed.</li>
+        <li><b>Volume as the goal.</b> More posts, more descriptions, more pages. As the tools get better at generating everything, the generated stuff becomes the floor, not the ceiling. Anyone can produce the average now.</li>
+        <li><b>Disconnected data.</b> The model guesses because nobody piped in the real numbers. Reports can't be traced back to a source.</li>
+        <li><b>No governance.</b> Client tone leaks between brands. A claim slips through. Someone on the team quietly becomes the QA step.</li>
+        <li><b>Measuring the wrong thing.</b> On one engagement, the rank tracker said everything was fine. Then I asked ChatGPT and Gemini the exact buying question this brand's customers ask, and the machine recommended a big box competitor. Every time.</li>
+      </ul>
+      <p>Both dashboards were right, is the thing. The site ranked. The machines could not read the products. Those are different problems, and most teams only have tools for the first one.</p>
+
+      <h2>Marketing through the system, not on top of it</h2>
+      <p>The model is the router. The system is everything around it: <a href="https://frdtlab.com/field-note-marketing-through-the-system">the layers that make the output sound like you</a>, use your data, and land where you actually publish. Most people set up the router, skip the layers, and then wonder why every session starts from zero.</p>
+      <p>Integrated marketing used to mean every channel saying the same thing. Now it means every channel learning from the same data. A handful of principles from my own work carry most of the weight.</p>
+
+      <h3 style="margin-top:36px">Machines read one signal</h3>
+      <p>Humans see channels. Machines see one signal system about one brand. Platforms reward clean signals, and a mediocre brand in tune will often beat a brilliant one out of tune. Alignment beats volume, almost every time.</p>
+
+      <h3 style="margin-top:36px">Confidence over rank</h3>
+      <p>AI calculates confidence: the machine's belief that naming your brand is safe. I <a href="https://frdtlab.com/confidence-engineering/">build that belief from four layers</a> and diagnose which one is failing before anything gets built. Identity asks whether the machine knows what you are. Coverage asks whether you hold the whole buying neighborhood. Corroboration asks whether independent witnesses describe you the same way. Variance asks whether every surface tells one story. More content touches maybe one of those, and usually not the one that's broken. When your specs disagree across the site, the feed and your profiles, the machine hedges, and hedging turns into omission.</p>
+
+      <h3 style="margin-top:36px">The feed is infrastructure</h3>
+      <p>On the engagement above, the Merchant Center feed scored 28 out of 100 and 43% of the catalog was disapproved. The size field sat 96% empty in a category where fitment is the whole purchase decision. Customers search by the size of the hole in their door; the catalog never spoke size. So we rebuilt the data spine so Google, Shopping and the AI answers all read the same truth at the same time. Feed score went from 28 to 59. Disapprovals dropped from 43% to under 5%. <a href="https://frdtlab.com/confidence-engineering/field-note-001-engineering-understanding">Search visibility moved from 28.51% to 83.43% in one quarter</a>, April to June 2026. I didn't rewrite a single product description on instinct.</p>
+
+      <h3 style="margin-top:36px">Reversibility is the line</h3>
+      <p>The argument about AI autonomy usually gets framed as a dial, more or less, faster or safer. I treat it as a line between deciding and doing. Reading, drafting, ranking, and filing into systems you control can run on their own. Anything sent in your name or anything that spends money waits for a person, and that yes gets logged. How impressive the demo looked doesn't decide it. One question does: can it be taken back?</p>
+
+      <h3 style="margin-top:36px">The single point of failure is a person</h3>
+      <p>Bad implementation hides this one best. When the tools don't share a brain, somebody has to be the brain, and it's usually the most capable person on the team, because competence has gravity. She pastes the brand guide in again, reconciles the dashboards, and catches the claim before it ships. That isn't a system. It's a system with a single point of failure, and the failure point is a person. Usually a tired one. Smart implementation moves state into the system so people can hold judgment instead of holding everything.</p>
+      <p><b>Build the machine. Just don't become one.</b></p>
+
+      <h2>Bolted-on vs. integrated AI marketing, side by side</h2>
+      <div class="tbl-wrap">
+        <table>
+          <thead><tr><th scope="col">Dimension</th><th scope="col">Bolted on AI</th><th scope="col">Integrated AI</th></tr></thead>
+          <tbody>
+            <tr><td><b>Data</b></td><td>Each tool guesses or works from pasted snippets</td><td>Live pipes into analytics, ads, feed and CMS; every number traces to a source</td></tr>
+            <tr><td><b>Content</b></td><td>Volume: more of the average</td><td>Signal: structured, rich in entities, written for the question a model will ask</td></tr>
+            <tr><td><b>Channels</b></td><td>SEO, paid, social and CRM in separate rooms</td><td>One loop: paid tests language fast, organic compounds what works</td></tr>
+            <tr><td><b>Product data</b></td><td>Feed treated as an upload</td><td>Feed treated as retrieval infrastructure, one source of truth for every surface</td></tr>
+            <tr><td><b>Governance</b></td><td>A person catches mistakes, when she has time</td><td>Rules encoded once; gates from confidence scoring to human approval</td></tr>
+            <tr><td><b>Autonomy</b></td><td>All or nothing, set by how good the demo looked</td><td>Earned tier by tier; reversibility decides what runs alone</td></tr>
+            <tr><td><b>Measurement</b></td><td>Clicks, rankings and output counts</td><td>Confidence, coverage and business impact, checked against independent sources before anyone believes it</td></tr>
+            <tr><td><b>Memory</b></td><td>Every session starts cold; you explain the brand again</td><td>A shared drive holds briefs, decisions and lessons, so month two is faster than month one</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>Five questions before you add another AI tool</h2>
+      <ol style="margin:16px 0 0 1.4em;max-width:68ch;color:var(--muted);font-size:1.02rem;display:grid;gap:10px">
+        <li>Does it read the same source of truth as everything else, or does it need its own copy?</li>
+        <li>Which failing layer does it fix: identity, coverage, corroboration or variance? If you can't name one, it's probably adding volume.</li>
+        <li>If it gets something wrong, can you fully undo it, and quickly?</li>
+        <li>Does it leave your own systems? If it sends, posts, spends or reaches a customer, who says yes, and where is that yes recorded?</li>
+        <li>When it learns something, where does the lesson go so the next campaign starts smarter?</li>
+      </ol>
+      <p>If a tool fails the first question, I'd fix the wiring before buying anything. And one rule sits above all five: don't automate what you can't explain.</p>
+
+      <h2>What I'm still testing</h2>
+      <p>What I'm doing in-house, I'm helping other companies do, and the pattern keeps repeating. The barrier is usually structure. Budget and the model come later. I'm beginning to think the companies that win the next decade will be the ones that lose the least humanity while using the technology, and I haven't finished measuring what that looks like yet.</p>
+      <p>The operating models behind this note, including the Autonomy Gradient and the trust gates, live in <a href="https://frdtlab.com/frameworks">Frameworks</a>.</p>
+    </div>
+  </div>
+</section>
+
+<section class="close">
+  <div class="wrap">
+    <p class="eyebrow">From field note to audit</p>
+    <h2>See where your own <em>signal</em> leaks.</h2>
+    <p class="lede">If you want to see where your own signal leaks, start with the AI Visibility Audit.</p>
+    <div class="cta-row"><a class="btn btn-primary" href="https://frdtlab.com/ai-visibility-audit">AI Visibility Audit</a></div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div>
+        <a class="mark" href="https://frdtlab.com/">FRDT<b>LAB</b></a>
+        <p class="tag">Systems. Stories. Signal.<br>Detroit-rooted · Future-facing</p>
+      </div>
+      <nav class="foot-links" aria-label="Footer">
+        <a href="https://frdtlab.com/in-motion">In Motion</a>
+        <a href="https://frdtlab.com/the-work/">The Work</a>
+        <a href="https://frdtlab.com/frameworks">Frameworks</a>
+        <a href="https://frdtlab.com/scorecard">AI Scorecard</a>
+        <a href="https://frdtlab.com/geo-playbook">Get Recommended by AI</a>
+        <a href="https://frdtlab.com/work-with-me">Work With Me</a>
+        <a href="https://frdtlab.com/shop">Shop</a>
+        <a href="https://afrdtlab.substack.com/">Newsletter</a>
+        <a href="mailto:hello@frdtlab.com">Contact</a>
+      </nav>
+    </div>
+    <p class="copyright">© 2026 FRDTLAB · Building what comes next</p>
+  </div>
+</footer>
+
+<script>/* kl-lead-handler */
+document.addEventListener('submit',function(e){
+  var f=e.target; if(!f||!f.getAttribute||!f.getAttribute('data-kl-event'))return;
+  e.preventDefault();
+  var fd=new FormData(f),p={};
+  fd.forEach(function(v,k){ if(k.charAt(0)!=='_'&&v){ p[k]=p[k]?p[k]+', '+v:''+v; } });
+  var email=p.email||p.Email||'';
+  var listId=f.getAttribute('data-kl-subscribe'), btn=f.querySelector('button,[type=submit]');
+  function done(){
+    try{ if(window.klaviyo){ if(email){window.klaviyo.push(['identify',Object.assign({'$email':email},p)]);} window.klaviyo.push(['track', f.getAttribute('data-kl-event'), p]); window.klaviyo.push(['track','New Lead',Object.assign({form:f.getAttribute('data-kl-event'),brand:'FRDTLAB'},p)]); } }catch(err){}
+    try{ if(window.gtag){ gtag('event','generate_lead',{event_category:'form',event_label:f.getAttribute('data-kl-event'),form_name:f.getAttribute('data-kl-event'),send_to:'G-1CDWBM46D5'}); } }catch(err){}
+    var msg=document.createElement('p'); msg.className='form-note'; msg.style.cssText='font-size:1.05rem;margin-top:8px'; msg.setAttribute('role','status'); msg.textContent='Thank you, we got it. We will be in touch.';
+    f.parentNode.insertBefore(msg,f.nextSibling); f.style.display='none';
+  }
+  function fail(){ if(btn)btn.disabled=false; var n=f.querySelector('.kl-err')||document.createElement('p'); n.className='form-note kl-err'; n.setAttribute('role','alert'); n.style.cssText='font-size:1rem;margin-top:8px'; n.textContent="That didn't go through. Please try again, or email hello@frdtlab.com."; if(!n.parentNode)f.appendChild(n); }
+  if(!listId||!email){ done(); return; }
+  if(btn)btn.disabled=true;
+  /* kl-lead-handler v2: subscribe per https://developers.klaviyo.com/en/v2024-10-15/reference/create_client_subscription, show success only on a 2xx. */
+  fetch('https://a.klaviyo.com/client/subscriptions?company_id=Twvzce',{method:'POST',keepalive:true,headers:{'Content-Type':'application/vnd.api+json','revision':'2024-10-15'},body:JSON.stringify({data:{type:'subscription',attributes:{custom_source:(f.getAttribute('data-kl-event')||'Website'),profile:{data:{type:'profile',attributes:{email:email,subscriptions:{email:{marketing:{consent:'SUBSCRIBED'}}}}}}},relationships:{list:{data:{type:'list',id:listId}}}}})})
+    .then(function(r){ if(!r.ok) throw new Error('HTTP '+r.status); done(); })
+    .catch(fail);
+});
+</script>
+
+</body>
+</html>

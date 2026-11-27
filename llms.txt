@@ -15,6 +15,12 @@
 - [Sample report](https://frdtlab.com/sample-report): Illustrative FRDTLAB monthly report: lane scoreboard, data currency box, platform watch.
 - [Case study: marketplace returns](https://frdtlab.com/case-study-amazon-returns): Anonymized. Fitment copy cut one listing's return rate from 12.96% to 3.13%; an untouched control rose 1.96 pts.
 - [Field note: Marketing through the system](https://frdtlab.com/field-note-marketing-through-the-system): The six-stage AI operating layer explained in PPC and SEO terms.
+- [Field note: Agentic marketing explained: how AI agents actually work](https://frdtlab.com/agentic-marketing): AI agents that pursue a goal inside limits you set: the loop, the jobs, and a supervised first pilot.
+- [Field note: Bolted on vs. built through](https://frdtlab.com/field-note-bolted-on-vs-built-through): Bad AI implementation bolts a tool onto every silo; integrated marketing wires one signal system.
+- [Field note: The PPC shift: built beneath the surface](https://frdtlab.com/field-note-future-of-ppc): The shift in PPC is in the data and infrastructure under the account, not inside it.
+- [Field note: How people search. How they trust. How they decide.](https://frdtlab.com/field-note-how-people-search): Machines shape discovery before people reach a brand; the case for a machine layer owner.
+- [Field note: Signal before consensus](https://frdtlab.com/field-note-signal-before-consensus): How marketing leaders read market signals: ten upstream signals, a signal loop, and a weekly rhythm.
+- [Field note: Fifty-seven things are marked urgent](https://frdtlab.com/field-note-fifty-seven-urgent): 130 live actions, 57 marked urgent: building an agentic operating layer for invisible labor.
 - [The Autonomy Gradient](https://frdtlab.com/frameworks#autonomy-gradient): Five autonomy tiers for AI agents; reversibility is the line.
 - [The Validation Loop](https://frdtlab.com/frameworks#validation-loop): Paid, organic, and real-sales data; two or more sources must agree before a decision ships.
 - [Agent Governance Builder Kit](https://frdtlab.com/agent-governance-kit): $47 kit, early access. Worksheet, templates, and stress tests that become a written permission policy for AI agents.
