@@ -24,7 +24,7 @@
 - [Field note: Fifty-seven things are marked urgent](https://frdtlab.com/field-note-fifty-seven-urgent): 130 live actions, 57 marked urgent: building an agentic operating layer for invisible labor.
 - [The Autonomy Gradient](https://frdtlab.com/frameworks#autonomy-gradient): Five autonomy tiers for AI agents; reversibility is the line.
 - [The Validation Loop](https://frdtlab.com/frameworks#validation-loop): Paid, organic, and real-sales data; two or more sources must agree before a decision ships.
-- [Agent Governance Builder Kit](https://frdtlab.com/agent-governance-kit): $47 kit, early access. Worksheet, templates, and stress tests that become a written permission policy for AI agents.
+- [Agent Governance Builder Kit](https://frdtlab.com/agent-governance-kit): $47 fillable PDF kit, instant download. Worksheet, templates, and stress tests that become a written permission policy for AI agents.
 
 - [The Work](https://frdtlab.com/the-work/): Dated proof logs from FRDTLAB. Entry 001: seven on-brand deliverables (logo suite, print-ready cards, team tech budget, priority sheet, Word templates, taglines, team handoff) shipped in one working day on an integrated marketing infrastructure: brand system, human voice and lived IP, proof library, content system, AI agents behind a human gate.
 
