@@ -96,6 +96,7 @@
 .on-hero-who p{margin:0;font-size:.98rem!important;color:var(--sr-mist,#a7a9b3)!important}
 .on-hold{border:2px dashed var(--sr-signal-hot,#ff4fa0);border-radius:.6rem;padding:clamp(1rem,3vw,1.6rem);margin:1rem 0}
 .on-hold p{margin:.4rem 0 0}
+.on-hold h3{margin:.6rem 0 .2rem}.on-hold h4{margin:1.1rem 0 .1rem}.on-hold ul{margin:.3rem 0 0 1.1rem}.on-issue-meta{font-size:.85rem}
 .on-steps li::before{content:counter(s);position:absolute;left:.9rem;top:.75rem;font-family:var(--sr-mono,monospace);color:var(--sr-signal-hot,#ff4fa0)}
 </style>
 </head>
@@ -139,13 +140,41 @@
 
 <h2 id="issue-zero">Issue zero</h2>
 <div class="on-hold" data-placeholder="issue-zero">
-<div class="on-draft">Placeholder: waiting on Amanda</div>
-<p><b>The first real brief goes here, in full:</b> real items from that week, each with its source, what to check and what to do. Amanda picks the topic. This box does not go live.</p>
+<div class="on-draft">Draft for Amanda&rsquo;s review</div>
+<p class="on-issue-meta"><b>The Operator Brief &middot; Issue zero &middot; Week of November 23, 2026</b></p>
+<h3>Three defaults changed under your lead campaigns this month</h3>
+<p>None of these came with a pop-up. Two are already on in most accounts. Here&rsquo;s what each one is, what I&rsquo;m sure of, and the one thing to check.</p>
+<h4>1. Smart Bidding now learns from your secondary conversions</h4>
+<p><b>What changed:</b> Google calls it Search Journey Awareness. Search campaigns on Target CPA, Target ROAS, Maximize Conversions or Maximize Conversion Value now learn from conversion actions you aren&rsquo;t bidding to, the ones marked secondary. Google&rsquo;s page says there is no on/off switch and nothing to opt into. Reported November 17; the help page itself carries no date.</p>
+<p><b>Why it matters for a lead account:</b> most service accounts park their noise in secondary. Button clicks, short calls, page views. Those used to be &ldquo;for reporting only.&rdquo; They now feed the bidding.</p>
+<p><b>What I&rsquo;m not sure of:</b> Google doesn&rsquo;t say how much weight a secondary action carries.</p>
+<p><b>Check this week:</b> open Goals, list every secondary action, and ask of each one: would I be fine if bidding chased more of this? <a href="https://support.google.com/google-ads/answer/18867814?hl=en">Google&rsquo;s page</a></p>
+<h4>2. New Search campaigns built in Editor now start with AI Max on</h4>
+<p><b>What changed:</b> Google Ads Editor 2.14 turns on AI Max, text asset automation and Final URL expansion by default for every new Search campaign you create in it. Reported November 12.</p>
+<p><b>Why it matters:</b> Final URL expansion lets Google send a click to a page other than the one you picked. On a service site that can mean a blog post, a careers page or a page with no form.</p>
+<p><b>Check this week:</b> any Search campaign built in Editor since you updated. Look at all three settings before you post it. <a href="https://support.google.com/google-ads/editor/answer/18835571?hl=en">Editor 2.14 release notes</a></p>
+<h4>3. Local Services Ads are moving into Performance Max</h4>
+<p><b>What changed:</b> LSA campaigns move on their own into a Performance Max campaign type with pay-per-lead goals, still showing on Search and Maps. Select US home and storefront services went first in August, broader groups follow in late 2026, and Google emails you 14 days before your account moves. Manual bidding goes away.</p>
+<p><b>Why it matters:</b> your old LSA reports don&rsquo;t carry over. The download Google offers holds lead totals split by phone, message and booking, and nothing else. No impressions, no clicks.</p>
+<p><b>Check this week:</b> if you run LSA, export what you can now, from inside the current reports, before the 14-day email lands. <a href="https://support.google.com/google-ads/answer/17213585?hl=en">Google&rsquo;s transition page</a></p>
+<h4>On watch</h4>
+<p><b>Meta Leads campaigns losing placement choice.</b> Reports from late October say Meta is removing ad-set placement selection for Leads, Sales, Engagement and App campaigns, rolling out gradually with no date. I couldn&rsquo;t open Meta&rsquo;s own help page to confirm it, so treat this as unconfirmed until it shows up in your Ads Manager.</p>
+<p><b>&ldquo;Learning&rdquo; ends at 7 days. Learning doesn&rsquo;t.</b> Google&rsquo;s page says the Learning label never lasts more than 7 days, and also that bidding takes one to two conversion cycles to settle on a new goal. If your leads take three weeks to close, don&rsquo;t judge a change on day 8.</p>
 </div>
 <h2 id="first-skill">The first skill</h2>
 <div class="on-hold" data-placeholder="first-skill">
-<div class="on-draft">Placeholder: waiting on Amanda</div>
-<p><b>Name of the first skill, one screenshot of its output, and one line on what it runs in and what account a member needs.</b> This box does not go live.</p>
+<div class="on-draft">Draft for Amanda&rsquo;s review</div>
+<h3>The Junk Lead Sorter</h3>
+<p>You export a week of form fills and call notes. The skill reads each one and tags it <b>likely job</b>, <b>junk</b> or <b>spam</b>, with a one-line reason you can check.</p>
+<p><b>What you get back:</b></p>
+<ul>
+<li>Your lead list with the tag and reason added to each row</li>
+<li>The junk rate by campaign and by source, so you see which spend brings the noise</li>
+<li>A clean list of the real leads, ready to send back to Google Ads as offline conversions</li>
+</ul>
+<p><b>Why it&rsquo;s first:</b> item 1 above. If bidding now learns from more of your signals, the signals had better be real leads.</p>
+<p><b>Runs in:</b> Claude, as a skill. [Account needed: to confirm before launch.] Ships with install notes, an example output and its known limits, like misreading a short message from a real customer as junk.</p>
+<p>[Screenshot of a sample output goes here.]</p>
 </div>
 
 <h2 id="price">Founding membership</h2>
