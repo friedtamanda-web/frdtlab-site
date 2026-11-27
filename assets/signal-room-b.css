@@ -82,6 +82,7 @@ html[data-srb] .srb-media img{display:block;width:100%;height:auto;border:0;bord
 html[data-srb] .srb-media.srb-photo img{filter:contrast(1.04) saturate(.92)}
 html[data-srb] .srb-media.srb-photo img{aspect-ratio:var(--ar,4/5);object-fit:cover}
 html[data-srb] .srb-tag{position:absolute;left:10px;bottom:10px;max-width:calc(100% - 20px);background:var(--sr-signal);color:var(--sr-ink);font-family:var(--sr-mono);font-size:.68rem;font-weight:500;letter-spacing:.16em;text-transform:uppercase;padding:9px 13px;line-height:1.35}
+html[data-srb] .srb-media:not(.srb-photo) .srb-tag{position:static;display:inline-block;margin-top:10px;max-width:100%}
 html[data-srb] .srb-media figcaption:not(.srb-tag){font-size:.85rem;color:var(--sr-mist);margin-top:12px;padding-top:12px;border-top:1px solid var(--sr-rule)}
 @media (max-width:959px){
   html[data-srb] .srb-media{max-width:640px}
