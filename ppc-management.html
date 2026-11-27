@@ -135,7 +135,7 @@ footer{background:var(--black);border-top:1px solid var(--line);padding:80px 0 4
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&amp;family=Newsreader:ital,opsz,wght@0,6..72,300..500;1,6..72,300..500&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap">
-<link rel="stylesheet" href="/assets/signal-room.css">
+<link rel="stylesheet" href="/assets/signal-room.css?v=2">
 <link rel="stylesheet" href="/assets/signal-room-b.css?v=2">
 <script src="/assets/signal-room.js" defer></script>
 </head>
@@ -144,7 +144,7 @@ footer{background:var(--black);border-top:1px solid var(--line);padding:80px 0 4
   <a href="/" class="brand">FRDT<b>LAB</b></a>
   <button class="menu-btn" id="menuBtn" aria-label="Toggle menu" aria-expanded="false">Menu</button>
   <div class="nav-links" id="navLinks"><a href="/">The Lab</a>
-        <a href="/about">About</a><a href="/the-work/">The Work</a><a href="/#build">How We Build</a><a href="/work-with-me">Work With Me</a><a href="/in-motion">In Motion</a><a href="https://theunapologeticleader.com">Unapologetic</a><a href="/shop">Shop</a><a href="https://afrdtlab.substack.com/" class="nav-cta">Subscribe</a></div>
+        <a href="/about">About</a><a href="/the-work/">The Work</a><a href="/#build">How We Build</a><a href="/work-with-me" class="nav-primary">Work With Me</a><a href="/in-motion">In Motion</a><a href="https://theunapologeticleader.com">Unapologetic</a><a href="/shop">Shop</a><a href="https://afrdtlab.substack.com/" class="nav-cta">Subscribe</a></div>
 </nav>
 <header class="hero"><div class="hero-bg"></div><div class="wrap srb-split"><div class="srb-split-text"><div class="eyebrow">PPC management &middot; Google Ads, Meta &amp; SEO</div><h1>PPC management that <em>audits before it spends.</em></h1><p>I run Google Ads and Meta for growing businesses, with SEO read alongside them, because paid and organic search fight over the same searches. Every engagement starts by reading the account and the website together, then moves fast: waste out within two weeks, tracking rebuilt around real leads, and you approve every change that touches your budget.</p><div class="ppc-ctas"><a href="/work-with-me#intake" class="btn btn-primary" data-cta="ppc-hero">Talk about your account</a><a href="#gaps" class="btn btn-ghost">See a real gap map</a></div><ul class="ppc-proof" aria-label="Credentials"><li>4x 2026 US Search Awards winner</li><li>PPC Hero Top 25, named six times</li><li>Twenty years in paid search and SEO</li><li>Detroit-rooted, remote across the US</li></ul>
 </div>
@@ -222,10 +222,6 @@ const nl=document.getElementById('navLinks'),mb=document.getElementById('menuBtn
 mb.addEventListener('click',()=>{const o=nl.classList.toggle('open');mb.setAttribute('aria-expanded',o)});
 nl.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{nl.classList.remove('open');mb.setAttribute('aria-expanded','false')}));
 </script>
-<script>
-const nl=document.getElementById('navLinks'),mb=document.getElementById('menuBtn');
-mb.addEventListener('click',()=>{const o=nl.classList.toggle('open');mb.setAttribute('aria-expanded',o)});
-nl.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{nl.classList.remove('open');mb.setAttribute('aria-expanded','false')}));
-</script>
+
 <script>document.querySelectorAll("[data-cta]").forEach(function(a){a.addEventListener("click",function(){try{gtag("event","generate_lead",{cta:a.getAttribute("data-cta"),page:"ppc-management"})}catch(e){}})});</script>
 </body></html>

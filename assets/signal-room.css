@@ -168,3 +168,29 @@ html[data-sr="paper"] :focus-visible{outline-color:var(--sr-signal-deep)}
   html[data-sr-art="diagram"] .hero-bg::after{width:44%}
   html[data-sr-art] .wrap.hero::after{width:34%;opacity:.7}
 }
+
+/* ---------- phone menu: one full-screen menu on every page (2026-11-27) ----------
+   Pages on signal-room-c already open a full-screen menu. The rest opened a short drop-down
+   (or nothing). This gives them the same full-screen menu. width/height use viewport units so
+   it fills the screen even where the nav has a blur behind it. */
+@media (max-width:1180px){
+  html[data-sr] body:not(.src) nav:has(.menu-btn) .brand,
+  html[data-sr] body:not(.src) nav:has(.menu-btn) .menu-btn{position:relative;z-index:3}
+  html[data-sr] body:not(.src) nav:has(.menu-btn) .nav-links.open{
+    display:flex!important;flex-direction:column!important;align-items:flex-start!important;justify-content:center!important;gap:6px!important;
+    position:fixed!important;top:0!important;left:0!important;right:auto!important;bottom:auto!important;z-index:2!important;
+    width:100vw!important;height:100vh!important;height:100dvh!important;max-height:none!important;margin:0!important;
+    padding:96px max(24px,env(safe-area-inset-left,0px)) 40px!important;overflow-y:auto!important;
+    background:var(--sr-ink,#0a0a0c)!important;border:0!important;box-shadow:none!important}
+  html[data-sr] body:not(.src) nav:has(.menu-btn) .nav-links.open a{
+    display:inline-block!important;margin:0!important;padding:4px 0!important;border:0!important;background:none!important;box-shadow:none!important;
+    font-family:var(--sr-display,system-ui)!important;font-variation-settings:"wdth" 118;font-weight:780!important;
+    font-size:clamp(1.8rem,7vw,2.8rem)!important;line-height:1.15!important;letter-spacing:-.01em!important;text-transform:none!important;
+    color:var(--sr-chalk,#ecebe7)!important;white-space:normal!important}
+  html[data-sr] body:not(.src) nav:has(.menu-btn) .nav-links.open a:is(.current,[aria-current]){color:var(--sr-white,#fafaf8)!important;box-shadow:inset 0 -3px 0 var(--sr-signal,#e84393)!important}
+  html[data-sr] body:not(.src) nav:has(.menu-btn) .nav-links.open a:is(.nav-primary,.nav-cta){
+    margin-top:10px!important;padding:14px 20px!important;font-family:var(--sr-mono,monospace)!important;font-variation-settings:normal;
+    font-size:1.05rem!important;font-weight:500!important;letter-spacing:.14em!important;text-transform:uppercase!important}
+  html[data-sr] body:not(.src) nav:has(.menu-btn) .nav-links.open a.nav-primary{background:var(--sr-signal,#e84393)!important;color:var(--sr-ink,#0a0a0c)!important}
+  html[data-sr] body:not(.src) nav:has(.menu-btn) .nav-links.open a.nav-cta{margin-top:4px!important;border:1px solid var(--sr-rule-hi,#3a3c46)!important;color:var(--sr-chalk,#ecebe7)!important}
+}

@@ -90,7 +90,7 @@ footer{background:var(--black);border-top:1px solid var(--line);padding:80px 0 4
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&amp;family=Newsreader:ital,opsz,wght@0,6..72,300..500;1,6..72,300..500&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap">
-<link rel="stylesheet" href="/assets/signal-room.css">
+<link rel="stylesheet" href="/assets/signal-room.css?v=2">
 <link rel="stylesheet" href="/assets/signal-room-b.css?v=2">
 <script src="/assets/signal-room.js" defer></script>
 </head>
@@ -98,7 +98,7 @@ footer{background:var(--black);border-top:1px solid var(--line);padding:80px 0 4
 <nav id="nav">
   <a href="/" class="brand">FRDT<b>LAB</b></a>
   <button class="menu-btn" id="menuBtn" aria-label="Toggle menu" aria-expanded="false">Menu</button>
-  <div class="nav-links" id="navLinks"><a href="/">The Lab</a><a href="/about" class="current">About</a><a href="/the-work/">The Work</a><a href="/#build">How We Build</a><a href="/work-with-me">Work With Me</a><a href="/in-motion">In Motion</a><a href="https://theunapologeticleader.com">Unapologetic</a><a href="/shop">Shop</a><a href="https://afrdtlab.substack.com/" class="nav-cta">Subscribe</a></div>
+  <div class="nav-links" id="navLinks"><a href="/">The Lab</a><a href="/about" class="current">About</a><a href="/the-work/">The Work</a><a href="/#build">How We Build</a><a href="/work-with-me" class="nav-primary">Work With Me</a><a href="/in-motion">In Motion</a><a href="https://theunapologeticleader.com">Unapologetic</a><a href="/shop">Shop</a><a href="https://afrdtlab.substack.com/" class="nav-cta">Subscribe</a></div>
 </nav>
 <header class="hero"><div class="hero-bg"></div><div class="wrap srb-split"><div class="srb-split-text"><div class="eyebrow">About &middot; FRDTLAB</div><h1>Amanda <em>Friedt</em>.</h1><p>Detroit-based growth and marketing operator. Founder of FRDTLAB, creator of the Unapologetic Leadership movement, keynote speaker, and 4x 2026 US Search Awards winner.</p><a href="/work-with-me" class="btn btn-primary">Work with me</a>
 </div>
@@ -130,9 +130,5 @@ const nl=document.getElementById('navLinks'),mb=document.getElementById('menuBtn
 mb.addEventListener('click',()=>{const o=nl.classList.toggle('open');mb.setAttribute('aria-expanded',o)});
 nl.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{nl.classList.remove('open');mb.setAttribute('aria-expanded','false')}));
 </script>
-<script>
-const nl=document.getElementById('navLinks'),mb=document.getElementById('menuBtn');
-mb.addEventListener('click',()=>{const o=nl.classList.toggle('open');mb.setAttribute('aria-expanded',o)});
-nl.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{nl.classList.remove('open');mb.setAttribute('aria-expanded','false')}));
-</script>
+
 </body></html>
