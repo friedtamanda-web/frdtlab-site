@@ -455,26 +455,25 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--blue);outline-offse
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&amp;family=Newsreader:ital,opsz,wght@0,6..72,300..500;1,6..72,300..500&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap">
 <link rel="stylesheet" href="/assets/signal-room.css">
 <script src="/assets/signal-room.js" defer></script>
+<link rel="stylesheet" href="/assets/signal-room-c.css">
+<script src="/assets/signal-room-c.js" defer></script>
 </head>
-<body>
-<nav class="fl-nav">
-  <a href="/" class="brand">FRDT<b>LAB</b></a>
-  <button class="fl-menu" aria-label="Toggle menu" aria-expanded="false" onclick="var l=document.getElementById('flLinks');var o=l.classList.toggle('open');this.setAttribute('aria-expanded',o)">Menu</button>
-  <div class="links" id="flLinks">
-    <a href="/">Home</a>
-    <a href="/in-motion">In Motion</a>
-    <a href="/frameworks">Frameworks</a>
-    <a href="/work-with-me">Work With Me</a>
-    <a href="/guide" class="current">The Guide</a>
-    <a href="https://afrdtlab.substack.com/" class="cta">Subscribe</a>
-  </div>
+<body class="src src-dark src-guide">
+<nav id="nav">
+<a href="/" class="brand">FRDT<b>LAB</b></a>
+<button class="menu-btn" id="menuBtn" aria-label="Toggle menu" aria-expanded="false" aria-controls="navLinks">Menu</button>
+<div class="nav-links" id="navLinks"><a href="/">The Lab</a><a href="/about">About</a><a href="/the-work/">The Work</a><a href="/#build">How We Build</a><a href="/work-with-me" class="nav-primary">Work With Me</a><a href="/in-motion">In Motion</a><a href="https://theunapologeticleader.com">Unapologetic</a><a href="/shop">Shop</a><a href="https://afrdtlab.substack.com/" class="nav-cta">Subscribe</a></div>
 </nav>
 
 <!-- HERO -->
-<div class="hero">
+<div class="hero src-band">
+<div class="src-hero"><div class="src-hero-text">
   <div class="label">SMX Advanced Training · Complete Guide</div>
   <h1>Infrastructure Era Marketing:<br><span>Build Your Own System</span></h1>
   <p class="sub">The practitioner's guide for SEO and PPC professionals. Three verticals · ecommerce, luxury, B2B SaaS · same six-layer framework. Visual step-by-step for every layer, with exercises you can run on your own accounts this week.</p>
+</div>
+<figure class="src-photo frame is-portrait"><picture><source srcset="/img/speaking-smx-siloed-teams.webp" type="image/webp"><img src="/img/speaking-smx-siloed-teams.jpg" width="771" height="1024" alt="Amanda Friedt on stage at SMX presenting The Misfire: Siloed Teams" fetchpriority="high" decoding="async"></picture><span class="src-tag" data-src-added>On stage · SMX</span></figure>
+</div>
 </div>
 
 <!-- PREMISE -->
@@ -498,9 +497,9 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--blue);outline-offse
       <table>
         <thead><tr>
           <th>Layer</th>
-          <th>🏠 Door Parts</th>
-          <th>⛵ Yacht Sales</th>
-          <th>🔒 B2B SaaS</th>
+          <th><span class="src-emo" aria-hidden="true">🏠 </span>Door Parts</th>
+          <th><span class="src-emo" aria-hidden="true">⛵ </span>Yacht Sales</th>
+          <th><span class="src-emo" aria-hidden="true">🔒 </span>B2B SaaS</th>
         </tr></thead>
         <tbody>
         <tr>
@@ -558,9 +557,9 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--blue);outline-offse
 
 <!-- VERTICAL TABS -->
 <div class="vert-bar" id="vertBar">
-  <button class="active" onclick="switchVert(0)">🏠 Ecommerce · Door Parts</button>
-  <button onclick="switchVert(1)">⛵ Luxury · Yacht Sales</button>
-  <button onclick="switchVert(2)">🔒 B2B SaaS · Cybersecurity</button>
+  <button class="active" onclick="switchVert(0)"><span class="src-emo" aria-hidden="true">🏠 </span>Ecommerce · Door Parts</button>
+  <button onclick="switchVert(1)"><span class="src-emo" aria-hidden="true">⛵ </span>Luxury · Yacht Sales</button>
+  <button onclick="switchVert(2)"><span class="src-emo" aria-hidden="true">🔒 </span>B2B SaaS · Cybersecurity</button>
 </div>
 
 <!-- STEP TABS -->
@@ -1425,28 +1424,32 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--blue);outline-offse
 </div><!-- /panels -->
 
 <!-- FOOTER -->
-<footer class="fl-foot">
-  <div class="fl-foot-in">
-    <div class="fl-foot-top">
-      <div class="fl-foot-brand">FRDT<b>LAB</b></div>
-      <div class="fl-foot-tag">Systems. Stories. Signal.<span>Detroit-rooted · Future-facing</span></div>
-    </div>
-    <div class="fl-foot-bottom">
-      <span class="meta">© 2026 FRDTLAB · Infrastructure Era Marketing</span>
-      <div class="fl-foot-links">
-        <a href="/">Home</a>
-        <a href="/in-motion">In Motion</a>
-    <a href="/frameworks">Frameworks</a>
-    <a href="/work-with-me">Work With Me</a>
-        <a href="https://theunapologeticleader.com">Unapologetic</a>
-        <a href="/prompt-pack">Prompt Pack</a><a href="/shop">Shop</a><a href="https://afrdtlab.substack.com/">Newsletter</a>
-        <a href="https://www.linkedin.com/in/amandafriedt/">LinkedIn</a>
-        <a href="https://www.instagram.com/unapologetic_leader/">Instagram</a>
-        <a href="https://www.tiktok.com/@unapologeticleadership">TikTok</a>
-        <a href="mailto:hello@frdtlab.com">Contact</a>
-      </div>
-    </div>
-  </div>
+<footer id="footer">
+<div class="wrap">
+<div class="foot-top">
+<div class="foot-brand">FRDT<b>LAB</b></div>
+<div class="foot-tag">Systems. Stories. Signal.<span>Detroit-rooted · Future-facing</span></div>
+</div>
+<div class="foot-bottom">
+<span class="meta">© 2026 FRDTLAB · Infrastructure Era Marketing</span>
+<div class="foot-links">
+<a href="/in-motion">In Motion</a>
+<a href="/guide">The Guide</a>
+<a href="/">Home</a>
+<a href="/frameworks">Frameworks</a>
+<a href="/work-with-me">Work With Me</a>
+<a href="https://theunapologeticleader.com">Unapologetic</a>
+<a href="/prompt-pack">Prompt Pack</a>
+<a href="/shop">Shop</a>
+<a href="/lipstick-and-receipts">Lipstick &amp; Receipts</a>
+<a href="https://afrdtlab.substack.com/">Newsletter</a>
+<a href="https://www.linkedin.com/in/amandafriedt/">LinkedIn</a>
+<a href="https://www.instagram.com/unapologetic_leader/">Instagram</a>
+<a href="https://www.tiktok.com/@unapologeticleadership">TikTok</a>
+<a href="mailto:hello@frdtlab.com">Contact</a>
+</div>
+</div>
+</div>
 </footer>
 
 <script>

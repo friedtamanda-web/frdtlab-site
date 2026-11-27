@@ -39,12 +39,22 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&amp;family=Newsreader:ital,opsz,wght@0,6..72,300..500;1,6..72,300..500&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap">
 <link rel="stylesheet" href="/assets/signal-room.css">
 <script src="/assets/signal-room.js" defer></script>
+<link rel="stylesheet" href="/assets/signal-room-c.css">
+<script src="/assets/signal-room-c.js" defer></script>
 </head>
-<body>
-  <header><a href="/">FRDTLAB</a></header>
+<body class="src src-dark src-kit">
+  <nav id="nav">
+<a href="/" class="brand">FRDT<b>LAB</b></a>
+<button class="menu-btn" id="menuBtn" aria-label="Toggle menu" aria-expanded="false" aria-controls="navLinks">Menu</button>
+<div class="nav-links" id="navLinks"><a href="/">The Lab</a><a href="/about">About</a><a href="/the-work/">The Work</a><a href="/#build">How We Build</a><a href="/work-with-me" class="nav-primary">Work With Me</a><a href="/in-motion">In Motion</a><a href="https://theunapologeticleader.com">Unapologetic</a><a href="/shop">Shop</a><a href="https://afrdtlab.substack.com/" class="nav-cta">Subscribe</a></div>
+</nav>
   <main>
+    <div class="src-band src-bleed"><div class="src-hero"><div class="src-hero-text">
     <h1>Shopify Launch Checklist</h1>
     <p class="intro">Get a free Shopify launch checklist for products, payments, shipping, local pickup, test orders, and domain setup before opening your online store.</p>
+    </div>
+    <figure class="src-photo frame is-diagram"><picture><source srcset="/img/feed-as-ai-infrastructure.webp" type="image/webp"><img src="/img/feed-as-ai-infrastructure.jpg" width="1200" height="675" alt="Layered diagram showing the product feed as infrastructure: data integrity at the base, entity intelligence in the middle, governance on top, supporting Shopping visibility, LLM retrieval, and entity confidence." fetchpriority="high" decoding="async"></picture><span class="src-tag" data-src-added>Diagram · The feed is infrastructure</span></figure>
+    </div></div>
     <section id="shopify-launch" aria-labelledby="guide-title">
         <h2 id="guide-title">Setup steps</h2>
         <p>Take a test order all the way from checkout to fulfillment before you invite customers in.</p>
@@ -67,6 +77,31 @@
     <h2>What to verify before removing the storefront password</h2><p>Have someone place an order on a phone using each fulfillment option you offer. Confirm that inventory updates correctly, the customer receives an order confirmation, and your team knows who handles the first pickup, shipment, or refund. Make sure live payments are enabled before opening the store.</p>
     <p>Related guide: <a href="/lead-follow-up-template.html">Lead follow-up automation template</a>.</p>
   </main>
+<footer id="footer">
+<div class="wrap">
+<div class="foot-top">
+<div class="foot-brand">FRDT<b>LAB</b></div>
+<div class="foot-tag">Systems. Stories. Signal.<span>Detroit-rooted · Future-facing</span></div>
+</div>
+<div class="foot-bottom">
+<span class="meta">© 2026 FRDTLAB · Workflow kits</span>
+<div class="foot-links">
+<a href="/">Home</a>
+<a href="/frameworks">Frameworks</a>
+<a href="/work-with-me">Work With Me</a>
+<a href="https://theunapologeticleader.com">Unapologetic</a>
+<a href="/prompt-pack">Prompt Pack</a>
+<a href="/shop">Shop</a>
+<a href="/lipstick-and-receipts">Lipstick &amp; Receipts</a>
+<a href="https://afrdtlab.substack.com/">Newsletter</a>
+<a href="https://www.linkedin.com/in/amandafriedt/">LinkedIn</a>
+<a href="https://www.instagram.com/unapologetic_leader/">Instagram</a>
+<a href="https://www.tiktok.com/@unapologeticleadership">TikTok</a>
+<a href="mailto:hello@frdtlab.com">Contact</a>
+</div>
+</div>
+</div>
+</footer>
   <script>
     // Fill these in with the approved program URLs. Empty values keep offers hidden.
     const affiliateLinks = { make: '', shopify: '' };
