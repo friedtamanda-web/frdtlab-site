@@ -438,6 +438,34 @@ footer{background:var(--black);border-top:1px solid var(--line);padding:80px 0 4
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&amp;family=Newsreader:ital,opsz,wght@0,6..72,300..500;1,6..72,300..500&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap">
 <link rel="stylesheet" href="/assets/signal-room.css">
+<style>
+/* Shop: one card system, one button system */
+.shop-list{display:flex;flex-direction:column;gap:18px}
+.shop-row,.shop-card{border:1px solid var(--line);border-radius:4px;background:var(--charcoal);min-width:0}
+.shop-row.is-hot,.shop-card.is-hot{border-color:var(--pink)}
+.shop-row{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:28px;align-items:center;padding:24px}
+.shop-row:not(:has(.shop-media)){grid-template-columns:minmax(0,1fr) auto}
+.shop-media{display:block;margin:0;line-height:0}
+.shop-media img{display:block;width:100%;height:auto;max-width:none;border-radius:3px}
+.shop-media.is-tall{width:132px}
+.shop-media.is-wide{width:240px}
+.shop-kick{font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--pink)}
+.shop-row h3,.shop-card h3{font-family:var(--display);text-transform:uppercase;color:var(--white);font-size:1.4rem;line-height:1.15;margin:8px 0;text-wrap:balance}
+.shop-row p,.shop-card p{color:var(--body-text);margin:0}
+.shop-more{margin-top:10px!important;font-size:.95rem}
+.shop-more a{color:var(--pink);text-decoration:underline;text-underline-offset:2px}
+.shop-acts{display:flex;flex-direction:column;gap:10px;min-width:0}
+.shop-acts .btn{justify-content:center;text-align:center;padding:0 22px;white-space:nowrap;text-decoration:none}
+.shop-acts.is-inline{flex-direction:row;flex-wrap:wrap;align-items:center;margin-top:auto;padding-top:18px}
+.shop-link{font-family:var(--mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--steel)}
+.shop-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.shop-card{display:flex;flex-direction:column;padding:0 24px 24px;overflow:hidden}
+.shop-cover{display:block;margin:0 -24px 18px;line-height:0}
+.shop-cover img{display:block;width:100%;max-width:none;height:auto;aspect-ratio:16/9;object-fit:cover}
+.shop-card p{flex:1}
+@media (max-width:900px){.shop-grid{grid-template-columns:minmax(0,1fr)}.shop-row{grid-template-columns:auto minmax(0,1fr)}.shop-row .shop-acts{grid-column:1/-1;flex-direction:row;flex-wrap:wrap}.shop-row:not(:has(.shop-media)) .shop-acts{grid-column:auto}}
+@media (max-width:640px){.shop-row,.shop-row:not(:has(.shop-media)){grid-template-columns:minmax(0,1fr);gap:18px}.shop-media.is-tall{width:120px}.shop-media.is-wide{width:100%}.shop-row .shop-acts,.shop-row:not(:has(.shop-media)) .shop-acts{grid-column:auto;flex-direction:column}.shop-acts .btn{white-space:normal;width:100%}.shop-acts.is-inline .btn{width:auto}}
+</style>
 <script src="/assets/signal-room.js" defer></script>
 </head>
 <body>
@@ -473,79 +501,77 @@ footer{background:var(--black);border-top:1px solid var(--line);padding:80px 0 4
 
 <section class="sec" style="border-top:1px solid var(--line)"><div class="wrap">
   <div class="sec-head"><div class="eyebrow">Products</div><h2>Buy once. Use forever.</h2></div>
-  <div style="margin-bottom:18px;border:1px solid var(--pink);border-radius:12px;padding:24px;background:var(--charcoal);display:flex;flex-wrap:wrap;align-items:center;gap:24px;justify-content:space-between">
-    <a href="/img/mini-field-guide-cover.webp"><img src="/img/mini-field-guide-cover.webp" alt="Build What’s Next. Stay Human. Mini Field Guide cover" loading="lazy" style="height:auto;width:155px;max-width:100%;border-radius:8px;display:block"></a>
-    <div style="flex:1 1 280px">
-      <div style="font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--pink)">Start here &middot; $9</div>
-      <h3 style="font-family:var(--display);text-transform:uppercase;color:var(--white);font-size:1.5rem;margin:8px 0 6px">Build What&rsquo;s Next. Stay Human.</h3>
-      <p style="color:var(--body-text);margin:0">The 65-page Mini Field Guide. A prelude and nine chapters on marketing and leadership. Instant download after checkout.</p>
-      <p><a href="/img/mini-field-guide-contents.webp" style="color:var(--pink)">Preview the table of contents</a></p>
+  <div class="shop-list">
+  <article class="shop-row is-hot">
+    <a class="shop-media is-tall" href="/img/mini-field-guide-cover.webp"><img src="/img/mini-field-guide-cover.webp" alt="Build What’s Next. Stay Human. Mini Field Guide cover" loading="lazy" width="1080" height="1620"></a>
+    <div class="shop-body">
+      <div class="shop-kick">Start here &middot; $9</div>
+      <h3>Build What&rsquo;s Next. Stay Human.</h3>
+      <p>The 65-page Mini Field Guide. A prelude and nine chapters on marketing and leadership. Instant download after checkout.</p>
+      <p class="shop-more"><a href="/img/mini-field-guide-contents.webp">Preview the table of contents</a></p>
     </div>
-    <a class="gumroad-button" href="https://buy.stripe.com/5kQ28r1vF8qPbIubjT1Nu05" style="background:#E84393;color:#fff;font-weight:700;border-radius:30px;padding:14px 28px;text-decoration:none;white-space:nowrap">Get it, $9</a>
-  </div>
-  <article style="margin-bottom:18px;border:1px solid var(--line);border-radius:12px;padding:24px;background:var(--charcoal);display:flex;flex-wrap:wrap;align-items:center;gap:20px;justify-content:space-between">
-    <div style="flex:1 1 280px">
-      <div class="eyebrow">The Unapologetic Leader · Digital workbook</div>
-      <h3 style="color:var(--white);margin:8px 0">Whose Is This?</h3>
-      <p style="color:var(--body-text);margin:0">A 14-day workbook to sort what’s yours, practice one boundary, and plan one clear handoff.</p>
-    </div>
-    <a class="btn-primary" href="/whose-is-this.html" style="border-radius:30px;padding:12px 22px;text-decoration:none">View workbook · $24</a>
+    <div class="shop-acts"><a class="btn btn-primary" href="https://buy.stripe.com/5kQ28r1vF8qPbIubjT1Nu05">Get it, $9</a></div>
   </article>
-  <div class="cols" style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px">
-    <div style="border:1px solid var(--pink);border-radius:12px;padding:24px;background:var(--charcoal);display:flex;flex-direction:column">
-      <picture><source srcset="img/cover-prompt-pack.webp" type="image/webp"><img width="1280" height="720" src="img/cover-prompt-pack.png" alt="The AI Marketing Prompt Pack, cover" loading="lazy" style="height:auto;width:calc(100% + 48px);margin:-24px -24px 16px;border-radius:12px 12px 0 0;display:block"></picture>
-      <div style="font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--pink)">Available now · $49</div>
-      <h3 style="font-family:var(--display);text-transform:uppercase;color:var(--white);font-size:1.4rem;margin:8px 0 8px">The AI Marketing Prompt Pack</h3>
-      <p style="color:var(--body-text);margin-bottom:18px;flex:1">50 operator-grade prompts across audience, content, AI search, paid, feed, social, email, and systems. Each comes with a worked example and a quality check. Instant download.</p>
-      <div style="display:flex;gap:10px;flex-wrap:wrap"><a class="gumroad-button" href="https://buy.stripe.com/cNi14ngqzfTh7se2Nn1Nu04" style="background:#E84393;color:#fff;font-weight:700;border-radius:30px;padding:12px 22px;text-decoration:none">Buy, $49</a><a href="/prompt-pack" style="align-self:center;font-family:var(--mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--steel)">Details →</a></div>
+  <article class="shop-row">
+    <a class="shop-media is-tall" href="/whose-is-this.html"><img src="/img/whose-is-this-cover.webp" alt="Cover of Whose Is This? The Caring vs. Carrying Workbook by Amanda Friedt" loading="lazy" width="1080" height="1543"></a>
+    <div class="shop-body">
+      <div class="shop-kick">The Unapologetic Leader · Digital workbook</div>
+      <h3>Whose Is This?</h3>
+      <p>A 14-day workbook to sort what’s yours, practice one boundary, and plan one clear handoff.</p>
     </div>
-    <div style="border:1px solid var(--line);border-radius:12px;padding:24px;background:var(--charcoal);display:flex;flex-direction:column">
-      <picture><source srcset="img/cover-playbook.webp" type="image/webp"><img width="1280" height="720" src="img/cover-playbook.png" alt="Get Recommended by AI, The GEO Playbook cover" loading="lazy" style="height:auto;width:calc(100% + 48px);margin:-24px -24px 16px;border-radius:12px 12px 0 0;display:block"></picture>
-      <div style="font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--pink)">Available now · $97</div>
-      <h3 style="font-family:var(--display);text-transform:uppercase;color:var(--white);font-size:1.4rem;margin:8px 0 8px">Get Recommended by AI, The GEO Playbook</h3>
-      <p style="color:var(--body-text);margin-bottom:18px;flex:1">The how-to for showing up in ChatGPT, Perplexity, and Google AI answers. The confidence engine, the 7 levers, and a 30-day plan.</p>
-      <div style="display:flex;gap:10px;flex-wrap:wrap"><a class="gumroad-button" href="https://unapologeticleader.gumroad.com/l/dorbkf?wanted=true" data-gumroad-overlay-checkout="true" style="background:#E84393;color:#fff;font-weight:700;border-radius:30px;padding:12px 22px;text-decoration:none">Buy, $97</a><a href="/geo-playbook" style="align-self:center;font-family:var(--mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--steel)">Details &rarr;</a></div>
-    </div>
-    <div style="border:1px solid var(--line);border-radius:12px;padding:24px;background:var(--charcoal);display:flex;flex-direction:column">
-      <picture><source srcset="img/cover-starter-kit.webp" type="image/webp"><img width="1280" height="720" src="img/cover-starter-kit.png" alt="Small Business AI Starter Kit, cover" loading="lazy" style="height:auto;width:calc(100% + 48px);margin:-24px -24px 16px;border-radius:12px 12px 0 0;display:block"></picture>
-      <div style="font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--pink)">Available now · $97</div>
-      <h3 style="font-family:var(--display);text-transform:uppercase;color:var(--white);font-size:1.4rem;margin:8px 0 8px">Small Business AI Starter Kit</h3>
-      <p style="color:var(--body-text);margin-bottom:18px;flex:1">The five AI systems a small business should set up first, with the prompts and SOPs to run them.</p>
-      <div style="display:flex;gap:10px;flex-wrap:wrap"><a class="gumroad-button" href="https://unapologeticleader.gumroad.com/l/nynshb?wanted=true" data-gumroad-overlay-checkout="true" style="background:#E84393;color:#fff;font-weight:700;border-radius:30px;padding:12px 22px;text-decoration:none">Buy, $97</a><a href="/starter-kit" style="align-self:center;font-family:var(--mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--steel)">Details &rarr;</a></div>
-    </div>
-  </div>
-  <article style="margin-top:18px;border:1px solid var(--pink);border-radius:12px;padding:24px;background:var(--charcoal);display:flex;flex-wrap:wrap;align-items:center;gap:24px;justify-content:space-between">
-    <div style="flex:1 1 320px">
-      <div style="font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--pink)">New &middot; A Claude skill &middot; from $49</div>
-      <h3 style="font-family:var(--display);text-transform:uppercase;color:var(--white);font-size:1.5rem;margin:8px 0 6px">DAM Agent</h3>
-      <p style="color:var(--body-text);margin:0 0 10px">Find what you already made. A Claude skill that names every photo, video and clip once, tracks sponsor and UGC rights to their expiry date, and traces every clip back to its source. Instant download after checkout.</p>
-      <p style="color:var(--body-text);margin:0;font-size:.95rem"><a href="/dam-agent" style="color:var(--pink);text-decoration:underline;text-underline-offset:2px">See what&rsquo;s inside DAM Agent</a>.</p>
-    </div>
-    <div style="display:flex;flex-direction:column;gap:10px;flex:0 0 auto">
-      <a class="gumroad-button" href="https://buy.stripe.com/4gM3cvb6f22r5k6afP1Nu07" style="background:#E84393;color:#0b0b0c;font-weight:700;border-radius:30px;padding:14px 24px;text-align:center;text-decoration:none">Creator edition, $49</a>
-      <a class="gumroad-button" href="https://buy.stripe.com/28E4gz0rB7mLaEqafP1Nu08" style="background:transparent;color:var(--white);border:1px solid var(--pink);font-weight:700;border-radius:30px;padding:13px 24px;text-align:center;text-decoration:none">Team edition, $249</a>
-    </div>
+    <div class="shop-acts"><a class="btn btn-primary" href="/whose-is-this.html">View workbook · $24</a></div>
   </article>
-  <div style="margin-top:18px;border:2px solid var(--pink);border-radius:12px;padding:28px 24px;background:var(--charcoal);display:flex;flex-wrap:wrap;align-items:center;gap:24px;justify-content:space-between">
-    <div style="flex:1 1 320px">
-      <div style="font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--pink)">Done for you &middot; from $497</div>
-      <h3 style="font-family:var(--display);text-transform:uppercase;color:var(--white);font-size:1.5rem;margin:8px 0 6px">The AI Visibility Audit</h3>
-      <p style="color:var(--body-text);margin:0 0 10px">Don&rsquo;t want to run the playbook yourself? We do it for you. How ChatGPT, Perplexity, Gemini, and Google AI answers see your brand, scored, with the fixes ranked by impact. Delivered in one week.</p>
-      <p style="color:var(--body-text);margin:0;font-size:.95rem">Built on the same system that took one catalog from 28.51% to 83.43% search visibility in a quarter. <a href="/ai-visibility-audit" style="color:var(--pink);text-decoration:underline;text-underline-offset:2px">See what&rsquo;s inside</a>.</p>
-    </div>
-    <div style="display:flex;flex-direction:column;gap:10px;flex:0 0 auto">
-      <a class="gumroad-button" href="https://unapologeticleader.gumroad.com/l/AIVisibilityAudit?wanted=true" data-gumroad-overlay-checkout="true" style="background:#E84393;color:#fff;font-weight:700;border-radius:30px;padding:14px 24px;text-align:center">Buy the Audit, $497</a>
-      <a class="gumroad-button" href="https://unapologeticleader.gumroad.com/l/AIVisibilityCompetitiveAudit?wanted=true" data-gumroad-overlay-checkout="true" style="background:transparent;color:var(--white);border:1px solid var(--line);font-weight:700;border-radius:30px;padding:13px 24px;text-align:center">With competitor benchmark, $1,250</a>
-    </div>
+  <div class="shop-grid">
+    <article class="shop-card is-hot">
+      <picture class="shop-cover"><source srcset="img/cover-prompt-pack.webp" type="image/webp"><img width="1280" height="720" src="img/cover-prompt-pack.png" alt="The AI Marketing Prompt Pack, cover" loading="lazy"></picture>
+      <div class="shop-kick">Available now · $49</div>
+      <h3>The AI Marketing Prompt Pack</h3>
+      <p>50 operator-grade prompts across audience, content, AI search, paid, feed, social, email, and systems. Each comes with a worked example and a quality check. Instant download.</p>
+      <div class="shop-acts is-inline"><a class="btn btn-primary" href="https://buy.stripe.com/cNi14ngqzfTh7se2Nn1Nu04">Buy, $49</a><a class="shop-link" href="/prompt-pack">Details →</a></div>
+    </article>
+    <article class="shop-card">
+      <picture class="shop-cover"><source srcset="img/cover-playbook.webp" type="image/webp"><img width="1280" height="720" src="img/cover-playbook.png" alt="Get Recommended by AI, The GEO Playbook cover" loading="lazy"></picture>
+      <div class="shop-kick">Available now · $97</div>
+      <h3>Get Recommended by AI, The GEO Playbook</h3>
+      <p>The how-to for showing up in ChatGPT, Perplexity, and Google AI answers. The confidence engine, the 7 levers, and a 30-day plan.</p>
+      <div class="shop-acts is-inline"><a class="btn btn-primary" href="https://unapologeticleader.gumroad.com/l/dorbkf?wanted=true" data-gumroad-overlay-checkout="true">Buy, $97</a><a class="shop-link" href="/geo-playbook">Details &rarr;</a></div>
+    </article>
+    <article class="shop-card">
+      <picture class="shop-cover"><source srcset="img/cover-starter-kit.webp" type="image/webp"><img width="1280" height="720" src="img/cover-starter-kit.png" alt="Small Business AI Starter Kit, cover" loading="lazy"></picture>
+      <div class="shop-kick">Available now · $97</div>
+      <h3>Small Business AI Starter Kit</h3>
+      <p>The five AI systems a small business should set up first, with the prompts and SOPs to run them.</p>
+      <div class="shop-acts is-inline"><a class="btn btn-primary" href="https://unapologeticleader.gumroad.com/l/nynshb?wanted=true" data-gumroad-overlay-checkout="true">Buy, $97</a><a class="shop-link" href="/starter-kit">Details &rarr;</a></div>
+    </article>
   </div>
-  <div style="margin-top:18px;border:1px solid var(--pink);border-radius:12px;padding:24px;background:var(--charcoal);display:flex;flex-wrap:wrap;align-items:center;gap:24px;justify-content:space-between">
-    <picture><source srcset="img/cover-bundle.webp" type="image/webp"><img width="1280" height="720" src="img/cover-bundle.png" alt="FRDTLAB Full-Stack AI Bundle, cover" loading="lazy" style="height:auto;width:260px;max-width:100%;border-radius:8px;display:block;flex:0 0 auto"></picture>
-    <div style="flex:1 1 280px">
-      <div style="font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--pink)">Best value · save $46</div>
-      <h3 style="font-family:var(--display);text-transform:uppercase;color:var(--white);font-size:1.5rem;margin:8px 0 6px">FRDTLAB Full-Stack AI Bundle</h3>
-      <p style="color:var(--body-text);margin:0">All three: the Prompt Pack, the GEO Playbook, and the Starter Kit. <span style="text-decoration:line-through;color:var(--steel)">$243</span> &nbsp;<b style="color:var(--white)">$197</b>.</p>
+  <article class="shop-row is-hot">
+    <div class="shop-body">
+      <div class="shop-kick">New &middot; A Claude skill &middot; from $49</div>
+      <h3>DAM Agent</h3>
+      <p>Find what you already made. A Claude skill that names every photo, video and clip once, tracks sponsor and UGC rights to their expiry date, and traces every clip back to its source. Instant download after checkout.</p>
+      <p class="shop-more"><a href="/dam-agent">See what&rsquo;s inside DAM Agent</a>.</p>
     </div>
-    <a class="gumroad-button" href="https://unapologeticleader.gumroad.com/l/etenyb?wanted=true" data-gumroad-overlay-checkout="true" style="background:#E84393;color:#fff;font-weight:700;border-radius:30px;padding:14px 28px;text-decoration:none;white-space:nowrap">Get the bundle, $197</a>
+    <div class="shop-acts"><a class="btn btn-primary" href="https://buy.stripe.com/4gM3cvb6f22r5k6afP1Nu07">Creator edition, $49</a><a class="btn btn-ghost" href="https://buy.stripe.com/28E4gz0rB7mLaEqafP1Nu08">Team edition, $249</a></div>
+  </article>
+  <article class="shop-row is-hot">
+    <a class="shop-media is-wide" href="/ai-visibility-audit"><picture><source srcset="/img/signals-confidence-engine.webp" type="image/webp"><img src="/img/signals-confidence-engine.jpg" alt="Illustration of a muscle-car engine labeled Confidence Engine, fed by first-party, search, social, video, commerce and review signals, with a recommendation on the far side" loading="lazy"></picture></a>
+    <div class="shop-body">
+      <div class="shop-kick">Done for you &middot; from $497</div>
+      <h3>The AI Visibility Audit</h3>
+      <p>Don&rsquo;t want to run the playbook yourself? We do it for you. How ChatGPT, Perplexity, Gemini, and Google AI answers see your brand, scored, with the fixes ranked by impact. Delivered in one week.</p>
+      <p class="shop-more">Built on the same system that took one catalog from 28.51% to 83.43% search visibility in a quarter. <a href="/ai-visibility-audit">See what&rsquo;s inside</a>.</p>
+    </div>
+    <div class="shop-acts"><a class="btn btn-primary" href="https://unapologeticleader.gumroad.com/l/AIVisibilityAudit?wanted=true" data-gumroad-overlay-checkout="true">Buy the Audit, $497</a><a class="btn btn-ghost" href="https://unapologeticleader.gumroad.com/l/AIVisibilityCompetitiveAudit?wanted=true" data-gumroad-overlay-checkout="true">With competitor benchmark, $1,250</a></div>
+  </article>
+  <article class="shop-row is-hot">
+    <picture class="shop-media is-wide"><source srcset="img/cover-bundle.webp" type="image/webp"><img width="1280" height="720" src="img/cover-bundle.png" alt="FRDTLAB Full-Stack AI Bundle, cover" loading="lazy"></picture>
+    <div class="shop-body">
+      <div class="shop-kick">Best value · save $46</div>
+      <h3>FRDTLAB Full-Stack AI Bundle</h3>
+      <p>All three: the Prompt Pack, the GEO Playbook, and the Starter Kit. <s>$243</s> &nbsp;<b>$197</b>.</p>
+    </div>
+    <div class="shop-acts"><a class="btn btn-primary" href="https://unapologeticleader.gumroad.com/l/etenyb?wanted=true" data-gumroad-overlay-checkout="true">Get the bundle, $197</a></div>
+  </article>
   </div>
 </div></section>
 
