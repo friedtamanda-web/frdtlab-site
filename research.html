@@ -143,7 +143,7 @@
     </form>
     <p class="gerr" id="rerr">Add a valid email and we'll send the report.</p>
     <p class="gfine">FRDTLAB Research Lab · No spam, leave anytime</p>
-    <div id="gdone"><p style="color:#F6F4F2;font-weight:700;margin-bottom:6px">On its way. Check your inbox.</p><a href="FRDTLAB-Competence-Trap-Findings.pdf" download>Download the findings (PDF) →</a></div>
+    <div id="gdone"><p style="color:#F6F4F2;font-weight:700;margin-bottom:6px">On its way. Check your inbox.</p></div>
   </div>
 
   <div class="sources">
@@ -165,15 +165,22 @@
 <script>
 window.FRDT_research=function(){
   var el=document.getElementById('remail');var email=(el&&el.value||'').trim();var err=document.getElementById('rerr');
-  if(!email||email.indexOf('@')<1||email.lastIndexOf('.')<email.indexOf('@')){if(err)err.style.display='block';return false;}
+  if(!email||email.indexOf('@')<1||email.lastIndexOf('.')<email.indexOf('@')){if(err){err.textContent="Add a valid email and we'll send the report.";err.style.display='block';}return false;}
   if(err)err.style.display='none';
-  try{var kl=window.klaviyo=window.klaviyo||[];
-    kl.push(['identify',{'$email':email,'brand':'FRDTLAB','source':'research_lab_findings'}]);
-    kl.push(['track','Research Findings Requested',{'report':'Competence Trap Findings No. 001'}]);
-    try{window.klaviyo.push(['track','New Lead',{form:'Research Findings Requested',brand:'FRDTLAB'}]);}catch(e){}
-  }catch(e){}
-  document.getElementById('rform').style.display='none';document.getElementById('rerr').style.display='none';
-  document.getElementById('gdone').style.display='block';return false;
+  var btn=document.querySelector('#rform button');if(btn)btn.disabled=true;
+  /* kl-lead-handler v2 pattern: subscribe, then only show success on a 2xx */
+  fetch('https://a.klaviyo.com/client/subscriptions?company_id=Twvzce',{method:'POST',keepalive:true,headers:{'Content-Type':'application/vnd.api+json','revision':'2024-10-15'},body:JSON.stringify({data:{type:'subscription',attributes:{custom_source:'Competence Trap Findings Request',profile:{data:{type:'profile',attributes:{email:email,subscriptions:{email:{marketing:{consent:'SUBSCRIBED'}}}}}}},relationships:{list:{data:{type:'list',id:'QYJzYY'}}}}})})
+  .then(function(r){ if(!r.ok) throw new Error('HTTP '+r.status);
+    try{var kl=window.klaviyo=window.klaviyo||[];
+      kl.push(['identify',{'$email':email,'brand':'FRDTLAB','source':'research_lab_findings'}]);
+      kl.push(['track','Competence Trap Findings Request',{'report':'Competence Trap Findings No. 001'}]);
+      kl.push(['track','New Lead',{form:'Competence Trap Findings Request',brand:'FRDTLAB'}]);
+    }catch(e){}
+    try{ if(window.gtag){ gtag('event','generate_lead',{event_category:'form',event_label:'Competence Trap Findings Request',form_name:'Competence Trap Findings Request',send_to:'G-1CDWBM46D5'}); } }catch(e){}
+    document.getElementById('rform').style.display='none';document.getElementById('gdone').style.display='block';
+  })
+  .catch(function(){ if(btn)btn.disabled=false; if(err){err.textContent="That didn't go through. Please try again, or email hello@frdtlab.com.";err.style.display='block';} });
+  return false;
 };
 </script>
 </body></html>
