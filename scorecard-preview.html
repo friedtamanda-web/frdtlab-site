@@ -427,6 +427,7 @@ var FRDT = (function () {
     document.getElementById("result").classList.remove("show");
     document.querySelector("#quiz header.hero").style.display = "none";
     document.getElementById("compBanner").style.display = "block";
+    var rn = document.querySelector(".frdt-research-note"); if (rn) rn.style.display = "none";
     document.getElementById("quiz").style.display = "block";
     render(); window.scrollTo({ top: 0, behavior: "smooth" });
   }
@@ -434,6 +435,7 @@ var FRDT = (function () {
     mode = "self"; answers = selfAnswers.slice();
     document.querySelector("#quiz header.hero").style.display = "";
     document.getElementById("compBanner").style.display = "none";
+    var rn = document.querySelector(".frdt-research-note"); if (rn) rn.style.display = "";
     document.getElementById("quiz").style.display = "none";
     document.getElementById("result").classList.add("show");
   }
@@ -463,7 +465,7 @@ var FRDT = (function () {
     answers = new Array(QUESTIONS.length).fill(null); idx = 0; mode = "self"; selfAnswers = null; selfScore = null; selfTier = null;
     document.getElementById("compare").style.display = "none"; document.getElementById("compare").innerHTML = "";
     document.getElementById("compStart").querySelector("h3").textContent = "Score a competitor next to you";
-    document.querySelector("#quiz header.hero").style.display = ""; document.getElementById("compBanner").style.display = "none";
+    document.querySelector("#quiz header.hero").style.display = ""; document.getElementById("compBanner").style.display = "none"; var rn2 = document.querySelector(".frdt-research-note"); if (rn2) rn2.style.display = "";
     document.getElementById("result").classList.remove("show");
     document.getElementById("frdt-breakdown").style.display = "none";
     document.getElementById("frdt-gate").style.display = "block";
