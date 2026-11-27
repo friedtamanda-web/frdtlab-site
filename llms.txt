@@ -11,6 +11,7 @@
 
 ## Guides, tools, and proof
 - [AI Search Visibility guide](https://frdtlab.com/ai-search-visibility): What AI search visibility is, how ChatGPT, Perplexity, Gemini, Copilot, and AI Overviews pick sources, how to track it, and a 30-day plan.
+- [Infrastructure Era Marketing guide](https://frdtlab.com/guide): The practitioner's guide for SEO and PPC pros: one six-layer system for getting found in the AI search era.
 - [Analytics Coverage Calculator](https://frdtlab.com/analytics-coverage-calculator): Free tool. Compare analytics-reported revenue with actual revenue to see what share your tracking sees.
 - [Sample report](https://frdtlab.com/sample-report): Illustrative FRDTLAB monthly report: lane scoreboard, data currency box, platform watch.
 - [Case study: marketplace returns](https://frdtlab.com/case-study-amazon-returns): Anonymized. Fitment copy cut one listing's return rate from 12.96% to 3.13%; an untouched control rose 1.96 pts.
@@ -42,6 +43,11 @@
 - [Lipstick & Receipts](https://frdtlab.com/lipstick-and-receipts): Coming soon. Decks, diagnostics and everyday objects for high-capacity women, from Amanda Friedt. First drop: The Desk Oracle (pre-order on theunapologeticleader.com).
 - [AI Visibility Scorecard](https://frdtlab.com/scorecard): Free: can AI search engines see your brand? 7 questions, instant score.
 - [AI Marketing Prompt Pack](https://frdtlab.com/prompt-pack): 50 operator-grade AI prompts. $49, instant PDF.
+- [GEO Playbook](https://frdtlab.com/geo-playbook): $97. How to get recommended by ChatGPT, Perplexity, and Google AI: the confidence engine, the 7 levers, and a 30-day plan.
+- [Small Business AI Starter Kit](https://frdtlab.com/starter-kit): $97. The five AI systems a small business should set up first, with the prompts and SOPs to run them.
+- [Full-Stack AI Bundle](https://frdtlab.com/shop): $197 (was $243). The Prompt Pack, the GEO Playbook, and the Starter Kit.
+- [DAM Agent](https://frdtlab.com/dam-agent): A Claude skill, from $49. Names every photo, video, and clip once and tracks sponsor and UGC rights.
+- [Build What's Next. Stay Human. (Mini Field Guide)](https://frdtlab.com/shop): $9. 65 pages: a prelude and nine chapters on marketing and leadership.
 - [DAM Agent](https://frdtlab.com/dam-agent): a Claude skill for creators and marketing teams that names every asset to one grammar, tracks usage rights with expiry dates, and traces each clip to its source. Creator edition $49, Team edition $249, instant download.
 
 ## Author
