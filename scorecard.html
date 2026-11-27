@@ -79,6 +79,7 @@
   .frdt-gate-kicker{font-family:var(--mono);font-weight:500;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--pink-acc);margin:0 0 .5rem}
   .frdt-gate-head{font-family:var(--sans);font-weight:800;font-size:1.3rem;letter-spacing:-.01em;color:var(--ink);margin:0 0 .5rem}
   .frdt-gate-sub{font:400 .95rem/1.5 var(--sans);color:var(--body);margin:0 0 1.1rem}
+  .frdt-gate-label{display:block;font:600 .9rem/1.3 var(--sans);color:var(--ink);margin:0 0 .4rem}
   .frdt-gate-input{width:100%;padding:.85rem 1rem;border-radius:10px;border:1px solid var(--line-2);background:#fff;color:var(--ink);font:400 1rem/1 var(--sans)}
   .frdt-gate-input::placeholder{color:var(--faint)}
   .frdt-gate-err{font:400 .85rem/1.4 var(--sans);color:var(--pink-acc);margin:.6rem 0 0}
@@ -93,6 +94,7 @@
   .lever h4{font:700 1.02rem/1.3 var(--sans);color:var(--ink);margin:0 0 .3rem;display:flex;justify-content:space-between;gap:1rem;align-items:baseline}
   .lever h4 .mark{font:700 .76rem/1 var(--sans);padding:.28rem .6rem;border-radius:99px;white-space:nowrap}
   .mark.weak{background:rgba(232,67,147,.12);color:var(--pink-acc)}
+  .mark.next{background:rgba(17,17,20,.07);color:var(--ink)}
   .mark.ok{background:rgba(47,122,82,.12);color:var(--good)}
   .lever p{margin:.25rem 0 0;color:var(--body);font-size:.94rem}
   .cta{margin-top:2rem;padding:1.7rem;border:1px solid rgba(232,67,147,.3);border-radius:14px;background:linear-gradient(180deg,rgba(232,67,147,.06),rgba(232,67,147,.01));text-align:center}
@@ -146,7 +148,7 @@
       <button type="button" class="back" id="backBtn" disabled onclick="FRDT.back()">← Back</button>
       <span></span>
     </div>
-      <p class="frdt-research-note" style="font-size:.82rem;line-height:1.5;opacity:.75;margin:10px 0 0">Your answers are saved anonymously, with no name or email, and used only in aggregate research.</p>
+      <p class="frdt-research-note" style="font-size:.82rem;line-height:1.5;opacity:.75;margin:10px 0 0">Your seven answers are stored anonymously for aggregate research. Nothing ties them to your name or email.</p>
   </div>
 
   <!-- RESULT -->
@@ -163,10 +165,11 @@
       <p class="frdt-gate-kicker">Your first move</p>
       <h3 class="frdt-gate-head">Want the exact fixes for your tier?</h3>
       <p class="frdt-gate-sub">You've got your score. The breakdown tells you what to fix first, in the order that actually moves your visibility. No spam, leave anytime.</p>
-      <input id="frdt-scorecard-email" type="email" inputmode="email" autocomplete="email" placeholder="you@company.com" class="frdt-gate-input" />
-      <p id="frdt-scorecard-err" class="frdt-gate-err" style="display:none;">Add a valid email and we'll send your breakdown.</p>
+      <label for="frdt-scorecard-email" class="frdt-gate-label">Your email</label>
+      <input id="frdt-scorecard-email" type="email" inputmode="email" autocomplete="email" placeholder="you@company.com" class="frdt-gate-input" required aria-describedby="frdt-scorecard-err" />
+      <p id="frdt-scorecard-err" class="frdt-gate-err" role="alert" style="display:none;">Add a valid email to see your breakdown.</p>
       <button type="button" class="frdt-gate-btn" onclick="return window.FRDT_unlockBreakdown();">Show my breakdown →</button>
-    <p class="frdt-research-note" style="font-size:.82rem;line-height:1.5;opacity:.75;margin:10px 0 0;text-align:center">Your answers are saved anonymously, with no name or email, and used only in aggregate research.</p>
+    <p class="frdt-research-note" style="font-size:.82rem;line-height:1.5;opacity:.75;margin:10px 0 0">Your email and score go to my email list in Klaviyo. Your quiz answers are stored separately and anonymously, for research only.</p>
     </div>
 
     <!-- Breakdown, revealed after unlock -->
@@ -316,9 +319,18 @@ var FRDT = (function () {
       "Freshness":"Does the system see signs of life.",
       "Distribution":"Are you showing up where the models actually read."
     };
+    /* Only the two weakest levers get "Fix first" (lowest score; ties go to the earlier lever, since the order matters). Other weak levers read "Next". */
+    var vals = QUESTIONS.map(function (item, i){ return answers[i] === null ? 0 : item.opts[answers[i]][1]; });
+    var firstTwo = vals.map(function (v, i){ return { v:v, i:i }; })
+      .filter(function (o){ return o.v <= 1; })
+      .sort(function (a, b){ return a.v - b.v || a.i - b.i; })
+      .slice(0, 2).map(function (o){ return o.i; });
     document.getElementById("leverList").innerHTML = QUESTIONS.map(function (item, i){
-      var v = answers[i] === null ? 0 : item.opts[answers[i]][1]; var weak = v <= 1;
-      return '<div class="lever"><h4>'+item.lever+'<span class="mark '+(weak?'weak':'ok')+'">'+(weak?'Fix first':'Holding')+'</span></h4><p>'+blurbs[item.lever]+'</p></div>';
+      var v = vals[i], label, cls;
+      if (firstTwo.indexOf(i) > -1){ label = "Fix first"; cls = "weak"; }
+      else if (v <= 1){ label = "Next"; cls = "next"; }
+      else { label = "Holding"; cls = "ok"; }
+      return '<div class="lever"><h4>'+item.lever+'<span class="mark '+cls+'">'+label+'</span></h4><p>'+blurbs[item.lever]+'</p></div>';
     }).join("");
     var head = document.getElementById("bdHead"), sub = document.getElementById("bdSub"), cta = document.getElementById("ctaBlock");
     var u = "?utm_source=scorecard&utm_medium=result&utm_campaign=scorecard_";
@@ -361,25 +373,23 @@ window.FRDT_unlockBreakdown = function () {
   var score = (typeof window.__frdtScore !== "undefined") ? window.__frdtScore : null;
   var tier = window.__frdtTier || (score !== null ? window.FRDT_tierFromScore(score) : "unknown");
   try {
-    var kl = window.klaviyo = window.klaviyo || [];
-    kl.push(["identify", {
-      "$email": email,
-      "scorecard_score": score,
-      "scorecard_tier": tier,
-      "scorecard_completed_at": new Date().toISOString(),
-      "brand": "FRDTLAB",
-      "source": "ai_visibility_scorecard"
-    }]);
-    kl.push(["track", "Scorecard Completed", {
-      "score": score, "tier": tier, "scorecard_name": "AI Visibility Scorecard"
-    }]);
-    try{window.klaviyo.push(["track","New Lead",{form:"Scorecard Completed",brand:"FRDTLAB"}]);}catch(e){}
-    /* subscribe with consent so the scorecard flow can actually deliver (list FRDT Lab Subscribers) */
-    fetch("https://a.klaviyo.com/client/subscriptions/?company_id=Twvzce", {
-      method: "POST",
-      headers: { "Content-Type": "application/json", "revision": "2024-10-15" },
-      body: JSON.stringify({ data: { type: "subscription", attributes: { profile: { data: { type: "profile", attributes: { email: email } } } }, relationships: { list: { data: { type: "list", id: "QYJzYY" } } } } })
+    var pr = { "score": score, "tier": tier, "scorecard_name": "AI Visibility Scorecard" };
+    var profAttrs = { email: email, properties: { scorecard_score: score, scorecard_tier: tier, scorecard_completed_at: new Date().toISOString(), brand: "FRDTLAB", source: "ai_visibility_scorecard" } };
+    var H = { "Content-Type": "application/vnd.api+json", "revision": "2024-10-15" };
+    /* events carry the typed email so they land on this person's profile, not an earlier visitor's cookie */
+    function sendEvent(name, props){
+      fetch("https://a.klaviyo.com/client/events?company_id=Twvzce", { method: "POST", headers: H,
+        body: JSON.stringify({ data: { type: "event", attributes: { properties: props, metric: { data: { type: "metric", attributes: { name: name } } }, profile: { data: { type: "profile", attributes: profAttrs } } } } })
+      }).then(function (r){ if (!r.ok) throw new Error("HTTP " + r.status); })
+        .catch(function (){ if (window.klaviyo){ window.klaviyo.push(["identify", Object.assign({ "$email": email }, profAttrs.properties)]); window.klaviyo.push(["track", name, props]); } });
+    }
+    sendEvent("Scorecard Completed", pr);
+    sendEvent("New Lead", { form: "Scorecard Completed", brand: "FRDTLAB", score: score, tier: tier });
+    /* subscribe with consent so follow-up email can deliver (list FRDT Lab Subscribers) */
+    fetch("https://a.klaviyo.com/client/subscriptions?company_id=Twvzce", { method: "POST", headers: H,
+      body: JSON.stringify({ data: { type: "subscription", attributes: { custom_source: "Scorecard Completed", profile: { data: { type: "profile", attributes: { email: email } } } }, relationships: { list: { data: { type: "list", id: "QYJzYY" } } } } })
     });
+    if (window.klaviyo){ window.klaviyo.push(["identify", { "$email": email }]); }
   } catch (err) {}
   document.getElementById("frdt-gate").style.display = "none";
   var bd = document.getElementById("frdt-breakdown");
