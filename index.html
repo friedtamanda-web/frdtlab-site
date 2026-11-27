@@ -298,6 +298,8 @@ nav#nav.scrolled{background:rgba(10,10,12,.78);-webkit-backdrop-filter:blur(16px
   .menu-btn{display:block}
   .nav-links{position:fixed;inset:0;flex-direction:column;align-items:flex-start;justify-content:center;gap:6px;padding:96px max(24px,env(safe-area-inset-left,0px)) 40px;background:var(--ink);opacity:0;visibility:hidden;transition:opacity .35s var(--ease),visibility .35s}
   .nav-links.open{opacity:1;visibility:visible}
+  .nav-links{right:auto;bottom:auto;width:100vw;height:100vh;height:100dvh;overflow-y:auto}
+  nav#nav.menu-open{-webkit-backdrop-filter:none;backdrop-filter:none;background:transparent;border-bottom-color:transparent}
   .nav-links a{font-family:var(--display);font-variation-settings:"wdth" 118;font-weight:780;font-size:clamp(1.8rem,7vw,2.8rem);letter-spacing:-.01em;text-transform:none;color:var(--chalk);padding:4px 0}
   .nav-links a.nav-primary,.nav-links a.nav-cta{margin-top:10px;font-size:1.05rem;font-family:var(--mono);font-variation-settings:normal;letter-spacing:.14em;text-transform:uppercase;padding:14px 20px}
   .nav-links a.nav-cta{margin-top:4px}
@@ -872,7 +874,7 @@ addEventListener('scroll',onScroll,{passive:true});onScroll();
 
 /* menu: full-screen on small screens, closes on Escape and link tap */
 var mb=document.getElementById('menuBtn'),nl=document.getElementById('navLinks');
-function setMenu(o){nl.classList.toggle('open',o);mb.setAttribute('aria-expanded',o?'true':'false');mb.textContent='Menu';document.body.style.overflow=o?'hidden':'';}
+function setMenu(o){nl.classList.toggle('open',o);document.getElementById('nav').classList.toggle('menu-open',o);mb.setAttribute('aria-expanded',o?'true':'false');mb.textContent='Menu';document.body.style.overflow=o?'hidden':'';}
 mb.addEventListener('click',function(){setMenu(!nl.classList.contains('open'));});
 nl.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){setMenu(false);});});
 addEventListener('keydown',function(e){if(e.key==='Escape'&&nl.classList.contains('open')){setMenu(false);mb.focus();}});
