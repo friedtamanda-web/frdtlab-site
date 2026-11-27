@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-sr="dark" data-sr-page="ai-visibility-audit" data-sr-art="diagram">
+<html lang="en" data-sr="dark" data-sr-page="ai-visibility-audit" data-srb="b">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -195,29 +195,22 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&amp;family=Newsreader:ital,opsz,wght@0,6..72,300..500;1,6..72,300..500&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap">
 <link rel="stylesheet" href="/assets/signal-room.css">
+<link rel="stylesheet" href="/assets/signal-room-b.css">
 <script src="/assets/signal-room.js" defer></script>
+<script src="/assets/signal-room-b.js" defer></script>
 </head>
 <body>
 
-<header>
-  <div class="wrap nav">
-    <a class="mark" href="https://frdtlab.com/">FRDT<b>LAB</b></a>
-    <nav class="nav-links" aria-label="Main">
-      <a href="https://frdtlab.com/">The Lab</a>
-      <a href="https://frdtlab.com/about">About</a>
-      <a href="https://frdtlab.com/the-work/">The Work</a>
-      <a href="https://frdtlab.com/work-with-me">Work With Me</a>
-      <a href="https://frdtlab.com/in-motion">In Motion</a>
-      <a href="https://theunapologeticleader.com">Unapologetic</a>
-      <a href="https://frdtlab.com/shop">Shop</a>
-      <a href="https://afrdtlab.substack.com/">Subscribe</a>
-    </nav>
-  </div>
-</header>
+<nav id="nav" aria-label="Main">
+  <a href="/" class="brand">FRDT<b>LAB</b></a>
+  <button class="menu-btn" id="menuBtn" aria-label="Toggle menu" aria-expanded="false" aria-controls="navLinks">Menu</button>
+  <div class="nav-links" id="navLinks"><a href="/">The Lab</a><a href="/about">About</a><a href="/the-work/">The Work</a><a href="/#build">How We Build</a><a href="/work-with-me" class="nav-primary">Work With Me</a><a href="/in-motion">In Motion</a><a href="https://theunapologeticleader.com">Unapologetic</a><a href="/shop">Shop</a><a href="https://afrdtlab.substack.com/" class="nav-cta">Subscribe</a></div>
+</nav>
 
 <main>
 
-<div class="wrap hero">
+<div class="wrap hero srb-hero">
+<div class="srb-hero-text">
   <p class="eyebrow">FRDTLAB · AI Visibility Audit · From $497</p>
   <h1>Find out what AI actually says about your <em>brand</em>.</h1>
   <p class="sub">Your buyers are asking ChatGPT, Perplexity, and Google AI who to trust. The audit runs their real questions, documents where you show up and where you're invisible, and hands you a scored report with the fixes in priority order. Fixed price. One week. No contact form, no contract.</p>
@@ -226,6 +219,11 @@
     <a class="btn btn-ghost" href="https://frdtlab.com/scorecard">Start with the free Scorecard</a>
   </div>
   <p class="sub" style="margin-top:14px;font-size:.95rem">Want to see the output first? <a href="https://frdtlab.com/sample-report">See a sample report</a> or read the <a href="https://frdtlab.com/ai-search-visibility">AI search visibility guide</a>.</p>
+</div>
+  <figure class="srb-media">
+    <picture><source srcset="/img/signals-confidence-engine.webp" type="image/webp"><img src="/img/signals-confidence-engine.jpg" width="1200" height="675" alt="Illustration of a muscle-car engine labeled Confidence Engine, fed by first-party, search, social, video, commerce and review signals, with a recommendation on the far side" fetchpriority="high" decoding="async"></picture>
+    <figcaption class="srb-tag">Illustration · The confidence engine</figcaption>
+  </figure>
 </div>
 
 <section id="deliverables">
@@ -349,13 +347,13 @@
 
 </main>
 
-<footer>
+<footer id="footer">
   <div class="wrap">
-    <div class="foot">
-      <div>
-        <a class="mark" href="https://frdtlab.com/">FRDT<b>LAB</b></a>
-        <p class="tag">Systems. Stories. Signal.<br>Detroit-rooted · Future-facing</p>
-      </div>
+    <div class="foot-top">
+      <a class="foot-brand" href="https://frdtlab.com/">FRDT<b>LAB</b></a>
+      <p class="foot-tag">Systems. Stories. Signal.<span>Detroit-rooted · Future-facing</span></p>
+    </div>
+    <div class="foot-bottom">
       <nav class="foot-links" aria-label="Footer">
         <a href="https://frdtlab.com/in-motion">In Motion</a>
         <a href="https://frdtlab.com/the-work/">The Work</a>
@@ -367,8 +365,8 @@
         <a href="https://afrdtlab.substack.com/">Newsletter</a>
         <a href="mailto:hello@frdtlab.com">Contact</a>
       </nav>
+      <span class="meta">© 2026 FRDTLAB · Building what comes next</span>
     </div>
-    <p class="copyright">© 2026 FRDTLAB · Building what comes next</p>
   </div>
 </footer>
 

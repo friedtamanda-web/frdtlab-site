@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-sr="dark" data-sr-page="case-study-amazon-returns" data-sr-art="diagram">
+<html lang="en" data-sr="dark" data-sr-page="case-study-amazon-returns" data-srb="b">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -62,9 +62,9 @@
     --text:#f5f5f4;
     --muted:#a1a1aa;
     --signal:#E84393;
-    --good:#4ad6a0;
+    --good:#e84393;
     --warn:#ffb454;
-    --bad:#ff6b6b;
+    --bad:#93acff;
     --blue:#6f9bff;
   }
   *{margin:0;padding:0;box-sizing:border-box;}
@@ -196,34 +196,32 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&amp;family=Newsreader:ital,opsz,wght@0,6..72,300..500;1,6..72,300..500&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap">
 <link rel="stylesheet" href="/assets/signal-room.css">
+<link rel="stylesheet" href="/assets/signal-room-b.css">
 <script src="/assets/signal-room.js" defer></script>
+<script src="/assets/signal-room-b.js" defer></script>
 </head>
 <body>
 
-<header>
-  <div class="wrap nav">
-    <a class="mark" href="https://frdtlab.com/">FRDT<b>LAB</b></a>
-    <nav class="nav-links" aria-label="Main">
-      <a href="https://frdtlab.com/">The Lab</a>
-      <a href="https://frdtlab.com/about">About</a>
-      <a href="https://frdtlab.com/the-work/">The Work</a>
-      <a href="https://frdtlab.com/work-with-me">Work With Me</a>
-      <a href="https://frdtlab.com/in-motion">In Motion</a>
-      <a href="https://theunapologeticleader.com">Unapologetic</a>
-      <a href="https://frdtlab.com/shop">Shop</a>
-      <a href="https://afrdtlab.substack.com/">Subscribe</a>
-    </nav>
-  </div>
-</header>
+<nav id="nav" aria-label="Main">
+  <a href="/" class="brand">FRDT<b>LAB</b></a>
+  <button class="menu-btn" id="menuBtn" aria-label="Toggle menu" aria-expanded="false" aria-controls="navLinks">Menu</button>
+  <div class="nav-links" id="navLinks"><a href="/">The Lab</a><a href="/about">About</a><a href="/the-work/">The Work</a><a href="/#build">How We Build</a><a href="/work-with-me" class="nav-primary">Work With Me</a><a href="/in-motion">In Motion</a><a href="https://theunapologeticleader.com">Unapologetic</a><a href="/shop">Shop</a><a href="https://afrdtlab.substack.com/" class="nav-cta">Subscribe</a></div>
+</nav>
 
 <main>
 
-<div class="wrap hero">
+<div class="wrap hero srb-hero">
+<div class="srb-hero-text">
   <p class="eyebrow">Case study · Marketplace listings · Home improvement</p>
   <h1>Copy fixes misjudgment. It doesn't fix <em>invisibility</em>.</h1>
   <p class="byline">By Amanda Friedt · FRDTLAB</p>
   <p class="sub">A home-improvement parts retailer had listings that sold fine and came back too often. We rewrote the copy around the one measurement that decides whether a part fits. Returns fell hard on the listings people could see. On the listings nobody could see, nothing happened at all. Both results were the lesson.</p>
-  <div class="stats" role="list">
+</div>
+  <figure class="srb-media">
+    <img src="/img/frdt/returns-slope.svg" width="1200" height="900" alt="Slope chart: the return rate on the rewritten listing falls from 12.96% to 3.13%, while the untouched comparison listing rises 1.96 points" fetchpriority="high" decoding="async">
+    <figcaption class="srb-tag">Return rate · Before and after</figcaption>
+  </figure>
+  <div class="stats srb-full" role="list">
     <div class="stat" role="listitem"><div class="v g">12.96% → 3.13%</div><div class="l">Return rate on the listing that started the program</div></div>
     <div class="stat" role="listitem"><div class="v g">76%</div><div class="l">Relative drop in returns on that listing</div></div>
     <div class="stat" role="listitem"><div class="v r">+1.96 pts</div><div class="l">The untouched comparison listing, same season</div></div>
@@ -245,38 +243,38 @@
     <p class="eyebrow">The result</p>
     <h2>Every listing that got a fitment gate came <em>down</em>. The one we left alone went up.</h2>
     <figure class="fig">
-      <div class="legend" aria-hidden="true"><span><i style="background:#4a4a52"></i>Month before</span><span><i style="background:#4ad6a0"></i>Month after, rewritten</span><span><i style="background:#ff6b6b"></i>Month after, untouched</span></div>
+      <div class="legend" aria-hidden="true"><span><i style="background:#4a4a52"></i>Month before</span><span><i style="background:#e84393"></i>Month after, rewritten</span><span><i style="background:#93acff"></i>Month after, untouched</span></div>
       <svg viewBox="0 0 360 408" width="360" height="408" role="img" aria-labelledby="ch-t ch-d" class="chart">
       <title id="ch-t">Return rate before and after the fitment copy</title>
       <desc id="ch-d">Trim plugs fell from 12.96% to 3.13%. Large frame-only kit fell from 15.12% to 12.00%. Smaller frame-only kit fell from 10.14% to 8.89%. The untouched comparison listing rose from 8.68% to 10.64%.</desc>
       <style>.cl{font:700 15px Inter,system-ui,sans-serif;fill:#f5f5f4}.cs{font:400 12.5px Inter,system-ui,sans-serif;fill:#a1a1aa}.cv{font:600 12.5px Inter,system-ui,sans-serif;fill:#d4d4d8}.cd{font:700 13px Inter,system-ui,sans-serif}</style>
       <text x="0" y="34" class="cl">Trim plugs</text>
-      <text x="360" y="34" text-anchor="end" class="cd" fill="#4ad6a0">9.83 pts lower</text>
+      <text x="360" y="34" text-anchor="end" class="cd" fill="#e84393">9.83 pts lower</text>
       <text x="0" y="51" class="cs">the measurement that decides fit, published</text>
       <rect x="0" y="58" width="182.2" height="16" rx="2" fill="#4a4a52"/>
       <text x="190.2" y="71" class="cv">12.96% before</text>
-      <rect x="0" y="78" width="44.0" height="16" rx="2" fill="#4ad6a0"/>
+      <rect x="0" y="78" width="44.0" height="16" rx="2" fill="#e84393"/>
       <text x="52.0" y="91" class="cv">3.13% after</text>
       <text x="0" y="130" class="cl">Large frame-only kit</text>
-      <text x="360" y="130" text-anchor="end" class="cd" fill="#4ad6a0">3.12 pts lower</text>
+      <text x="360" y="130" text-anchor="end" class="cd" fill="#e84393">3.12 pts lower</text>
       <text x="0" y="147" class="cs">glass-thickness check added</text>
       <rect x="0" y="154" width="212.6" height="16" rx="2" fill="#4a4a52"/>
       <text x="220.6" y="167" class="cv">15.12% before</text>
-      <rect x="0" y="174" width="168.8" height="16" rx="2" fill="#4ad6a0"/>
+      <rect x="0" y="174" width="168.8" height="16" rx="2" fill="#e84393"/>
       <text x="176.8" y="187" class="cv">12.00% after</text>
       <text x="0" y="226" class="cl">Smaller frame-only kit</text>
-      <text x="360" y="226" text-anchor="end" class="cd" fill="#4ad6a0">1.25 pts lower</text>
+      <text x="360" y="226" text-anchor="end" class="cd" fill="#e84393">1.25 pts lower</text>
       <text x="0" y="243" class="cs">glass-thickness check added</text>
       <rect x="0" y="250" width="142.6" height="16" rx="2" fill="#4a4a52"/>
       <text x="150.6" y="263" class="cv">10.14% before</text>
-      <rect x="0" y="270" width="125.0" height="16" rx="2" fill="#4ad6a0"/>
+      <rect x="0" y="270" width="125.0" height="16" rx="2" fill="#e84393"/>
       <text x="133.0" y="283" class="cv">8.89% after</text>
       <text x="0" y="322" class="cl">Comparison listing</text>
-      <text x="360" y="322" text-anchor="end" class="cd" fill="#ff6b6b">1.96 pts higher</text>
+      <text x="360" y="322" text-anchor="end" class="cd" fill="#93acff">1.96 pts higher</text>
       <text x="0" y="339" class="cs">left untouched on purpose</text>
       <rect x="0" y="346" width="122.1" height="16" rx="2" fill="#4a4a52"/>
       <text x="130.1" y="359" class="cv">8.68% before</text>
-      <rect x="0" y="366" width="149.6" height="16" rx="2" fill="#ff6b6b"/>
+      <rect x="0" y="366" width="149.6" height="16" rx="2" fill="#93acff"/>
       <text x="157.6" y="379" class="cv">10.64% after</text>
     </svg>
       <figcaption>Return rate, 30 days before vs 30 days after the copy change. Scale runs to 16%. A second small-parts listing rewritten at the same time sat at 0% returns on 28 orders.</figcaption>
@@ -372,13 +370,13 @@
 
 </main>
 
-<footer>
+<footer id="footer">
   <div class="wrap">
-    <div class="foot">
-      <div>
-        <a class="mark" href="https://frdtlab.com/">FRDT<b>LAB</b></a>
-        <p class="tag">Systems. Stories. Signal.<br>Detroit-rooted · Future-facing</p>
-      </div>
+    <div class="foot-top">
+      <a class="foot-brand" href="https://frdtlab.com/">FRDT<b>LAB</b></a>
+      <p class="foot-tag">Systems. Stories. Signal.<span>Detroit-rooted · Future-facing</span></p>
+    </div>
+    <div class="foot-bottom">
       <nav class="foot-links" aria-label="Footer">
         <a href="https://frdtlab.com/in-motion">In Motion</a>
         <a href="https://frdtlab.com/the-work/">The Work</a>
@@ -390,8 +388,8 @@
         <a href="https://afrdtlab.substack.com/">Newsletter</a>
         <a href="mailto:hello@frdtlab.com">Contact</a>
       </nav>
+      <span class="meta">© 2026 FRDTLAB · Building what comes next</span>
     </div>
-    <p class="copyright">© 2026 FRDTLAB · Building what comes next</p>
   </div>
 </footer>
 

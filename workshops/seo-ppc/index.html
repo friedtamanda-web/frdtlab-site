@@ -1,4 +1,4 @@
-<!doctype html><html lang="en" data-sr="dark"><head><meta charset="utf-8">
+<!doctype html><html lang="en" data-sr="dark" data-srb="ws"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>SEO + PPC Workshop | FRDTLAB</title>
 <meta name="description" content="Use paid and organic search data to pick one revenue-focused test. Preview the FRDTLAB workshop and sign up for new dates.">
@@ -95,13 +95,20 @@ section{padding:56px 0;border-top:1px solid var(--line)} h2{font-size:clamp(1.8r
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&amp;family=Newsreader:ital,opsz,wght@0,6..72,300..500;1,6..72,300..500&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap">
 <link rel="stylesheet" href="/assets/signal-room.css">
+<link rel="stylesheet" href="/assets/signal-room-b.css">
 <script src="/assets/signal-room.js" defer></script>
+<script src="/assets/signal-room-b.js" defer></script>
 <style id="sr-map">html[data-sr]:root{--ink:#0a0a0c;--panel:#101014;--cream:#ecebe7;--muted:#a7a9b3;--pink:#e84393;--line:#26272e;--head:"Archivo",system-ui,sans-serif;--mono:"JetBrains Mono",ui-monospace,monospace}</style>
 </head><body>
 <a class="skip" href="#main">Skip to content</a>
-<header><div class="wrap mast"><a class="brand" href="/">FRDT<span>LAB</span></a><nav aria-label="Workshop navigation"><a href="#practice">Try it</a><a href="#signup">Get updates</a></nav></div></header>
+<nav id="nav" aria-label="Main">
+  <a href="/" class="brand">FRDT<b>LAB</b></a>
+  <button class="menu-btn" id="menuBtn" aria-label="Toggle menu" aria-expanded="false" aria-controls="navLinks">Menu</button>
+  <div class="nav-links" id="navLinks"><a href="/">The Lab</a><a href="/about">About</a><a href="/the-work/">The Work</a><a href="/#build">How We Build</a><a href="/work-with-me" class="nav-primary">Work With Me</a><a href="/in-motion">In Motion</a><a href="https://theunapologeticleader.com">Unapologetic</a><a href="/shop">Shop</a><a href="https://afrdtlab.substack.com/" class="nav-cta">Subscribe</a></div>
+</nav>
 <main id="main">
-<section class="wrap hero"><p class="eyebrow">FRDTLAB is now offering workshops</p>
+<section class="wrap hero srb-hero">
+<div class="srb-hero-text"><p class="eyebrow">FRDTLAB is now offering workshops</p>
 <h1>SEO and PPC.<br>One revenue plan.</h1>
 <p class="lead">Built on 20 years of marketing experience, this workshop teaches workflows to connect search demand to revenue. Bring your paid and organic data into one view, automate the repeatable pulls and checks, and leave with a test your team can run.</p>
 <p class="lead">A 75-minute hands-on workshop. Built for SEO and PPC leads, growth teams, and anyone who owns both channels.</p>
@@ -117,7 +124,13 @@ section{padding:56px 0;border-top:1px solid var(--line)} h2{font-size:clamp(1.8r
           <a id="newsletter-fallback" class="button" href="https://afrdtlab.substack.com/">Read the FRDTLAB newsletter</a>
           <p id="signup-status" role="status" aria-live="polite"></p>
 </div>
-<div class="actions"><a href="#practice">Try the workshop exercise ↓</a></div></section>
+<div class="actions"><a href="#practice">Try the workshop exercise ↓</a></div>
+</div>
+  <figure class="srb-media srb-photo srb-tall">
+    <picture><source srcset="/img/speaking-smx-siloed-teams.webp" type="image/webp"><img src="/img/speaking-smx-siloed-teams.jpg" width="771" height="1024" alt="Amanda Friedt on stage at SMX presenting The Misfire: Siloed Teams and PPC" fetchpriority="high" decoding="async" style="object-position:50% 35%"></picture>
+    <figcaption class="srb-tag">On stage · SMX</figcaption>
+  </figure>
+</section>
 <section id="practice"><div class="wrap">
 <h2>Where should the next search dollar go?</h2>
 <p class="long">Pair an SEO and PPC lead. Bring a common date range, market, and device scope from Search Console and Google Ads, plus net sales or qualified lead data from your reporting system. Use the sample when exports or permissions are missing.</p>
@@ -151,7 +164,16 @@ section{padding:56px 0;border-top:1px solid var(--line)} h2{font-size:clamp(1.8r
 </div><button class="button" type="submit">Download my brief</button></form>
 <div class="actions"><a href="#signup">Get the latest workshop dates</a><a href="/marketing-machine/">Explore the full course</a></div>
 </div></section></main>
-<footer class="wrap"><a href="/">FRDTLAB</a> · <a href="/privacy.html">Privacy</a></footer>
+<footer id="footer">
+  <div class="wrap">
+    <div class="foot-top">
+      <a class="foot-brand" href="/">FRDTLAB</a>
+    </div>
+    <div class="foot-bottom">
+      <nav class="foot-links" aria-label="Footer"><a href="/privacy.html">Privacy</a></nav>
+    </div>
+  </div>
+</footer>
 <script>
 document.querySelector('#brief').addEventListener('submit', event => {
   event.preventDefault();
