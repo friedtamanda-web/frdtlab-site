@@ -146,6 +146,7 @@
       <button type="button" class="back" id="backBtn" disabled onclick="FRDT.back()">← Back</button>
       <span></span>
     </div>
+      <p class="frdt-research-note" style="font-size:.82rem;line-height:1.5;opacity:.75;margin:10px 0 0">Your answers are saved anonymously, with no name or email, and used only in aggregate research.</p>
   </div>
 
   <!-- RESULT -->
@@ -165,6 +166,7 @@
       <input id="frdt-scorecard-email" type="email" inputmode="email" autocomplete="email" placeholder="you@company.com" class="frdt-gate-input" />
       <p id="frdt-scorecard-err" class="frdt-gate-err" style="display:none;">Add a valid email and we'll send your breakdown.</p>
       <button type="button" class="frdt-gate-btn" onclick="return window.FRDT_unlockBreakdown();">Show my breakdown →</button>
+    <p class="frdt-research-note" style="font-size:.82rem;line-height:1.5;opacity:.75;margin:10px 0 0;text-align:center">Your answers are saved anonymously, with no name or email, and used only in aggregate research.</p>
     </div>
 
     <!-- Breakdown, revealed after unlock -->
@@ -284,6 +286,8 @@ var FRDT = (function () {
     var score = Math.round((rawScore() / (QUESTIONS.length * 3)) * 100);
     var tier = window.FRDT_tierFromScore(score);
     window.FRDT_setScore(score, tier);
+    /* Anonymous research log: score, tier and the seven answers (0-3). No name, email or IP is sent. */
+    try{ var d=new URLSearchParams({score:score,tier:tier,v:"sc-v1",test:(/[?&]sc_test=1/.test(location.search)?"true":"false")}); answers.forEach(function(oi,i){ d.append("q"+(i+1), oi===null?"":QUESTIONS[i].opts[oi][1]); }); if(navigator.sendBeacon){ navigator.sendBeacon("https://hook.us2.make.com/bilv4qdmqila6hve4fks8p9npiazvw1v", d); } else { fetch("https://hook.us2.make.com/bilv4qdmqila6hve4fks8p9npiazvw1v",{method:"POST",mode:"no-cors",body:d,keepalive:true}); } }catch(e){}
     document.getElementById("bar").style.width = "100%";
     paintResult(score, tier);
     document.getElementById("quiz").style.display = "none";
