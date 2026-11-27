@@ -1,0 +1,515 @@
+<!DOCTYPE html><html lang="en" data-sr="paper"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Free AI Visibility Scorecard: Can AI See Your Brand? &middot; FRDTLAB</title>
+<meta name="description" content="Can AI and search engines actually see your brand? Take the free 2-minute AI Visibility Scorecard from FRDTLAB and find where you are invisible.">
+<link rel="canonical" href="https://frdtlab.com/scorecard">
+<meta name="robots" content="noindex,nofollow">
+<meta name="theme-color" content="#F6F4F2">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<meta property="og:type" content="website"><meta property="og:site_name" content="FRDTLAB">
+<meta property="og:title" content="Free AI Visibility Scorecard: Can AI See Your Brand?"><meta property="og:description" content="Can AI and search engines actually see your brand? Take the free 2-minute AI Visibility Scorecard from FRDTLAB and find where you are invisible.">
+<meta property="og:url" content="https://frdtlab.com/scorecard"><meta property="og:image" content="https://frdtlab.com/og-scorecard.jpg"><meta property="og:image:alt" content="Free AI Visibility Scorecard: can AI see your brand?"><meta name="twitter:image" content="https://frdtlab.com/og-scorecard.jpg"><meta name="twitter:image:alt" content="Free AI Visibility Scorecard: can AI see your brand?"><meta name="twitter:image:alt" content="Free AI Visibility Scorecard: can AI see your brand?">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Free AI Visibility Scorecard: Can AI See Your Brand?"><meta name="twitter:description" content="Can AI and search engines actually see your brand? Take the free 2-minute AI Visibility Scorecard from FRDTLAB and find where you are invisible.">
+<!-- Klaviyo onsite (account Twvzce) -->
+<script>addEventListener("load",function(){var s=document.createElement("script");s.async=1;s.src="https://static.klaviyo.com/onsite/js/Twvzce/klaviyo.js?company_id=Twvzce";document.head.appendChild(s);});</script>
+<script type="text/javascript">
+!function(){if(!window.klaviyo){window._klOnsite=window._klOnsite||[];try{window.klaviyo=new Proxy({},{get:function(n,i){return"push"===i?function(){var n;(n=window._klOnsite).push.apply(n,arguments)}:function(){for(var n=arguments.length,o=new Array(n),w=0;w<n;w++)o[w]=arguments[w];var t="function"==typeof o[o.length-1]?o.pop():void 0,e=new Promise((function(n){window._klOnsite.push([i].concat(o,[function(i){t&&t(i),n(i)}]))}));return e}}})}catch(n){window.klaviyo=window.klaviyo||[],window.klaviyo.push=function(){var n;(n=window._klOnsite).push.apply(n,arguments)}}}}();
+</script>
+<style>
+  :root{
+    --ground:#F6F4F2;--card:#FCFBFA;--panel:#F1EEEA;--line:#E2DEDA;--line-2:#D9D4CE;
+    --ink:#111114;--body:#4A4A52;--faint:#8E8E96;
+    --pink:#E84393;--pink-acc:#b81c66;--good:#2f7a52;
+    --sans:'Inter',system-ui,-apple-system,sans-serif;--mono:'JetBrains Mono',ui-monospace,monospace;
+    --max:680px;--ease:cubic-bezier(.16,1,.3,1);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{-webkit-font-smoothing:antialiased;scroll-behavior:smooth}
+  body{background:var(--ground);color:var(--body);font-family:var(--sans);font-size:17px;line-height:1.6}
+  img,svg{max-width:100%;height:auto}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
+
+  nav{display:flex;align-items:center;justify-content:space-between;padding:18px 24px;border-bottom:1px solid var(--line);position:sticky;top:0;background:rgba(246,244,242,.88);backdrop-filter:blur(10px);z-index:10}
+  .brand{font-family:var(--sans);font-weight:800;font-size:19px;letter-spacing:.02em;text-transform:uppercase;color:var(--ink)}
+  .brand b{color:var(--pink-acc)}
+  nav a.back{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--faint)}
+  nav a.back:hover{color:var(--pink-acc)}
+
+  .kicker{font-family:var(--mono);font-size:11.5px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--pink-acc)}
+  header.hero{padding:64px 0 18px;text-align:center}
+  header .kicker{display:block;margin-bottom:16px}
+  h1{font-family:var(--sans);font-weight:900;letter-spacing:-.02em;font-size:clamp(2.1rem,5.6vw,3.3rem);line-height:1.04;color:var(--ink);max-width:18ch;margin:0 auto}
+  h1 em{font-style:normal;color:var(--pink)}
+  .lede{margin:20px auto 0;max-width:46ch;color:var(--body);font-size:1.08rem}
+  .nores{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--faint);margin-top:20px}
+
+  .progress{height:5px;background:var(--line);border-radius:99px;overflow:hidden;margin:30px 0 26px}
+  .progress > span{display:block;height:100%;width:0;background:var(--pink);transition:width .35s var(--ease)}
+
+  .q{display:none}
+  .q.active{display:block;animation:rise .35s var(--ease) both}
+  @keyframes rise{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+  .q-count{font-family:var(--mono);font-size:11.5px;font-weight:500;letter-spacing:.1em;color:var(--faint);text-transform:uppercase;margin:0 0 .7rem}
+  .q-text{font-family:var(--sans);font-weight:700;font-size:1.4rem;line-height:1.28;color:var(--ink);margin:0 0 1.4rem;letter-spacing:-.01em}
+  .opts{display:grid;gap:.6rem}
+  .opt{display:block;width:100%;text-align:left;padding:1rem 1.1rem;border:1px solid var(--line-2);border-radius:12px;background:var(--card);color:var(--ink);font:500 1rem/1.4 var(--sans);cursor:pointer;transition:border-color .15s,background .15s,transform .05s}
+  .opt:hover{border-color:var(--pink-acc);background:#fff}
+  .opt:active{transform:scale(.995)}
+  .opt.sel{border-color:var(--pink-acc);background:rgba(232,67,147,.07)}
+  .navrow{display:flex;justify-content:space-between;align-items:center;margin-top:1.6rem}
+  .back{background:none;border:0;color:var(--faint);font:500 .95rem var(--sans);cursor:pointer;padding:.4rem 0}
+  .back:hover{color:var(--body)}
+  .back[disabled]{opacity:0;pointer-events:none}
+
+  #result{display:none}
+  #result.show{display:block;animation:rise .4s var(--ease) both}
+  .score-wrap{text-align:center;padding:1.2rem 0 .4rem}
+  .score-num{font-family:var(--sans);font-weight:900;font-size:5rem;line-height:1;letter-spacing:-.03em;color:var(--ink)}
+  .score-num small{font-size:1.5rem;color:var(--faint);font-weight:700}
+  .tier-badge{display:inline-block;margin-top:.7rem;padding:.42rem .95rem;border-radius:99px;font:700 .78rem/1 var(--sans);letter-spacing:.08em;text-transform:uppercase}
+  .tier-invisible{background:#ECE8E3;color:#5d5d66;border:1px solid var(--line-2)}
+  .tier-emerging{background:rgba(232,67,147,.1);color:var(--pink-acc);border:1px solid rgba(232,67,147,.35)}
+  .tier-signal-strong{background:rgba(47,122,82,.1);color:var(--good);border:1px solid rgba(47,122,82,.35)}
+  .tier-line{text-align:center;font-size:1.05rem;color:var(--body);margin:1.1rem auto 0;max-width:34em}
+
+  .frdt-gate{max-width:480px;margin:2.2rem auto 0;padding:1.75rem;border:1px solid var(--line);border-radius:14px;background:var(--card);text-align:left;box-shadow:0 12px 40px rgba(17,17,20,.05)}
+  .frdt-gate-kicker{font-family:var(--mono);font-weight:500;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--pink-acc);margin:0 0 .5rem}
+  .frdt-gate-head{font-family:var(--sans);font-weight:800;font-size:1.3rem;letter-spacing:-.01em;color:var(--ink);margin:0 0 .5rem}
+  .frdt-gate-sub{font:400 .95rem/1.5 var(--sans);color:var(--body);margin:0 0 1.1rem}
+  .frdt-gate-label{display:block;font:600 .9rem/1.3 var(--sans);color:var(--ink);margin:0 0 .4rem}
+  .frdt-gate-input{width:100%;padding:.85rem 1rem;border-radius:10px;border:1px solid var(--line-2);background:#fff;color:var(--ink);font:400 1rem/1 var(--sans)}
+  .frdt-gate-input::placeholder{color:var(--faint)}
+  .frdt-gate-err{font:400 .85rem/1.4 var(--sans);color:var(--pink-acc);margin:.6rem 0 0}
+  .frdt-gate-btn{width:100%;margin-top:.9rem;padding:.95rem 1rem;border:0;border-radius:10px;background:var(--pink-acc);color:#fff;font:700 1rem/1 var(--sans);cursor:pointer;transition:filter .2s}
+  .frdt-gate-btn:hover{filter:brightness(1.06)}
+  .frdt-fine{font:400 .8rem/1.5 var(--sans);color:var(--faint);text-align:center;margin:.85rem auto 0;max-width:30em}
+
+  #frdt-breakdown{display:none;margin-top:2.4rem}
+  .bd-head{font-family:var(--sans);font-weight:800;font-size:1.55rem;letter-spacing:-.01em;color:var(--ink);margin:0 0 .4rem}
+  .bd-sub{color:var(--body);margin:0 0 1.6rem}
+  .lever{border:1px solid var(--line);border-radius:12px;padding:1.05rem 1.2rem;margin-bottom:.65rem;background:var(--card)}
+  .lever h4{font:700 1.02rem/1.3 var(--sans);color:var(--ink);margin:0 0 .3rem;display:flex;justify-content:space-between;gap:1rem;align-items:baseline}
+  .lever h4 .mark{font:700 .76rem/1 var(--sans);padding:.28rem .6rem;border-radius:99px;white-space:nowrap}
+  .mark.weak{background:rgba(232,67,147,.12);color:var(--pink-acc)}
+  .mark.next{background:rgba(17,17,20,.07);color:var(--ink)}
+  .mark.ok{background:rgba(47,122,82,.12);color:var(--good)}
+  .lever p{margin:.25rem 0 0;color:var(--body);font-size:.94rem}
+  .cta{margin-top:2rem;padding:1.7rem;border:1px solid rgba(232,67,147,.3);border-radius:14px;background:linear-gradient(180deg,rgba(232,67,147,.06),rgba(232,67,147,.01));text-align:center}
+  .cta h3{font-family:var(--sans);font-weight:800;font-size:1.35rem;letter-spacing:-.01em;color:var(--ink);margin:0 0 .5rem}
+  .cta p{color:var(--body);margin:0 0 1.2rem}
+  .btn-primary{display:inline-block;padding:.95rem 1.6rem;border-radius:10px;background:var(--pink-acc);color:#fff;font:700 1rem/1 var(--sans);text-decoration:none;transition:filter .2s}
+  .btn-primary:hover{filter:brightness(1.06)}
+  .restart{display:block;margin:2.4rem auto 0;background:none;border:0;color:var(--faint);font:500 .9rem var(--sans);cursor:pointer;text-decoration:underline}
+  .restart:hover{color:var(--body)}
+
+  footer{background:var(--ink);margin-top:60px;padding:34px 0;text-align:center}
+  footer .meta{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#9A9AA2}
+  footer a{color:#B9B7BD}footer a:hover{color:var(--pink)}
+</style>
+<style id="mob-grid-fix">@media(max-width:600px){[style*="grid-template-columns"]{grid-template-columns:1fr!important}img,svg,video{max-width:100%!important;height:auto!important}html,body{overflow-x:hidden!important}}</style>
+<!-- Google tag (FRDT Lab property) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-1CDWBM46D5"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-1CDWBM46D5');</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&amp;family=Newsreader:ital,opsz,wght@0,6..72,300..500;1,6..72,300..500&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" media="print" onload="this.media='all'"><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&amp;family=Newsreader:ital,opsz,wght@0,6..72,300..500;1,6..72,300..500&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap"></noscript>
+<link rel="stylesheet" href="/assets/signal-room.css?v=2">
+<script src="/assets/signal-room.js" defer></script>
+<link rel="stylesheet" href="/assets/signal-room-c.css">
+<script src="/assets/signal-room-c.js" defer></script>
+<style id="slide-text-css">.slide-text{display:none}@media(max-width:600px){.slide-text{display:block;margin:12px 0 18px;padding:14px 16px;border:1px solid var(--sr-rule,#26272e);border-radius:10px;background:var(--sr-graphite,#17181d);color:var(--sr-chalk,#ecebe7);font:15px/1.5 var(--sr-text,"Archivo",system-ui,sans-serif);text-align:left;white-space:normal}.slide-text p,.slide-text li{max-width:none!important;text-align:left!important}.slide-text .st-k{font:11px/1.4 var(--sr-mono,"JetBrains Mono",monospace)!important;letter-spacing:.14em!important;text-transform:uppercase!important;color:var(--sr-signal-hot,#ff4fa0)!important;margin:0 0 4px!important}.slide-text .st-t{font:700 17px/1.3 var(--sr-text,"Archivo",system-ui,sans-serif)!important;margin:0 0 8px!important;color:var(--sr-white,#fafaf8)!important;letter-spacing:0!important;text-transform:none!important}.slide-text ul{margin:0!important;padding:0 0 0 18px!important;list-style:disc!important}.slide-text li{margin:0 0 6px!important;color:var(--sr-chalk,#ecebe7)!important;font:15px/1.5 var(--sr-text,"Archivo",system-ui,sans-serif)!important}.slide-text b{color:var(--sr-white,#fafaf8)!important;font-weight:700!important}}</style></head>
+<style id="sc-v2">
+  .share-card{margin:1.6rem auto 0;max-width:32rem;border:1px solid var(--line);border-radius:14px;background:var(--card);padding:1.1rem 1.2rem;text-align:center}
+  .share-card .share-k{font-family:var(--mono);font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--pink-acc);margin:0 0 .7rem}
+  .share-row{display:flex;flex-wrap:wrap;gap:.6rem;justify-content:center}
+  .share-btn{display:inline-flex;align-items:center;justify-content:center;gap:.4rem;min-height:44px;padding:.7rem 1.1rem;border-radius:10px;border:1px solid var(--line-2);background:#fff;color:var(--ink);font:700 .95rem/1 var(--sans);text-decoration:none;cursor:pointer}
+  .share-btn:hover{border-color:var(--pink-acc);color:var(--pink-acc)}
+  .share-btn.li{background:var(--ink);color:#fff;border-color:var(--ink)}
+  .share-btn.li:hover{background:var(--pink-acc);border-color:var(--pink-acc);color:#fff}
+  .share-note{font-size:.82rem;color:var(--faint);margin:.7rem 0 0}
+  .share-copied{font-size:.85rem;color:var(--good);margin:.5rem 0 0;min-height:1.2em}
+  .cta .cta-alt{margin:1rem 0 0;font-size:.92rem;color:var(--body)}
+  .cta .cta-alt a{color:var(--pink-acc);font-weight:700}
+  .cta .btn-ghost{display:inline-block;padding:.95rem 1.4rem;border-radius:10px;border:1px solid var(--line-2);color:var(--ink);font:700 1rem/1 var(--sans);text-decoration:none;margin:0 6px 8px}
+  .cta .btn-ghost:hover{border-color:var(--pink-acc);color:var(--pink-acc)}
+  .comp-start{margin-top:2rem;padding:1.3rem 1.2rem;border:1px dashed var(--line-2);border-radius:14px;text-align:center}
+  .comp-start h3{font:800 1.15rem/1.3 var(--sans);color:var(--ink);margin:0 0 .4rem}
+  .comp-start p{color:var(--body);margin:0 0 1rem;font-size:.94rem}
+  #compBanner{display:none;margin:1.4rem 0 .4rem;padding:.9rem 1rem;border-radius:12px;background:var(--ink);color:#fff;font-size:.95rem}
+  #compBanner b{color:#ffb3d6}
+  #compBanner button{margin-left:.6rem;background:none;border:0;color:#fff;text-decoration:underline;font:inherit;cursor:pointer}
+  #compare{display:none;margin-top:2rem}
+  .cmp-scores{display:flex;gap:.8rem;justify-content:center;margin:0 0 1rem}
+  .cmp-scores div{flex:1;max-width:11rem;border:1px solid var(--line);border-radius:12px;background:var(--card);padding:.8rem}
+  .cmp-scores b{display:block;font:900 2rem/1 var(--sans);color:var(--ink)}
+  .cmp-scores span{font-family:var(--mono);font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--faint)}
+  .cmp-table{width:100%;border-collapse:collapse;font-size:.92rem}
+  .cmp-table th,.cmp-table td{text-align:left;padding:.65rem .5rem;border-bottom:1px solid var(--line)}
+  .cmp-table th{font-family:var(--mono);font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--faint);font-weight:500}
+  .cmp-table td:first-child{font-weight:700;color:var(--ink)}
+  .cmp-lead{display:inline-block;margin-left:.35rem;font:700 .7rem/1 var(--sans);padding:.22rem .45rem;border-radius:99px;background:rgba(232,67,147,.12);color:var(--pink-acc);white-space:nowrap}
+  @media(max-width:520px){.cmp-table th:nth-child(2),.cmp-table td:nth-child(2),.cmp-table th:nth-child(3),.cmp-table td:nth-child(3){white-space:nowrap}}
+</style>
+<body class="src src-paper src-score">
+<nav id="nav">
+<a href="/" class="brand">FRDT<b>LAB</b></a>
+<button class="menu-btn" id="menuBtn" aria-label="Toggle menu" aria-expanded="false" aria-controls="navLinks">Menu</button>
+<div class="nav-links" id="navLinks"><a href="/">The Lab</a><a href="/about">About</a><a href="/the-work/">The Work</a><a href="/#build">How We Build</a><a href="/work-with-me" class="nav-primary">Work With Me</a><a href="/in-motion">In Motion</a><a href="https://theunapologeticleader.com">Unapologetic</a><a href="/shop">Shop</a><a href="https://afrdtlab.substack.com/" class="nav-cta">Subscribe</a></div>
+</nav>
+<div role="main" id="main" style="display:contents">
+
+<div class="wrap">
+
+  <!-- INTRO / QUIZ -->
+  <div id="quiz">
+    <header class="hero src-band src-bleed"><div class="src-hero"><div class="src-hero-text">
+      <a class="src-crumb" href="/frameworks" data-src-moved>← Frameworks</a>
+      <span class="kicker">The Signal System · Free Scorecard</span>
+      <h1>Can the machines that recommend you actually <em>see</em> you?</h1>
+      <p class="lede">ChatGPT, Perplexity, and Google's AI answers now decide who gets named when a buyer asks for "the best ___." Seven questions tells you where you stand, and what to fix first.</p>
+      <p class="nores">No email required to get your score</p>
+    </div>
+    <figure class="src-photo frame is-diagram"><picture><source srcset="/img/signals-to-recommendation.webp" type="image/webp"><img src="/img/signals-to-recommendation.jpg" width="1200" height="675" alt="Diagram: search, social, reviews, commerce, and first-party data flow into a confidence engine that cleans, connects, and interprets them, then into an agentic step and a recommendation, with a learning loop back and human judgment underneath." fetchpriority="high"></picture><span class="src-tag" data-src-added>The Signal System · Diagram</span></figure><div class="slide-text" aria-hidden="true"><p class="st-t">From signals to a recommendation.</p><ul><li>Search · Social · Reviews · Commerce · First-party</li><li><b>Confidence Engine:</b> Clean · Connect · Interpret</li><li>Confidence Engine → Agentic System → Recommendation → Learn → Confidence Engine</li><li>Human judgment + clear boundaries</li></ul></div>
+    </div></header>
+
+    <div id="compBanner" role="status"><b>Scoring a competitor.</b> Answer the way you&rsquo;d guess for them. Nothing about them is saved or sent.<button type="button" onclick="FRDT.cancelCompetitor()">Cancel</button></div>
+    <div class="progress"><span id="bar"></span></div>
+    <form id="qform" onsubmit="return false;"></form>
+    <div class="navrow">
+      <button type="button" class="back" id="backBtn" disabled onclick="FRDT.back()">← Back</button>
+      <span></span>
+    </div>
+      <p class="frdt-research-note" style="font-size:.82rem;line-height:1.5;opacity:.75;margin:10px 0 0">Your seven answers are stored anonymously for aggregate research. Nothing ties them to your name or email.</p>
+  </div>
+
+  <!-- RESULT -->
+  <div id="result">
+    <p class="kicker" style="text-align:center">Your result</p>
+    <div class="score-wrap">
+      <div class="score-num"><span id="scoreVal">0</span><small>/100</small></div>
+      <div id="tierBadge" class="tier-badge"> </div>
+    </div>
+    <p class="tier-line" id="tierLine"></p>
+
+    <div class="share-card" id="shareCard">
+      <p class="share-k">Share your score</p>
+      <div class="share-row">
+        <a class="share-btn li" id="shareLi" href="#" target="_blank" rel="noopener">Share on LinkedIn</a>
+        <button type="button" class="share-btn" id="shareCopy">Copy link</button>
+      </div>
+      <p class="share-copied" id="shareCopied" aria-live="polite"></p>
+      <p class="share-note">The link shows your score and tier. Not your answers, not your email.</p>
+    </div>
+
+    <!-- Gate: score is free above; breakdown is gated -->
+    <div id="frdt-gate" class="frdt-gate">
+      <p class="frdt-gate-kicker">Your first move</p>
+      <h3 class="frdt-gate-head">Want the exact fixes for your tier?</h3>
+      <p class="frdt-gate-sub">You've got your score. The breakdown tells you what to fix first, in the order that actually moves your visibility. No spam, leave anytime.</p>
+      <label for="frdt-scorecard-email" class="frdt-gate-label">Your email</label>
+      <input id="frdt-scorecard-email" type="email" inputmode="email" autocomplete="email" placeholder="you@company.com" class="frdt-gate-input" required aria-describedby="frdt-scorecard-err" />
+      <p id="frdt-scorecard-err" class="frdt-gate-err" role="alert" style="display:none;">Add a valid email to see your breakdown.</p>
+      <button type="button" class="frdt-gate-btn" onclick="return window.FRDT_unlockBreakdown();">Show my breakdown →</button>
+    <p class="frdt-research-note" style="font-size:.82rem;line-height:1.5;opacity:.75;margin:10px 0 0">Your email and score go to my email list in Klaviyo. Your quiz answers are stored separately and anonymously, for research only.</p>
+    </div>
+
+    <!-- Breakdown, revealed after unlock -->
+    <div id="frdt-breakdown">
+      <h2 class="bd-head" id="bdHead">Your breakdown</h2>
+      <p class="bd-sub" id="bdSub"></p>
+      <div id="leverList"></div>
+      <div class="cta" id="ctaBlock"></div>
+      <div class="comp-start" id="compStart">
+        <h3>Score a competitor next to you</h3>
+        <p>Answer the same seven questions the way you&rsquo;d guess for them. Nothing about them is saved or sent.</p>
+        <button type="button" class="share-btn li" onclick="FRDT.startCompetitor()">Score a competitor</button>
+      </div>
+      <div id="compare" aria-live="polite"></div>
+    </div>
+
+    <button type="button" class="restart" onclick="FRDT.restart()">Retake the scorecard</button>
+  </div>
+
+  <p class="meta src-signoff">FRDTLAB · You are no longer marketing on top of the system. You are marketing through it.</p>
+</div>
+
+
+<section class="sec seo-related" style="padding:32px 0"><div class="wrap"><p style="margin:0;line-height:1.8"><b>Keep reading:</b> <a href="/ai-search-visibility" style="color:var(--pink,inherit);font-weight:600">How AI search visibility works</a> &nbsp;&middot;&nbsp; <a href="/guide" style="color:var(--pink,inherit);font-weight:600">The Infrastructure Era Marketing guide</a> &nbsp;&middot;&nbsp; <a href="/ai-visibility-audit" style="color:var(--pink,inherit);font-weight:600">The AI Visibility Audit</a></p></div></section>
+</div>
+<footer id="footer">
+<div class="wrap">
+<div class="foot-top">
+<div class="foot-brand">FRDT<b>LAB</b></div>
+<div class="foot-tag">Systems. Stories. Signal.<span>Detroit-rooted · Future-facing</span></div>
+</div>
+<div class="foot-bottom">
+<span class="meta">FRDTLAB · The Signal Lab · Detroit</span>
+<div class="foot-links">
+<a href="/">Home</a>
+<a href="/frameworks">Frameworks</a>
+<a href="/work-with-me">Work With Me</a>
+<a href="https://theunapologeticleader.com">Unapologetic</a>
+<a href="/prompt-pack">Prompt Pack</a>
+<a href="/shop">Shop</a>
+<a href="/operator-brief">Operator Brief</a>
+<a href="/lipstick-and-receipts">Lipstick &amp; Receipts</a>
+<a href="https://smartgirlera.com/?utm_source=frdtlab&amp;utm_medium=referral&amp;utm_campaign=footer">Smart Girl Era</a>
+<a href="https://afrdtlab.substack.com/">Newsletter</a>
+<a href="https://www.linkedin.com/in/amandafriedt/">LinkedIn</a>
+<a href="https://www.instagram.com/unapologetic_leader/">Instagram</a>
+<a href="https://www.tiktok.com/@unapologeticleadership">TikTok</a>
+<a href="mailto:hello@frdtlab.com">Contact</a>
+</div>
+</div>
+</div>
+<p class="foot-disclose" style="margin:1.5rem auto 0;max-width:1200px;padding:0 max(16px,env(safe-area-inset-right,0px)) 0 max(16px,env(safe-area-inset-left,0px));font-size:.78rem;line-height:1.5;opacity:.72">Some links on this site are affiliate links. If you buy through one, I may earn a commission at no extra cost to you.</p>
+</footer>
+
+<script>
+/* ===== TIER LOGIC, single source of truth (score 0-100) ===== */
+window.FRDT_tierFromScore = function (score) {
+  if (score <= 40) return "invisible";
+  if (score <= 75) return "emerging";
+  return "signal-strong";
+};
+window.FRDT_setScore = function (score, tier) {
+  window.__frdtScore = score;
+  window.__frdtTier  = tier || window.FRDT_tierFromScore(score);
+};
+
+/* ===== SCORECARD ENGINE ===== */
+var FRDT = (function () {
+  var QUESTIONS = [
+    { lever:"Entity clarity",
+      q:"If someone asked an AI “what is [your brand]?”, how clearly could it answer?",
+      opts:[["It couldn't, nothing on my site states plainly what I am",0],["It'd guess from scattered clues",1],["There's a clear line, but it's buried",2],["One unambiguous line says exactly what I am, up top",3]]},
+    { lever:"Question coverage",
+      q:"Do you answer real buyer questions in the words a buyer would actually type into an AI?",
+      opts:[["No, my copy is about us, not their questions",0],["A little, mostly keyword pages",1],["Some real questions, inconsistently",2],["Yes, buyer questions, in buyer phrasing, across the site",3]]},
+    { lever:"Quotable answers",
+      q:"Is your copy structured so a model can lift a clean 2-3 sentence answer verbatim?",
+      opts:[["No, it's long-form marketing prose",0],["Rarely",1],["On a few key pages",2],["Yes, tight, quotable answers by design",3]]},
+    { lever:"Citations & proof",
+      q:"Does anything off your own site corroborate your claims (press, reviews, mentions, data)?",
+      opts:[["Nothing I know of",0],["A couple of stray mentions",1],["Some reviews / third-party signals",2],["Strong, consistent off-site proof",3]]},
+    { lever:"Schema / machine-readability",
+      q:"Is your authority marked up so machines can read it (structured data / schema)?",
+      opts:[["No schema at all",0],["Not sure / default theme only",1],["Basic schema on some pages",2],["Deliberate, complete structured data",3]]},
+    { lever:"Freshness",
+      q:"How recently has the substance of your site shown signs of life?",
+      opts:[["Untouched for a year+",0],["Occasional small edits",1],["Updated every few months",2],["Active, visible, regular updates",3]]},
+    { lever:"Distribution",
+      q:"Are you showing up where the models actually read, the places they pull answers from?",
+      opts:[["No idea where that even is",0],["Only my own site",1],["A few relevant platforms",2],["Present across the surfaces models cite",3]]}
+  ];
+  var answers = new Array(QUESTIONS.length).fill(null);
+  var idx = 0;
+  var mode = "self", selfAnswers = null, selfScore = null, selfTier = null;
+  var LEVEL = ["Missing","Weak","Partial","Strong"];
+
+  function render() {
+    var form = document.getElementById("qform"); form.innerHTML = "";
+    QUESTIONS.forEach(function (item, i) {
+      var card = document.createElement("div");
+      card.className = "q" + (i === idx ? " active" : ""); card.id = "q" + i;
+      var opts = item.opts.map(function (o, oi) {
+        var sel = answers[i] === oi ? " sel" : "";
+        return '<button type="button" class="opt'+sel+'" onclick="FRDT.pick('+i+','+oi+','+o[1]+')">'+o[0]+'</button>';
+      }).join("");
+      card.innerHTML = '<p class="q-count">Question '+(i+1)+' of '+QUESTIONS.length+' · '+item.lever+'</p>'+
+        '<p class="q-text">'+item.q+'</p><div class="opts">'+opts+'</div>';
+      form.appendChild(card);
+    });
+    updateBar(); document.getElementById("backBtn").disabled = (idx === 0);
+  }
+  function updateBar(){ document.getElementById("bar").style.width = (idx / QUESTIONS.length) * 100 + "%"; }
+  function show(i){
+    document.querySelectorAll(".q").forEach(function (c, ci){ c.classList.toggle("active", ci === i); });
+    idx = i; updateBar(); document.getElementById("backBtn").disabled = (idx === 0);
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
+  function pick(qi, oi){
+    answers[qi] = oi;
+    var card = document.getElementById("q" + qi);
+    card.querySelectorAll(".opt").forEach(function (b, bi){ b.classList.toggle("sel", bi === oi); });
+    setTimeout(function (){ if (qi < QUESTIONS.length - 1){ show(qi + 1); } else { finish(); } }, 180);
+  }
+  function back(){ if (idx > 0) show(idx - 1); }
+  function rawScore(){ return answers.reduce(function (sum, oi, i){ return sum + (oi === null ? 0 : QUESTIONS[i].opts[oi][1]); }, 0); }
+  function finish(){
+    var score = Math.round((rawScore() / (QUESTIONS.length * 3)) * 100);
+    if (mode === "competitor"){ finishCompetitor(score); return; }
+    var tier = window.FRDT_tierFromScore(score);
+    window.FRDT_setScore(score, tier);
+    /* Anonymous research log: score, tier and the seven answers (0-3). No name, email or IP is sent. */
+    try{ var d=new URLSearchParams({score:score,tier:tier,v:"sc-v1",test:"true"}); answers.forEach(function(oi,i){ d.append("q"+(i+1), oi===null?"":QUESTIONS[i].opts[oi][1]); }); if(navigator.sendBeacon){ navigator.sendBeacon("https://hook.us2.make.com/bilv4qdmqila6hve4fks8p9npiazvw1v", d); } else { fetch("https://hook.us2.make.com/bilv4qdmqila6hve4fks8p9npiazvw1v",{method:"POST",mode:"no-cors",body:d,keepalive:true}); } }catch(e){}
+    document.getElementById("bar").style.width = "100%";
+    selfAnswers = answers.slice(); selfScore = score; selfTier = tier;
+    paintResult(score, tier);
+    document.getElementById("quiz").style.display = "none";
+    document.getElementById("result").classList.add("show");
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
+  var TIERS = {
+    "invisible":{ label:"Invisible", line:"The systems that decide who gets recommended can't find a reason to name you yet. Not broken, unbuilt. And infrastructure problems are fixable in a defined order." },
+    "emerging":{ label:"Emerging", line:"You exist. The machines can see you, they're just not picking you when a buyer asks. The gap from visible to recommended is smaller than it looks." },
+    "signal-strong":{ label:"Signal-Strong", line:"You're ahead of most. The machines can see you and lean toward recommending you. The risk now is quiet decay, and the move from strong to category-defining." }
+  };
+  function paintResult(score, tier){
+    document.getElementById("scoreVal").textContent = score;
+    var badge = document.getElementById("tierBadge");
+    badge.textContent = TIERS[tier].label; badge.className = "tier-badge tier-" + tier;
+    document.getElementById("tierLine").textContent = TIERS[tier].line;
+    paintShare(score, tier);
+    buildBreakdown(tier);
+  }
+  function vals(a){ return QUESTIONS.map(function (item, i){ return a[i] === null ? 0 : item.opts[a[i]][1]; }); }
+  function order(v){ /* weakest first; ties keep the lever order, since the order matters */
+    return v.map(function (x, i){ return { v:x, i:i }; }).sort(function (a, b){ return a.v - b.v || a.i - b.i; }).map(function (o){ return o.i; });
+  }
+  function paintShare(score, tier){
+    var url = "https://frdtlab.com/scorecard-result/" + tier + "?s=" + score;
+    var li = document.getElementById("shareLi"), cp = document.getElementById("shareCopy"), msg = document.getElementById("shareCopied");
+    li.href = "https://www.linkedin.com/sharing/share-offsite/?url=" + encodeURIComponent(url);
+    li.onclick = function (){ try{ gtag("event", "scorecard_share", { method: "linkedin", tier: tier }); }catch(e){} };
+    msg.textContent = "";
+    cp.onclick = function (){
+      try{ gtag("event", "scorecard_share", { method: "copy_link", tier: tier }); }catch(e){}
+      function done(){ msg.textContent = "Link copied."; }
+      function fallback(){ var t = document.createElement("textarea"); t.value = url; t.setAttribute("readonly", ""); t.style.position = "fixed"; t.style.opacity = "0"; document.body.appendChild(t); t.select(); var ok = false; try{ ok = document.execCommand("copy"); }catch(e){} document.body.removeChild(t); msg.textContent = ok ? "Link copied." : url; }
+      if (navigator.clipboard && navigator.clipboard.writeText){ navigator.clipboard.writeText(url).then(done, fallback); } else { fallback(); }
+    };
+  }
+  function buildBreakdown(tier){
+    var blurbs = {
+      "Entity clarity":"Does the machine know what you ARE, in one unambiguous line, before anything else.",
+      "Question coverage":"Do you answer buyer questions in buyer phrasing, not keyword pages.",
+      "Quotable answers":"Is your copy shaped to be lifted verbatim into an AI response.",
+      "Citations & proof":"Does anything off your own site corroborate you.",
+      "Schema / machine-readability":"Is your authority machine-readable.",
+      "Freshness":"Does the system see signs of life.",
+      "Distribution":"Are you showing up where the models actually read."
+    };
+    var v = vals(answers), ord = order(v);
+    /* Only the two weakest levers get "Fix first". Other weak levers read "Next". */
+    var firstTwo = ord.filter(function (i){ return v[i] <= 1; }).slice(0, 2);
+    document.getElementById("leverList").innerHTML = ord.map(function (i){
+      var item = QUESTIONS[i], label, cls;
+      if (firstTwo.indexOf(i) > -1){ label = "Fix first"; cls = "weak"; }
+      else if (v[i] <= 1){ label = "Next"; cls = "next"; }
+      else { label = "Holding"; cls = "ok"; }
+      return '<div class="lever"><h4>'+item.lever+'<span class="mark '+cls+'">'+label+'</span></h4><p>'+blurbs[item.lever]+'</p></div>';
+    }).join("");
+    var head = document.getElementById("bdHead"), sub = document.getElementById("bdSub"), cta = document.getElementById("ctaBlock");
+    var u = "?utm_source=scorecard&utm_medium=result&utm_campaign=scorecard_";
+    var AUDIT = "https://buy.stripe.com/dRm6oH5LV5eD9AmafP1Nu0d", AUDIT_COMP = "https://buy.stripe.com/9B66oHeir0Yn9Am2Nn1Nu0e";
+    var auditBlock = function (t){ return '<h3>The AI Visibility Audit</h3><p>Want it done for you? See exactly how ChatGPT, Perplexity, Gemini, and Google AI answers treat your brand, scored and prioritized. Fixed price, one-week turnaround.</p><a class="btn-primary" href="'+AUDIT+u+t+'" style="margin:0 6px 8px">Buy the Audit, $497</a><a class="btn-ghost" href="/ai-visibility-audit'+u+t+'">See what&rsquo;s inside</a>'; };
+    if (tier === "invisible"){
+      var names = (firstTwo.length ? firstTwo : ord.slice(0, 2)).map(function (i){ return QUESTIONS[i].lever.toLowerCase(); });
+      head.textContent = "The 7 levers, in the order that matters";
+      sub.textContent = "Most brands fix schema first and wonder why nothing moves. Yours start with " + names.join(", then ") + ". The foundation isn't built yet, and the order beats the effort.";
+      cta.innerHTML = auditBlock("invisible") + '<p class="cta-alt">Rather run it yourself? <a href="https://buy.stripe.com/9B600j1vFfTheUG4Vv1Nu0f'+u+'invisible">The GEO Playbook, $97</a>: the confidence engine, all seven levers, and a 30-day plan.</p>';
+    } else if (tier === "emerging"){
+      head.textContent = "You're visible, but not chosen";
+      sub.textContent = "The difference between seen and recommended is usually one thing: your content reads like marketing, not like an answer a machine wants to quote. Stop writing pages, start writing answers. Point it at your highest-intent page first.";
+      cta.innerHTML = auditBlock("emerging") + '<p class="cta-alt">Rather do it yourself? <a href="https://buy.stripe.com/cNi14ngqzfTh7se2Nn1Nu04?utm_source=frdtlab&utm_medium=scorecard&utm_campaign=emerging">Prompt Pack, $49</a> or the <a href="https://unapologeticleader.gumroad.com/l/etenyb'+u+'emerging">Full Bundle, $197</a>.</p>';
+    } else {
+      head.textContent = "You're in rare air, here's the edge most miss";
+      sub.textContent = "The levers everyone talks about are handled. The frontier move is upstream of tactics: building authority the machines treat as a source, not just a result, so your point of view becomes the reference answer in your category.";
+      cta.innerHTML = '<h3>The Audit, with competitor benchmarking</h3><p>See exactly how ChatGPT, Perplexity, Gemini, and Google AI answers treat your brand and your closest competitors, scored and prioritized. One-week turnaround.</p><a class="btn-primary" href="'+AUDIT_COMP+u+'signalstrong" style="margin:0 6px 8px">Buy the Audit + Competitive, $1,250</a><p class="cta-alt">If the next move is structural, <a href="/work-with-me'+u+'signalstrong">tell me what you&rsquo;re building</a>.</p>';
+    }
+  }
+  function startCompetitor(){
+    if (!selfAnswers) return;
+    try{ gtag("event", "scorecard_competitor_start", { tier: selfTier }); }catch(e){}
+    mode = "competitor"; answers = new Array(QUESTIONS.length).fill(null); idx = 0;
+    document.getElementById("result").classList.remove("show");
+    document.querySelector("#quiz header.hero").style.display = "none";
+    document.getElementById("compBanner").style.display = "block";
+    document.getElementById("quiz").style.display = "block";
+    render(); window.scrollTo({ top: 0, behavior: "smooth" });
+  }
+  function backToResult(){
+    mode = "self"; answers = selfAnswers.slice();
+    document.querySelector("#quiz header.hero").style.display = "";
+    document.getElementById("compBanner").style.display = "none";
+    document.getElementById("quiz").style.display = "none";
+    document.getElementById("result").classList.add("show");
+  }
+  function cancelCompetitor(){ backToResult(); var c = document.getElementById("compStart"); window.scrollTo({ top: c.offsetTop - 20, behavior: "smooth" }); }
+  function finishCompetitor(score){
+    /* Competitor answers stay in this page: no research log, no Klaviyo. */
+    var them = vals(answers), you = vals(selfAnswers);
+    backToResult();
+    var rows = QUESTIONS.map(function (item, i){
+      var lead = them[i] > you[i] ? '<span class="cmp-lead">They lead</span>' : '';
+      return '<tr><td>'+item.lever+lead+'</td><td>'+LEVEL[you[i]]+'</td><td>'+LEVEL[them[i]]+'</td></tr>';
+    }).join("");
+    var leads = them.filter(function (t, i){ return t > you[i]; }).length;
+    var u = "?utm_source=scorecard&utm_medium=result&utm_campaign=scorecard_compare";
+    var box = document.getElementById("compare");
+    box.innerHTML = '<h2 class="bd-head">You vs. your competitor</h2>'+
+      '<p class="bd-sub">' + (leads ? 'They lead on ' + leads + ' of 7 levers. These are guesses, so treat it as a map of where to look.' : 'By your answers, they don&rsquo;t lead on any lever. These are guesses, so treat it as a map of where to look.') + '</p>'+
+      '<div class="cmp-scores"><div><span>You</span><b>'+selfScore+'</b></div><div><span>Them</span><b>'+score+'</b></div></div>'+
+      '<div style="overflow-x:auto"><table class="cmp-table"><thead><tr><th>Lever</th><th>You</th><th>Them</th></tr></thead><tbody>'+rows+'</tbody></table></div>'+
+      '<div class="cta"><h3>See it measured, not guessed</h3><p>The Audit with competitor benchmarking runs your buyers&rsquo; questions across the four major answer engines for you and your closest competitors, scored and prioritized.</p><a class="btn-primary" href="https://buy.stripe.com/9B66oHeir0Yn9Am2Nn1Nu0e'+u+'">Buy the Audit + Competitive, $1,250</a></div>';
+    box.style.display = "block";
+    document.getElementById("compStart").querySelector("h3").textContent = "Score another competitor";
+    try{ gtag("event", "scorecard_competitor_done", { tier: selfTier }); }catch(e){}
+    setTimeout(function (){ window.scrollTo({ top: box.getBoundingClientRect().top + window.pageYOffset - 20, behavior: "smooth" }); }, 60);
+  }
+  function restart(){
+    answers = new Array(QUESTIONS.length).fill(null); idx = 0; mode = "self"; selfAnswers = null; selfScore = null; selfTier = null;
+    document.getElementById("compare").style.display = "none"; document.getElementById("compare").innerHTML = "";
+    document.getElementById("compStart").querySelector("h3").textContent = "Score a competitor next to you";
+    document.querySelector("#quiz header.hero").style.display = ""; document.getElementById("compBanner").style.display = "none";
+    document.getElementById("result").classList.remove("show");
+    document.getElementById("frdt-breakdown").style.display = "none";
+    document.getElementById("frdt-gate").style.display = "block";
+    document.getElementById("frdt-scorecard-email").value = "";
+    document.getElementById("quiz").style.display = "block";
+    render(); window.scrollTo({ top: 0, behavior: "smooth" });
+  }
+  return { pick:pick, back:back, restart:restart, startCompetitor:startCompetitor, cancelCompetitor:cancelCompetitor, _render:render };
+})();
+FRDT._render();
+
+/* ===== KLAVIYO CAPTURE, fires on unlock (account Twvzce, list FRDT Lab Subscribers) ===== */
+window.FRDT_unlockBreakdown = function () {
+  var emailEl = document.getElementById("frdt-scorecard-email");
+  var email = (emailEl && emailEl.value || "").trim();
+  var errEl = document.getElementById("frdt-scorecard-err");
+  if (!email || email.indexOf("@") < 1 || email.lastIndexOf(".") < email.indexOf("@")) {
+    if (errEl) errEl.style.display = "block"; return false;
+  }
+  if (errEl) errEl.style.display = "none";
+  var score = (typeof window.__frdtScore !== "undefined") ? window.__frdtScore : null;
+  var tier = window.__frdtTier || (score !== null ? window.FRDT_tierFromScore(score) : "unknown");
+  try {
+    var pr = { "score": score, "tier": tier, "scorecard_name": "AI Visibility Scorecard", "scorecard_version": "v2" };
+    var profAttrs = { email: email, properties: { scorecard_score: score, scorecard_tier: tier, scorecard_completed_at: new Date().toISOString(), brand: "FRDTLAB", source: "ai_visibility_scorecard" } };
+    var H = { "Content-Type": "application/vnd.api+json", "revision": "2024-10-15" };
+    /* events carry the typed email so they land on this person's profile, not an earlier visitor's cookie */
+    function sendEvent(name, props){
+      fetch("https://a.klaviyo.com/client/events?company_id=Twvzce", { method: "POST", headers: H,
+        body: JSON.stringify({ data: { type: "event", attributes: { properties: props, metric: { data: { type: "metric", attributes: { name: name } } }, profile: { data: { type: "profile", attributes: profAttrs } } } } })
+      }).then(function (r){ if (!r.ok) throw new Error("HTTP " + r.status); })
+        .catch(function (){ if (window.klaviyo){ window.klaviyo.push(["identify", Object.assign({ "$email": email }, profAttrs.properties)]); window.klaviyo.push(["track", name, props]); } });
+    }
+    sendEvent("Scorecard Completed", pr);
+    sendEvent("New Lead", { form: "Scorecard Completed", brand: "FRDTLAB", score: score, tier: tier });
+    /* subscribe with consent so follow-up email can deliver (list FRDT Lab Subscribers) */
+    fetch("https://a.klaviyo.com/client/subscriptions?company_id=Twvzce", { method: "POST", headers: H,
+      body: JSON.stringify({ data: { type: "subscription", attributes: { custom_source: "Scorecard Completed", profile: { data: { type: "profile", attributes: { email: email } } } }, relationships: { list: { data: { type: "list", id: "QYJzYY" } } } } })
+    });
+    if (window.klaviyo){ window.klaviyo.push(["identify", { "$email": email }]); }
+  } catch (err) {}
+  document.getElementById("frdt-gate").style.display = "none";
+  var bd = document.getElementById("frdt-breakdown");
+  bd.style.display = "block";
+  window.scrollTo({ top: bd.offsetTop - 20, behavior: "smooth" });
+  return false;
+};
+</script>
+</body></html>
