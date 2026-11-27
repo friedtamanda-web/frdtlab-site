@@ -75,7 +75,7 @@
 <script src="/assets/signal-room.js" defer></script>
 </head>
 <body>
-<nav><a href="/" class="brand">FRDT<b>LAB</b></a><a href="/competence-trap" class="back">← Competence Trap</a></nav>
+<nav><a href="/" class="brand">FRDT<b>LAB</b></a><a href="https://theunapologeticleader.com/competence-trap" class="back">← Competence Trap</a></nav>
 
 <header class="hero"><div class="wrap">
   <span class="kicker">The Research Lab</span>
@@ -136,14 +136,8 @@
   <div class="gate">
     <span class="kicker">The full report</span>
     <h2>Get the compiled findings.</h2>
-    <p>The complete research compilation, every finding, the full data, and the framework underneath, with all sources. Free. We'll send it straight to your inbox.</p>
-    <form class="gform" id="rform" onsubmit="return window.FRDT_research();">
-      <input id="remail" type="email" inputmode="email" autocomplete="email" placeholder="you@company.com" required>
-      <button type="submit">Send me the findings →</button>
-    </form>
-    <p class="gerr" id="rerr">Add a valid email and we'll send the report.</p>
-    <p class="gfine">FRDTLAB Research Lab · No spam, leave anytime</p>
-    <div id="gdone"><p style="color:#F6F4F2;font-weight:700;margin-bottom:6px">On its way. Check your inbox.</p></div>
+    <p>The compiled findings now live with The Competence Trap on The Unapologetic Leader.</p>
+    <a href="https://theunapologeticleader.com/competence-trap#remail" style="display:inline-block;background:var(--pink);color:#fff;font-weight:700;border-radius:10px;padding:14px 28px;text-decoration:none">Get the findings &rarr;</a>
   </div>
 
   <div class="sources">
@@ -160,27 +154,6 @@
   </div>
 </div>
 
-<footer><div class="wrap"><a href="/">FRDTLAB</a> · <a href="/competence-trap">Competence Trap</a> · <a href="/ai-powered-marketing-machine">The Marketing Machine</a> · <a href="/work-with-me">Work With Me</a> · Detroit-rooted, storm-tested</div></footer>
+<footer><div class="wrap"><a href="/">FRDTLAB</a> · <a href="https://theunapologeticleader.com/competence-trap">Competence Trap</a> · <a href="/ai-powered-marketing-machine">The Marketing Machine</a> · <a href="/work-with-me">Work With Me</a> · Detroit-rooted, storm-tested</div></footer>
 
-<script>
-window.FRDT_research=function(){
-  var el=document.getElementById('remail');var email=(el&&el.value||'').trim();var err=document.getElementById('rerr');
-  if(!email||email.indexOf('@')<1||email.lastIndexOf('.')<email.indexOf('@')){if(err){err.textContent="Add a valid email and we'll send the report.";err.style.display='block';}return false;}
-  if(err)err.style.display='none';
-  var btn=document.querySelector('#rform button');if(btn)btn.disabled=true;
-  /* kl-lead-handler v2 pattern: subscribe, then only show success on a 2xx */
-  fetch('https://a.klaviyo.com/client/subscriptions?company_id=Twvzce',{method:'POST',keepalive:true,headers:{'Content-Type':'application/vnd.api+json','revision':'2024-10-15'},body:JSON.stringify({data:{type:'subscription',attributes:{custom_source:'Competence Trap Findings Request',profile:{data:{type:'profile',attributes:{email:email,subscriptions:{email:{marketing:{consent:'SUBSCRIBED'}}}}}}},relationships:{list:{data:{type:'list',id:'QYJzYY'}}}}})})
-  .then(function(r){ if(!r.ok) throw new Error('HTTP '+r.status);
-    try{var kl=window.klaviyo=window.klaviyo||[];
-      kl.push(['identify',{'$email':email,'brand':'FRDTLAB','source':'research_lab_findings'}]);
-      kl.push(['track','Competence Trap Findings Request',{'report':'Competence Trap Findings No. 001'}]);
-      kl.push(['track','New Lead',{form:'Competence Trap Findings Request',brand:'FRDTLAB'}]);
-    }catch(e){}
-    try{ if(window.gtag){ gtag('event','generate_lead',{event_category:'form',event_label:'Competence Trap Findings Request',form_name:'Competence Trap Findings Request',send_to:'G-1CDWBM46D5'}); } }catch(e){}
-    document.getElementById('rform').style.display='none';document.getElementById('gdone').style.display='block';
-  })
-  .catch(function(){ if(btn)btn.disabled=false; if(err){err.textContent="That didn't go through. Please try again, or email hello@frdtlab.com.";err.style.display='block';} });
-  return false;
-};
-</script>
 </body></html>
