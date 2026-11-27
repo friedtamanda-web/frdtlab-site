@@ -121,6 +121,38 @@
 <link rel="stylesheet" href="/assets/signal-room-c.css">
 <script src="/assets/signal-room-c.js" defer></script>
 <style id="slide-text-css">.slide-text{display:none}@media(max-width:600px){.slide-text{display:block;margin:12px 0 18px;padding:14px 16px;border:1px solid var(--sr-rule,#26272e);border-radius:10px;background:var(--sr-graphite,#17181d);color:var(--sr-chalk,#ecebe7);font:15px/1.5 var(--sr-text,"Archivo",system-ui,sans-serif);text-align:left;white-space:normal}.slide-text p,.slide-text li{max-width:none!important;text-align:left!important}.slide-text .st-k{font:11px/1.4 var(--sr-mono,"JetBrains Mono",monospace)!important;letter-spacing:.14em!important;text-transform:uppercase!important;color:var(--sr-signal-hot,#ff4fa0)!important;margin:0 0 4px!important}.slide-text .st-t{font:700 17px/1.3 var(--sr-text,"Archivo",system-ui,sans-serif)!important;margin:0 0 8px!important;color:var(--sr-white,#fafaf8)!important;letter-spacing:0!important;text-transform:none!important}.slide-text ul{margin:0!important;padding:0 0 0 18px!important;list-style:disc!important}.slide-text li{margin:0 0 6px!important;color:var(--sr-chalk,#ecebe7)!important;font:15px/1.5 var(--sr-text,"Archivo",system-ui,sans-serif)!important}.slide-text b{color:var(--sr-white,#fafaf8)!important;font-weight:700!important}}</style></head>
+<style id="sc-v2">
+  .share-card{margin:1.6rem auto 0;max-width:32rem;border:1px solid var(--line);border-radius:14px;background:var(--card);padding:1.1rem 1.2rem;text-align:center}
+  .share-card .share-k{font-family:var(--mono);font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--pink-acc);margin:0 0 .7rem}
+  .share-row{display:flex;flex-wrap:wrap;gap:.6rem;justify-content:center}
+  .share-btn{display:inline-flex;align-items:center;justify-content:center;gap:.4rem;min-height:44px;padding:.7rem 1.1rem;border-radius:10px;border:1px solid var(--line-2);background:#fff;color:var(--ink);font:700 .95rem/1 var(--sans);text-decoration:none;cursor:pointer}
+  .share-btn:hover{border-color:var(--pink-acc);color:var(--pink-acc)}
+  .share-btn.li{background:var(--ink);color:#fff;border-color:var(--ink)}
+  .share-btn.li:hover{background:var(--pink-acc);border-color:var(--pink-acc);color:#fff}
+  .share-note{font-size:.82rem;color:var(--faint);margin:.7rem 0 0}
+  .share-copied{font-size:.85rem;color:var(--good);margin:.5rem 0 0;min-height:1.2em}
+  .cta .cta-alt{margin:1rem 0 0;font-size:.92rem;color:var(--body)}
+  .cta .cta-alt a{color:var(--pink-acc);font-weight:700}
+  .cta .btn-ghost{display:inline-block;padding:.95rem 1.4rem;border-radius:10px;border:1px solid var(--line-2);color:var(--ink);font:700 1rem/1 var(--sans);text-decoration:none;margin:0 6px 8px}
+  .cta .btn-ghost:hover{border-color:var(--pink-acc);color:var(--pink-acc)}
+  .comp-start{margin-top:2rem;padding:1.3rem 1.2rem;border:1px dashed var(--line-2);border-radius:14px;text-align:center}
+  .comp-start h3{font:800 1.15rem/1.3 var(--sans);color:var(--ink);margin:0 0 .4rem}
+  .comp-start p{color:var(--body);margin:0 0 1rem;font-size:.94rem}
+  #compBanner{display:none;margin:1.4rem 0 .4rem;padding:.9rem 1rem;border-radius:12px;background:var(--ink);color:#fff;font-size:.95rem}
+  #compBanner b{color:#ffb3d6}
+  #compBanner button{margin-left:.6rem;background:none;border:0;color:#fff;text-decoration:underline;font:inherit;cursor:pointer}
+  #compare{display:none;margin-top:2rem}
+  .cmp-scores{display:flex;gap:.8rem;justify-content:center;margin:0 0 1rem}
+  .cmp-scores div{flex:1;max-width:11rem;border:1px solid var(--line);border-radius:12px;background:var(--card);padding:.8rem}
+  .cmp-scores b{display:block;font:900 2rem/1 var(--sans);color:var(--ink)}
+  .cmp-scores span{font-family:var(--mono);font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--faint)}
+  .cmp-table{width:100%;border-collapse:collapse;font-size:.92rem}
+  .cmp-table th,.cmp-table td{text-align:left;padding:.65rem .5rem;border-bottom:1px solid var(--line)}
+  .cmp-table th{font-family:var(--mono);font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--faint);font-weight:500}
+  .cmp-table td:first-child{font-weight:700;color:var(--ink)}
+  .cmp-lead{display:inline-block;margin-left:.35rem;font:700 .7rem/1 var(--sans);padding:.22rem .45rem;border-radius:99px;background:rgba(232,67,147,.12);color:var(--pink-acc);white-space:nowrap}
+  @media(max-width:520px){.cmp-table th:nth-child(2),.cmp-table td:nth-child(2),.cmp-table th:nth-child(3),.cmp-table td:nth-child(3){white-space:nowrap}}
+</style>
 <body class="src src-paper src-score">
 <nav id="nav">
 <a href="/" class="brand">FRDT<b>LAB</b></a>
@@ -143,6 +175,7 @@
     <figure class="src-photo frame is-diagram"><picture><source srcset="/img/signals-to-recommendation.webp" type="image/webp"><img src="/img/signals-to-recommendation.jpg" width="1200" height="675" alt="Diagram: search, social, reviews, commerce, and first-party data flow into a confidence engine that cleans, connects, and interprets them, then into an agentic step and a recommendation, with a learning loop back and human judgment underneath." fetchpriority="high"></picture><span class="src-tag" data-src-added>The Signal System · Diagram</span></figure><div class="slide-text" aria-hidden="true"><p class="st-t">From signals to a recommendation.</p><ul><li>Search · Social · Reviews · Commerce · First-party</li><li><b>Confidence Engine:</b> Clean · Connect · Interpret</li><li>Confidence Engine → Agentic System → Recommendation → Learn → Confidence Engine</li><li>Human judgment + clear boundaries</li></ul></div>
     </div></header>
 
+    <div id="compBanner" role="status"><b>Scoring a competitor.</b> Answer the way you&rsquo;d guess for them. Nothing about them is saved or sent.<button type="button" onclick="FRDT.cancelCompetitor()">Cancel</button></div>
     <div class="progress"><span id="bar"></span></div>
     <form id="qform" onsubmit="return false;"></form>
     <div class="navrow">
@@ -160,6 +193,16 @@
       <div id="tierBadge" class="tier-badge"> </div>
     </div>
     <p class="tier-line" id="tierLine"></p>
+
+    <div class="share-card" id="shareCard">
+      <p class="share-k">Share your score</p>
+      <div class="share-row">
+        <a class="share-btn li" id="shareLi" href="#" target="_blank" rel="noopener">Share on LinkedIn</a>
+        <button type="button" class="share-btn" id="shareCopy">Copy link</button>
+      </div>
+      <p class="share-copied" id="shareCopied" aria-live="polite"></p>
+      <p class="share-note">The link shows your score and tier. Not your answers, not your email.</p>
+    </div>
 
     <!-- Gate: score is free above; breakdown is gated -->
     <div id="frdt-gate" class="frdt-gate">
@@ -179,6 +222,12 @@
       <p class="bd-sub" id="bdSub"></p>
       <div id="leverList"></div>
       <div class="cta" id="ctaBlock"></div>
+      <div class="comp-start" id="compStart">
+        <h3>Score a competitor next to you</h3>
+        <p>Answer the same seven questions the way you&rsquo;d guess for them. Nothing about them is saved or sent.</p>
+        <button type="button" class="share-btn li" onclick="FRDT.startCompetitor()">Score a competitor</button>
+      </div>
+      <div id="compare" aria-live="polite"></div>
     </div>
 
     <button type="button" class="restart" onclick="FRDT.restart()">Retake the scorecard</button>
@@ -258,6 +307,8 @@ var FRDT = (function () {
   ];
   var answers = new Array(QUESTIONS.length).fill(null);
   var idx = 0;
+  var mode = "self", selfAnswers = null, selfScore = null, selfTier = null;
+  var LEVEL = ["Missing","Weak","Partial","Strong"];
 
   function render() {
     var form = document.getElementById("qform"); form.innerHTML = "";
@@ -290,11 +341,13 @@ var FRDT = (function () {
   function rawScore(){ return answers.reduce(function (sum, oi, i){ return sum + (oi === null ? 0 : QUESTIONS[i].opts[oi][1]); }, 0); }
   function finish(){
     var score = Math.round((rawScore() / (QUESTIONS.length * 3)) * 100);
+    if (mode === "competitor"){ finishCompetitor(score); return; }
     var tier = window.FRDT_tierFromScore(score);
     window.FRDT_setScore(score, tier);
     /* Anonymous research log: score, tier and the seven answers (0-3). No name, email or IP is sent. */
     try{ var d=new URLSearchParams({score:score,tier:tier,v:"sc-v1",test:(/[?&]sc_test=1/.test(location.search)?"true":"false")}); answers.forEach(function(oi,i){ d.append("q"+(i+1), oi===null?"":QUESTIONS[i].opts[oi][1]); }); if(navigator.sendBeacon){ navigator.sendBeacon("https://hook.us2.make.com/bilv4qdmqila6hve4fks8p9npiazvw1v", d); } else { fetch("https://hook.us2.make.com/bilv4qdmqila6hve4fks8p9npiazvw1v",{method:"POST",mode:"no-cors",body:d,keepalive:true}); } }catch(e){}
     document.getElementById("bar").style.width = "100%";
+    selfAnswers = answers.slice(); selfScore = score; selfTier = tier;
     paintResult(score, tier);
     document.getElementById("quiz").style.display = "none";
     document.getElementById("result").classList.add("show");
@@ -310,7 +363,25 @@ var FRDT = (function () {
     var badge = document.getElementById("tierBadge");
     badge.textContent = TIERS[tier].label; badge.className = "tier-badge tier-" + tier;
     document.getElementById("tierLine").textContent = TIERS[tier].line;
+    paintShare(score, tier);
     buildBreakdown(tier);
+  }
+  function vals(a){ return QUESTIONS.map(function (item, i){ return a[i] === null ? 0 : item.opts[a[i]][1]; }); }
+  function order(v){ /* weakest first; ties keep the lever order, since the order matters */
+    return v.map(function (x, i){ return { v:x, i:i }; }).sort(function (a, b){ return a.v - b.v || a.i - b.i; }).map(function (o){ return o.i; });
+  }
+  function paintShare(score, tier){
+    var url = "https://frdtlab.com/scorecard-result/" + tier + "?s=" + score;
+    var li = document.getElementById("shareLi"), cp = document.getElementById("shareCopy"), msg = document.getElementById("shareCopied");
+    li.href = "https://www.linkedin.com/sharing/share-offsite/?url=" + encodeURIComponent(url);
+    li.onclick = function (){ try{ gtag("event", "scorecard_share", { method: "linkedin", tier: tier }); }catch(e){} };
+    msg.textContent = "";
+    cp.onclick = function (){
+      try{ gtag("event", "scorecard_share", { method: "copy_link", tier: tier }); }catch(e){}
+      function done(){ msg.textContent = "Link copied."; }
+      function fallback(){ var t = document.createElement("textarea"); t.value = url; t.setAttribute("readonly", ""); t.style.position = "fixed"; t.style.opacity = "0"; document.body.appendChild(t); t.select(); var ok = false; try{ ok = document.execCommand("copy"); }catch(e){} document.body.removeChild(t); msg.textContent = ok ? "Link copied." : url; }
+      if (navigator.clipboard && navigator.clipboard.writeText){ navigator.clipboard.writeText(url).then(done, fallback); } else { fallback(); }
+    };
   }
   function buildBreakdown(tier){
     var blurbs = {
@@ -322,37 +393,81 @@ var FRDT = (function () {
       "Freshness":"Does the system see signs of life.",
       "Distribution":"Are you showing up where the models actually read."
     };
-    /* Only the two weakest levers get "Fix first" (lowest score; ties go to the earlier lever, since the order matters). Other weak levers read "Next". */
-    var vals = QUESTIONS.map(function (item, i){ return answers[i] === null ? 0 : item.opts[answers[i]][1]; });
-    var firstTwo = vals.map(function (v, i){ return { v:v, i:i }; })
-      .filter(function (o){ return o.v <= 1; })
-      .sort(function (a, b){ return a.v - b.v || a.i - b.i; })
-      .slice(0, 2).map(function (o){ return o.i; });
-    document.getElementById("leverList").innerHTML = QUESTIONS.map(function (item, i){
-      var v = vals[i], label, cls;
+    var v = vals(answers), ord = order(v);
+    /* Only the two weakest levers get "Fix first". Other weak levers read "Next". */
+    var firstTwo = ord.filter(function (i){ return v[i] <= 1; }).slice(0, 2);
+    document.getElementById("leverList").innerHTML = ord.map(function (i){
+      var item = QUESTIONS[i], label, cls;
       if (firstTwo.indexOf(i) > -1){ label = "Fix first"; cls = "weak"; }
-      else if (v <= 1){ label = "Next"; cls = "next"; }
+      else if (v[i] <= 1){ label = "Next"; cls = "next"; }
       else { label = "Holding"; cls = "ok"; }
       return '<div class="lever"><h4>'+item.lever+'<span class="mark '+cls+'">'+label+'</span></h4><p>'+blurbs[item.lever]+'</p></div>';
     }).join("");
     var head = document.getElementById("bdHead"), sub = document.getElementById("bdSub"), cta = document.getElementById("ctaBlock");
     var u = "?utm_source=scorecard&utm_medium=result&utm_campaign=scorecard_";
+    var AUDIT = "https://buy.stripe.com/dRm6oH5LV5eD9AmafP1Nu0d", AUDIT_COMP = "https://buy.stripe.com/9B66oHeir0Yn9Am2Nn1Nu0e";
+    var auditBlock = function (t){ return '<h3>The AI Visibility Audit</h3><p>Want it done for you? See exactly how ChatGPT, Perplexity, Gemini, and Google AI answers treat your brand, scored and prioritized. Fixed price, one-week turnaround.</p><a class="btn-primary" href="'+AUDIT+u+t+'" style="margin:0 6px 8px">Buy the Audit, $497</a><a class="btn-ghost" href="/ai-visibility-audit'+u+t+'">See what&rsquo;s inside</a>'; };
     if (tier === "invisible"){
+      var names = (firstTwo.length ? firstTwo : ord.slice(0, 2)).map(function (i){ return QUESTIONS[i].lever.toLowerCase(); });
       head.textContent = "The 7 levers, in the order that matters";
-      sub.textContent = "Most brands fix #5 first and wonder why nothing moves. Yours start at the top: entity, then questions, then quotable proof. The foundation isn't built yet, and the order beats the effort.";
-      cta.innerHTML = '<h3>The GEO Playbook</h3><p>The confidence engine, all seven levers, and a 30-day plan. The exact system, not theory.</p><a class="btn-primary" href="https://buy.stripe.com/9B600j1vFfTheUG4Vv1Nu0f'+u+'invisible">Get the GEO Playbook, $97</a>';
+      sub.textContent = "Most brands fix schema first and wonder why nothing moves. Yours start with " + names.join(", then ") + ". The foundation isn't built yet, and the order beats the effort.";
+      cta.innerHTML = auditBlock("invisible") + '<p class="cta-alt">Rather run it yourself? <a href="https://buy.stripe.com/9B600j1vFfTheUG4Vv1Nu0f'+u+'invisible">The GEO Playbook, $97</a>: the confidence engine, all seven levers, and a 30-day plan.</p>';
     } else if (tier === "emerging"){
       head.textContent = "You're visible, but not chosen";
       sub.textContent = "The difference between seen and recommended is usually one thing: your content reads like marketing, not like an answer a machine wants to quote. Stop writing pages, start writing answers. Point it at your highest-intent page first.";
-      cta.innerHTML = '<h3>The Prompt Pack</h3><p>Fifty operator prompts, including a block for AI-search content built to get quoted. Or take the Bundle: Pack + Playbook + Starter Kit, save $46.</p><a class="btn-primary" href="https://buy.stripe.com/cNi14ngqzfTh7se2Nn1Nu04?utm_source=frdtlab&utm_medium=scorecard&utm_campaign=emerging" style="margin:0 6px 8px">Prompt Pack, $49</a><a class="btn-primary" href="https://unapologeticleader.gumroad.com/l/etenyb'+u+'emerging" style="margin:0 6px 8px;background:#111114">Full Bundle, $197</a>';
+      cta.innerHTML = auditBlock("emerging") + '<p class="cta-alt">Rather do it yourself? <a href="https://buy.stripe.com/cNi14ngqzfTh7se2Nn1Nu04?utm_source=frdtlab&utm_medium=scorecard&utm_campaign=emerging">Prompt Pack, $49</a> or the <a href="https://unapologeticleader.gumroad.com/l/etenyb'+u+'emerging">Full Bundle, $197</a>.</p>';
     } else {
       head.textContent = "You're in rare air, here's the edge most miss";
       sub.textContent = "The levers everyone talks about are handled. The frontier move is upstream of tactics: building authority the machines treat as a source, not just a result, so your point of view becomes the reference answer in your category.";
-      cta.innerHTML = '<h3>The conversation</h3><p>Turning strong signal into a durable category position is a strategy problem, not a checklist. If the next move is structural, tell me what you’re building.</p><a class="btn-primary" href="/work-with-me'+u+'signalstrong">Tell me what you’re building →</a>';
+      cta.innerHTML = '<h3>The Audit, with competitor benchmarking</h3><p>See exactly how ChatGPT, Perplexity, Gemini, and Google AI answers treat your brand and your closest competitors, scored and prioritized. One-week turnaround.</p><a class="btn-primary" href="'+AUDIT_COMP+u+'signalstrong" style="margin:0 6px 8px">Buy the Audit + Competitive, $1,250</a><p class="cta-alt">If the next move is structural, <a href="/work-with-me'+u+'signalstrong">tell me what you&rsquo;re building</a>.</p>';
     }
   }
+  function startCompetitor(){
+    if (!selfAnswers) return;
+    try{ gtag("event", "scorecard_competitor_start", { tier: selfTier }); }catch(e){}
+    mode = "competitor"; answers = new Array(QUESTIONS.length).fill(null); idx = 0;
+    document.getElementById("result").classList.remove("show");
+    document.querySelector("#quiz header.hero").style.display = "none";
+    document.getElementById("compBanner").style.display = "block";
+    var rn = document.querySelector(".frdt-research-note"); if (rn) rn.style.display = "none";
+    document.getElementById("quiz").style.display = "block";
+    render(); window.scrollTo({ top: 0, behavior: "smooth" });
+  }
+  function backToResult(){
+    mode = "self"; answers = selfAnswers.slice();
+    document.querySelector("#quiz header.hero").style.display = "";
+    document.getElementById("compBanner").style.display = "none";
+    var rn = document.querySelector(".frdt-research-note"); if (rn) rn.style.display = "";
+    document.getElementById("quiz").style.display = "none";
+    document.getElementById("result").classList.add("show");
+  }
+  function cancelCompetitor(){ backToResult(); var c = document.getElementById("compStart"); window.scrollTo({ top: c.offsetTop - 20, behavior: "smooth" }); }
+  function finishCompetitor(score){
+    /* Competitor answers stay in this page: no research log, no Klaviyo. */
+    var them = vals(answers), you = vals(selfAnswers);
+    backToResult();
+    var rows = QUESTIONS.map(function (item, i){
+      var lead = them[i] > you[i] ? '<span class="cmp-lead">They lead</span>' : '';
+      return '<tr><td>'+item.lever+lead+'</td><td>'+LEVEL[you[i]]+'</td><td>'+LEVEL[them[i]]+'</td></tr>';
+    }).join("");
+    var leads = them.filter(function (t, i){ return t > you[i]; }).length;
+    var u = "?utm_source=scorecard&utm_medium=result&utm_campaign=scorecard_compare";
+    var box = document.getElementById("compare");
+    box.innerHTML = '<h2 class="bd-head">You vs. your competitor</h2>'+
+      '<p class="bd-sub">' + (leads ? 'They lead on ' + leads + ' of 7 levers. These are guesses, so treat it as a map of where to look.' : 'By your answers, they don&rsquo;t lead on any lever. These are guesses, so treat it as a map of where to look.') + '</p>'+
+      '<div class="cmp-scores"><div><span>You</span><b>'+selfScore+'</b></div><div><span>Them</span><b>'+score+'</b></div></div>'+
+      '<div style="overflow-x:auto"><table class="cmp-table"><thead><tr><th>Lever</th><th>You</th><th>Them</th></tr></thead><tbody>'+rows+'</tbody></table></div>'+
+      '<div class="cta"><h3>See it measured, not guessed</h3><p>The Audit with competitor benchmarking runs your buyers&rsquo; questions across the four major answer engines for you and your closest competitors, scored and prioritized.</p><a class="btn-primary" href="https://buy.stripe.com/9B66oHeir0Yn9Am2Nn1Nu0e'+u+'">Buy the Audit + Competitive, $1,250</a></div>';
+    box.style.display = "block";
+    document.getElementById("compStart").querySelector("h3").textContent = "Score another competitor";
+    try{ gtag("event", "scorecard_competitor_done", { tier: selfTier }); }catch(e){}
+    setTimeout(function (){ window.scrollTo({ top: box.getBoundingClientRect().top + window.pageYOffset - 20, behavior: "smooth" }); }, 60);
+  }
   function restart(){
-    answers = new Array(QUESTIONS.length).fill(null); idx = 0;
+    answers = new Array(QUESTIONS.length).fill(null); idx = 0; mode = "self"; selfAnswers = null; selfScore = null; selfTier = null;
+    document.getElementById("compare").style.display = "none"; document.getElementById("compare").innerHTML = "";
+    document.getElementById("compStart").querySelector("h3").textContent = "Score a competitor next to you";
+    document.querySelector("#quiz header.hero").style.display = ""; document.getElementById("compBanner").style.display = "none"; var rn2 = document.querySelector(".frdt-research-note"); if (rn2) rn2.style.display = "";
     document.getElementById("result").classList.remove("show");
     document.getElementById("frdt-breakdown").style.display = "none";
     document.getElementById("frdt-gate").style.display = "block";
@@ -360,7 +475,7 @@ var FRDT = (function () {
     document.getElementById("quiz").style.display = "block";
     render(); window.scrollTo({ top: 0, behavior: "smooth" });
   }
-  return { pick:pick, back:back, restart:restart, _render:render };
+  return { pick:pick, back:back, restart:restart, startCompetitor:startCompetitor, cancelCompetitor:cancelCompetitor, _render:render };
 })();
 FRDT._render();
 
@@ -376,7 +491,7 @@ window.FRDT_unlockBreakdown = function () {
   var score = (typeof window.__frdtScore !== "undefined") ? window.__frdtScore : null;
   var tier = window.__frdtTier || (score !== null ? window.FRDT_tierFromScore(score) : "unknown");
   try {
-    var pr = { "score": score, "tier": tier, "scorecard_name": "AI Visibility Scorecard" };
+    var pr = { "score": score, "tier": tier, "scorecard_name": "AI Visibility Scorecard", "scorecard_version": "v2" };
     var profAttrs = { email: email, properties: { scorecard_score: score, scorecard_tier: tier, scorecard_completed_at: new Date().toISOString(), brand: "FRDTLAB", source: "ai_visibility_scorecard" } };
     var H = { "Content-Type": "application/vnd.api+json", "revision": "2024-10-15" };
     /* events carry the typed email so they land on this person's profile, not an earlier visitor's cookie */
