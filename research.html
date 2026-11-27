@@ -144,14 +144,14 @@
   <div class="gate">
     <span class="kicker">The full report</span>
     <h2>Get the compiled findings.</h2>
-    <p>The complete research compilation, every finding, the full data, and the framework underneath, with all sources. Free. We'll send it straight to your inbox.</p>
+    <p>The complete research compilation, every finding, the full data, and the framework underneath, with all sources. Free. The download appears right here.</p>
     <form class="gform" id="rform" onsubmit="return window.FRDT_research();">
       <input id="remail" type="email" inputmode="email" autocomplete="email" placeholder="you@company.com" required>
       <button type="submit">Send me the findings →</button>
     </form>
-    <p class="gerr" id="rerr">Add a valid email and we'll send the report.</p>
+    <p class="gerr" id="rerr">Add a valid email to get the report.</p>
     <p class="gfine">FRDTLAB Research Lab · No spam, leave anytime</p>
-    <div id="gdone"><p style="color:#F6F4F2;font-weight:700;margin-bottom:6px">On its way. Check your inbox.</p><a href="FRDTLAB-Competence-Trap-Findings.pdf" download>Download the findings (PDF) →</a></div>
+    <div id="gdone"><p style="color:#F6F4F2;font-weight:700;margin-bottom:6px">Here it is.</p><a href="FRDTLAB-Competence-Trap-Findings.pdf" download>Download the findings (PDF) →</a></div>
   </div>
 
   <div class="sources">
@@ -199,17 +199,27 @@
 </footer>
 
 <script>
+/* kl-core: posts events and list sign-ups straight to Klaviyo's client API with the typed email, so they land on the right person even if another visitor used this browser */
+window.FRDT_kl=window.FRDT_kl||(function(){
+  var H={'Content-Type':'application/vnd.api+json','revision':'2024-10-15'}, U='https://a.klaviyo.com/client/', C='?company_id=Twvzce';
+  function post(path,body){ return fetch(U+path+C,{method:'POST',keepalive:true,headers:H,body:JSON.stringify(body)}).then(function(r){ if(!r.ok) throw new Error('HTTP '+r.status); return r; }); }
+  function event(name,email,props,profileProps){ var a={email:email}; if(profileProps) a.properties=profileProps; return post('events',{data:{type:'event',attributes:{properties:props||{},metric:{data:{type:'metric',attributes:{name:name}}},profile:{data:{type:'profile',attributes:a}}}}}); }
+  function subscribe(listId,email,source){ return post('subscriptions',{data:{type:'subscription',attributes:{custom_source:source,profile:{data:{type:'profile',attributes:{email:email}}}},relationships:{list:{data:{type:'list',id:listId}}}}}); }
+  return { event:event, subscribe:subscribe, lead:function(form,email,props,listId,profileProps){
+    var p=Object.assign({},props||{}), jobs=[event(form,email,p,profileProps), event('New Lead',email,Object.assign({form:form,brand:'FRDTLAB'},p)).catch(function(){})];
+    if(listId) jobs.push(subscribe(listId,email,form).catch(function(){}));
+    try{ if(window.gtag) gtag('event','generate_lead',{event_category:'form',event_label:form,form_name:form,send_to:'G-1CDWBM46D5'}); }catch(e){}
+    return Promise.all(jobs);
+  } };
+})();
+
 window.FRDT_research=function(){
   var el=document.getElementById('remail');var email=(el&&el.value||'').trim();var err=document.getElementById('rerr');
   if(!email||email.indexOf('@')<1||email.lastIndexOf('.')<email.indexOf('@')){if(err)err.style.display='block';return false;}
   if(err)err.style.display='none';
-  try{var kl=window.klaviyo=window.klaviyo||[];
-    kl.push(['identify',{'$email':email,'brand':'FRDTLAB','source':'research_lab_findings'}]);
-    kl.push(['track','Research Findings Requested',{'report':'Competence Trap Findings No. 001'}]);
-    try{window.klaviyo.push(['track','New Lead',{form:'Research Findings Requested',brand:'FRDTLAB'}]);}catch(e){}
-  }catch(e){}
-  document.getElementById('rform').style.display='none';document.getElementById('rerr').style.display='none';
-  document.getElementById('gdone').style.display='block';return false;
+  /* event + your alert + FRDT Lab Subscribers; the download shows right away either way */
+  try{ window.FRDT_kl.lead('Research Findings Requested',email,{report:'Competence Trap Findings No. 001',page:'/research'},'QYJzYY',{brand:'FRDTLAB',source:'research_lab_findings'}).catch(function(){}); }catch(e){}
+  document.getElementById('rform').style.display='none';document.getElementById('gdone').style.display='block';return false;
 };
 </script>
 </body></html>

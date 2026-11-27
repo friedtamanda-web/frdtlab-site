@@ -936,6 +936,7 @@ footer{
         <div class="full"><button class="btn btn-primary" type="submit" style="width:100%;">Request my teardown, $750</button></div>
       </div>
       <p class="form-note">Delivered within 5 business days · credited toward your build · built by hand, not by software.</p>
+      <p class="form-note" style="margin-top:.4rem">You&rsquo;ll also get FRDTLAB&rsquo;s occasional notes. Unsubscribe anytime.</p>
     </form>
   </div>
 </section>
@@ -1003,17 +1004,31 @@ const io = new IntersectionObserver((entries)=>{
 },{threshold:0.12});
 document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 
-/* ---------- teardown form → email handoff ----------
-   Placeholder handling: composes an email to hello@frdtlab.com.
-   Swap for a real form endpoint (Formspree, Netlify, CRM webhook)
-   before launch. */
+/* kl-core: posts events and list sign-ups straight to Klaviyo's client API with the typed email, so they land on the right person even if another visitor used this browser */
+window.FRDT_kl=window.FRDT_kl||(function(){
+  var H={'Content-Type':'application/vnd.api+json','revision':'2024-10-15'}, U='https://a.klaviyo.com/client/', C='?company_id=Twvzce';
+  function post(path,body){ return fetch(U+path+C,{method:'POST',keepalive:true,headers:H,body:JSON.stringify(body)}).then(function(r){ if(!r.ok) throw new Error('HTTP '+r.status); return r; }); }
+  function event(name,email,props,profileProps){ var a={email:email}; if(profileProps) a.properties=profileProps; return post('events',{data:{type:'event',attributes:{properties:props||{},metric:{data:{type:'metric',attributes:{name:name}}},profile:{data:{type:'profile',attributes:a}}}}}); }
+  function subscribe(listId,email,source){ return post('subscriptions',{data:{type:'subscription',attributes:{custom_source:source,profile:{data:{type:'profile',attributes:{email:email}}}},relationships:{list:{data:{type:'list',id:listId}}}}}); }
+  return { event:event, subscribe:subscribe, lead:function(form,email,props,listId,profileProps){
+    var p=Object.assign({},props||{}), jobs=[event(form,email,p,profileProps), event('New Lead',email,Object.assign({form:form,brand:'FRDTLAB'},p)).catch(function(){})];
+    if(listId) jobs.push(subscribe(listId,email,form).catch(function(){}));
+    try{ if(window.gtag) gtag('event','generate_lead',{event_category:'form',event_label:form,form_name:form,send_to:'G-1CDWBM46D5'}); }catch(e){}
+    return Promise.all(jobs);
+  } };
+})();
+
+/* ---------- teardown form → Klaviyo (event + your alert + FRDT Foundry Teardown Requests list) ---------- */
 document.getElementById('teardownForm').addEventListener('submit',function(ev){
   ev.preventDefault();
-  const f = new FormData(this);
-  const body = encodeURIComponent(
-    `Teardown request\n\nName: ${f.get('name')}\nCompany: ${f.get('company')}\nTrade: ${f.get('trade')}\nWebsite: ${f.get('website')}\nEmail: ${f.get('email')}`
-  );
-  window.location.href = `mailto:hello@frdtlab.com?subject=${encodeURIComponent('Teardown request: '+f.get('company'))}&body=${body}`;
+  var form=this, f=new FormData(form), btn=form.querySelector('button[type=submit]');
+  var email=(f.get('email')||'').trim(); if(!email) return;
+  var props={name:f.get('name')||'',company:f.get('company')||'',trade:f.get('trade')||'',website:f.get('website')||'',page:'/foundry/'};
+  if(btn){ btn.disabled=true; btn.textContent='Sending...'; }
+  function note(html){ var m=document.createElement('p'); m.className='form-note'; m.setAttribute('role','status'); m.style.cssText='font-size:1.05rem;text-align:left'; m.innerHTML=html; form.parentNode.insertBefore(m,form.nextSibling); }
+  window.FRDT_kl.lead('Foundry Teardown Request',email,props,'TcXXji',{first_name:(props.name.split(' ')[0]||''),organization:props.company})
+    .then(function(){ form.style.display='none'; note('Got it. You&rsquo;ll hear from me within two business days.'); })
+    .catch(function(){ if(btn){ btn.disabled=false; btn.textContent='Request my teardown, $750'; } note('That didn&rsquo;t go through. Please try again, or email <a href="mailto:hello@frdtlab.com">hello@frdtlab.com</a>.'); });
 });
 </script>
 </body>

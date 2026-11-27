@@ -344,17 +344,27 @@ document.getElementById('diagnostic').addEventListener('submit', function(e){
 });
 
 /* email capture -> Klaviyo onsite (identify + track) */
+/* kl-core: posts events and list sign-ups straight to Klaviyo's client API with the typed email, so they land on the right person even if another visitor used this browser */
+window.FRDT_kl=window.FRDT_kl||(function(){
+  var H={'Content-Type':'application/vnd.api+json','revision':'2024-10-15'}, U='https://a.klaviyo.com/client/', C='?company_id=Twvzce';
+  function post(path,body){ return fetch(U+path+C,{method:'POST',keepalive:true,headers:H,body:JSON.stringify(body)}).then(function(r){ if(!r.ok) throw new Error('HTTP '+r.status); return r; }); }
+  function event(name,email,props,profileProps){ var a={email:email}; if(profileProps) a.properties=profileProps; return post('events',{data:{type:'event',attributes:{properties:props||{},metric:{data:{type:'metric',attributes:{name:name}}},profile:{data:{type:'profile',attributes:a}}}}}); }
+  function subscribe(listId,email,source){ return post('subscriptions',{data:{type:'subscription',attributes:{custom_source:source,profile:{data:{type:'profile',attributes:{email:email}}}},relationships:{list:{data:{type:'list',id:listId}}}}}); }
+  return { event:event, subscribe:subscribe, lead:function(form,email,props,listId,profileProps){
+    var p=Object.assign({},props||{}), jobs=[event(form,email,p,profileProps), event('New Lead',email,Object.assign({form:form,brand:'FRDTLAB'},p)).catch(function(){})];
+    if(listId) jobs.push(subscribe(listId,email,form).catch(function(){}));
+    try{ if(window.gtag) gtag('event','generate_lead',{event_category:'form',event_label:form,form_name:form,send_to:'G-1CDWBM46D5'}); }catch(e){}
+    return Promise.all(jobs);
+  } };
+})();
+
 document.getElementById('captureForm').addEventListener('submit', function(e){
   e.preventDefault();
   if(this.company_website && this.company_website.value){ return; } /* honeypot */
   var email = document.getElementById('email').value.trim();
   if(!email){ return; }
-  try{
-    var _learnq = window._learnq || [];
-    _learnq.push(['identify', {'$email': email, 'Signal Leak Score': lastScore, 'Signal Leak Band': lastBand}]);
-    _learnq.push(['track', 'Signal Leak Diagnostic', {'score': lastScore, 'band': lastBand, 'top_leaks': lastLeaks, 'source': '/signal-leak'}]);
-    try{window.klaviyo.push(['track','New Lead',{form:'Signal Leak Diagnostic',brand:'FRDTLAB',source:'/signal-leak'}]);}catch(e){}
-  }catch(err){}
+  /* event (starts the Signal-Leak nurture) + your alert + FRDT Lab Subscribers, sent with the typed email */
+  try{ window.FRDT_kl.lead('Signal Leak Diagnostic',email,{score:lastScore,band:lastBand,top_leaks:lastLeaks,source:'/signal-leak'},'QYJzYY',{'Signal Leak Score':lastScore,'Signal Leak Band':lastBand}).catch(function(){}); }catch(err){}
   try{ if(window.gtag){ gtag('event','signal_leak_lead',{score:lastScore, band:lastBand}); } }catch(err){}
   document.getElementById('capture').classList.add('hidden');
   document.getElementById('thanks').classList.remove('hidden');

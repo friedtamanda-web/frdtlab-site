@@ -218,18 +218,28 @@ footer.site{max-width:760px;margin:0 auto;padding:30px 24px 70px;border-top:2px 
 <script>addEventListener("load",function(){var s=document.createElement("script");s.async=1;s.src="https://static.klaviyo.com/onsite/js/Twvzce/klaviyo.js?company_id=Twvzce";document.head.appendChild(s);});</script>
 <script type="text/javascript">!function(){if(!window.klaviyo){window._klOnsite=window._klOnsite||[];try{window.klaviyo=new Proxy({},{get:function(n,i){return"push"===i?function(){var n;(n=window._klOnsite).push.apply(n,arguments)}:function(){for(var n=arguments.length,o=new Array(n),w=0;w<n;w++)o[w]=arguments[w];var t="function"==typeof o[o.length-1]?o.pop():void 0,e=new Promise((function(n){window._klOnsite.push([i].concat(o,[function(i){t&&t(i),n(i)}]))}));return e}}})}catch(n){window.klaviyo=window.klaviyo||[],window.klaviyo.push=function(){var n;(n=window._klOnsite).push.apply(n,arguments)}}}}();</script>
 <script>
-/* email capture -> Klaviyo onsite (identify + track), then reveal the download */
+/* kl-core: posts events and list sign-ups straight to Klaviyo's client API with the typed email, so they land on the right person even if another visitor used this browser */
+window.FRDT_kl=window.FRDT_kl||(function(){
+  var H={'Content-Type':'application/vnd.api+json','revision':'2024-10-15'}, U='https://a.klaviyo.com/client/', C='?company_id=Twvzce';
+  function post(path,body){ return fetch(U+path+C,{method:'POST',keepalive:true,headers:H,body:JSON.stringify(body)}).then(function(r){ if(!r.ok) throw new Error('HTTP '+r.status); return r; }); }
+  function event(name,email,props,profileProps){ var a={email:email}; if(profileProps) a.properties=profileProps; return post('events',{data:{type:'event',attributes:{properties:props||{},metric:{data:{type:'metric',attributes:{name:name}}},profile:{data:{type:'profile',attributes:a}}}}}); }
+  function subscribe(listId,email,source){ return post('subscriptions',{data:{type:'subscription',attributes:{custom_source:source,profile:{data:{type:'profile',attributes:{email:email}}}},relationships:{list:{data:{type:'list',id:listId}}}}}); }
+  return { event:event, subscribe:subscribe, lead:function(form,email,props,listId,profileProps){
+    var p=Object.assign({},props||{}), jobs=[event(form,email,p,profileProps), event('New Lead',email,Object.assign({form:form,brand:'FRDTLAB'},p)).catch(function(){})];
+    if(listId) jobs.push(subscribe(listId,email,form).catch(function(){}));
+    try{ if(window.gtag) gtag('event','generate_lead',{event_category:'form',event_label:form,form_name:form,send_to:'G-1CDWBM46D5'}); }catch(e){}
+    return Promise.all(jobs);
+  } };
+})();
+
+/* email capture -> Klaviyo (event + list), then reveal the download */
 document.getElementById('dlForm').addEventListener('submit', function(e){
   e.preventDefault();
   if(this.company_website && this.company_website.value){ return; } /* honeypot */
   var email = document.getElementById('dlEmail').value.trim();
   if(!email){ return; }
-  try{
-    var _learnq = window._learnq || [];
-    _learnq.push(['identify', {'$email': email, 'Signal Brief Lead': true}]);
-    _learnq.push(['track', 'Signal Brief Download', {'deck': 'Marketing News to Ignore This Week', 'source': '/signal-brief/signal-brief/'}]);
-    try{ window.klaviyo.push(['track','New Lead',{form:'Signal Brief Deck', brand:'FRDTLAB', source:'/signal-brief/signal-brief/'}]); }catch(e){}
-  }catch(err){}
+  /* event + your alert + FRDT Lab Subscribers, sent with the typed email */
+  try{ window.FRDT_kl.lead('Signal Brief Download',email,{deck:'Marketing News to Ignore This Week',source:'/signal-brief/'},'QYJzYY',{'Signal Brief Lead':true}).catch(function(){}); }catch(err){}
   try{ if(window.gtag){ gtag('event','signal_brief_lead',{deck:'marketing-news-to-ignore'}); } }catch(err){}
   document.getElementById('dlForm').classList.add('hidden');
   var u = document.getElementById('unlocked');
